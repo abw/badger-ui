@@ -5,6 +5,74 @@ __metadata:
   version: 5
   cacheKey: 8
 
+"@abw/badger-ui@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@abw/badger-ui@workspace:."
+  dependencies:
+    "@abw/react-context-generator": ^1.1.0
+    "@babel/cli": ^7.15.7
+    "@babel/core": ^7.15.5
+    "@babel/eslint-parser": ^7.15.7
+    "@babel/node": ^7.15.4
+    "@babel/plugin-proposal-class-properties": ^7.14.5
+    "@babel/preset-env": ^7.15.6
+    "@babel/preset-react": ^7.14.5
+    "@fortawesome/fontawesome-svg-core": ^1.3.0-beta2
+    "@fortawesome/free-regular-svg-icons": ^6.0.0-beta2
+    "@fortawesome/free-solid-svg-icons": ^6.0.0-beta2
+    "@fortawesome/react-fontawesome": ^0.1.15
+    "@rollup/plugin-babel": ^5.3.0
+    "@rollup/plugin-commonjs": ^20.0.0
+    "@rollup/plugin-json": ^4.1.0
+    "@rollup/plugin-node-resolve": ^13.0.5
+    "@storybook/addon-actions": ^6.3.8
+    "@storybook/addon-essentials": ^6.3.8
+    "@storybook/addon-links": ^6.3.8
+    "@storybook/addon-storysource": ^6.3.8
+    "@storybook/react": ^6.3.8
+    autoprefixer: ^10.3.6
+    babel: ^6.23.0
+    babel-loader: ^8.2.2
+    chalk: ^4.1.2
+    colors: ^1.4.0
+    command-line-args: ^5.2.0
+    command-line-usage: ^6.1.1
+    css-loader: 5.2.6
+    eslint: ^7.32.0
+    eslint-plugin-babel: ^5.3.1
+    eslint-plugin-react: ^7.26.1
+    history: ^5.0.1
+    js-yaml: ^4.1.0
+    postcss: ^8.3.8
+    prop-types: ^15.7.2
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-router: ^6.0.0-beta.5
+    react-router-dom: ^6.0.0-beta.5
+    rimraf: ^3.0.2
+    rollup: ^2.57.0
+    rollup-plugin-copy: ^3.4.0
+    rollup-plugin-peer-deps-external: ^2.2.4
+    rollup-plugin-styles: ^3.14.1
+    rollup-plugin-terser: ^7.0.2
+    sass: ^1.42.1
+    sass-loader: 10.2.0
+    style-loader: 2.0.0
+    yup: ^0.32.9
+  peerDependencies:
+    "@abw/react-context-generator": ^1.1.0
+    "@fortawesome/fontawesome-svg-core": ^1.3.0-beta2
+    "@fortawesome/free-regular-svg-icons": ^6.0.0-beta2
+    "@fortawesome/free-solid-svg-icons": ^6.0.0-beta2
+    "@fortawesome/react-fontawesome": ^0.1.15
+    history: ^5.0.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-router: ^6.0.0-beta.5
+    react-router-dom: ^6.0.0-beta.5
+  languageName: unknown
+  linkType: soft
+
 "@abw/react-context-generator@npm:^1.1.0":
   version: 1.1.0
   resolution: "@abw/react-context-generator@npm:1.1.0"
@@ -4563,74 +4631,6 @@ __metadata:
   checksum: 129af541cdfa010f09d7c6413a2e0b159f98605195ae05952dfef4d36de22b995536920c09f189676db2304d81faad8203ee787eb12029d89a9a59136beda488
   languageName: node
   linkType: hard
-
-"badger-ui@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "badger-ui@workspace:."
-  dependencies:
-    "@abw/react-context-generator": ^1.1.0
-    "@babel/cli": ^7.15.7
-    "@babel/core": ^7.15.5
-    "@babel/eslint-parser": ^7.15.7
-    "@babel/node": ^7.15.4
-    "@babel/plugin-proposal-class-properties": ^7.14.5
-    "@babel/preset-env": ^7.15.6
-    "@babel/preset-react": ^7.14.5
-    "@fortawesome/fontawesome-svg-core": ^1.3.0-beta2
-    "@fortawesome/free-regular-svg-icons": ^6.0.0-beta2
-    "@fortawesome/free-solid-svg-icons": ^6.0.0-beta2
-    "@fortawesome/react-fontawesome": ^0.1.15
-    "@rollup/plugin-babel": ^5.3.0
-    "@rollup/plugin-commonjs": ^20.0.0
-    "@rollup/plugin-json": ^4.1.0
-    "@rollup/plugin-node-resolve": ^13.0.5
-    "@storybook/addon-actions": ^6.3.8
-    "@storybook/addon-essentials": ^6.3.8
-    "@storybook/addon-links": ^6.3.8
-    "@storybook/addon-storysource": ^6.3.8
-    "@storybook/react": ^6.3.8
-    autoprefixer: ^10.3.6
-    babel: ^6.23.0
-    babel-loader: ^8.2.2
-    chalk: ^4.1.2
-    colors: ^1.4.0
-    command-line-args: ^5.2.0
-    command-line-usage: ^6.1.1
-    css-loader: 5.2.6
-    eslint: ^7.32.0
-    eslint-plugin-babel: ^5.3.1
-    eslint-plugin-react: ^7.26.1
-    history: ^5.0.1
-    js-yaml: ^4.1.0
-    postcss: ^8.3.8
-    prop-types: ^15.7.2
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-router: ^6.0.0-beta.5
-    react-router-dom: ^6.0.0-beta.5
-    rimraf: ^3.0.2
-    rollup: ^2.57.0
-    rollup-plugin-copy: ^3.4.0
-    rollup-plugin-peer-deps-external: ^2.2.4
-    rollup-plugin-styles: ^3.14.1
-    rollup-plugin-terser: ^7.0.2
-    sass: ^1.42.1
-    sass-loader: 10.2.0
-    style-loader: 2.0.0
-    yup: ^0.32.9
-  peerDependencies:
-    "@abw/react-context-generator": ^1.1.0
-    "@fortawesome/fontawesome-svg-core": ^1.3.0-beta2
-    "@fortawesome/free-regular-svg-icons": ^6.0.0-beta2
-    "@fortawesome/free-solid-svg-icons": ^6.0.0-beta2
-    "@fortawesome/react-fontawesome": ^0.1.15
-    history: ^5.0.1
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-router: ^6.0.0-beta.5
-    react-router-dom: ^6.0.0-beta.5
-  languageName: unknown
-  linkType: soft
 
 "bail@npm:^1.0.0":
   version: 1.0.5

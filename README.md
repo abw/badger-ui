@@ -16,7 +16,7 @@ it in other projects.
 Add the `badger-ui` library to your project.
 
 ```sh
-cd ../your-project
+cd your-project
 yarn add @abw/badger-ui
 ```
 
