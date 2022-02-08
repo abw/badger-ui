@@ -1,11 +1,15 @@
 {
-  "name": "badger-ui",
+  "name": "@abw/badger-ui",
   "version": "1.0.4",
   "description": "CSS/React User Interface Components",
   "author": "Andy Wardley",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abw/badger-ui/issues"
+  },
+  "homepage": "https://github.com/abw/badger-ui",
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn clean && rollup --config",

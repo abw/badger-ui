@@ -1,3 +1,7 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Introduction" />
+
 # Badger-UI
 
 The `badger-ui` library contains React components and corresponding
@@ -16,7 +20,6 @@ it in other projects.
 Add the `badger-ui` library to your project.
 
 ```sh
-cd ../your-project
 yarn add @abw/badger-ui
 ```
 
@@ -52,13 +55,13 @@ files in `src/styles/config` and `src/styles/components` to see what
 they are). Then import the `badger-ui` styles.
 
 ```scss
-    // custom configuration variables
-    $orange: #FF7F00;
-    $alert-radius: 10px;
-    $checkbox-padding: 2px 4px;
+// custom configuration variables
+$orange: #FF7F00;
+$alert-radius: 10px;
+$checkbox-padding: 2px 4px;
 
-    // import badger-ui styles
-    @import "@abw/badger-ui/dist/styles/badger-ui.scss";
+// import badger-ui styles
+@import "@abw/badger-ui/dist/styles/badger-ui.scss";
 ```
 
 You should then import this custom stylesheet into your application.
@@ -69,8 +72,8 @@ The `badger-ui` library uses a number of icons from the [Fontawesome](https://fo
 
 You will almost certainly want to add further icons to this
 collection, either incorporating addition Fontawesome icons
-or custom SVG icons.  See the [README](./icons/README.md) file
-in the [icons](./icons) directory for further information.
+or custom SVG icons.  See the `README` file
+in the `icons` directory for further information.
 
 ## Updating the `badger-ui` Library
 
@@ -112,7 +115,7 @@ this command.
 yarn clean
 ```
 
-Note that this happens automatically when you run `yarn build`.
+Note that the `clean` step happens automatically when you run `yarn build`.
 
 # Author
 
