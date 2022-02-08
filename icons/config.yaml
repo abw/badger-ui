@@ -1,0 +1,98 @@
+---
+#============================================================================
+# This file contains the configuration for the build.js script which
+# generates a custom library of Fontawesome 5 icons.  This is used by the
+# Icon component in src/components/Icon.
+#
+# After making any changes here or adding any files to the "custom" directory
+# you should run the build.js script to generate a new icon library. You can
+# run the script in the cog-ui library using this yarn command:
+#
+#   yarn icons
+#
+# If you're running it from a project which uses cog-ui then it would be:
+#
+#   node node_modules/cog-ui/icons/build.js --verbose --extend
+#
+# See the README.md file for further information.
+#============================================================================
+
+# icons to include from solid icon set
+solid:
+  - angle-left
+  - angle-right
+  - angle-down
+  - angle-up
+  - arrow-up
+  - arrow-down
+  - arrow-left
+  - arrow-right
+  - asterisk
+  - at
+  - ban
+  - bars
+  - caret-up
+  - caret-down
+  - caret-left
+  - caret-right
+  - caret-square-left
+  - caret-square-right
+  - cat
+  - check
+  - check-square
+  - circle
+  - circle-check
+  - circle-exclamation
+  - circle-question
+  - cog
+  - cogs
+  - clipboard-list
+  - exclamation-triangle
+  - filter
+  - info-circle
+  - key
+  - plus
+  - radiation
+  - search
+  - sort
+  - sort-down
+  - sort-up
+  - rotate-left
+  - times
+  - times-circle
+  - toggle-on
+  - toggle-off
+  - trash
+  - user
+  - users
+  - wrench
+
+# icons to include from regular icon set
+regular:
+  - check-circle
+  - circle
+  - dot-circle
+  - face-frown
+  - square
+
+
+# define aliases for icons
+alias:
+  alert:        solid:circle-exclamation
+  checked:      solid:check-square
+  dotted:       regular:dot-circle
+  info:         solid:info-circle
+  ok:           solid:circle-check
+  sad:          regular:face-frown
+  unchecked:    regular:square
+  undo:         solid:rotate-left
+  undotted:     regular:circle
+  warning:      solid:exclamation-triangle
+
+
+
+# set true if you want to automatically generate aliases for regular icons
+aliasRegular: true
+
+# load all custom icons in the 'custom' directory (relative to this dir)
+customDir: custom
