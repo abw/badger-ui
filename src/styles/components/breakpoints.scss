@@ -1,0 +1,14 @@
+// classes to limit width to a breakpoint, e.g. .tablet
+@each $name, $size in $breakpoints {
+  .#{$name} {
+    max-width: $size;
+    &.center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  // for debugging/style guide
+  .#{$name}-width:before {
+    content: "#{$size}";
+  }
+}

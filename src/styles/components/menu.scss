@@ -1,0 +1,66 @@
+$menu-radius: $unit-radius !default;
+$menu-back:   $white !default;
+$menu-fore:   rgba($black, 0.7) !default;
+
+.menu {
+  border: 1px solid $border-color;
+  border-radius: $menu-radius;
+  a:focus {
+    text-decoration: none;
+  }
+  .item {
+    font-size: $unit-size;
+    line-height: $unit-line;
+    display: block;
+    padding: $unit-pad-v * 2 $unit-pad-h;
+    background-color: $menu-back;
+    color: $menu-fore;
+    border-bottom: 1px solid $border-color;
+    user-select: none;
+    display: flex;
+    align-items: baseline;
+    .caption {
+      flex-grow: 1;
+      text-align: left;
+    }
+    &:first-child {
+      border-radius: $menu-radius $menu-radius 0 0;
+    }
+    &:last-child {
+      border-bottom: none;
+      border-radius: 0 0 $menu-radius $menu-radius;
+    }
+    &:only-child {
+      border-bottom: none;
+      border-radius: $menu-radius $menu-radius $menu-radius $menu-radius;
+    }
+    &:hover {
+      background-color: rgba($select-hover-back, 0.1);
+      color: mix($select-hover-back, $black, 60%);
+    }
+    &.active {
+      background-color: $selected-back;
+      color: $selected-fore;
+      .trivia {
+        color: $black;
+      }
+    }
+    &.disabled {
+      & > *:not(.tooltip, .icon) {
+        color: $grey;
+        opacity: 0.5;
+      }
+      &:hover {
+        background-color: mix($red, $white, 10%) !important;
+        cursor: not-allowed;
+        & > * {
+          color: $red !important;
+        }
+      }
+    }
+    &.saving {
+      color: $saving-fore;
+      background-color: $saving-back;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.dropdown {
+  position: relative;
+  overflow: visible;
+  display: inline-block;
+  margin-right: $unit-pad-h;
+  .trigger {
+    .button {
+      margin: 0;
+    }
+  }
+  .content {
+    display: none;
+    position: absolute;
+    min-width: 150%;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+    background-color: $white;
+    border-radius: $unit-radius;
+    border-top-left-radius: 0;
+    .item .caption {
+      white-space: nowrap;
+    }
+  }
+  &:hover:not(.clicked) {
+    .trigger .button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .content {
+      display: block;
+      box-shadow: 2px 2px 5px rgba($black, 0.1);
+    }
+  }
+  &.right {
+    margin-right: 0;
+
+    &:hover .content {
+      left: auto;
+      right: 0;
+      border-top-left-radius: $unit-radius;
+      border-top-right-radius: 0;
+    }
+  }
+  .separator {
+    display: block;
+    border-bottom: 4px solid $border-color;
+  }
+}
+
+.dropdown.border {
+  .content {
+    border: 1px solid lighten($grey, 30%);
+  }
+}
+
+.dropdown:not(.right) .content .menu {
+  border-top-left-radius: 0;
+  .item {
+    &:first-child {
+      border-top-left-radius: 0;
+    }
+  }
+}
+.dropdown.right .content .menu {
+  border-top-right-radius: 0;
+  .item {
+    &:first-child {
+      border-top-right-radius: 0;
+    }
+  }
+}
+
+@each $name,$color in $colors {
+  .dropdown.#{$name} .separator,
+  .dropdown.#{$name} .menu,
+  .dropdown.#{$name} .menu .item {
+    background-color: mix($color, $white, 2%);
+    border-color: mix($color, $white, 40%);
+    color: rgba(mix($color, $black, 30%), 0.9) !important;
+    &:hover {
+      background-color: rgba($color, 0.1);
+    }
+  }
+}
+

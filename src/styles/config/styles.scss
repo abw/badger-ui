@@ -1,0 +1,68 @@
+// colors for alerts and other general style representing different statuses
+$info-color:      $blue !default;
+$info-dark:       darkish-color($info-color) !default;
+$info-back:       wash-color($info-color) !default;
+$info-text:       darkish-color($info-color) !default;
+$info-head:       darker-color($info-color) !default;
+$info-edge:       $info-color !default;
+$info-hover:      darkish-color($info-color) !default;
+
+$success-color:   $green !default;
+$success-dark:    darkish-color($success-color) !default;
+$success-back:    wash-color($success-color) !default;
+$success-text:    darkish-color($success-color) !default;
+$success-head:    darker-color($success-color) !default;
+$success-edge:    $success-color !default;
+$success-hover:   darkish-color($success-color) !default;
+
+$warning-color:   $orange !default;
+$warning-dark:    darkish-color($warning-color) !default;
+$warning-back:    wash-color($warning-color) !default;
+$warning-text:    darkish-color($warning-color) !default;
+$warning-head:    darker-color($warning-color) !default;
+$warning-edge:    $warning-color !default;
+$warning-hover:   darkish-color($warning-color) !default;
+
+$error-color:     $red !default;
+$error-dark:      darkish-color($error-color) !default;
+$error-back:      wash-color($error-color) !default;
+$error-fore:      darker-color($error-color) !default;
+$error-text:      darkish-color($error-color) !default;
+$error-head:      darker-color($error-color) !default;
+$error-edge:      $error-color !default;
+$error-hover:     darkish-color($error-color) !default;
+
+// invalid form fields, buttons, etc.
+$invalid-color:   $red !default;
+$invalid-fore:    mix($invalid-color, $black, 50%) !default;
+$invalid-back:    mix($invalid-color, $white, 2%) !default;
+$invalid-edge:    mix($invalid-color, $white, 40%) !default;
+$invalid-place:   rgba($invalid-color, 0.5) !default;
+
+// positive and negative
+$positive-color:  $success-color !default;
+$positive-back:   pale-color($positive-color) !default;
+$positive-fore:   darker-color($positive-color) !default;
+$positive-edge:   darkish-color($positive-color) !default;
+
+$negative-color:  $error-color !default;
+$negative-back:   pale-color($negative-color) !default;
+$negative-fore:   darker-color($negative-color) !default;
+$negative-edge:   darkish-color($negative-color) !default;
+
+// to indicate an item is saving
+$saving-color:    $violet !default;
+$saving-back:     pale-color($saving-color) !default;
+$saving-fore:     darker-color($saving-color) !default;
+$saving-edge:     darkish-color($saving-color) !default;
+
+// select - for selectable tables, etc.
+$select-color:      $blue !default;
+$select-hover-fore: $white !default;
+$select-hover-back: lightish-color($select-color) !default;
+$select-hover-dark: dark-color($select-color) !default;
+$selected-back:     pale-color($select-color) !default;
+$selected-fore:     rgba($white, 0.9) !default;
+
+$border-color:    lightest-color($grey) !default;
+$shade-color:     pale-color($grey);

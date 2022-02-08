@@ -1,0 +1,53 @@
+/*-- components/sizes --*/
+// generate .smallest, .smaller ... $larger, $largest for font sizes
+@each $name, $size in $sizes {
+  .#{$name} {
+    font-size: $size !important;
+    line-height: $unit-line;
+  }
+}
+
+// generate x2, x3 ... x10 for size multipliers
+@for $n from 2 through 10 {
+  .x#{$n} {
+    font-size: #{$n}rem !important;
+    line-height: 100%;
+  }
+}
+
+// generate lh-100, lh-110 ... lh-200 for line-height percentages
+@for $lh from 0 through 10 {
+  .lh-#{100 + $lh * 10} {
+    line-height: 100% + $lh * 10% !important;
+  }
+}
+
+// generate wd-1 to wd-20 for em widths
+// and wd-100 to wd-2000 for pixel widths
+@for $wd from 1 through 20 {
+  .wd-#{$wd} {
+    width: #{$wd}em;
+  }
+  .wd-#{100 * $wd} {
+    width: #{100 * $wd}px;
+    max-height: #{250 * $wd}px;
+  }
+  .ht-#{$wd} {
+    height: #{$wd}em;
+  }
+  .ht-#{100 * $wd} {
+    height: #{100 * $wd}px;
+  }
+}
+
+// generate vh-10, vh-20 ... vh-100 for heights based on viewport height
+@for $vh from 1 through 10 {
+  .vh-#{$vh * 10} {
+    height: #{$vh * 10}vh;
+  }
+}
+
+.normal {
+  font-size: 1rem;
+}
+

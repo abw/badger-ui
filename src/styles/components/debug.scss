@@ -1,0 +1,25 @@
+$debug-color:     $brown !default;
+$debug-back:      pale-color($debug-color) !default;
+$debug-fore:      darkish-color($debug-color) !default;
+$debug-edge:      lighter-color($debug-color) !default;
+$debug-head-back: mix($debug-color, $white, 50%) !default;
+$debug-head-fore: darker-color($debug-color) !default;
+
+.debug {
+  background-color: $debug-back;
+  color: $debug-fore;
+  border: 1px solid $debug-edge;
+  padding: 1rem;
+  font-size: 0.9em;
+  .heading {
+    color: $debug-head-fore;
+    background-color: $debug-head-back;
+    margin: -1rem -1rem 1rem -1rem;
+    line-height: 170%;
+    padding-left: 1rem;
+    border-bottom: 1px solid $debug-edge;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: $debug-head-fore;
+  }
+}

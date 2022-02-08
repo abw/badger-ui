@@ -1,0 +1,123 @@
+/*-- components/typography --*/
+html {
+  font-family: $font-text;
+  font-size: $unit-size;
+  line-height: $unit-line;
+  color: $text-color;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-head;
+  font-weight: $weight-light;
+  color: $head-color;
+  margin-top:   0em;
+  margin-bottom: 0.5em;
+  page-break-after: avoid;
+}
+h1 {
+  font-size: $size-largest;
+  line-height: 130%;
+  letter-spacing: -1px;
+}
+h2 {
+  font-size: $size-larger;
+  line-height: 135%;
+  letter-spacing: -0.5px;
+}
+h3 {
+  font-size: $size-large;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+}
+h4 {
+  font-size: $size-largish;
+  line-height: 135%;
+}
+h5 {
+  font-size: $size-medium;
+  font-weight: $weight-bold;
+  line-height: 135%;
+}
+h6 {
+  font-size: $size-smallish;
+  font-size: 1em;
+  color: $grey;
+  font-weight: $weight-bold;
+}
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0.5em;
+}
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+  margin-bottom: 0.5em;
+}
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1.25em;
+}
+p.intro,
+.intro p {
+  font-size: $size-largish;
+  line-height: 150%;
+  font-weight: 400;
+  color: $head-color;
+  letter-spacing: -0.3px;
+}
+a {
+  color: $link-color;
+  cursor: pointer;
+  &:hover {
+    color: $link-hover;
+    h1, h2, h3, h4, h5, h6 {
+      color: $link-hover;
+    }
+  }
+  &:focus {
+    text-decoration: underline;
+  }
+}
+.bold {
+  font-weight: 700;
+}
+.italic {
+  font-style: italic;
+}
+.mono {
+  font-family: $font-mono;
+}
+.code {
+  font-family: $font-mono;
+  font-size: 0.8em;
+  color: $code-fore;
+  background-color: $code-back;
+  border: $code-border $code-edge;
+  border-radius: $code-radius;
+  padding: $code-padding;
+  margin: $code-margin;
+}
+.trivia {
+  font-size: $trivia-size;
+  color: $trivia-color;
+}
+.summary {
+  .title {
+    // font-size: 1.75em;
+    font-size: $size-larger;
+    line-height: 100%;
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    font-weight: 300;
+  }
+  .subtitle {
+    // font-size: 1em;
+    font-size: $size-largish;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+  .detail {
+    font-weight: 300;
+    //color: rgba($black, 0.4);
+  }
+}
+.scroll {
+  cursor: pointer;
+}

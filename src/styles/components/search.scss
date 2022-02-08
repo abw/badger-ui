@@ -1,0 +1,96 @@
+$search-icon-color: $blue !default;
+
+.search {
+  position: relative;
+  .input {
+    width: 100%;
+    padding-right: 2em;
+    outline: none;
+  }
+  & > .icon {
+    position: absolute;
+    font-size: 1.2em;
+    right: $unit-margin;
+    top: 0.4em;
+    &.clear {
+      right: calc($unit-margin + 0.1em);
+    }
+    &.clear:hover {
+      color: $search-icon-color;
+      cursor: pointer;
+    }
+  }
+  &.focus > .icon {
+    color: $field-focus-edge !important;
+  }
+  .no-results {
+    padding: $unit-pad-v $unit-pad-h;
+    background-color: mix($red, $white, 5%);
+    color: dark-color($red);
+  }
+  .options {
+    box-shadow: $focus-box-shadow;
+    .option {
+      cursor: pointer;
+      display: block;
+      overflow: hidden;
+      padding: 0 !important;
+      .off {
+        background-color: $shade-color;
+        color: rgba($black, 0.4);
+      }
+      &.active {
+        background-color: $blue;
+        color: $white;
+        .off {
+          background-color: dark-color($teal);
+          color: rgba($white, 0.8);
+        }
+        .status .inactive,
+        .status .invisible {
+          color: $orange;
+        }
+      }
+      &:last-child {
+        border-radius: 0 0 $unit-radius $unit-radius;
+        border-bottom: none;
+      }
+      .result {
+        padding: 0.25rem 0.5rem;
+      }
+      .summary {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.5rem;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        user-select: none;
+        .detail {
+          flex-grow: 1;
+        }
+        .primary {
+          font-size: $size-largish;
+          line-height: 1.4;
+          font-weight: 400;
+        }
+        .secondary {
+          font-size: $size-medium;
+          line-height: 1.2;
+          font-weight: 400;
+        }
+        .tertiary {
+          font-size: $size-smallish;
+          line-height: 1.5;
+          opacity: 0.8;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  &.rounded {
+    .input {
+      border-radius: 1em;
+      padding-left: 0.75em;
+    }
+  }
+}

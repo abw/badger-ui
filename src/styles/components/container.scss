@@ -1,0 +1,11 @@
+.container {
+  margin: 0 2rem;
+  // classes to limit width to a breakpoint, e.g. .tablet
+  @each $name, $size in $breakpoints {
+    &.#{$name} {
+      max-width: $size;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

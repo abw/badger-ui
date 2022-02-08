@@ -1,0 +1,15 @@
+//----------------------------------------------------------------------------
+// Responsive breakpoints
+//----------------------------------------------------------------------------
+$potato:      640px  !default;
+$mobile:      800px  !default;
+$tablet:      1024px !default;
+$desktop:     1200px !default;
+$widescreen:  1500px !default;
+$breakpoints: (
+    'potato':     $potato,
+    'mobile':     $mobile,
+    'tablet':     $tablet,
+    'desktop':    $desktop,
+    'widescreen': $widescreen
+);

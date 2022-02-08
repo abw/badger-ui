@@ -1,0 +1,32 @@
+$overlay-plaque-width: 100px !default;
+$overlay-plaque-height: 100px !default;
+
+.overlayable {
+  position: relative;
+  min-height: $overlay-plaque-height * 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($white, 0.85);
+  color: rgba($black, 0.85);
+  &.grey {
+    background-color: rgba($grey, 0.85);
+    color: rgba($black, 0.5);
+  }
+  &.black {
+    background-color: rgba($black, 0.85);
+    color: rgba($white, 0.85);
+  }
+  .middle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,240 @@
+$datatable-color:             $blue !default;
+$datatable-sort-color:        $brown !default;
+$datatable-filter-color:      $indigo !default;
+$datatable-header-back:       mix($datatable-color, $white, 15%) !default;
+$datatable-header-fore:       mix($datatable-color, $black, 80%) !default;
+$datatable-border-color:      rgba(mix($datatable-color, $black, 80%), 0.2) !default;
+$datatable-summary-bg-color:  mix($datatable-color, $white, 15%) !default;
+$datatable-select-color:      $select-color !default;
+$datatable-select-fore:       $select-hover-fore !default;
+$datatable-select-back:       $select-hover-back !default;
+$datatable-select-dark:       $select-hover-dark !default;
+
+.datatable table.table {
+  margin: 0;
+  border-color: $datatable-border-color;
+  thead {
+    tr.headings {
+      th {
+        padding: 0.2em 0.2em 0.2em 0.4em;
+        position: relative;
+        font-size: 0.7em;
+        font-weight: 600;
+        //color: mix($primary, $black, 50%);
+        background-color: $datatable-header-back;
+        border-color: $datatable-border-color;
+        cursor: pointer;
+        & > div {
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          .heading {
+            flex-basis: 100%;
+          }
+        }
+        &.id {
+          width: 6em;
+        }
+        &.timestamp {
+          width: 14em;
+        }
+        &:hover {
+          background-color: rgba($datatable-sort-color, 0.1);
+        }
+        &.sorting {
+          background-color: rgba($datatable-sort-color, 0.3);
+          border-color: rgba($datatable-sort-color, 0.4);
+          color: darken($datatable-sort-color, 15%);
+        }
+        .filter {
+          border-radius: 0.5em;
+          padding: 0 0.25em;
+          margin-left: 0.5rem;
+          color: mix($datatable-filter-color, $black, 40%);
+          &:hover {
+            background-color: rgba($datatable-filter-color, 0.5);
+            color: white;
+          }
+        }
+      }
+    }
+    tr.filters {
+      th {
+        vertical-align: middle;
+        background-color: rgba($datatable-filter-color, 0.1);
+        padding: 0.2em;
+        font-size: $size-smallish;
+        padding: 0;
+        & > div {
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          .filter {
+            flex-basis: 100%;
+          }
+        }
+        input, select {
+          color: $datatable-filter-color;
+          height: 100%;
+          border: 0;
+        }
+        .icon {
+          margin: 0 0.5em;
+          font-size: $size-medium;
+          color: $grey;
+        }
+        .icon.clear-filter:hover {
+          color: $datatable-filter-color;
+        }
+        select {
+          color: $brown;
+          width: 100%;
+          padding: 0;
+        }
+      }
+      &.sorting {
+        background-color: rgba($datatable-filter-color, 0.2);
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        transition: background-color 0.1s, color 0s;
+        padding: 0.4em 0.6em;
+        user-select: none;
+        border-color: $datatable-border-color;
+
+        &.sorting {
+          background-color: rgba($datatable-sort-color, 0.1);
+          border-color: rgba($datatable-sort-color, 0.3);
+          color: darken($datatable-sort-color, 15%);
+        }
+      }
+      &:nth-child(even) td {
+        background-color: rgba($datatable-color, 0.05);
+        &.sorting {
+          background-color: rgba($datatable-sort-color, 0.15);
+        }
+      }
+    }
+  }
+  .id,
+  .number,
+  .money, .pounds, .price {
+    text-align: right;
+  }
+  .id, .boolean {
+    width: 6em;
+  }
+  .status,
+  .user_status,
+  .user_price_list,
+  .boolean {
+    text-align: center;
+  }
+  .pagination {
+    margin-bottom: 1em;
+  }
+}
+
+.datatable table.selectable tbody tr:hover td {
+  background-color: $datatable-select-back !important;
+  color: $datatable-select-fore !important;
+  .yesno {
+//      color: white !important;
+  }
+}
+.datatable .summary {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 0 0 1em 0;
+  font-size: $size-small;
+  background-color: $datatable-header-back;
+  color: $datatable-header-fore;
+  border: 1px solid $datatable-border-color;
+  border-radius: $unit-radius;
+  justify-content: stretch;
+  padding: 0;
+  .paginate {
+    margin: -1px;
+    display: inline-block;
+    height: 2.5em;
+    &:focus {
+      border-color: transparent;
+      box-shadow: none;
+    }
+    &.prev {
+      border-radius: $unit-radius-inner 0 0 $unit-radius-inner;
+    }
+    &.next {
+      border-radius: 0 $unit-radius-inner $unit-radius-inner 0;
+    }
+  }
+  .page-no {
+    flex: 1 0;
+    margin-left: 1em;
+  }
+  .page-records {
+    flex: 2 0;
+    text-align: center;
+  }
+  .page-size {
+    flex: 0 0;
+    flex-shrink: 1;
+    text-align: right;
+    .select {
+      margin: 0;
+      width: 10em;
+      float: right;
+    }
+  }
+}
+
+.datatable .pagination {
+  margin: 1em 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  .button {
+    margin-bottom: 0;
+  }
+  .prev {
+    flex: 0 0 10em;
+  }
+  .next {
+    flex: 0 0 10em;
+    text-align: right;
+  }
+  .list {
+    flex: 1 0;
+    text-align: center;
+    .etc {
+      font-size: 1.4em;
+      margin: 0 0.6rem 0 0
+    }
+  }
+}
+
+.datatable .selections {
+  font-size: $size-smallish;
+}
+
+.datatable .select-fields {
+    margin-bottom: $unit-margin;
+}
+.datatable .filtering {
+  .icon.on-left {
+    float: left;
+  }
+  .icon.on-right {
+    float: right;
+  }
+  .value {
+      font-weight: bold;
+      color: white;
+  }
+}

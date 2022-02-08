@@ -1,0 +1,58 @@
+// field bottom margin
+$field-mar-b: 1rem !default;
+
+// field input - should be same "unit" size as buttons
+$field-input-fore:      $text-color !default;
+$field-input-size:      $unit-size !default;
+$field-input-line:      $unit-line !default;
+$field-input-pad-v:     $unit-pad-v !default;
+$field-input-pad-h:     $unit-pad-h !default;
+$field-input-padding:   $field-input-pad-v $field-input-pad-h !default;
+$field-input-edge:      $border-color !default;
+$field-input-radius:    $unit-radius !default;
+$field-input-place:     rgba($text-color, 0.5) !default;
+
+// different input states: focussed, changed, valid, invalid
+$field-focus-color:     $blue !default;
+$field-focus-edge:      mix($field-focus-color, $white, 30%) !default;
+$field-focus-fore:      mix($field-focus-color, $black, 50%) !default;
+$field-focus-back:      mix($field-focus-color, $white, 5%) !default;
+$field-focus-place:     rgba($field-focus-color, 0.5) !default;
+$field-changed-color:   $orange !default;
+$field-changed-edge:    mix($field-changed-color, $white, 30%) !default;
+$field-changed-fore:    mix($field-changed-color, $black, 50%) !default;
+$field-changed-back:    mix($field-changed-color, $white, 5%) !default;
+$field-changed-place:   rgba($field-changed-color, 0.5) !default;
+$field-valid-color:     $green !default;
+$field-valid-edge:      mix($field-valid-color, $white, 30%) !default;
+$field-valid-fore:      mix($field-valid-color, $black, 50%) !default;
+$field-valid-back:      mix($field-valid-color, $white, 2%) !default;
+$field-valid-place:     rgba($field-valid-color, 0.5) !default;
+$field-invalid-color:   $red !default;
+$field-invalid-edge:    mix($field-invalid-color, $white, 40%) !default;
+$field-invalid-fore:    mix($field-invalid-color, $black, 50%) !default;
+$field-invalid-back:    mix($field-invalid-color, $white, 2%) !default;
+$field-invalid-place:   rgba($field-invalid-color, 0.5) !default;
+$field-saving-color:    $saving-color !default;
+$field-saving-edge:     $saving-edge !default;
+$field-saving-fore:     $saving-fore !default;
+$field-saving-back:     $saving-back !default;
+$field-saving-place:    rgba($field-saving-color, 0.5) !default;
+
+// field labels
+$field-label-mar-b:     0.25em !default;
+$field-label-fore:      $text-color !default;
+$field-label-size:      0.75em !default;
+$field-label-line:      1.5 !default;
+$field-label-weight:    300 !default;
+// calculate the amount of space taken by a label, e.g. for aligning buttons
+// note that the margin must be multiplied by 0.75 to account for the smaller
+// font-size of the label
+$field-label-height: ($field-label-size * $field-label-line) + ($field-label-mar-b * 0.75) !default;
+
+// field help
+$field-help-fore:       $grey !default;
+$field-help-size:       0.75em !default;
+$field-help-line:       1.5 !default;
+$field-help-margin:     0.25em 0 0 0 !default;
+$focus-box-shadow:      0 0 0 1px mix($blue, $white, 30%) !default;

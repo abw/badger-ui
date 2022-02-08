@@ -1,0 +1,22 @@
+// text colours
+$head-color: hsl($primary-hue, 30%, 15%) !default;
+$text-color: hsl($primary-hue, 10%, 30%) !default;
+
+// links
+$link-color: hsl($secondary-hue, 60%, 40%) !default;
+$link-hover: hsl($secondary-hue, 80%, 30%) !default;
+
+// code
+$code-color:    $brown !default;
+$code-size:     0.8em !default;
+$code-fore:     darken($code-color, 20%) !default;
+$code-back:     mix($code-color, $white, 5%) !default;
+$code-edge:     mix(darken($code-color, 20%), $white, 20%) !default;
+$code-border:   1px solid !default;
+$code-padding:  0.1em 0.3em !default;
+$code-margin:   0 0.2em !default;
+$code-radius:   0.2em !default;
+
+// trivia
+$trivia-color:  $grey !default;
+$trivia-size:   0.8em !default;

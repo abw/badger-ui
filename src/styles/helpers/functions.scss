@@ -1,0 +1,63 @@
+// Functions for generating grid and spacing classes
+@function spacing-suffix($n) {
+    // generate suffix for margin, spacing, etc., e.g. ,mar-2, .mar-3,
+    @return '-' + $n;
+}
+
+@function wash-color($color) {
+  @return mix($color, $white, 5%);
+}
+
+@function pale-color($color) {
+  @return mix($color, $white, 10%);
+}
+
+@function lightest-color($color) {
+  @return mix($color, $white, 20%);
+}
+
+@function lighter-color($color) {
+  @return mix($color, $white, 40%);
+}
+
+@function light-color($color) {
+  @return mix($color, $white, 60%);
+}
+
+@function lightish-color($color) {
+  @return mix($color, $white, 80%);
+}
+
+@function darkish-color($color) {
+  @return mix($color, $black, 80%);
+}
+
+@function dark-color($color) {
+  @return mix($color, $black, 60%);
+}
+
+@function darker-color($color) {
+  @return mix($color, $black, 40%);
+}
+
+@function darkest-color($color) {
+  @return mix($color, $black, 20%);
+}
+
+//@function greyscale($hue, $n) {
+//  @return hsl($hue, 25% - $n * 2%, 12% + $n * 9%);
+//}
+
+@function greyscale($hue, $n) {
+  @return hsl($hue, 18% - $n * 2%, 12% + $n * 9%);
+}
+
+//@function darker-color($color) {
+//  @return mix($color, $black, 70%);
+//  @return darken($color, 30%);
+//}
+
+//$negative-fore:   darken($negative-color, 20%) !default;
+//
+//@function dark-color($color) {
+//}

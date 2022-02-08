@@ -1,0 +1,60 @@
+.revealable {
+  &>.head {
+    font-size:   $button-size;
+    line-height: $button-line;
+    padding:     $button-padding;
+    user-select: none;
+    &:hover {
+      background-color: $select-hover-back;
+      color: $select-hover-fore;
+      cursor: pointer;
+      code {
+        background-color: rgba($white, 0.8);
+        color: $select-hover-dark;
+        border-color: $select-hover-dark;
+      }
+    }
+    .icon {
+      margin-right: 0;
+    }
+  }
+  &>.body {
+    padding: 0.5em;
+  }
+  &.rounded {
+    .head {
+      border-radius: $unit-radius;
+    }
+  }
+  &.lined {
+    &>.head {
+      border-bottom: 1px solid $border-color;
+    }
+    &>.body {
+      padding-top: $unit-padding;
+      padding-bottom: $unit-padding;
+    }
+  }
+  &.outlined {
+    border: 1px solid $border-color;
+    border-radius: $unit-radius;
+    &>.head {
+      border-radius: $unit-radius;
+    }
+    &.revealed>.head {
+      border-radius: $unit-radius $unit-radius 0 0;
+      background-color: mix($select-hover-back, $white, 5%);
+      color: $select-hover-dark;
+      border-bottom: 1px solid $border-color;
+      &:hover {
+        background-color: $select-hover-back;
+        color: $white;
+      }
+    }
+  }
+  &.nested {
+    &>.body {
+      padding-left: 2rem;
+    }
+  }
+}

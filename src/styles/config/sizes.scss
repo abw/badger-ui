@@ -1,0 +1,26 @@
+//----------------------------------------------------------------------------
+// Text sizes
+//----------------------------------------------------------------------------
+$size-xlarge:     3em     !default;  // 48px
+$size-largest:    2.5em   !default;  // 40px
+$size-larger:     2em     !default;  // 32px
+$size-large:      1.5em   !default;  // 24px
+$size-largish:    1.25em  !default;  // 20px
+$size-medium:     1em     !default;  // 16px
+$size-smallish:   0.875em !default;  // 14px
+$size-small:      0.75em  !default;  // 12px
+$size-smaller:    0.625em !default;  // 10px
+$size-smallest:   0.5em   !default;  // 8px
+
+$sizes: (
+    xlarge:    $size-xlarge,
+    largest:   $size-largest,
+    larger:    $size-larger,
+    large:     $size-large,
+    largish:   $size-largish,
+    medium:    $size-medium,
+    smallish:  $size-smallish,
+    small:     $size-small,
+    smaller:   $size-smaller,
+    smallest:  $size-smallest,
+);

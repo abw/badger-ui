@@ -1,0 +1,56 @@
+.confirm {
+  .verify {
+    .prompt {
+      color: $red;
+      font-size: $size-largish;
+      margin: 0 0.5em;
+    }
+  }
+  .buttons {
+    .or {
+      position: relative;
+      width: 0.25em;
+      z-index: 3;
+      &:before {
+        position: absolute;
+        text-align: center;
+        border-radius: 5rem;
+        background-color: $white;
+        text-shadow: none;
+        content: 'OR';
+        font-size: 0.7em;
+        top: 50%;
+        left: 50%;
+        width: 2.2em;
+        height: 2.2em;
+        line-height: 2em;
+        transform: translate(-50%, -50%);
+        color: rgba(0, 0, 0, 0.4);
+        font-style: normal;
+        font-weight: bold;
+        border: 1px solid rgba($black, 0.4);
+      }
+    }
+  }
+  &.solid .buttons .or:before {
+    border: 0;
+    line-height: 2.2em;
+  }
+  .button:not(:last-child) {
+      border-right: 1px solid;
+  }
+  &.wide {
+    .initial-button {
+      width: 100%;
+    }
+    .buttons {
+      width: 100%;
+    }
+    .verify {
+      .prompt {
+        display: block;
+        margin: 0 0 $unit-margin 0;
+      }
+    }
+  }
+}

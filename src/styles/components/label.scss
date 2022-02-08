@@ -1,0 +1,59 @@
+$label-size:   $size-small !default;
+$label-height: 1.2 !default;
+$label-pad-v:  $unit-pad-v !default;
+$label-pad-h:  $unit-pad-h * 2 !default;
+$label-radius: 50px !default;
+
+.label {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: $label-size;
+  line-height: $label-height;
+  padding: $label-pad-v $label-pad-h;
+  margin: 0.2em 0;
+  vertical-align: baseline;
+  background-color: #E8E8E8;
+  background-image: none;
+  color: rgba($black, 0.6);
+  border: 1px solid rgba($black, 0.2);
+  border-radius: $label-radius;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+  .icon.on-left {
+    margin-left: 0;
+  }
+  .icon.on-right {
+    margin-right: 0;
+  }
+}
+.label:first-child {
+  margin-left: 0em;
+}
+.label:last-child {
+  margin-right: 0em;
+}
+@each $name,$color in $colors {
+  .label.#{$name} {
+    background-color: pale-color($color);
+    border-color: darkish-color($color);
+    border-color: lighter-color($color);
+    color: $color;
+  }
+}
+.label.yellow {
+  color: $orange;
+}
+.label.dark-text {
+  color: rgba($black,0.55);
+}
+.white.label {
+  color: rgba($black, 0.9);
+}
+.white.outline.label {
+  color: rgba($black, 0.9);
+  border-color: rgba($black, 0.2);
+  color: rgba($black, 0.9);
+}
+.label + .label {
+  margin-left: 0.5rem;
+}

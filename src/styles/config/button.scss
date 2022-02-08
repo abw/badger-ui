@@ -1,0 +1,10 @@
+$button-back:     lighten($grey, 30%) !default;
+$button-fore:     rgba($black, 0.7) !default;
+$button-size:     $unit-size !default;
+$button-line:     $unit-line !default;
+$button-pad-v:    $unit-pad-v !default;
+$button-pad-h:    $unit-pad-h !default;
+$button-padding:  $button-pad-v $button-pad-h !default;
+$button-margin:   0 $unit-margin $unit-margin 0 !default;
+$button-radius:   $unit-radius !default;
+$button-gap:      3px !default;

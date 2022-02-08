@@ -1,0 +1,56 @@
+@mixin spaced-out($prefix, $suffix, $param, $value) {
+  .#{$prefix}#{$suffix}   { #{$param}:        $value !important; }
+  .#{$prefix}-h#{$suffix},
+  .#{$prefix}-l#{$suffix} { #{$param}-left:   $value !important; }
+  .#{$prefix}-h#{$suffix},
+  .#{$prefix}-r#{$suffix} { #{$param}-right:  $value !important; }
+  .#{$prefix}-v#{$suffix},
+  .#{$prefix}-t#{$suffix} { #{$param}-top:    $value !important; }
+  .#{$prefix}-v#{$suffix},
+  .#{$prefix}-b#{$suffix} { #{$param}-bottom: $value !important; }
+}
+
+@mixin spaced-out-margin($n) {
+  $suffix:  spacing-suffix($n);
+  $margin:  $n * $unit-margin;
+  @include spaced-out('mar', $suffix, 'margin', $margin);
+}
+
+@mixin spaced-out-padding($n) {
+  $suffix:  spacing-suffix($n);
+  $padding: $n * $unit-padding;
+  @include spaced-out('pad', $suffix, 'padding', $padding);
+}
+
+@mixin spaced-out-gutter($n) {
+  $suffix: spacing-suffix($n);
+  $gutter: $n * $unit-gutter;
+  @include spaced-out('gut', $suffix, 'padding', $gutter);
+}
+
+@mixin outline($col) {
+  //box-shadow: 0 0 0 2px $white, 0 0 0 4px rgba($col, 0.5);
+  box-shadow: 0 0 0 2px $col;
+}
+
+@mixin shadow1() {
+  box-shadow: 1px 1px 4px rgba($black,0.18), 0 1px 2px rgba($black,0.20);
+}
+@mixin shadow2() {
+  box-shadow: 1px 4px 12px rgba($black,0.12), 0 3px 5px rgba($black, 0.16);
+}
+@mixin shadow3() {
+  box-shadow: 2px 8px 20px rgba($black, 0.08), 2px 8px 11px rgba($black,0.18);
+}
+
+@mixin unsplit() {
+  &[class*="split-"], & > [class*="split-"] {
+    width: 100% !important;
+    &[class*="gut-l"], &[class*="gut-h"] {
+      padding-left: 0 !important;
+    }
+    &[class*="gut-r"], &[class*="gut-h"] {
+      padding-right: 0 !important;
+    }
+  }
+}

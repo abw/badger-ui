@@ -1,0 +1,14 @@
+//----------------------------------------------------------------------------
+// Unit sizes for inputs, buttons, checkboxes, etc.
+//----------------------------------------------------------------------------
+$unit-size:         1em     !default;
+$unit-line:         150%    !default;
+$unit-pad-v:        0.25em  !default;
+$unit-pad-h:        0.5em   !default;
+$unit-space:        0.5rem  !default;
+$unit-radius:       2px     !default;
+$unit-radius-small: 1px     !default;
+$unit-radius-inner: $unit-radius - 1px !default;
+$unit-margin:       $unit-space !default;
+$unit-padding:      $unit-space !default;
+$unit-gutter:       $unit-space !default;

@@ -1,0 +1,115 @@
+.select {
+  position: relative;
+  transition: all .3s;
+  .input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: white;
+    .placeholder, .value {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .icon {
+      width: 1em;
+      font-size: 1.5em;
+      color: rgba($black, 0.5);
+    }
+  }
+  &.open .input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .options {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    right: 0;
+    max-height: 50vh;
+    overflow-y: scroll;
+    transform-origin: center top;
+    white-space: normal;
+    text-align: left;
+    text-transform: none;
+    background: $white;
+    border-radius: 0 0 $field-input-radius $field-input-radius;
+    border: 1px solid $field-input-edge;
+    border-top: 1px solid $field-input-edge;
+    z-index: 998;
+    margin: 0;
+    .option {
+      font-size: $field-input-size;
+      line-height: $field-input-line;
+      padding: $field-input-padding;
+      border-bottom: 1px solid $field-input-edge;
+      cursor: pointer;
+      &:last-child {
+        border-bottom: none;
+      }
+      &.selected {
+        background-color: $select-hover-back;
+        color: $select-hover-fore;
+      }
+      &.heading {
+        color: rgba($black, 0.9);
+        font-weight: 700;
+//        background-color: rgba($black, 0.1);
+        &:first-child,
+        & + .heading {
+          border-top: none;
+        }
+      }
+    }
+    .subset {
+      border-bottom: 1px solid $field-input-edge;
+      padding-left: 1em;
+    }
+    & .subset:last-child {
+      border-bottom: none;
+    }
+  }
+  &.focus,
+  &:focus {
+    .input {
+      color: $field-focus-fore;
+      background-color: $field-focus-back;
+      border-color: $field-focus-edge;
+      box-shadow: $focus-box-shadow;
+      outline: none;
+      cursor: pointer;
+      .icon {
+        color: $field-focus-fore;
+      }
+    }
+    .placeholder,
+    .input::placeholder {
+      color: $field-focus-place;
+      font-weight: 300;
+    }
+    .options {
+      color: $field-focus-fore;
+      background-color: $field-focus-back;
+      border-color: $field-focus-edge;
+      box-shadow: $focus-box-shadow;
+      .option {
+        border-color: $field-focus-edge;
+      }
+    }
+  }
+  &.bold-placeholder {
+    .placeholder {
+      color: $black;
+    }
+  }
+}
+.field.changed .select .icon {
+  color: $field-changed-fore;
+}
+.field.valid .select .icon {
+  color: $field-valid-fore;
+}
+.field.invalid .select .icon {
+  color: $field-invalid-fore;
+}

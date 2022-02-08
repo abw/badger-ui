@@ -1,0 +1,31 @@
+.bar {
+  width: 100%;
+  display: flex;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &.top {
+    align-items: flex-start;
+  }
+  &.bottom {
+    align-items: flex-end;
+  }
+  .bar-left {
+    justify-content: flex-start;
+  }
+  .bar-right {
+    justify-content: flex-end;
+  }
+  .grow {
+    flex-grow: 1;
+  }
+  .shrink {
+    flex-shrink: 1;
+  }
+}

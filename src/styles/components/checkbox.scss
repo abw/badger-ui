@@ -1,0 +1,90 @@
+// checkbox - same "unit" size as buttons
+$checkbox-back:         $white !default;
+$checkbox-size:         $unit-size !default;
+$checkbox-line:         $unit-line !default;
+$checkbox-edge:         $border-color !default;
+$checkbox-pad-v:        $unit-pad-v !default;
+$checkbox-pad-h:        $unit-pad-h !default;
+$checkbox-padding:      $checkbox-pad-v $checkbox-pad-h !default;
+$checkbox-margin:       0 $unit-margin $unit-margin 0 !default;
+$checkbox-radius:       $unit-radius !default;
+
+/*-- components/checkbox --*/
+.checkbox {
+  display:          inline-flex;
+  font-size:        $checkbox-size;
+  line-height:      $checkbox-line;
+  padding:          $checkbox-padding;
+  margin:           $checkbox-margin !important;
+  background-color: $checkbox-back;
+  border:           1px solid $checkbox-edge;
+  user-select:      none;
+  border-radius:    $checkbox-radius;
+  text-align:       left;
+  align-items:      center;
+  transition:       all .3s;
+  .text {
+    flex-grow: 1;
+    transition: all .1s;
+  }
+  .icon {
+    transition: all .3s;
+  }
+  &.wide {
+    display: flex;
+    margin-right: 0;
+  }
+  &.checked {
+    border: 1px solid $field-valid-edge;
+    background-color: $field-valid-back;
+    color: $field-valid-fore;
+    &:hover {
+      background-color: darken($field-valid-back, 5%);
+      border-color: darken($field-valid-edge, 10%);
+      &, .icon {
+        color: darken($field-valid-fore, 10%);
+      }
+    }
+  }
+  &:focus,
+  &:hover {
+    background-color: $field-focus-back;
+    border: 1px solid $field-focus-edge;
+    outline: none;
+    color: $field-focus-fore;
+    .icon {
+      color: $field-focus-fore;
+    }
+    cursor: pointer;
+  }
+  &:focus {
+    @include outline($field-focus-edge);
+  }
+  &.disabled {
+    opacity: 0.5;
+    &:hover {
+      background-color: $field-invalid-back;
+      border-color: $field-invalid-edge;
+      cursor: not-allowed;
+      &, .icon {
+        color: $field-invalid-fore;
+      }
+    }
+  }
+  &.saving {
+    color: $field-saving-fore !important;
+    border-color: $field-saving-edge !important;
+    background-color: $field-saving-back !important;
+    box-shadow: 0 0 0 1px $field-saving-edge !important;
+  }
+}
+
+form .checkbox {
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+
+form .radioset .checkbox {
+  width: auto;
+  margin-bottom: 0 !important;
+}

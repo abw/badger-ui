@@ -1,0 +1,210 @@
+/*-- components/buttons --*/
+$button-color:          light-color($grey) !default;
+$button-back:           lightish-color($button-color) !default;
+$button-fore:           rgba($black, 0.7) !default;
+$button-size:           $unit-size !default;
+$button-line:           $unit-line !default;
+$button-pad-v:          $unit-pad-v !default;
+$button-pad-h:          $unit-pad-h !default;
+$button-padding:        $button-pad-v $button-pad-h !default;
+$button-margin:         0 $unit-margin $unit-margin 0 !default;
+$button-radius:         $unit-radius !default;
+$button-focus:          0 0 0 2px rgba($white, 0.9), 0 0 0 4px rgba($black, 0.25) !default;
+$button-border-width:   1px;
+$button-invalid-back:   $invalid-back !default;
+$button-invalid-edge:   $invalid-edge !default;
+$button-invalid-fore:   $invalid-fore !default;
+
+.button {
+  position:         relative;
+  display:          inline-block;
+  color:            $button-fore;
+  font-size:        $button-size;
+  line-height:      $button-line;
+  margin:           $button-margin;
+  padding:          $button-padding;
+  border-radius:    $button-radius;
+  text-align:       center;
+  text-decoration:  none;
+  vertical-align:   middle;
+  outline:          none;
+  cursor:           pointer;
+  touch-action:     manipulation;
+  background-image: none;
+  white-space:      nowrap;
+  user-select:      none;
+  transition: 0.3s all;
+  background-color: white;
+  background-color: wash-color($button-color);
+  border:           $button-border-width solid darken($button-color, 5%);
+  &.solid {
+    //background-color: $button-back;
+    background-color: darkish-color($button-color);
+    border-color:     transparent;
+    color:            rgba($white,0.85);
+  }
+  &.compact {
+    line-height: 100%;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  .icon {
+    margin: 0;
+  }
+  .icon.on-left {
+    margin-left: 0;
+  }
+  .icon.on-right {
+    margin-right: 0;
+  }
+  &.spread {
+    display: flex;
+    align-items: center;
+    .caption {
+      flex-grow: 1;
+    }
+  }
+  &:hover, &:focus, &.focus {
+    background-color: rgba($button-color, 0.1);
+    text-decoration: none;
+    border-color: $button-color;
+    &.solid {
+        background-color: $button-color;
+    }
+  }
+  &:focus, &.focus {
+    border-color: white;
+    background-color: pale-color($button-color);
+    @include outline($button-color);
+  }
+  &:active,
+  &.active {
+      outline: 0;
+      background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  .disabled & {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.5;
+      box-shadow: none;
+      &:hover {
+        background-color: $button-invalid-back;
+        border-color: $button-invalid-edge;
+        cursor: not-allowed;
+        &, .icon {
+          color: $button-invalid-fore;
+        }
+      }
+  }
+  &.rounded {
+    padding: 0.5em 1em;
+    border-radius: 2em;
+  }
+  &.rounded.empty {
+    padding: 0.5em 0.6em;
+  }
+}
+
+@each $name, $col in $colors {
+  .button.#{"" + $name} {
+    color: darken($col, 5%);
+    border-color: darken($col, 5%);
+    background-color: wash-color($col);
+    &:hover, &:focus, &.focus {
+      color: $col;
+      border-color: $col;
+      background-color: rgba($col, 0.1);
+    }
+    &:focus, &.focus {
+      border-color: white;
+      color: darken(saturate($col, 30%), 20%);
+      background-color: rgba($col, 0.15);
+      @include outline($col);
+    }
+  }
+  .solid.button.#{"" + $name} {
+    background-color: darkish-color($col);
+    background-color: $col;
+    //background-color: $col;
+    color: rgba($white,0.85);
+    &:hover, &:focus, &.focus {
+      background-color: darkish-color($col);
+      color: rgba($white,0.90);
+      border-color: darken($col, 5%);
+    }
+    &:focus, &.focus {
+      border-color: mix($white, $col, 80%);
+      background-color: darken(saturate($col, 20%), 10%);
+      color: $white;
+      @include outline(rgba($col, 0.6));
+    }
+  }
+}
+.button.dark-text {
+  color: rgba($black,0.75);
+  &:hover, &:focus, &.focus {
+    color: $black;
+  }
+}
+.button.black.solid {
+  color: rgba($white, 0.7);
+  &:hover, &:focus, &.focus {
+    color: rgba($white, 0.9);
+  }
+}
+.button.light-grey,
+.button.light-grey.solid,
+.button.white,
+.button.white.solid {
+  color: rgba($black, 0.7);
+  border: 1px solid rgba($black, 0.1);
+  &:hover, &:focus, &.focus {
+    color: rgba($black, 0.9);
+  }
+}
+.button.dark {
+  background-color: rgba($black,0.3);
+  color: rgba($white,0.7);
+  border-color: rgba($black,0.5);
+  &:hover {
+    background-color: rgba($black,0.5);
+    color: rgba($white,0.9);
+    border-color: rgba($black,0.9);
+  }
+}
+.button.clear {
+    margin-left: 0;
+}
+.buttons {
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 1em;
+  align-items: center;
+  margin: 0 0 0.5em 0;
+  .button {
+    flex: 1 0 auto;
+    margin-right: $button-gap;
+    margin-bottom: 0;
+    border-radius: 0 0 0 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    &:first-child {
+      margin-left: 0;
+      border-radius: $button-radius 0 0 $button-radius;
+    }
+    &:last-child {
+      border-radius: 0 $button-radius $button-radius 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &:focus {
+      z-index: 1;
+    }
+    &.solid:focus {
+      z-index: 1;
+    }
+  }
+}

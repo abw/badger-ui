@@ -1,0 +1,283 @@
+$table-radius:          $unit-radius !default;
+$table-radius-inner:    $unit-radius-inner !default;
+$table-shade:           $shade-color !default;
+$table-edge:            hsl($primary-hue, 30%, 80%) !default;
+$table-head-back:       hsl($primary-hue, 50%, 93%) !default;
+$table-head-fore:       hsl($primary-hue, 30%, 20%) !default;
+$table-spec-back:       hsl($primary-hue, 20%, 90%) !default;
+$table-spec-fore:       hsl($primary-hue, 40%, 70%) !default;
+$table-spec-border:     rgba($black, 0.5) !default;
+$table-key-back:        $table-head-back !default;
+$table-key-fore:        $table-head-fore !default;
+$table-detail-border:   hsl($primary-hue, 40%, 80%) !default;
+$table-detail-foot:     hsl($primary-hue, 60%, 70%) !default;
+$table-stripe-back:     hsl($primary-hue, 50%, 97%) !default;
+
+.table {
+  background: #fff;
+  margin: 1em 0;
+  border: 1px solid $table-edge;
+  border-radius: $table-radius;
+  text-align: left;
+  color: $text-color;
+  border-collapse: separate;
+  border-spacing: 0px;
+  &:last-child {
+    margin-bottom: 0em;
+  }
+  th, td {
+    transition: background-color 0.3s ease, color 0.1s ease;
+    padding: 0.8em 1em;
+    text-align: inherit;
+    &.nowrap {
+      white-space: nowrap;
+    }
+  }
+  thead th {
+    cursor: auto;
+    background: $table-head-back;
+    color: $table-head-fore;
+    text-align: inherit;
+    padding: 0.8em 1em;
+    vertical-align: inherit;
+    font-style: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: none;
+    border-bottom: 1px solid $table-edge;
+    border-left: none;
+  }
+}
+
+.table thead tr > th:first-child {
+  border-left: none;
+}
+.table thead > tr:first-child > th:first-child {
+  border-radius: $table-radius-inner 0 0 0;
+}
+.table thead > tr:first-child > th:last-child {
+  border-radius: 0 $table-radius-inner 0 0;
+}
+.table thead > tr:first-child > th:only-child {
+  border-radius: $table-radius-inner $table-radius-inner 0 0;
+}
+
+.table tfoot {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.table tfoot th {
+  cursor: auto;
+  border-top: 1px solid $table-edge;
+  background: $table-shade;
+  text-align: inherit;
+  color: $text-color;
+  padding: 0.8em 1em;
+  vertical-align: middle;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+}
+.table tfoot tr > th:first-child {
+  border-left: none;
+}
+.table tfoot > tr:last-child > th:first-child {
+  border-radius: 0 0 0 $table-radius-inner;
+}
+.table tfoot > tr:last-child > th:last-child {
+  border-radius: 0 0 $table-radius-inner 0;
+}
+.table tfoot > tr:last-child > th:only-child {
+  border-radius: 0 0 $table-radius-inner $table-radius-inner;
+}
+.table tr td {
+  border-top: 1px solid $table-edge;
+}
+.table tr:first-child > td {
+  border-top: none;
+}
+
+.table > .icon {
+  vertical-align: baseline;
+}
+.table > .icon:only-child {
+  margin: 0em;
+}
+.table.segment {
+  padding: 0em;
+}
+.table tr.warning,
+.table td.warning {
+  background: $warning-back;
+  color: $warning-text;
+}
+.table tfoot th.important-note {
+    color: $brown;
+    background-color: rgba($brown, 0.1);
+}
+.celled.table {
+  tr {
+    th, td {
+      border-left: 1px solid $table-edge;
+    }
+    th:first-child, td:first-child {
+      border-left: none;
+    }
+  }
+}
+
+.compact.table {
+  th, td {
+    font-size: $size-smallish;
+    line-height: $unit-line;
+    padding: $unit-pad-v $unit-pad-h;
+  }
+}
+
+table.even-3 td {
+  width: 33.33% !important;
+}
+table.even-4 td {
+  width: 25% !important;
+}
+table.even-5 td {
+  width: 20% !important;
+}
+
+.table.spec {
+  border-color: $table-spec-border;
+  th, td.key {
+    background-color: $table-key-back;
+    color: $table-key-fore;
+  }
+  td {
+    background-color: $table-spec-back;
+    color: $table-spec-fore;
+    border-top: none;
+  }
+}
+
+table.celled.detail {
+  border-color: $table-detail-border;
+  border-radius: $table-radius;
+  & > thead > tr > th,
+  & > tfoot > tr > th {
+    border-color: $table-detail-border;
+    background: $table-detail-foot;
+  }
+  & > tbody > tr {
+    & > td {
+      border-color: $table-detail-border;
+      padding: 0.3em 0.5em;
+      &.key {
+        vertical-align: baseline;
+        background-color: $table-key-back;
+        border-color: $table-detail-border;
+        text-align: right;
+     //  width: 33%;
+      }
+      &.baseline {
+        vertical-align: baseline;
+      }
+      &.narrow {
+        width: 20%;
+      }
+      &.raw {
+        white-space: pre-wrap;
+        font-family: font('mono');
+        font-weight: 300;
+        line-height: 160%;
+      }
+      table.celled.detail {
+        border: none;
+      }
+    }
+    &:first-child > td:first-child {
+      border-top-left-radius: $table-radius - 1px;
+    }
+    &:last-child td:first-child {
+      border-bottom-left-radius: $table-radius - 1px;
+    }
+  }
+  & > tfoot > tr {
+    & > td, & > th {
+      &.bold {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+table.striped {
+  tr:nth-child(even) {
+    td {
+      background-color: $table-stripe-back;
+    }
+  }
+}
+
+table.selectable tr:hover td,
+table tr.selectable:hover td,
+table tr td.selectable:hover,
+table tr th.selectable:hover {
+  background-color: $select-hover-back !important;
+  color: $select-hover-fore;
+  cursor: pointer;
+  user-select: none;
+  .label {
+    background-color: rgba($white, 0.6);
+    color: rgba($black, 0.9) !important;
+    border-color: rgba($black, 0.5);
+  }
+}
+
+table tr.selected td,
+table.selectable tr.selectable.selected td {
+  background-color: rgba($orange, 0.8) !important;
+  color: white;
+  .label {
+    background-color: rgba($white, 0.6);
+    color: rgba($black, 0.9) !important;
+    border-color: rgba($black, 0.5);
+  }
+}
+
+table {
+  tr.positive td,
+  tr td.positive {
+    background-color: $positive-back;
+    color: $positive-fore;
+  }
+  tr.negative td,
+  tr td.negative {
+    background-color: $negative-back;
+    color: $negative-fore;
+  }
+}
+table.striped {
+  tr.positive:nth-child(even) td,
+  tr:nth-child(even) td.positive {
+    background-color: darken($positive-back, 5%);
+  }
+  tr.negative:nth-child(even) td,
+  tr:nth-child(even) td.negative {
+      background-color: darken($negative-back, 5%);
+  }
+}
+
+table tr {
+  td.middle {
+    vertical-align: middle;
+  }
+  th.shrink,
+  td.shrink {
+    width:0.1%;
+    white-space: nowrap;
+  }
+  td.saving,
+  &.saving td {
+    background-color: $saving-back !important;
+    color: $saving-fore;
+  }
+}
+

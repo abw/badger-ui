@@ -1,0 +1,23 @@
+/*-- components/spacing --*/
+// Margins, padding and gutters (gutters are padding that collapses on stack)
+// e.g. mar-l for left margin, mar-v for vertical (top and bottom) margin
+// pad-r for right padding, etc.
+@include spaced-out('mar', '', 'margin',  $unit-margin);
+@include spaced-out('pad', '', 'padding', $unit-padding);
+@include spaced-out('gut', '', 'padding', $unit-gutter);
+
+// The -none suffix is a special case, e.g. mar-none is equivalent to mar-0
+@include spaced-out('mar', '-none', 'margin',  0);
+@include spaced-out('pad', '-none', 'padding', 0);
+@include spaced-out('gut', '-none', 'padding', 0);
+
+// Multiple of margins, padding and gutters, e.g. mar-l-2 pad-v-5
+@for $n from 0 through 10 {
+    @include spaced-out-margin($n);
+    @include spaced-out-padding($n);
+    @include spaced-out-gutter($n);
+}
+
+@for $n from -1 through -5 {
+    @include spaced-out-margin($n);
+}

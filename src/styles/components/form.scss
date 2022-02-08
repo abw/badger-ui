@@ -1,0 +1,345 @@
+.form {
+  position: relative;
+  max-width: 100%;
+
+  .form-header {
+    margin-bottom: 1rem;
+    .subtitle {
+      margin-top: 0;
+    }
+  }
+  .form-footer {
+    background-color: white;
+    padding: 1rem 0;
+  }
+  .validation-errors {
+    .key {
+        text-align: right;
+        padding-right: 0.5em;
+        font-weight: bold;
+    }
+  }
+  h3.group {
+    label {
+      padding: 0.2em 0.4em;
+      //@include border-radius(0.25em);
+      &:hover {
+        background-color: rgba($blue, 0.1);
+      }
+    }
+    input[type=checkbox] {
+      margin-right: 0.25em;
+      font-size: 16em;
+      line-height: 16em;
+      vertical-align: text-top;
+    }
+  }
+  .no-label {
+    padding-top: $field-label-height;
+  }
+}
+
+.field {
+  clear: both;
+  margin: 0 0 $field-mar-b 0;
+  label, .field-label {
+    display: block;
+    margin: 0 0 $field-label-mar-b 0;
+    color: $field-label-fore;
+    text-transform: none;
+    font-size: $field-label-size;
+    font-weight: $field-label-weight;
+    line-height: $field-label-line;
+  }
+  .help {
+    color: $grey;
+    font-size: $field-help-size;
+    line-height: $field-help-line;
+    margin: $field-help-margin;
+    .icon {
+      margin-right: 0.25em;
+    }
+  }
+}
+
+.field .input,
+.field .input-icon,
+.field .prefix,
+.field .suffix {
+  max-width: 100%;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  background: #fff;
+  color: $field-input-fore;
+  border-radius: $field-input-radius;
+  transition: all 0.3s;
+}
+
+.field.icon-left .input,
+.field.prefixed .input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.field.icon-right .input,
+.field.suffixed .input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.field .inputs {
+  display: flex;
+  .input-icon, .suffix, .prefix {
+    font-size: $field-input-size;
+    line-height: $field-input-line;
+    padding: $field-input-padding;
+    color: $field-input-fore;
+    border: 1px solid $field-input-edge;
+    background-color: #eee;
+    &.icon-left, &.prefix {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &.icon-right, &.suffix {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  .control {
+    flex-basis: 100%;
+    // avoid overflow: https://stackoverflow.com/questions/36230944/prevent-flex-items-from-overflowing-a-container
+    min-width: 0;
+  }
+}
+
+.field input:-webkit-autofill {
+  box-shadow: 0px 0px 0px 100px #FFFFF0 inset;
+  //border-color: #E5DFA1 !important;
+}
+
+/*
+.field input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0px 0px 0px 100px #FFFFF0 inset;
+          box-shadow: 0px 0px 0px 100px #FFFFF0 inset;
+  border-color: #D5C315 !important;
+}
+
+.field.invalid input:-webkit-autofill {
+  -webkit-box-shadow: 0px 0px 0px 100px #FFFAF0 inset;
+          box-shadow: 0px 0px 0px 100px #FFFAF0 inset;
+  border-color: #E0B4B4 !important;
+}
+*/
+
+.field {
+  label, .field-label {
+    font-weight: 400;
+    .required, .optional {
+      float: right;
+      font-size: 0.7rem;
+      margin-left: .5rem;
+      vertical-align: baseline;
+      .icon {
+        margin : 0 0.25em;
+      }
+    }
+  }
+}
+
+.field.required {
+  label, .field-label {
+    font-weight: 400;
+    .required {
+      font-weight: 700;
+      color: darker-color($red);
+      .icon {
+        margin : 0 0.25em;
+      }
+    }
+  }
+}
+
+.field.disabled input,
+.field.disabled .input,
+.field.disabled textarea,
+.field input:disabled,
+.field textarea:disabled {
+  background-color: rgba($black, 0.1);
+  color: $grey;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.field.disabled label {
+  color: $grey;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.field.valid {
+  label, .help, .input, .input-icon, .prefix, .suffix, .textarea, .select, .checkbox,
+  input:-webkit-autofill {
+    color: $field-valid-fore;
+    border-color: $field-valid-edge;
+  }
+  .input, .textarea, .checkbox {
+    background-color: $field-valid-back;
+  }
+  .input-icon, .prefix, .suffix {
+    background-color: mix($field-valid-color, $white, 10%);
+  }
+  .input::placeholder,
+  .textarea::placeholder {
+    color: $field-valid-place;
+  }
+  &.required .required {
+    color: $field-valid-fore;
+  }
+  input:-webkit-autofill {
+    box-shadow: 0px 0px 0px 100px $field-valid-back inset;
+  }
+}
+
+.field.invalid {
+  label, .help, .input, .input-icon, .prefix, .suffix, .textarea, .select, .checkbox,
+  input:-webkit-autofill {
+    color: $field-invalid-fore;
+    border-color: $field-invalid-edge;
+    font-weight: 400 !important;
+  }
+  .input, .textarea, .checkbox {
+    background-color: $field-invalid-back;
+  }
+  .input-icon, .prefix, .suffix {
+    background-color: mix($field-invalid-color, $white, 10%);
+  }
+  .input::placeholder,
+  .textarea::placeholder {
+    color: $field-invalid-place;
+  }
+  input:-webkit-autofill {
+    box-shadow: 0px 0px 0px 100px $field-invalid-back inset;
+  }
+}
+
+.field.changed {
+  label, .help, .input, .input-icon, .prefix, .suffix, .textarea, .select, .checkbox,
+  input:-webkit-autofill {
+    color: $field-changed-fore !important;
+    border-color: $field-changed-back;
+//  font-weight: 400 !important;
+  }
+  label, .field-label {
+    color: $field-changed-fore;
+    border-color: $field-changed-edge;
+  }
+  .input, .textarea, .checkbox {
+    background-color: $field-changed-back;
+  }
+  .input-icon, .prefix, .suffix {
+    background-color: mix($field-changed-color, $white, 10%);
+  }
+  .input::placeholder,
+  .textarea::placeholder {
+    color: $field-changed-place;
+  }
+  .icon {
+    color: $field-changed-fore !important;
+  }
+  .input:focus ~ .icon {
+    color: $field-changed-edge !important;
+  }
+}
+
+.field.focus .input,
+.field.focus .textarea,
+.field.focus .input-icon,
+.field.focus .prefix,
+.field.focus .suffix,
+.field .input:focus,
+.field .textarea:focus
+.field input:-webkit-autofill:focus {
+  border-color: $field-focus-edge !important;
+  background-color: $field-focus-back !important;
+  color: $field-focus-fore !important;
+  box-shadow: $focus-box-shadow;
+}
+.field input:-webkit-autofill:focus {
+  box-shadow: 0px 0px 0px 100px $field-valid-back inset, $focus-box-shadow;
+}
+
+.field.focus {
+  .input-icon, .prefix, .suffix {
+    background-color: mix($field-focus-edge, $white, 50%) !important;
+  }
+}
+.field.focus .placeholder,
+.field.focus .input::placeholder,
+.field.focus .textarea::placeholder,
+.field .input:focus::placeholder,
+.field .textarea:focus::placeholder {
+  color: $field-focus-place !important;
+  font-weight: 300;
+}
+:focus {
+  outline: none;
+}
+
+.field.saving {
+  label, .help, .input, .input:focus, .input-icon, .textarea, .select, .checkbox {
+    color: $field-saving-fore !important;
+    border-color: $field-saving-edge !important;
+  }
+  .input, .textarea, .checkbox {
+    background-color: $field-saving-back !important;
+    box-shadow: 0 0 0 1px $field-saving-edge !important;
+  }
+  .input::placeholder,
+  .textarea::placeholder {
+    color: $field-saving-place !important;
+  }
+}
+
+
+.media.upload form {
+  .button.select {
+    font-size:        $button-size;
+    line-height:      $button-line;
+    margin:           $button-margin;
+    padding:          $button-padding;
+    border-radius:    $button-radius;
+//    font-size: 1.1rem;
+//    line-height: 100%;
+//    height: 37px;
+    font-weight: normal;
+  }
+  [type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+  }
+  [type="file"] + label {
+    transition: background-color 0.3s;
+  }
+  .form .field [type="file"] + label {
+      font-weight: normal !important;
+  }
+  [type="file"]:focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+}
+
+.input[type="color"].big-swatch {
+  &::-webkit-color-swatch {
+    height: 4em;
+  }
+  height: auto;
+}

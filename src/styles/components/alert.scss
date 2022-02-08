@@ -1,0 +1,203 @@
+$alert-margin:      1em 0em !default;
+$alert-padding:     1em 1.5em !default;
+$alert-border:      2px !default;
+//$alert-radius:      $unit-radius !default;
+$alert-radius:      2px !default;
+$alert-head-radius: $alert-radius - $alert-border - 1px !default;
+
+$alert-color:       $grey !default;
+$alert-dark:        darken($alert-color, 10%) !default;
+$alert-back:        wash-color($alert-color) !default;
+$alert-text:        darkish($alert-color, 20%) !default;
+$alert-head:        darker($alert-color, 20%) !default;
+$alert-edge:        $alert-dark !default;
+$alert-hover:       $alert-color !default;
+$alert-icon-size:           2em !default;
+$alert-icon-padding:        0.2em !default;
+$alert-icon-back-opacity:   0.1 !default;
+$alert-icon-border-opacity: 0.2 !default;
+$alert-icon-border-width:   3px !default;
+
+.alert {
+  position:       relative;
+  margin:         $alert-margin;
+  padding:        $alert-padding;
+  color:          $alert-text !important;
+  background:     $alert-back;
+  border:         $alert-border solid $alert-edge;
+  border-radius:  $alert-radius;
+  .headline {
+    font-size:    $button-size;
+    line-height:  $button-line;
+    padding:      $button-padding;
+    user-select:  none;
+    margin:       0 -1.5em 1em -1.5em;
+    font-weight:  700;
+    color:        rgba(white, 0.9);
+    display:      flex;
+    flex-wrap:    nowrap;
+    align-items:  center;
+    background-color: $alert-edge;
+    border-radius: $alert-head-radius $alert-head-radius 0 0;
+    .text {
+      flex: 2 0;
+    }
+    .dismiss, .reveal {
+    }
+    .message-control {
+      font-size: 1.2em;
+      color: rgba($white, 0.8);
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  .body {
+    display: flex;
+  }
+  .body-icon {
+    color: $alert-edge;
+    margin-right: 0.5em;
+    background: rgba($alert-color, $alert-icon-back-opacity);
+    font-size: $alert-icon-size;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2em;
+    padding: $alert-icon-padding;
+    vertical-align: middle;
+    border: $alert-icon-border-width solid rgba($alert-color, $alert-icon-back-opacity);
+  }
+  .title {
+    color: $alert-head !important;
+    font-size: $size-largish;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+  }
+  &.headline {
+    padding-top: 0;
+  }
+  &.headline:not(.revealed) .headline {
+    margin-bottom: 0;
+  }
+  &.headline.revealable:not(.dismissable) .headline:hover {
+    color: $white;
+    background-color: $alert-hover;
+    cursor: pointer;
+  }
+  // Info
+  &.info {
+    color:              $info-text !important;
+    background-color:   $info-back;
+    border-color:       $info-edge;
+    .title {
+      color:            $info-head !important;
+    }
+    .body-icon {
+      color: $info-edge;
+      background: rgba($info-color, 0.1);
+      border-color: rgba($info-color, 0.2);
+    }
+    .headline {
+      background-color: $info-edge;
+    }
+    &.headline.revealable:not(.dismissable) .headline:hover {
+      background-color: $info-hover;
+    }
+  }
+  // Success
+  &.success {
+    color:              $success-text !important;
+    background-color:   $success-back;
+    border-color:       $success-edge;
+    .body-icon {
+      color:            $success-edge;
+      background:       rgba($success-color, 0.1);
+      border-color:     rgba($success-color, 0.2);
+    }
+    .title {
+      color:            $success-head !important;
+    }
+    .headline {
+      background-color: $success-edge;
+    }
+    &.headline.revealable:not(.dismissable) .headline:hover {
+      background-color: $success-hover;
+    }
+  }
+  // Warning
+  &.warning {
+    color:              $warning-text !important;
+    background-color:   $warning-back;
+    border-color:       $warning-edge;
+    .body-icon {
+      color:            $warning-edge;
+      background:       rgba($warning-color, 0.1);
+      border-color:     rgba($warning-color, 0.2);
+    }
+    .title {
+      color:            $warning-head !important;
+    }
+    .headline {
+      background-color: $warning-edge;
+    }
+    &.headline.revealable:not(.dismissable) .headline:hover {
+      background-color: $warning-hover;
+    }
+  }
+  // Error
+  &.error {
+    color:              $error-text !important;
+    background-color:   $error-back;
+    border-color:       $error-edge;
+    .body-icon {
+      color:            $error-edge;
+      background:       rgba($error-color, 0.1);
+      border-color:     rgba($error-color, 0.2);
+    }
+    .title {
+      color:            $error-head !important;
+    }
+    .headline {
+      background-color: $error-edge;
+    }
+    &.headline.revealable:not(.dismissable) .headline:hover {
+      background-color: $error-hover
+    }
+  }
+  &.revealable:not(.revealed) {
+    padding-bottom: 0;
+  }
+  &.stripe {
+    border-right: 0;
+    border-bottom: 0;
+    border-top: 0;
+    border-left-width: 5px;
+    background-color: $white;
+  }
+  &.shadow {
+    box-shadow:
+      2px 2px 2px rgba($black, 0.05),
+      0px 0px 4px 2px rgba($black, 0.05),
+  }
+}
+.alert:first-child {
+  margin-top: 0em;
+}
+.alert:last-child {
+  margin-bottom: 0em;
+}
+.alert > .close.icon {
+  cursor: pointer;
+  position: absolute;
+  margin: 0em;
+  top: 0.78575em;
+  right: 0.5em;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,111 @@
+/*-- components/input --*/
+.input {
+  position: relative;
+  display: flex;
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+  outline: none !important;
+  margin: 0em;
+  font-size: $field-input-size;
+  line-height: $field-input-line;
+  padding: $field-input-padding;
+  color: $field-input-fore;
+  &.static {
+    background-color: $shade-color;
+  }
+}
+
+.input,
+textarea,
+input:not([type]),
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="text"],
+input[type="file"],
+input[type="url"] {
+  width: 100%;
+  font-size: $field-input-size;
+  vertical-align: top;
+  border: 1px solid $field-input-edge;
+  border-radius: $field-input-radius;
+  &:focus {
+    border-color: $field-focus-edge;
+    box-shadow: $focus-box-shadow;
+  }
+}
+input[type="date"] {
+//  line-height: 140%;
+  &::-webkit-inner-spin-button { display: none; }
+//  padding-inline-start: 0;
+  //padding: 0.25em 0.5em;
+}
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+  padding: 0;
+}
+::-webkit-inner-spin-button {
+  height: auto;
+}
+input[type="checkbox"] {
+  vertical-align: top;
+}
+textarea {
+  margin: 0em;
+  padding: 0.5em 0.5em;
+  background: #fff;
+  border: 1px solid $field-input-edge;
+  outline: none;
+  color: $field-input-fore;
+  border-radius: 0.3rem;
+  font-size: 1em;
+  line-height: 120%;
+  resize: vertical;
+//  transition: color 0.3s ease, border-color 0.3s ease;
+  -webkit-appearance: none;
+  &:not([rows]) {
+    height: 12em;
+    min-height: 8em;
+    max-height: 24em;
+  }
+}
+select {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  margin: 0em;
+  padding: 0.3em;
+  border: 1px solid $field-input-edge;
+  border-radius: $field-input-radius;
+  font-size: 1em;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  color: $field-input-fore;
+  text-align: left;
+}
+.placeholder,
+.input::placeholder,
+.textarea::placeholder {
+  color: $field-input-place;
+  font-weight: 300;
+}
+.input:focus::placeholder,
+.textarea:focus::placeholder {
+  color: $field-focus-place;
+}
+
+.checkbox input[type=checkbox] {
+  margin-right: $unit-margin;
+}

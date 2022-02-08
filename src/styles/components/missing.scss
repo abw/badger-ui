@@ -1,0 +1,30 @@
+$missing-border-width: 3px !default;
+
+.missing {
+  background-color: $grey-90;
+  border: $missing-border-width solid $grey-80;
+  border-radius: 0.2rem;
+  text-align: center;
+  padding: 4rem 0;
+  line-height: 2;
+  font-size: $size-largish;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  .content {
+    text-align: left;
+  }
+  .icon {
+    font-size: 2rem;
+    width: 1em;
+    height: 1em;
+    padding: 0.3rem;
+    vertical-align: middle;
+    text-align: center;
+    color: rgba($black, 0.7);
+    border: 5px solid rgba($black, 0.2);
+    border-radius: 50%;
+    background-color: rgba($white, 0.2);
+  }
+}

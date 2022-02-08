@@ -1,0 +1,110 @@
+/*-- components/colors --*/
+@each $name,$color in $colors {
+  .#{$name} {
+    color: $color;
+  }
+  // text colors
+  .pale-#{$name} {
+    color: pale-color($color);
+  }
+  .lightest-#{$name} {
+    color: lightest-color($color);
+  }
+  .lighter-#{$name} {
+    color: lighter-color($color);
+  }
+  .light-#{$name} {
+    color: light-color($color);
+  }
+  .lightish-#{$name} {
+    color: lightish-color($color);
+  }
+  .darkish-#{$name} {
+    color: darkish-color($color);
+  }
+  .dark-#{$name} {
+    color: dark-color($color);
+  }
+  .darker-#{$name} {
+    color: darker-color($color);
+  }
+  .darkest-#{$name} {
+    color: darkest-color($color);
+  }
+
+  // background colors
+  .bg-#{$name} {
+    background-color: $color;
+  }
+  .bg-pale-#{$name} {
+    background-color: pale-color($color);
+  }
+  .bg-lightest-#{$name} {
+    background-color: lightest-color($color);
+  }
+  .bg-lighter-#{$name} {
+    background-color: lighter-color($color);
+  }
+  .bg-light-#{$name} {
+    background-color: light-color($color);
+  }
+  .bg-lightish-#{$name} {
+    background-color: lightish-color($color);
+  }
+  .bg-darkish-#{$name} {
+    background-color: darkish-color($color);
+  }
+  .bg-dark-#{$name} {
+    background-color: dark-color($color);
+  }
+  .bg-darker-#{$name} {
+    background-color: darker-color($color);
+  }
+  .bg-darkest-#{$name} {
+    background-color: darkest-color($color);
+  }
+  // border colors
+  .bd-#{$name} {
+    border: 1px solid $color;
+  }
+  .bd-dark-#{$name} {
+    border: 1px solid dark-color($color);
+  }
+}
+@each $name,$color in $greys {
+  .#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+.bg-black, .bg-slate {
+  color: $white;
+}
+
+// greyscales
+@for $gs from 1 through 9 {
+  .grey-#{$gs * 10} {
+    color: greyscale($primary-hue, $gs);
+  }
+  .bg-grey-#{$gs * 10} {
+    background-color: greyscale($primary-hue, $gs);
+  }
+}
+
+// super-light greys
+$grey-99: hsl($primary-hue, 1%, 99%);
+$grey-97: hsl($primary-hue, 2%, 97%);
+$grey-95: hsl($primary-hue, 2%, 95%);
+$grey-85: hsl($primary-hue, 2%, 85%);
+$grey-90: greyscale($primary-hue, 9);
+$grey-80: greyscale($primary-hue, 8);
+$grey-70: greyscale($primary-hue, 7);
+$grey-60: greyscale($primary-hue, 6);
+$grey-50: greyscale($primary-hue, 5);
+$grey-40: greyscale($primary-hue, 4);
+$grey-30: greyscale($primary-hue, 3);
+$grey-20: greyscale($primary-hue, 2);
+$grey-10: greyscale($primary-hue, 1);
+$grey-5:  hsl($primary-hue, 17%, 16%);

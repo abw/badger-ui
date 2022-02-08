@@ -1,0 +1,54 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($black, 0.75);
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid rgba($black, 0.5);
+  box-shadow: 5px 5px 5px rgba($black, 0.3);
+  background: #fff;
+  overflow: auto;
+  overflow-y: scroll;
+  max-height: 80vh;
+  border-radius: 4px;
+  outline: none;
+  padding: 2em;
+  z-index: 1001;
+}
+
+.modal .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: $grey;
+  font-size: 1rem;
+  background: rgba($grey, 0.1);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2em;
+  padding: 0.2em;
+  vertical-align: middle;
+  transition: 0.3s all;
+  border: 2px solid rgba($grey, 0.2);
+  &:hover {
+    cursor: pointer;
+    color: $red;
+    background: rgba($red, 0.2);
+    color: dark-color($red);
+    border-color: $white;
+    box-shadow: 0 0 0 4px rgba($red, 0.5);
+  }
+}

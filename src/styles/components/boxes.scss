@@ -1,0 +1,33 @@
+.border {
+  border: 1px solid $border-color;
+  padding: $unit-padding;
+  margin-bottom: $unit-margin;
+}
+.shade {
+  background-color: $shade-color;
+  padding: $unit-padding;
+  margin-bottom: $unit-margin;
+}
+.rounded {
+  border-radius: $unit-radius;
+}
+.saving {
+  background-color: $saving-back;
+  border-color: $saving-edge;
+  color: $saving-fore;
+  transition: all 0.3s;
+}
+.positive {
+  background-color: $positive-back;
+  border-color: $positive-edge;
+  color: $positive-fore;
+}
+.negative {
+  background-color: $negative-back;
+  border-color: $negative-edge;
+  color: $negative-fore;
+}
+.inverse {
+  background-color: $slate;
+  color: $white;
+}
