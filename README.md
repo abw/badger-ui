@@ -15,6 +15,8 @@ it in other projects.
 
 Add the `badger-ui` library to your project.
 
+> **NOTE:**  These examples assume you're using `yarn` but the equivalent using `npm` will also work.
+
 ```sh
 cd your-project
 yarn add @abw/badger-ui
