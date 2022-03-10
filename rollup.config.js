@@ -51,6 +51,10 @@ export default {
           src: 'src/styles',
           dest: dest,
         },
+        {
+          src: 'icons/build.js',
+          dest: "dist/icons",
+        },
       ],
     }),
   ],
