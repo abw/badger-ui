@@ -12,8 +12,8 @@ from either of those sets.
 It is also possible to add custom SVG icons that will be included in the
 generated icon library.
 
-The `cog-ui` library defines its own small set of core icons.  You can
-extend this with additional icons for other projects which use the `cog-ui`
+The `badger-ui` library defines its own small set of core icons.  You can
+extend this with additional icons for other projects which use the `badger-ui`
 library.
 
 ## Configuration File
@@ -142,7 +142,7 @@ that you want.
 The `build.js` script is used to generate a custom icon library from the
 information defined in the `config.yaml` file.
 
-In the `cog-ui` library the script can be invoked as:
+In the `badger-ui` library the script can be invoked as:
 
 ```sh
 yarn icons
@@ -169,15 +169,15 @@ useful for generating style guides showing all available icons.
 
 ### Adding More Icons to Your Project
 
-The `cog-ui` library only defines a small core set of icons that are used by
-the `cog-ui` components.  When you incorporate the `cog-ui` library into another
+The `badger-ui` library only defines a small core set of icons that are used by
+the `badger-ui` components.  When you incorporate the `badger-ui` library into another
 project you can use the same script to add further icons that are specific
 to your project.
 
-First you should add `cog-ui` as a dependency if you haven't already.
+First you should add `badger-ui` as a dependency if you haven't already.
 
 ```sh
-yarn add /path/to/cog-ui
+yarn add @abw/badger-ui
 ```
 
 Then create an `icons` directory with a `config.yaml` file in it and optionally,
@@ -185,11 +185,11 @@ a `custom` directory with SVG files for your custom icons.  Then you can run
 the script using this command:
 
 ```sh
-node node_modules/cog-ui/icons/build.js --verbose --extend
+node node_modules/@abw/badger-ui/dist/icons/build.js --verbose --extend
 ```
 
 This performs the same functionality as described above but will add new
-icons onto those already defined in the `cog-ui` library.  To register the new icons in your project you should import the `init()` function from the generated library file and invoke it.
+icons onto those already defined in the `badger-ui` library.  To register the new icons in your project you should import the `init()` function from the generated library file and invoke it.
 
 ```jsx
     import { init } from 'src/config/iconLibrary'

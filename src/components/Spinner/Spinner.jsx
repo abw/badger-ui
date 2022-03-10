@@ -3,7 +3,7 @@ import { Icon, Icons } from '../Icon'
 
 export const Spinner = ({
   size,
-  icon = 'cloop',
+  icon = 'cog',
   color = 'yellow',
   bgColor = 'black'
 }) =>
