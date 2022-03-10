@@ -35,7 +35,6 @@ $label-radius: 50px !default;
 @each $name,$color in $colors {
   .label.#{$name} {
     background-color: pale-color($color);
-    border-color: darkish-color($color);
     border-color: lighter-color($color);
     color: $color;
   }
