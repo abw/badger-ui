@@ -14,4 +14,4 @@ Overlay.defaultProps = {
   color: 'white',
 };
 
-export default Themed(Overlay)
+export default Themed(Overlay, 'Overlay')
