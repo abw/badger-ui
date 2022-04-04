@@ -80,3 +80,23 @@ export const IconStackComponent = () => <>
   />
 </>
 
+export const Modifiers = () =>
+  <>
+    <p className="mar-t-none pad-b-2">
+      Add <code className="code">spin</code> to the name as a short-hand for
+      the <code className="code">spin</code> property.
+      Add <code className="code">flip-h</code> as a short-hand for
+      the <code className="code">flip="horizontal"</code>.
+      These can be useful when
+      you're defining an icon by name, e.g. in a button, checkbox, etc.
+    </p>
+    <Icon name="wrench" className="mar-r-2"/>
+    <Icon name="wrench" flip="horizontal" className="mar-r-2"/>
+    <Icon name="wrench flip-h" className="mar-r-2"/>
+    <br/>
+    <Icon name="cat" className="mar-r-2"/>
+    <Icon name="cat" spin className="mar-r-2"/>
+    <Icon name="cat spin" className="mar-r-2"/>
+
+  </>
+

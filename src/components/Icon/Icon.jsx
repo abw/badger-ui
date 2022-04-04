@@ -20,6 +20,15 @@ export const Icon = (props) => {
   myProps.icon = icon;
   delete myProps.name;
 
+  if (myProps.icon.match(/\bspin\b/)) {
+    myProps.spin = true;
+    myProps.icon = myProps.icon.replace(/\b\s*spin\b/, '');
+  }
+  if (myProps.icon.match(/\bflip-h\b/)) {
+    myProps.flip = 'horizontal';
+    myProps.icon = myProps.icon.replace(/\b\s*flip-h\b/, '');
+  }
+
   // look for solid/outline/regular props
   Object.keys(styles).forEach(
     style => {
