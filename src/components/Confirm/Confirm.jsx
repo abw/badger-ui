@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import Button from '../Button'
 import preventDefault from '../../utils/preventDefault'
+import { Themed } from '../../utils';
 
-export const Confirm = ({
+const Confirm = ({
   initiallyRevealed = false,
-  confirmIcon = 'check',
-  confirmText = 'Confirm',
-  confirmColor = '',
-  cancelIcon = 'times',
-  cancelText = 'Cancel',
-  cancelColor = '',
-  prompt = 'Are you sure?',
+  confirmIcon,
+  confirmText,
+  confirmColor,
+  cancelIcon,
+  cancelText,
+  cancelColor,
+  prompt,
   className = '',
   buttonClass = '',
   buttonsClass = '',
@@ -36,8 +37,8 @@ export const Confirm = ({
             text={cancelText} onClick={preventDefault(() => setRevealed(false))} solid={solid} />
           {or ? <div className="or"></div> : null}
           <Button
-            {...props} iconRight={confirmIcon}
-            className={`confirm-button ${confirmClass} ${confirmColor}`} solid={solid}
+            {...props} iconRight={confirmIcon} color={confirmColor}
+            className={`confirm-button ${confirmClass}`} solid={solid}
             text={confirmText}
             onClick={
               preventDefault(
@@ -57,4 +58,14 @@ export const Confirm = ({
   </div>
 }
 
-export default Confirm
+Confirm.defaultProps = {
+  confirmIcon:  'check',
+  confirmText:  'Confirm',
+  confirmColor: 'red',
+  cancelIcon:   'times',
+  cancelText:   'Cancel',
+  cancelColor:  'grey',
+  prompt:       'Are you sure?',
+}
+
+export default Themed(Confirm, 'Confirm')
