@@ -17,6 +17,12 @@ export const isString = value =>
 export const isArray = value =>
   Array.isArray(value)
 
+export const isFunction = value =>
+  typeof value === 'function'
+
+export const isObject = value =>
+  typeof value === 'object' && !!value;
+
 export function doNothing() {
   // speak again Cordelia
 }
@@ -43,16 +49,3 @@ export function debounce(func, timeout=300) {
   };
 }
 
-/*
-export const useDebouncedEffect = (effect, deps, delay) =>
-  useEffect(
-    // WARNING: I copied this off stack overflow and I don't think
-    // it's really debouncing anything, just delaying.
-    () => {
-      const handler = setTimeout(() => effect(), delay);
-      return () => clearTimeout(handler);
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [...deps || [], delay]
-  )
-*/
