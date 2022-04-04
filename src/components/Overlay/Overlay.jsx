@@ -1,8 +1,17 @@
 import React from 'react'
+import { Themed } from '../../utils';
 
-export const Overlay = ({ color = 'white', className = '', children }) =>
+const Overlay = ({
+  color,
+  className='',
+  children
+}) =>
   <div className={`overlay ${className} ${color}`}>
     {children}
   </div>
 
-export default Overlay
+Overlay.defaultProps = {
+  color: 'white',
+};
+
+export default Themed(Overlay)

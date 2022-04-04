@@ -1,2 +1,2 @@
-export { Overlay as default } from './Overlay'
-export { Overlay } from './Overlay'
+export { default as Overlay } from './Overlay'
+export { default } from './Overlay'
