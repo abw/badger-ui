@@ -1,5 +1,5 @@
 import React from "react";
-import { Todo } from "../../src/components/Debug/Todo";
+import { Todo } from "../../src/components/Debug";
 import { iconNames } from '../../src/config/iconNames'
 
 export default {

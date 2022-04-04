@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from '../Icon'
 import { iconNames } from '../../config/iconNames'
+import { Themed } from '../../utils'
 
-export const Debug = ({
-  title = 'Debug',
-  icon = 'wrench',
+const Debug = ({
+  title,
+  icon,
   className = '',
   text,
   children
@@ -14,8 +15,6 @@ export const Debug = ({
     <h3 className="heading"><Icon name={icon} /> {title}</h3>
     {text || children}
   </div>
-
-//console.log("iconName: ", iconNames);
 
 Debug.propTypes = {
   /** Title for the panel. */
@@ -26,4 +25,9 @@ Debug.propTypes = {
   icon: PropTypes.oneOf(iconNames),
 }
 
-export default Debug
+Debug.defaultProps = {
+  title:  'Debug',
+  icon:   'wrench',
+};
+
+export default Themed(Debug, 'Debug')

@@ -1,15 +1,23 @@
 import React from 'react'
-import { Debug } from './Debug'
+import { Themed } from '../../utils';
+import Debug from './Debug'
 
-export const Todo = ({
-  title = 'Todo',
-  icon = 'clipboard-list',
+const Todo = ({
+  title,
+  icon,
   className = '',
   text,
-  children
+  children,
+  fallback
 }) =>
   <Debug title={title} className={className} icon={icon}>
-    {text || children || 'This is TODO'}
+    {text || children || fallback}
   </Debug>
 
-export default Todo
+Todo.defaultProps = {
+  title:    'Todo',
+  icon:     'clipboard-list',
+  fallback: 'This is TODO',
+};
+
+export default Themed(Todo, 'Todo')

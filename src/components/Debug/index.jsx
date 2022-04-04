@@ -1,3 +1,3 @@
-export { Debug as default } from './Debug'
-export { Debug } from './Debug'
-export { Todo } from './Todo'
+export { default } from './Debug'
+export { default as Debug } from './Debug'
+export { default as Todo } from './Todo'
