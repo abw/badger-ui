@@ -1,12 +1,13 @@
 import React from 'react'
-import { Loading } from './Loading'
+import Loading from './Loading'
+import { Themed } from '../../utils';
 
-export const Saving = ({
-  color = 'orange',
-  message = 'Saving...',
-  ...props
-}) =>
-  <Loading color={color} message={message} {...props} />
+const Saving = (props) =>
+  <Loading {...props} />
 
+Saving.defaultProps = {
+  color:   'orange',
+  message: 'Saving...',
+};
 
-export default Saving
+export default Themed(Saving, 'Saving')

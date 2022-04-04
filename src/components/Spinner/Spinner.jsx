@@ -1,15 +1,26 @@
 import React from 'react'
+import { Themed } from '../../utils';
 import { Icon, Icons } from '../Icon'
 
-export const Spinner = ({
+const Spinner = ({
   size,
-  icon = 'cog',
-  color = 'yellow',
-  bgColor = 'black'
+  icon,
+  color,
+  bgColor,
+  bgIcon,
+  bgTransform
 }) =>
   <Icons className={size}>
-    <Icon name="circle" className={bgColor} transform="grow-6" />
+    <Icon name={bgIcon} className={bgColor} transform={bgTransform} />
     <Icon name={icon} color={color} spin />
   </Icons>
 
-export default Spinner
+Spinner.defaultProps = {
+  icon:         'cog',
+  color:        'yellow',
+  bgColor:      'black',
+  bgIcon:       'circle',
+  bgTransform:  'grow-6',
+};
+
+export default Themed(Spinner, 'Spinner')

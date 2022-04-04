@@ -1,16 +1,25 @@
 import React from 'react'
+import Spinner from './Spinner'
+import { Themed } from '../../utils';
 import { Overlay } from '../Overlay'
-import { Spinner } from './Spinner'
 
 export const Loader = ({
-  message, color, bgColor, overlayColor, icon,
-  className = '', textSize = 'larger', size = 'fa-4x'
+  overlayColor,
+  textSize,
+  message,
+  className='',
+  ...props
 }) =>
   <Overlay color={overlayColor} className={className}>
     <div className="middle">
-      <Spinner size={size} icon={icon} color={color} bgColor={bgColor} />
+      <Spinner {...props}/>
       <div className={`caption mar-2 ${textSize}`}>{message}</div>
     </div>
   </Overlay>
 
-export default Loader
+Loader.defaultProps = {
+  textSize: 'larger',
+  size:     'fa-4x',
+};
+
+export default Themed(Loader, 'Loader')

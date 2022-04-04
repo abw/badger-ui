@@ -1,15 +1,17 @@
 import React from 'react'
-import { Loader } from './Loader'
+import Loader from './Loader'
+import { Themed } from '../../utils';
 
-export const Loading = ({
-  color,
-  icon,
-  textSize,
-  message = 'Loading...',
-  className = ''
+const Loading = ({
+  className='',
+  ...props
 }) =>
   <div className={`loader-buffer ${className}`}>
-    <Loader color={color} icon={icon} textSize={textSize} message={message} />
+    <Loader {...props}/>
   </div>
 
-export default Loading
+Loading.defaultProps = {
+  message: 'Loading...',
+};
+
+export default Themed(Loading, 'Loading')

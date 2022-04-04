@@ -9,17 +9,10 @@ const contextMapProps = (context={}, map={}, props={}) => {
     }
   );
   Object.assign(result, props);
-  console.log('map result: ', result);
   return result;
 }
 
 const contextSpecProps = (context={}, spec=false, props={}) => {
-  // simple case, assuming spec is a single word identifying
-  // the component, e.g. "Spinner" or a function which will return
-  // an object.
-  // console.log('contextSpecProps context: ', context);
-  // console.log('contextSpecProps spec: ', spec);
-  // console.log('contextSpecProps props: ', props);
   if (! spec) {
     return props;
   }
