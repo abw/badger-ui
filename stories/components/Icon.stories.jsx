@@ -97,6 +97,5 @@ export const Modifiers = () =>
     <Icon name="cat" className="mar-r-2"/>
     <Icon name="cat" spin className="mar-r-2"/>
     <Icon name="cat spin" className="mar-r-2"/>
-
   </>
 
