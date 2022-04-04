@@ -14,7 +14,9 @@ export const parameters = {
         'Introduction',
         'Styles', ['Typography', 'Boxes', 'Colors', 'Grid', 'Layout'],
         'Components', ['Fields', 'Inputs'],
-        'Test'],
+        'Theming', ['Introduction'],
+        'Test'
+      ],
     },
   }
 }
