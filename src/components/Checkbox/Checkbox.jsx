@@ -2,12 +2,18 @@ import React from 'react'
 import Icon from '../Icon'
 import PropTypes from 'prop-types'
 import classNames from '../../utils/classNames'
+import { Themed } from '../../utils'
 
-export const Checkbox = ({
+const Checkbox = ({
   text,
-  value = false, disabled = false,
-  checkedIcon = 'checked', uncheckedIcon = 'unchecked', iconClass,
-  onChange, onFocus, onBlur,
+  value = false,
+  disabled = false,
+  checkedIcon,
+  uncheckedIcon,
+  iconClass = '',
+  onChange,
+  onFocus,
+  onBlur,
   ...props
 }) => {
   const onKeyPress = (event) => {
@@ -18,13 +24,13 @@ export const Checkbox = ({
   };
   const click = onChange && !disabled ? () => onChange(!value) : null;
   const press = disabled ? null : onKeyPress;
-  const icon = value ? checkedIcon : uncheckedIcon;
+  const icon  = value ? checkedIcon : uncheckedIcon;
   const cname = classNames(props, 'checkbox input', value && 'checked', disabled && 'disabled');
 
   return <div
     className={cname} tabIndex={disabled ? -1 : 0}
     onClick={click} onKeyPress={press} onFocus={onFocus} onBlur={onBlur}>
-    <Icon name={icon} className={`mar-r ${iconClass || ''}`} fixedWidth />
+    <Icon name={icon} className={`mar-r ${iconClass}`} fixedWidth />
     <span className="text">{text}</span>
   </div>
 }
@@ -55,5 +61,10 @@ Checkbox.propTypes = {
   onBlur: PropTypes.func,
 };
 
-export default Checkbox
+Checkbox.defaultProps = {
+  checkedIcon:   'checked',
+  uncheckedIcon: 'unchecked',
+};
+
+export default Themed(Checkbox, 'Checkbox')
 
