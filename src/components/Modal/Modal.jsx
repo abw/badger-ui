@@ -1,16 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Icon from '../Icon';
+import { Themed } from '../../utils';
 
 const hasDocument = (typeof document !== 'undefined');
 const modalRoot = hasDocument
   ? document.getElementById('root')
   : null;
 
-const ModalWrapper = ({ children, close }) => <div className="modal-overlay">
+const ModalWrapper = ({ children, closeIcon, close }) => <div className="modal-overlay">
   <div className="modal">
     {children}
-    <Icon name="times" className="close" onClick={close}/>
+    <Icon name={closeIcon} className="close" onClick={close}/>
   </div>
 </div>
 
@@ -39,5 +40,9 @@ export class Modal extends React.Component {
   }
 }
 
-export default Modal;
+Modal.defaultProps = {
+  closeIcon: 'times',
+}
+
+export default Themed(Modal, 'Modal');
 

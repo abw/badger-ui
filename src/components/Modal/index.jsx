@@ -1,2 +1,2 @@
-export { Modal as default } from './Modal'
-export { Modal } from './Modal'
+export { default } from './Modal'
+export { default as Modal } from './Modal'
