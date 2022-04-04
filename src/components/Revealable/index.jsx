@@ -1,2 +1,2 @@
-export { Revealable as default } from './Revealable'
-export { Revealable } from './Revealable'
+export { default } from './Revealable'
+export { default as Revealable } from './Revealable'

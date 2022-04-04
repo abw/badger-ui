@@ -1,11 +1,11 @@
 import React from 'react'
 import Icon from '../Icon'
-import { classNames } from '../../utils'
+import { classNames, Themed } from '../../utils'
 
-export const Revealable = ({
+const Revealable = ({
+  revealedIcon,
+  unrevealedIcon,
   initiallyRevealed = false,
-  revealedIcon = 'caret-down',
-  unrevealedIcon = 'caret-right',
   revealable = true,
   headClass = '',
   bodyClass = '',
@@ -36,4 +36,9 @@ export const Revealable = ({
   </div>
 }
 
-export default Revealable
+Revealable.defaultProps = {
+  revealedIcon:   'caret-down',
+  unrevealedIcon: 'caret-right',
+}
+
+export default Themed(Revealable, 'Revealable')
