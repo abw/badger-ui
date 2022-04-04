@@ -1,2 +1,2 @@
-export { Missing as default } from './Missing'
-export { Missing } from './Missing'
+export { default } from './Missing'
+export { default as Missing } from './Missing'

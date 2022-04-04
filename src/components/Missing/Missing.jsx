@@ -1,10 +1,13 @@
 import React from 'react'
 import Icon from '../Icon'
+import { Themed } from '../../utils'
 
-export const Missing = ({
+const Missing = ({
   item,
-  text, children,
-  icon = 'circle-question',
+  text,
+  children,
+  fallback,
+  icon,
   className = ''
 }) =>
   <div className={`missing ${className}`}>
@@ -12,9 +15,15 @@ export const Missing = ({
     { children
       ? <div className="content">{children}</div>
       : <h3 className="mar-none">
-          {text || (item ? `No ${item}` : 'Not found')}
+          {text || (item ? `No ${item}` : fallback)}
         </h3>
     }
   </div>
 
-export default Missing
+Missing.defaultProps = {
+  icon:     'circle-question',
+  fallback: 'Not found',
+};
+
+export default Themed (Missing, 'Missing')
+
