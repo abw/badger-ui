@@ -1,2 +1,2 @@
-export { Alert as default } from './Alert'
-export { Alert, Info, Success, Warning, Error } from './Alert'
+export { default } from './Alert'
+export { default as Alert, Info, Success, Warning, Error } from './Alert'

@@ -4,11 +4,23 @@ import Icon from '../Icon'
 import propClasses from '../../utils/propClasses'
 import { sizes, fasizes } from '../../config/sizes'
 import { types } from '../../config/alert'
+import { Themed } from '../../utils';
 
-export const Alert = ({
-  title, headline, headIcon, type, size, stripe, shadow, className, icon, text, children,
-  iconSize = '2x', dismissable = false, revealable = false, initiallyRevealed = false,
-  onDismiss
+const Alert = ({
+  title,
+  headline,
+  headIcon,
+  type, size,
+  stripe, shadow,
+  className, icon, text, children,
+  iconSize = '2x',
+  dismissable = false,
+  revealable = false,
+  initiallyRevealed = false,
+  onDismiss,
+  dismissIcon,
+  revealedIcon,
+  unrevealedIcon,
 }) => {
   const [revealed, reveal] = useState(initiallyRevealed || !revealable);
   const [dismissed, setDismissed] = useState(false);
@@ -37,18 +49,18 @@ export const Alert = ({
         <span className="text">{headline}</span>
         {dismissable &&
           <span className="dismiss">
-            <Icon icon="times-circle" fixedWidth className="message-control" onClick={() => dismiss(true)} />
+            <Icon icon={dismissIcon} fixedWidth className="message-control" onClick={() => dismiss(true)} />
           </span>
         }
         {revealable &&
           <span className="reveal">
             {revealed
               ? <Icon
-                icon="caret-down" fixedWidth className="message-control" transform="grow-8"
+                icon={revealedIcon} fixedWidth className="message-control" transform="grow-8"
                 onClick={() => reveal(false)}
               />
               : <Icon
-                icon="caret-left" fixedWidth className="message-control" transform="grow-8 down-1"
+                icon={unrevealedIcon} fixedWidth className="message-control" transform="grow-8 down-1"
                 onClick={() => reveal(true)}
               />
             }
@@ -69,14 +81,18 @@ export const Alert = ({
   </div>
 }
 
-export const Info = (props) =>
-  <Alert {...props} type='info' />
-export const Success = (props) =>
-  <Alert {...props} type='success' />
-export const Warning = (props) =>
-  <Alert {...props} type='warning' />
-export const Error = (props) =>
-  <Alert {...props} type='error' />
+export const Info = Themed(
+  props => <Alert {...props} type='info' />, 'Alert'
+)
+export const Success = Themed(
+  props => <Alert {...props} type='success' />, 'Alert'
+)
+export const Warning = Themed(
+  props => <Alert {...props} type='warning' />, 'Alert'
+)
+export const Error = Themed(
+  props => <Alert {...props} type='error' />, 'Alert'
+)
 
 Alert.Info    = Info
 Alert.Success = Success
@@ -114,4 +130,10 @@ Alert.propTypes = {
   onDismiss: PropTypes.func,
 };
 
-export default Alert
+Alert.defaultProps = {
+  dismissIcon:    'times-circle',
+  revealedIcon:   'caret-down',
+  unrevealedIcon: 'caret-left',
+}
+
+export default Themed(Alert, 'Alert')

@@ -1,7 +1,8 @@
 import React from "react";
-import Alert from "../../src/components/Alert";
+import { Alert, Info } from "../../src/components/Alert";
 import { sizes, fasizes } from '../../src/config/sizes'
 import { iconNames } from '../../src/config/iconNames'
+import { addMethod } from "yup";
 
 export default {
   title: "Components/Alert",
@@ -57,7 +58,7 @@ export const Example = (props) =>
     </div>
   </>
 
-export const Info = () =>
+export const InfoAlert = () =>
   <>
     <Alert
       type="info"
@@ -67,6 +68,11 @@ export const Info = () =>
     />
     <Alert
       type="info"
+      headline="Info Alert" headIcon="info"
+      icon="info" title="Info Alert"
+      text="This is an example of a more complex info alert"
+    />
+    <Info
       headline="Info Alert" headIcon="info"
       icon="info" title="Info Alert"
       text="This is an example of a more complex info alert"
