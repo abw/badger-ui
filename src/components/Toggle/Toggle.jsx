@@ -1,17 +1,14 @@
 import React from 'react'
 import { Checkbox } from '../Checkbox'
+import { Themed } from '../../utils'
 
-export const Toggle = ({
-  checkedIcon = 'toggle-on',
-  uncheckedIcon = 'toggle-off',
-  iconClass = 'large',
-  ...props
-}) =>
-  <Checkbox
-    {...props}
-    checkedIcon={checkedIcon}
-    uncheckedIcon={uncheckedIcon}
-    iconClass={iconClass}
-  />
+const Toggle = props =>
+  <Checkbox {...props}/>
 
-export default Toggle
+Toggle.defaultProps = {
+  checkedIcon:   'toggle-on',
+  uncheckedIcon: 'toggle-off',
+  iconClass:     'large'
+};
+
+export default Themed(Toggle, 'Toggle')

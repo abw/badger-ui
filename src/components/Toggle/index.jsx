@@ -1,3 +1,3 @@
-export { Toggle as default } from './Toggle'
-export { Toggle } from './Toggle'
-export { ToggleState } from './ToggleState'
+export { default } from './Toggle'
+export { default as Toggle } from './Toggle'
+export { default as ToggleState } from './ToggleState'
