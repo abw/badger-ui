@@ -1,12 +1,17 @@
 import React from 'react'
 import Icon from '../Icon'
-import { classNames, isDefined } from '../../utils'
+import { classNames, isDefined, Themed } from '../../utils'
 
-export const Radio = ({
+const Radio = ({
+  value,
   options = [],
-  value, disabled = false,
-  checkedIcon = 'dotted', uncheckedIcon = 'undotted',
-  optionClass, onChange, onFocus, onBlur,
+  disabled = false,
+  optionClass='',
+  checkedIcon,
+  uncheckedIcon,
+  onChange,
+  onFocus,
+  onBlur,
   ...props
 }) => {
   const onKeyPress = (event, option) => {
@@ -32,7 +37,7 @@ export const Radio = ({
           : null;
         return <div
           key={n}
-          className={`checkbox ${optionClass || ''} ${option.className || ''} ${active ? '' : 'disabled'}`}
+          className={`checkbox ${optionClass} ${option.className || ''} ${active ? '' : 'disabled'}`}
           tabIndex={active ? 0 : -1} onKeyPress={press} onClick={click}
           onFocus={active ? onFocus : null} onBlur={active ? onBlur : null}>
           <Icon
@@ -46,4 +51,10 @@ export const Radio = ({
   </div>
 }
 
-export default Radio
+Radio.defaultProps = {
+  checkedIcon:   'dotted',
+  uncheckedIcon: 'undotted',
+};
+
+export default Themed(Radio, 'Radio')
+
