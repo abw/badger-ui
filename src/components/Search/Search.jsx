@@ -1,6 +1,6 @@
 import React  from 'react'
 import Icon from '../Icon'
-import { addDebug, isDefined, classNames, debounce } from '../../utils'
+import { addDebug, isDefined, classNames, debounce, Themed } from '../../utils'
 
 const inactiveState = {
   searching: false,
@@ -15,9 +15,12 @@ class Search extends React.Component {
         minLength:     2,
         debounceTime:  500,
         placeholder:   'Search',
-        debug:         false,
+        debug:         true,
         debugLabel:    'Search',
-        debugColor:    'MediumVioletRed'
+        debugColor:    'MediumVioletRed',
+        loadingIcon:   'cog',
+        clearIcon:     'times',
+        searchIcon:    'search'
     };
     constructor(props) {
         super(props);
@@ -246,7 +249,7 @@ class Search extends React.Component {
     }
     render() {
         const props = this.props;
-        const {disabled, inputClass, placeholder, ariaLabel} = props;
+        const {disabled, inputClass, placeholder, ariaLabel, loadingIcon, searchIcon, clearIcon} = props;
         const {input, focussed, searching, results} = this.state;
 
         const cname = classNames(
@@ -264,10 +267,10 @@ class Search extends React.Component {
             autoComplete="chrome-is-broken" tabIndex="0" aria-label={ariaLabel || placeholder}
           />
           { searching
-            ? <Icon name="cloop" className="loading" spin onClick={this.clear}/>
+            ? <Icon name={loadingIcon} className="loading" spin onClick={this.clear}/>
             : input && input.length
-              ? <Icon name="times" className="clear" onClick={this.clear}/>
-              : <Icon name="search"/>
+              ? <Icon name={clearIcon} className="clear" onClick={this.clear}/>
+              : <Icon name={searchIcon}/>
           }
           { results
             ? this.renderResults()
@@ -277,4 +280,5 @@ class Search extends React.Component {
     }
 }
 
-export default Search;
+
+export default Themed(Search, 'Search');
