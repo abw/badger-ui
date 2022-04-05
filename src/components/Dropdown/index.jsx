@@ -1,5 +1,5 @@
-export { Dropdown as default } from './Dropdown'
-export { Dropdown } from './Dropdown'
+export { default } from './Dropdown'
+export { default as Dropdown } from './Dropdown'
 export { Menu as DropdownMenu } from './Menu'
 export { Item as DropdownItem } from './Item'
 export { Content as DropdownContent } from './Content'

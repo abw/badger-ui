@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Dropdown } from './Dropdown'
+import Dropdown from './Dropdown'
 import { Item } from './Item'
 import { Separator } from './Separator'
 

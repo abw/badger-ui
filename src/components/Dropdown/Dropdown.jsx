@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button } from '../Button'
-import { classNames } from '../../utils';
+import { classNames, Themed } from '../../utils';
 
-export const Dropdown = ({
+const Dropdown = ({
   right, border,
   clicked, setClicked,
   children,
-  iconRight = 'caret-down',
+  iconRight,
   iconLeft,
   text,
   ...props
@@ -34,4 +34,9 @@ export const Dropdown = ({
   </div>
 }
 
-export default Dropdown
+Dropdown.defaultProps = {
+  iconRight: 'caret-down',
+};
+
+export default Themed(Dropdown, 'Dropdown');
+// export default Themed(Dropdown, 'Dropdown');
