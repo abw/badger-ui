@@ -1,68 +1,86 @@
 import React from 'react'
+import { Themed } from '../../utils'
 import { Button } from '../Button'
 
-const Pagination = ({page, setPageNo}) => <div className="pagination">
-  <div className="prev">
-  { page.less &&
-      <Button
-        className="paginate-prev"
-        aria-label="Goto previous page"
-        iconLeft="arrow-left"
-        color="blue"
-        text="Previous"
-        onClick={() => setPageNo(page.prevPage)}
-      />
-  }
-  </div>
-  <div className="list">
-  { page.showFirst &&
+const Pagination = ({
+  page, setPageNo,
+  prevIcon='arrow-left',
+  prevColor='blue',
+  prevText='Previous',
+  pageColor='teal',
+  thisPageColor='black',
+  nextIcon='arrow-right',
+  nextColor='blue',
+  nextText='Next Page',
+  solidButtons=false
+}) =>
+  <div className="pagination">
+    <div className="prev">
+    { page.less &&
+        <Button
+          className="paginate-prev"
+          aria-label="Goto previous page"
+          iconLeft={prevIcon}
+          color={prevColor}
+          text={prevText}
+          solid={solidButtons}
+          onClick={() => setPageNo(page.prevPage)}
+        />
+    }
+    </div>
+    <div className="list">
+    { page.showFirst &&
+        <Button
+          className="link"
+          aria-label="Goto page 1"
+          color={pageColor}
+          text="1"
+          solid={solidButtons}
+          onClick={() => setPageNo(1)}
+        />
+    }
+    {page.separateFirst &&
+      <span className="etc">&hellip;</span>
+    }
+    { page.pageRange && page.pageRange.map(
+        pageNo => <Button
+          key={pageNo}
+          className="link"
+          aria-label={`Goto page ${pageNo}`}
+          color={pageNo === page.pageNo ? thisPageColor : pageColor}
+          text={pageNo.toString()}
+          solid={solidButtons}
+          onClick={() => setPageNo(pageNo)}
+        />
+      )
+    }
+    { page.separateLast &&
+      <span className="etc">&hellip;</span>
+    }
+    { page.showLast &&
       <Button
         className="link"
-        aria-label="Goto page 1"
-        color="teal"
-        text="1"
-        onClick={() => setPageNo(1)}
+        aria-label={`Goto page ${page.lastPage}`}
+        color={pageColor}
+        text={page.lastPage.toString()}
+        solid={solidButtons}
+        onClick={() => setPageNo(page.lastPage)}
       />
-  }
-  {page.separateFirst &&
-    <span className="etc">&hellip;</span>
-  }
-  { page.pageRange && page.pageRange.map(
-      pageNo => <Button
-        key={pageNo}
-        className="link"
-        aria-label={`Goto page ${pageNo}`}
-        color={pageNo === page.pageNo ? 'black' : 'teal'}
-        text={pageNo.toString()}
-        onClick={() => setPageNo(pageNo)}
+    }
+    </div>
+    <div className="next">
+    { page.more &&
+        <Button
+          className="next"
+          aria-label="Goto next page"
+          iconRight={nextIcon}
+          color={nextColor}
+          text={nextText}
+          solid={solidButtons}
+          onClick={() => setPageNo(page.nextPage)}
       />
-    )
-  }
-  { page.separateLast &&
-    <span className="etc">&hellip;</span>
-  }
-  { page.showLast &&
-    <Button
-      className="link"
-      aria-label={`Goto page ${page.lastPage}`}
-      color="teal"
-      text={page.lastPage.toString()}
-      onClick={() => setPageNo(page.lastPage)}
-    />
-  }
+    }
+    </div>
   </div>
-  <div className="next">
-  { page.more &&
-      <Button
-        className="next"
-        aria-label="Goto next page"
-        iconRight="arrow-right"
-        color="blue"
-        text="Next page"
-        onClick={() => setPageNo(page.nextPage)}
-    />
-  }
-  </div>
-</div>
 
-export default Pagination
+export default Themed(Pagination, 'DataTable');

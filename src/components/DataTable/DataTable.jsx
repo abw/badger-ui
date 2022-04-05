@@ -4,12 +4,12 @@ import sort from './Sort'
 import paginate from './Paginate'
 import filter from './Filter'
 import { extractVisibleColumns } from './Utils'
-import { isDefined } from '../../utils'
+import { isDefined, Themed } from '../../utils'
 
-export const DataTable = ({
+const DataTable = ({
   rows=[],
   columns={},
-  initialPageSize=10,
+  initialPageSize,
   Layout=DefaultLayout,
   ...props
 }) => {
@@ -81,8 +81,7 @@ export const DataTable = ({
   // useDebouncedEffect(
   useEffect(
     () => {
-      console.log('recomputing...');
-
+      // console.log('recomputing...');
       setPage(
         paginate({
           rows: sort({
@@ -116,5 +115,9 @@ export const DataTable = ({
   />
 }
 
-export default DataTable
+DataTable.defaultProps = {
+  initialPageSize: 10,
+}
+
+export default Themed(DataTable, 'DataTable');
 

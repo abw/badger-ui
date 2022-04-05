@@ -4,7 +4,7 @@ import { Checkbox } from '../Checkbox'
 import { Dropdown } from '../Dropdown'
 
 export const FieldSelect = ({ columns, visibleColumns, setVisibleColumn }) =>
-  <Dropdown text="Fields">
+  <Dropdown text="Fields" right className="mar-r">
     <div className="menu pad pad-b-none">
       { Object.keys(columns).map(
           name => <Checkbox

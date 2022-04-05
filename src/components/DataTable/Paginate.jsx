@@ -2,23 +2,14 @@ import { range } from '../../utils'
 
 export const paginate = ({rows, pageNo=1, pageSize=rows.length}) => {
   const total = rows.length;
-
-  //console.log(
-  //  "paginate(%s): total items %s, pageSize: %s  pageNo: %s ",
-  //  msg||'default', total, pageSize, pageNo
-  //);
-
   let firstIndex = pageSize * (pageNo - 1);
   let lastIndex  = firstIndex + pageSize;
-
-  //console.log("paginating items from %s to %s", firstIndex, lastIndex);
 
   // NOTE: JS Array.slice(start, end) does NOT include the end item
   let items = rows.slice(firstIndex, lastIndex);
 
   // we may have got less than a whole page so we might as well re-calculate lastIndex
   lastIndex = firstIndex + items.length - 1;
-  //console.log("sliced %s items, lastIndex is", items.length, lastIndex);
 
   const thisSize    = items.length;
   const onFirstPage = (pageNo === 1);

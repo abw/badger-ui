@@ -1,5 +1,5 @@
 import React from 'react'
-import { isDefined, pounds, commas, capitalize, price } from '../../utils'
+import { isDefined, pounds, commas, capitalize, price, Themed } from '../../utils'
 import { Label } from '../Label'
 
 export const displayText = ({value}) =>
@@ -17,10 +17,22 @@ export const displayPrice = ({value}) =>
 export const displayCapitalized = ({value}) =>
   isDefined(value) ? capitalize(value) : '';
 
-export const displayBoolean = ({value}) =>
-  value
-    ? <Label iconLeft="check-circle" color="green" text="Yes" className="small wide outline"/>
-    : <Label iconLeft="times-circle" color="red" text="No"    className="small wide outline"/>
+export const displayBoolean = Themed(
+  ({value,
+    trueIcon='check-circle',
+    trueColor='green',
+    trueText='Yes',
+    falseIcon='times-circle',
+    falseColor='red',
+    falseText='No',
+    booleanClass='small wide outline'
+  }) => (
+    value
+      ? <Label iconLeft={trueIcon}  color={trueColor}  text={trueText}  className={booleanClass}/>
+      : <Label iconLeft={falseIcon} color={falseColor} text={falseText} className={booleanClass}/>
+  ),
+  'DataTable'
+)
 
 export const displayTypes = {
     default:    displayText,

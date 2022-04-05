@@ -1,31 +1,40 @@
 import React from 'react'
 import { Button } from '../Button'
 import { Select } from '../Select'
-import { commas } from '../../utils'
+import { commas, Themed } from '../../utils'
 import FieldSelect from './FieldSelect'
 import PageSize from './PageSize'
 
-export const Summary = ({
+const Summary = ({
   page,
   setPageSize,
   setPageNo,
+  prevIcon='arrow-left',
+  prevColor='blue',
+  nextIcon='arrow-right',
+  nextColor='blue',
+  disabledColor='smoke',
+  solidButtons=false,
+  summaryClass='',
   ...props
 }) => {
-  return <div className="summary">
+  return <div className={`summary ${summaryClass}`}>
     { page.less
       ? <Button
           className="paginate prev"
           aria-label="Goto previous page"
-          icon="arrow-left"
-          color="blue"
+          icon={prevIcon}
+          color={prevColor}
+          solid={solidButtons}
           onClick={() => setPageNo(page.prevPage)}
         />
       : <Button
           className="paginate prev disabled"
           aria-label="Goto previous page"
-          icon="arrow-left"
-          color="smoke"
+          icon={prevIcon}
+          color={disabledColor}
           disabled={true}
+          solid={solidButtons}
         />
     }
     <div className="page-no">
@@ -48,19 +57,21 @@ export const Summary = ({
       ? <Button
           className="paginate next"
           aria-label="Goto next page"
-          icon="arrow-right"
-          color="blue"
+          icon={nextIcon}
+          color={nextColor}
+          solid={solidButtons}
           onClick={() => setPageNo(page.nextPage)}
         />
       : <Button
           className="paginate prev disabled"
           aria-label="Goto next page"
-          icon="arrow-right"
-          color="smoke"
+          icon={prevIcon}
+          color={disabledColor}
           disabled={true}
+          solid={solidButtons}
         />
     }
   </div>
 }
 
-export default Summary
+export default Themed(Summary, 'DataTable');

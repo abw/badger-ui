@@ -1,11 +1,15 @@
 import React from 'react'
 import Icon from '../Icon'
-import { propClasses, preventDefault, capitalize } from '../../utils'
+import { propClasses, preventDefault, capitalize, Themed } from '../../utils'
 
-export const Header = ({
+const Header = ({
   name, column,
-  sortColumn, sortReverse, toggleSortColumn,
-  toggleFilters
+  sortColumn, sortReverse,
+  toggleSortColumn, toggleFilters,
+  filterIcon='filter',
+  sortIcon='sort',
+  sortUpIcon='sort-up',
+  sortDownIcon='sort-down'
 }) => {
     const type    = column.type || 'text';
     const sorting = sortColumn === name;
@@ -17,8 +21,8 @@ export const Header = ({
       {sorting, reverse}, type
     );
     const icon = sorting
-      ? (reverse ? 'sort-up' : 'sort-down')
-      : 'sort';
+      ? (reverse ? sortUpIcon : sortDownIcon)
+      : sortIcon;
 
     return <th className={classes} onClick={() => toggleSortColumn(name)}>
       <div>
@@ -29,10 +33,10 @@ export const Header = ({
           {column.label || capitalize(name)}
         </div>
         <span className="filter" onClick={preventDefault(toggleFilters)}>
-          <Icon name="filter" fixedWidth/>
+          <Icon name={filterIcon} fixedWidth/>
         </span>
       </div>
     </th>
 }
 
-export default Header
+export default Themed(Header, 'DataTable');
