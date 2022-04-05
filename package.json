@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-ui",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "CSS/React User Interface Components",
   "author": "Andy Wardley",
   "main": "dist/index.js",
