@@ -5,7 +5,9 @@
   "author": "Andy Wardley",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "files": ["dist/*"],
+  "files": [
+    "dist/*"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/abw/badger-ui/issues"
