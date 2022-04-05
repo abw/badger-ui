@@ -1,3 +1,3 @@
-export { Select as default } from './Select'
-export { Select } from './Select'
-export { SelectState } from './SelectState'
+export { default } from './Select'
+export { default as Select } from './Select'
+export { default as SelectState } from './SelectState'

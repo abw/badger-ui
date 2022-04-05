@@ -20,13 +20,17 @@ export const ThemedToggle = () => {
     <div className="row text-center">
       <div className="split-2 gut-r">
         <h2>Unthemed</h2>
+        <h5>Toggle</h5>
         <Toggle text="Unthemed Toggle" value={checked1} onChange={setChecked1}/>
+        <h5>ToggleState</h5>
         <ToggleState text="Unthemed ToggleState"/>
       </div>
       <div className="split-2 gut-l">
         <h2>Themed</h2>
         <Theme.Provider {...MyTheme}>
+          <h5>Toggle</h5>
           <Toggle text="Themed Toggle" value={checked2} onChange={setChecked2}/>
+          <h5>ToggleState</h5>
           <ToggleState text="Themed ToggleState"/>
         </Theme.Provider>
       </div>

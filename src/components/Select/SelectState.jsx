@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from './Select'
 
-export const SelectState = (props) => {
+const SelectState = (props) => {
   const [value, setValue] = React.useState(props.initialValue || false);
   const change = option => {
     setValue(option.value);
@@ -11,4 +11,5 @@ export const SelectState = (props) => {
   }
   return <Select {...props} value={value} onChange={change}/>
 }
-export default Select
+
+export default SelectState

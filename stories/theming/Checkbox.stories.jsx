@@ -20,13 +20,17 @@ export const ThemedCheckboxes = () => {
     <div className="row text-center">
       <div className="split-2 gut-r">
         <h2>Unthemed</h2>
+        <h5>Checkbox</h5>
         <Checkbox text="Unthemed Checkbox" value={checked1} onChange={setChecked1}/>
+        <h5 className="mar-t">CheckboxState</h5>
         <CheckboxState text="Unthemed CheckboxState"/>
       </div>
       <div className="split-2 gut-l">
         <h2>Themed</h2>
         <Theme.Provider {...MyTheme}>
+          <h5>Checkbox</h5>
           <Checkbox text="Themed Checkbox" value={checked2} onChange={setChecked2}/>
+          <h5 className="mar-t">CheckboxState</h5>
           <CheckboxState text="Themed CheckboxState"/>
         </Theme.Provider>
       </div>

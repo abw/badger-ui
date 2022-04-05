@@ -25,19 +25,23 @@ export const ThemedRadio = () => {
     <div className="row text-center">
       <div className="split-2 gut-r">
         <h2>Unthemed</h2>
+        <h5>Radio</h5>
         <Radio
           value={radio1} options={options}
           onChange={option => setRadio1(option.value)}
         />
+        <h5 className="mar-t">RadioState</h5>
         <RadioState options={options}/>
       </div>
       <div className="split-2 gut-l">
         <h2>Themed</h2>
         <Theme.Provider {...MyTheme}>
+          <h5>Radio</h5>
           <Radio
             value={radio2} options={options}
             onChange={option => setRadio2(option.value)}
           />
+          <h5 className="mar-t">RadioState</h5>
           <RadioState options={options}/>
         </Theme.Provider>
       </div>

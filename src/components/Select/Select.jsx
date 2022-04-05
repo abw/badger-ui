@@ -1,8 +1,9 @@
 import React from 'react'
 import { expandOptions, findOption } from './Utils'
 import List from './List'
+import { Themed } from '../../utils';
 
-export const Select = ({
+const Select = ({
   options=[],
   value=undefined,
   ...props
@@ -19,4 +20,9 @@ export const Select = ({
   />
 }
 
-export default Select
+Select.defaultProps = {
+  openIcon: 'caret-up',
+  closedIcon: 'caret-down'
+}
+
+export default Themed(Select, 'Select')

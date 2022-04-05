@@ -5,9 +5,18 @@ import { onKeyPress } from './Utils'
 import Options from './Options'
 
 export const List = ({
-  options=[], optionList=[], placeholder='Select',
-  index=undefined, disabled=false, selected,
-  optionClass, onChange, onFocus, onBlur,
+  options=[],
+  optionList=[],
+  placeholder='Select',
+  index=undefined,
+  disabled=false,
+  openIcon,
+  closedIcon,
+  selected,
+  optionClass,
+  onChange,
+  onFocus,
+  onBlur,
   ...props
 }) => {
   // cursor to track which option is highlighted in the list, or undefined when options not visible
@@ -48,7 +57,7 @@ export const List = ({
         ? <div className="value">{selected.text}</div>
         : <div className="placeholder">{placeholder||''}</div>
       }
-      <Icon name="caret-down" className=""/>
+      <Icon name={open ? openIcon : closedIcon} className=""/>
     </div>
     { open
       ? <div className="options">
