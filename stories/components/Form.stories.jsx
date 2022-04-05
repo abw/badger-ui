@@ -1,6 +1,7 @@
 import React from 'react'
 import { Success } from '../../src/components/Alert';
 import { Form, Field, Reset, Submit } from '../../src/components/Form'
+import { sleep } from '../../src/utils';
 
 export default {
   title: 'Components/Form',
@@ -160,7 +161,7 @@ export const ResetButton = () =>
 
 export const SubmitButton = () => {
   const [success, setSuccess] = React.useState();
-  const onSubmit = submit => {
+  const onSubmit = submit => sleep(1000).then(() => {
     const name = submit.values.name;
     if (name.match(/badger/i)) {
       // fake a valid server response
@@ -184,7 +185,7 @@ export const SubmitButton = () => {
         }
       });
     }
-  }
+  })
   return <>
     <p className="mar-t-none">
       The <code className="code">Submit</code> component can be used to

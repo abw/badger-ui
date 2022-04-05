@@ -3,7 +3,7 @@ import Spinner from './Spinner'
 import { Themed } from '../../utils';
 import { Overlay } from '../Overlay'
 
-export const Loader = ({
+const Loader = ({
   overlayColor,
   textSize,
   message,

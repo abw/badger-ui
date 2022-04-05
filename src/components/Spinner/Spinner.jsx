@@ -11,7 +11,7 @@ const Spinner = ({
   bgTransform
 }) =>
   <Icons className={size}>
-    <Icon name={bgIcon} className={bgColor} transform={bgTransform} />
+    <Icon name={bgIcon} color={bgColor} transform={bgTransform} />
     <Icon name={icon} color={color} spin />
   </Icons>
 

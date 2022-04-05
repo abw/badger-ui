@@ -21,7 +21,7 @@ export const Layout = ({ form, children }) =>
       <Footer/>
     </div>
     { (form.submitting && ! form.noSaver)
-      ? <Loader color="orange" className="normal" message={form.savingMessage||'Saving...'}/>
+      ? <Loader color="orange" bgColor="white" className="normal" message={form.savingMessage||'Saving...'}/>
       : null
     }
   </form>

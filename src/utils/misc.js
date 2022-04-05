@@ -49,3 +49,5 @@ export function debounce(func, timeout=300) {
   };
 }
 
+export const sleep = ms =>
+  new Promise(r => setTimeout(r, ms));

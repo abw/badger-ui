@@ -66,6 +66,9 @@ export const CustomSpinners = () =>
 export const LoadingMessage = () =>
   <Loading />
 
+export const CustomLoadingMessage = () =>
+  <Loading overlayColor="black" color="green" icon="cat" message="Cat in the Washing Machine"/>
+
 
 export const SavingMessage = () =>
   <Saving />
