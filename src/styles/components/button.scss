@@ -38,10 +38,10 @@ $button-invalid-fore:   $invalid-fore !default;
   background-color: wash-color($button-color);
   border:           $button-border-width solid darken($button-color, 5%);
   &.solid {
-    //background-color: $button-back;
     background-color: darkish-color($button-color);
     border-color:     transparent;
-    color:            rgba($white,0.85);
+    color:            rgba($white,0.95);
+    text-shadow:      1px 1px 1px darkish-color($button-color);
   }
   &.compact {
     line-height: 100%;
@@ -128,11 +128,13 @@ $button-invalid-fore:   $invalid-fore !default;
   .solid.button.#{"" + $name} {
     background-color: darkish-color($col);
     background-color: $col;
+    border-color: transparent;
     //background-color: $col;
-    color: rgba($white,0.85);
+    color: rgba($white,0.95);
+    text-shadow: 1px 1px 1px darkish-color($col);
     &:hover, &:focus, &.focus {
       background-color: darkish-color($col);
-      color: rgba($white,0.90);
+      color: $white;
       border-color: darken($col, 5%);
     }
     &:focus, &.focus {
