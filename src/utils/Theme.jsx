@@ -44,10 +44,12 @@ export const Themer = (options) => {
       {context => <Component {...context} {...props} context={context}/>}
     </Context.Consumer>
 
-  const Component = (Implementation, spec) => props =>
-    <Context.Consumer>
-      {context => <Implementation {...contextSpecProps(context, spec, props) }/>}
-    </Context.Consumer>
+  const Component = (Implementation, spec) => React.forwardRef(
+    (props, ref) =>
+      <Context.Consumer>
+        {context => <Implementation {...contextSpecProps(context, spec, props) } ref={ref}/>}
+      </Context.Consumer>
+  );
 
   const Map = (Component, map) => props =>
     <Context.Consumer>

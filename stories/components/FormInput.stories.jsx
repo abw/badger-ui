@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Field } from '../../src/components/Form'
+import { Button } from '../../src/components/Button'
 
 export default {
   title: 'Components/Form/Inputs',
@@ -74,6 +75,7 @@ export const SelectInput = () =>
   </div>
 
 export const SearchInput = () => {
+  const [searchField, setSearchField] = React.useState();
   const rows = [
     { id: 100, forename: 'Alan',    surname: 'Aardvark' },
     { id: 101, forename: 'Brian',   surname: 'Badger' },
@@ -105,9 +107,29 @@ export const SearchInput = () => {
       The <code className="code">search</code> input type displays an autocomplete search
       using the <code className="code">Search</code> component.
     </p>
+    <p>
+      If you need to programmatically set the search value then use
+      the <code className="code">onLoad</code> prop to store a reference
+      to the input field.  That will contain an <code className="code">inputRef</code> which
+      is a reference to the <code className="code">Search</code> component.  Call
+      the <code className="code">select()</code> method on that.
+    </p>
     <Form>
       <Field
         name="animal" input="search" minLength={1} {...field}
+        onLoad={setSearchField}
+      />
+      <Button
+        color="blue" text="Set to Alan Aardvark"
+        onClick={() => searchField.inputRef.select(rows[0])}
+      />
+      <Button
+        color="blue" text="Set to Brian Badger"
+        onClick={() => searchField.inputRef.select(rows[1])}
+      />
+      <Button
+        color="blue" text="Set to Colin Camel"
+        onClick={() => searchField.inputRef.select(rows[2])}
       />
     </Form>
   </div>
