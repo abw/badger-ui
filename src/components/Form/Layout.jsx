@@ -2,7 +2,7 @@ import React from 'react'
 import Context from './Context'
 import Header from './Header'
 import Footer from './Footer'
-import { Loader } from '../Spinner'
+import Saving from './Saving'
 
 export const Layout = ({ form, children }) =>
   <form
@@ -21,7 +21,7 @@ export const Layout = ({ form, children }) =>
       <Footer/>
     </div>
     { (form.submitting && ! form.noSaver)
-      ? <Loader color="orange" bgColor="white" className="normal" message={form.savingMessage||'Saving...'}/>
+      ? <Saving/>
       : null
     }
   </form>

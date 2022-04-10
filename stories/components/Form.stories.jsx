@@ -209,6 +209,56 @@ export const SubmitButton = () => {
   </>
 }
 
+export const SavingSpinner = () => {
+  const onSubmit = submit => sleep(5000).then(() => {
+    // fake a valid server response
+    return Promise.resolve({
+      status: 200,
+      data: { message: 'Hello' }
+    });
+  })
+  return <>
+    <p className="mar-t-none">
+      This example demonstrates the "Saving..." spinner. Submit the form to see it.
+    </p>
+    <Form onSubmit={onSubmit}>
+      <Field name="name" label="Name"/>
+      <Field name="dob" label="Date of Birth"/>
+      <Field name="animal" label="Favourite Animal"/>
+      <Submit color="green" solid className="mar-t-2"/>
+    </Form>
+  </>
+}
+
+export const CustomSavingSpinner = () => {
+  const onSubmit = submit => sleep(5000).then(() => {
+    // fake a valid server response
+    return Promise.resolve({
+      status: 200,
+      data: { message: 'Hello' }
+    });
+  })
+  return <>
+    <p className="mar-t-none">
+      There are various form properties that can be used to change the "Saving..." spinner.
+      Submit the form to see it in action.  Also be aware that you can use the theming to
+      set the form saving spinner on a site-wide basis.
+    </p>
+    <Form
+      onSubmit={onSubmit}
+      savingIcon="radiation" savingBgColor="yellow"
+      savingColor="black" savingOverlayColor="black"
+      savingMessage="Sending data to server..."
+    >
+      <Field name="name" label="Name"/>
+      <Field name="dob" label="Date of Birth"/>
+      <Field name="animal" label="Favourite Animal"/>
+      <Submit color="green" solid className="mar-t-2"/>
+    </Form>
+  </>
+}
+
+
 export const FormErrors = () =>
   <>
     <p className="mar-t-none">
