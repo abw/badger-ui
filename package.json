@@ -20,7 +20,8 @@
     "lint:fix": "eslint --fix 'src/**/*'",
     "icons": "node icons/build.js --verbose",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "publish": "yarn build && npm publish"
   },
   "devDependencies": {
     "@abw/react-context-generator": "^1.1.0",
