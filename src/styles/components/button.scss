@@ -9,6 +9,7 @@ $button-pad-h:          $unit-pad-h !default;
 $button-padding:        $button-pad-v $button-pad-h !default;
 $button-margin:         0 $unit-margin $unit-margin 0 !default;
 $button-radius:         $unit-radius !default;
+$button-text-shadow:    0.2;
 $button-focus:          0 0 0 2px rgba($white, 0.9), 0 0 0 4px rgba($black, 0.25) !default;
 $button-border-width:   1px;
 $button-invalid-back:   $invalid-back !default;
@@ -41,7 +42,10 @@ $button-invalid-fore:   $invalid-fore !default;
     background-color: darkish-color($button-color);
     border-color:     transparent;
     color:            rgba($white,0.95);
-    text-shadow:      1px 1px 1px darkish-color($button-color);
+    text-shadow: 1px 1px 1px rgba(black, $button-text-shadow);
+    .icon {
+      filter: drop-shadow(1px 1px 1px rgba(black, $button-text-shadow));
+    }
   }
   &.compact {
     line-height: 100%;
@@ -129,9 +133,7 @@ $button-invalid-fore:   $invalid-fore !default;
     background-color: darkish-color($col);
     background-color: $col;
     border-color: transparent;
-    //background-color: $col;
     color: rgba($white,0.95);
-    text-shadow: 1px 1px 1px darkish-color($col);
     &:hover, &:focus, &.focus {
       background-color: darkish-color($col);
       color: $white;
