@@ -1,4 +1,5 @@
 import React from 'react'
+import DefaultTrigger from './Trigger'
 import { Button } from '../Button'
 import { classNames, Themed } from '../../utils';
 
@@ -6,9 +7,7 @@ const Dropdown = ({
   right, border,
   clicked, setClicked,
   children,
-  iconRight,
-  iconLeft,
-  text,
+  Trigger=DefaultTrigger,
   ...props
 }) => {
   const cname = classNames(
@@ -19,14 +18,7 @@ const Dropdown = ({
   );
   return <div className={cname}>
     <div className="trigger" onMouseEnter={setClicked ? () => setClicked(0) : null}>
-      <Button
-        color={props.color}
-        solid={props.solid}
-        className={props.buttonClass}
-        iconLeft={iconLeft}
-        iconRight={iconRight}
-        text={text}
-      />
+      <Trigger {...props}/>
     </div>
     <div className="content">
       {children}

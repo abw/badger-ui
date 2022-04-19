@@ -14,7 +14,7 @@ export const Overview = () => <>
 </>
 
 export const SimpleDropdown = () =>
-  <Dropdown text="Badgers" iconLeft="badger" color="brown" solid>
+  <Dropdown text="Badgers" iconLeft="badger" color="brown" solid className="mar-b-12">
     <div className="menu nowrap pad">
       <Icon name="badger" fixedWidth/>
       <Icon name="badger" fixedWidth/>
@@ -27,6 +27,7 @@ export const OutlineDropdownMenu = () =>
   <DropdownMenu
     size="small" text="Menu"
     iconLeft="bars" color="brown"
+    className="mar-b-12"
     items={[
       { text: 'User',        iconLeft: "user" },
       { text: 'Company',     iconLeft: "users" },
@@ -39,6 +40,7 @@ export const SolidDropdownMenu = () =>
   <DropdownMenu
     size="small" text="Menu" solid
     iconLeft="bars" color="blue"
+    className="mar-b-12"
     items={[
       { text: 'User',        iconLeft: "user" },
       { text: 'Company',     iconLeft: "users" },
@@ -49,7 +51,7 @@ export const SolidDropdownMenu = () =>
 
 export const RightAlignedMenu = () =>
   <DropdownMenu
-    size="small" text="Actions" className="float-right" right
+    size="small" text="Actions" className="float-right mar-b-12" right
     iconLeft="cog" color="orange" solid
     items={[
       { text: 'Activate',
@@ -67,3 +69,17 @@ export const RightAlignedMenu = () =>
       },
     ]}
   />
+
+export const CustomTrigger = () => {
+  const Trigger = ({props}) => <Icon name="bars"/>
+
+  return <DropdownMenu
+    size="small" className="mar-b-12"
+    Trigger={Trigger}
+    items={[
+      { text: 'Foo', onClick: () => window.alert("You clicked on 'Foo'") },
+      { text: 'Bar', onClick: () => window.alert("You clicked on 'Bar'") },
+      { text: 'baz', onClick: () => window.alert("You clicked on 'Baz'") },
+    ]}
+  />
+}
