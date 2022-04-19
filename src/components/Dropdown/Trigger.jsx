@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button } from '../Button'
-import { Themed } from '../../utils';
 
 const Trigger = ({
   color, solid, buttonClass,
@@ -16,4 +15,4 @@ const Trigger = ({
     text={text}
   />
 
-export default Themed(Trigger, 'DropdownTrigger');
+export default Trigger;
