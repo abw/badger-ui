@@ -10,8 +10,10 @@ $alert-dark:        darken($alert-color, 10%) !default;
 $alert-back:        wash-color($alert-color) !default;
 $alert-text:        darkish($alert-color, 20%) !default;
 $alert-head:        darker($alert-color, 20%) !default;
+$alert-head-text:   rgba(white, 0.9) !default;
 $alert-edge:        $alert-dark !default;
 $alert-hover:       $alert-color !default;
+$alert-stripe-back: $white !default;
 $alert-icon-size:           2em !default;
 $alert-icon-padding:        0.2em !default;
 $alert-icon-back-opacity:   0.1 !default;
@@ -33,7 +35,7 @@ $alert-icon-border-width:   3px !default;
     user-select:  none;
     margin:       0 -1.5em 1em -1.5em;
     font-weight:  700;
-    color:        rgba(white, 0.9);
+    color:        $alert-head-text;
     display:      flex;
     flex-wrap:    nowrap;
     align-items:  center;
@@ -41,8 +43,6 @@ $alert-icon-border-width:   3px !default;
     border-radius: $alert-head-radius $alert-head-radius 0 0;
     .text {
       flex: 2 0;
-    }
-    .dismiss, .reveal {
     }
     .message-control {
       font-size: 1.2em;
@@ -54,11 +54,15 @@ $alert-icon-border-width:   3px !default;
   }
   .body {
     display: flex;
+    .content {
+      flex-basis: 100%;
+    }
   }
   .body-icon {
     color: $alert-edge;
     margin-right: 0.5em;
     background: rgba($alert-color, $alert-icon-back-opacity);
+    border: $alert-icon-border-width solid rgba($alert-color, $alert-icon-border-opacity);
     font-size: $alert-icon-size;
     width: 1em;
     height: 1em;
@@ -67,7 +71,6 @@ $alert-icon-border-width:   3px !default;
     line-height: 2em;
     padding: $alert-icon-padding;
     vertical-align: middle;
-    border: $alert-icon-border-width solid rgba($alert-color, $alert-icon-back-opacity);
   }
   .title {
     color: $alert-head !important;
@@ -96,8 +99,8 @@ $alert-icon-border-width:   3px !default;
     }
     .body-icon {
       color: $info-edge;
-      background: rgba($info-color, 0.1);
-      border-color: rgba($info-color, 0.2);
+      background: rgba($info-color, $alert-icon-back-opacity);
+      border-color: rgba($info-color, $alert-icon-border-opacity);
     }
     .headline {
       background-color: $info-edge;
@@ -113,8 +116,8 @@ $alert-icon-border-width:   3px !default;
     border-color:       $success-edge;
     .body-icon {
       color:            $success-edge;
-      background:       rgba($success-color, 0.1);
-      border-color:     rgba($success-color, 0.2);
+      background:       rgba($success-color, $alert-icon-back-opacity);
+      border-color:     rgba($success-color, $alert-icon-border-opacity);
     }
     .title {
       color:            $success-head !important;
@@ -133,8 +136,8 @@ $alert-icon-border-width:   3px !default;
     border-color:       $warning-edge;
     .body-icon {
       color:            $warning-edge;
-      background:       rgba($warning-color, 0.1);
-      border-color:     rgba($warning-color, 0.2);
+      background:       rgba($warning-color, $alert-icon-back-opacity);
+      border-color:     rgba($warning-color, $alert-icon-border-opacity);
     }
     .title {
       color:            $warning-head !important;
@@ -153,8 +156,8 @@ $alert-icon-border-width:   3px !default;
     border-color:       $error-edge;
     .body-icon {
       color:            $error-edge;
-      background:       rgba($error-color, 0.1);
-      border-color:     rgba($error-color, 0.2);
+      background:       rgba($error-color, $alert-icon-back-opacity);
+      border-color:     rgba($error-color, $alert-icon-border-opacity);
     }
     .title {
       color:            $error-head !important;
@@ -174,7 +177,7 @@ $alert-icon-border-width:   3px !default;
     border-bottom: 0;
     border-top: 0;
     border-left-width: 5px;
-    background-color: $white;
+    background-color: $alert-stripe-back;
   }
   &.shadow {
     box-shadow:
