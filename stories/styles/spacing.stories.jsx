@@ -35,6 +35,8 @@ export const Padding = () =>
       padding units.  e.g. <code className="code">pad-t-2</code> for 2 units on the
       top, <code className="code">pad-t-3</code> for 3, and so on.  A number can also be
       used to indicate all-round padding, e.g. <code className="code">pad-4</code>.
+      Numbers range from 1 to 10 in units (1, 2, 3 ... 10), then from 12 to 20 by steps of 2
+      (12, 14, 16, 18, 20), then from 24 to 40 in steps of 4 (24, 28, 32 ... 40).
     </p>
     <p>
       The <code className="code">-none</code> suffix can be used to remove any existing
@@ -58,6 +60,14 @@ export const Padding = () =>
     <div className="bg-blue white pad-4 mar-b">
       There are four units (2em) of padding all around.
     </div>
+    <div className="bg-violet white pad-5 mar-b">
+      There are five units (2.5em) of padding all around.
+    </div>
+    { [6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40].map(
+      n => <div className={`bg-magenta white pad-l-${n} mar-b mar-r`}>
+        pad-l-{n}
+      </div>
+    )}
     <Button solid text="Default Padding" />
     <Button solid className="pad-h-none" text="No Horiz." />
     <Button solid className="pad-none" text="No Padding" />

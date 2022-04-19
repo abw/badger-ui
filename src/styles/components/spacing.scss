@@ -17,6 +17,14 @@
     @include spaced-out-padding($n);
     @include spaced-out-gutter($n);
 }
+@for $n from 1 through 5 {
+    @include spaced-out-margin(10 + $n * 2);
+    @include spaced-out-padding(10 + $n * 2);
+    @include spaced-out-gutter(10 + $n * 2);
+    @include spaced-out-margin(20 + $n * 4);
+    @include spaced-out-padding(20 + $n * 4);
+    @include spaced-out-gutter(20 + $n * 4);
+}
 
 @for $n from -1 through -5 {
     @include spaced-out-margin($n);
