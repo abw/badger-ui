@@ -1,11 +1,18 @@
 import React from 'react'
+import { Themed } from '../../utils';
 import { Error } from '../Alert'
 
-const Errors = ({errors}) => <Error
-  className="small"
-  icon="alert"
-  headline={`Form Error${errors.length === 1 ? '' : 's'}`}
-  title={`Please correct the following issue${errors.length === 1 ? '' : 's'}.`}
+const Errors = ({
+  errors,
+  className,
+  icon,
+  headlineOne, headlineMany,
+  titleOne, titleMany
+}) => <Error
+  className={className}
+  icon={icon}
+  headline={errors.length === 1 ? headlineOne : headlineMany}
+  title={errors.length === 1 ? titleOne : titleMany}
 >
   <table className="validation-errors">
     <tbody>
@@ -20,4 +27,13 @@ const Errors = ({errors}) => <Error
   </table>
 </Error>
 
-export default Errors
+Errors.defaultProps = {
+  className:    'small',
+  icon:         'alert',
+  headlineOne:  'Form Error',
+  headlineMany: 'Form Errors',
+  titleOne:     'Please correct the following issue',
+  titleMany:    'Please correct the following issues',
+};
+
+export default Themed(Errors, 'FormErrors');

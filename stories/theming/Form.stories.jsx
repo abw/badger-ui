@@ -40,3 +40,37 @@ export const ThemedSavingSpinner = () => {
     </Theme.Provider>
   </>
 }
+
+export const ThemedValidationErrors = () => {
+  const MyTheme = {
+    FormErrors: {
+      icon:         'radiation',
+      className:    'small',
+      headlineOne:  'One Error',
+      headlineMany: 'Many Errors',
+      titleOne:     'Please correct this error.',
+      titleMany:    'Please correct all these errors.'
+    },
+  };
+
+  return <>
+    <p className="mar-t-none">
+      The <code className="code">FormErrors</code> can be themed.
+    </p>
+    <p>
+      Try submitting the form without entering values for either of the required fields.
+    </p>
+    <div className="shade pad-6">
+      <Theme.Provider {...MyTheme}>
+        <Form
+          title="Login" icon="user" className="rounded border pad-v-2 pad-h-4 shadow-2 bg-white"
+        >
+          <Field name="email" label="Email" required />
+          <Field name="password" label="Password" required
+            requiredMessage="You must enter your password, you muppet!"/>
+          <Submit color="green" solid className="mar-t-2"/>
+        </Form>
+      </Theme.Provider>
+    </div>
+  </>
+}
