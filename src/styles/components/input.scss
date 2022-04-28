@@ -41,10 +41,7 @@ input[type="url"] {
   }
 }
 input[type="date"] {
-//  line-height: 140%;
   &::-webkit-inner-spin-button { display: none; }
-//  padding-inline-start: 0;
-  //padding: 0.25em 0.5em;
 }
 ::-webkit-datetime-edit-fields-wrapper,
 ::-webkit-datetime-edit-text,
@@ -64,15 +61,14 @@ input[type="checkbox"] {
 textarea {
   margin: 0em;
   padding: 0.5em 0.5em;
-  background: #fff;
+  background: $field-input-back;
+  color: $field-input-fore;
   border: 1px solid $field-input-edge;
   outline: none;
-  color: $field-input-fore;
   border-radius: 0.3rem;
   font-size: 1em;
   line-height: 120%;
   resize: vertical;
-//  transition: color 0.3s ease, border-color 0.3s ease;
   -webkit-appearance: none;
   &:not([rows]) {
     height: 12em;
