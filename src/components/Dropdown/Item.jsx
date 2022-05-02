@@ -7,7 +7,7 @@ export const Item = (props) => props.disabled
       <Content {...props}/>
     </div>
   : props.to ?
-    <Link to={props.to||'/'} className="item" onClick={() => props.setClicked(1)}>
+    <Link to={props.to||'/'} label={props.label||props.text} className="item" onClick={() => props.setClicked(1)}>
       <Content {...props}/>
     </Link>
   : <span

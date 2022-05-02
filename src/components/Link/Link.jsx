@@ -9,6 +9,7 @@ export const LinkItem = (props, ref) =>
     onClick={props.onClick}
     end={props.exact && 'end'}
     className={({ isActive }) => classNames(props, isActive ? 'active' : null)}
+    aria-label={props.label}
     ref={ref}
   >
     {props.icon &&

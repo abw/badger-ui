@@ -20,6 +20,11 @@ export const DefaultExample = () =>
     <Link to="nowhere" text="Example Link" />
   </Router>
 
+export const LinkWithLabel = () =>
+  <Router>
+    <Link to="nowhere" text="Example Link with Label" label="badger"/>
+  </Router>
+
 export const LinkWithIcons = () =>
   <Router>
     <Link to="nowhere" text="Example Link" iconLeft="badger2" iconRight="arrow-right" />
