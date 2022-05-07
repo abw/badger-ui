@@ -100,3 +100,10 @@ export const ButtonSets = () =>
       { iconRight: "arrow-right", color: "blue", text: "Right" }
     ]} />
   </>
+
+export const DisabledButton = () =>
+  <>
+    <Button
+      iconLeft="arrow-left" color="red" text="Left" disabled={true}
+    />
+  </>

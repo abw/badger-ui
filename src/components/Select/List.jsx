@@ -41,6 +41,7 @@ export const List = ({
 
   return <div
     className={cname} tabIndex="0"
+    aria-disabled={disabled}
     onFocus={onFocus} onBlur={blur}
     onClick={disabled ? null : toggleVisibility}
     onKeyDown={

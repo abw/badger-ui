@@ -27,12 +27,16 @@ const Checkbox = ({
   const icon  = value ? checkedIcon : uncheckedIcon;
   const cname = classNames(props, 'checkbox input', value && 'checked', disabled && 'disabled');
 
-  return <div
-    className={cname} tabIndex={disabled ? -1 : 0}
-    onClick={click} onKeyPress={press} onFocus={onFocus} onBlur={onBlur}>
-    <Icon name={icon} className={`mar-r ${iconClass}`} fixedWidth />
-    <span className="text">{text}</span>
-  </div>
+  return (
+    <div
+      className={cname} tabIndex={disabled ? -1 : 0}
+      onClick={click} onKeyPress={press} onFocus={onFocus} onBlur={onBlur}
+      aria-disabled={disabled}
+    >
+      <Icon name={icon} className={`mar-r ${iconClass}`} fixedWidth />
+      <span className="text">{text}</span>
+    </div>
+  )
 }
 
 Checkbox.propTypes = {

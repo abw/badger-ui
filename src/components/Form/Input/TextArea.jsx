@@ -7,6 +7,7 @@ export const TextArea = ({field}) =>
     name={field.name}
     value={field.value||''}
     disabled={field.disabled}
+    aria-disabled={field.disabled}
     placeholder={field.placeholder}
     onChange={field.onChange}
     onFocus={field.onFocus}

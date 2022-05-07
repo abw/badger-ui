@@ -8,6 +8,7 @@ export const Text = ({field}) =>
     name={field.name}
     value={isDefined(field.value) ? field.value : ''}
     disabled={field.disabled}
+    aria-disabled={field.disabled}
     tabIndex={field.disabled ? '-1' : ''}
     placeholder={field.placeholder}
     autoComplete={field.autocomplete}

@@ -17,7 +17,7 @@ export const Button = ({
   return <button
     className={`${classNames(props, 'button', solid && 'solid')} ${content ? '' : 'empty'}`}
     aria-label={label} onClick={onClick} tabIndex={tabIndex}
-    type={type} disabled={disabled}
+    type={type} disabled={disabled} aria-disabled={disabled}
   >
     {icon && <Icon icon={icon} fixedWidth />}
     {iconLeft && <Icon icon={iconLeft} className="on-left" fixedWidth />}
