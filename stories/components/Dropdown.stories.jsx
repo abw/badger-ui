@@ -33,6 +33,8 @@ export const OutlineDropdownMenu = () =>
       { text: 'Company',     iconLeft: "users" },
       { separator: true },
       { text: 'Radiation',   iconLeft: "radiation" },
+      { separator: true },
+      { text: 'Disabled',    iconLeft: "times", disabled: true },
     ]}
   />
 
@@ -42,10 +44,10 @@ export const SolidDropdownMenu = () =>
     iconLeft="bars" color="blue"
     className="mar-b-12"
     items={[
-      { text: 'User',        iconLeft: "user" },
-      { text: 'Company',     iconLeft: "users" },
+      { text: 'User',        iconLeft: "user", href: "/user" },
+      { text: 'Company',     iconLeft: "users", href: "/company" },
       { separator: true },
-      { text: 'Radiation',   iconLeft: "radiation" },
+      { text: 'Radiation',   iconLeft: "radiation", href: "https://wardray-premise.com" },
     ]}
   />
 
