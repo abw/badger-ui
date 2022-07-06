@@ -152,9 +152,15 @@ export const ResetButton = () =>
       Try changing the values in the form below then click on the reset
       button to reset them.
     </p>
-    <Form values={{ name: 'Bobby Badger', occupation: 'Badgering' }}>
-      <Field name="name" label="Name"/>
-      <Field name="occupation" label="Occupation"/>
+    <Form
+      values={{ name: 'Bobby Badger', occupation: 'Badgering' }}
+      fields={{
+        name:       { label: 'Name' },
+        occupation: { label: 'Occupation' }
+      }}
+    >
+      <Field name="name"/>
+      <Field name="occupation"/>
       <Reset color="brown" solid className="mar-t-2"/>
     </Form>
   </>
