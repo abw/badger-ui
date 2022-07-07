@@ -65,7 +65,7 @@ const Summary = ({
       : <Button
           className="paginate prev disabled"
           aria-label="Goto next page"
-          icon={prevIcon}
+          icon={nextIcon}
           color={disabledColor}
           disabled={true}
           solid={solidButtons}
