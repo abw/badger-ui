@@ -30,7 +30,7 @@ class Context extends React.Component {
     };
 
     // add a debugging function if debug property is set
-    addDebug(this, props.debug);
+    addDebug(this, props.debug, props.debugLabel, props.debugColor);
 
     // pull any saved options out of storage
     if (this.props.storageKey) {

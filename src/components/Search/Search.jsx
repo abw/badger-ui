@@ -35,7 +35,7 @@ class Search extends React.Component {
         };
 
         // add this.debug()
-        addDebug(this, this.props.debug, this.props.debugLabel, this.props.debugColor);
+        addDebug(this, props.debug, props.debugLabel, props.debugColor);
 
         // bind handlers to this so they can be called as functions
         this.focus    = this.focus.bind(this);
@@ -50,7 +50,6 @@ class Search extends React.Component {
         this.search = props.debounceTime
           ? debounce(this.search.bind(this), props.debounceTime)
           : this.search.bind(this);
-
 
         this.debug('initial value:%o  input:%s', value, input);
     }
