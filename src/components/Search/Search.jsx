@@ -15,7 +15,7 @@ class Search extends React.Component {
         minLength:     2,
         debounceTime:  500,
         placeholder:   'Search',
-        debug:         true,
+        debug:         false,
         debugLabel:    'Search',
         debugColor:    'MediumVioletRed',
         loadingIcon:   'cog',
