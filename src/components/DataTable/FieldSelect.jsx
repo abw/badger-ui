@@ -2,6 +2,7 @@ import React from 'react'
 import { capitalize } from '../../utils'
 import { Checkbox } from '../Checkbox'
 import { Dropdown } from '../Dropdown'
+import Context from './Context'
 
 export const FieldSelect = ({ columns, visibleColumns, setVisibleColumn }) =>
   <Dropdown text="Fields" right className="mar-r">
@@ -17,4 +18,6 @@ export const FieldSelect = ({ columns, visibleColumns, setVisibleColumn }) =>
     </div>
   </Dropdown>
 
-export default FieldSelect
+export default Context.Consumer(
+  FieldSelect
+)

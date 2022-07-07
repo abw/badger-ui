@@ -1,6 +1,7 @@
 import React from 'react'
 import { Themed } from '../../utils'
 import { Button } from '../Button'
+import Context from './Context'
 
 const Pagination = ({
   page, setPageNo,
@@ -83,4 +84,6 @@ const Pagination = ({
     </div>
   </div>
 
-export default Themed(Pagination, 'DataTable');
+export default Context.Consumer(
+  Themed(Pagination, 'DataTable')
+);

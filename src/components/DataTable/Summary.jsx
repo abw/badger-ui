@@ -4,6 +4,7 @@ import { Select } from '../Select'
 import { commas, Themed } from '../../utils'
 import FieldSelect from './FieldSelect'
 import PageSize from './PageSize'
+import Context from './Context'
 
 const Summary = ({
   page,
@@ -48,10 +49,10 @@ const Summary = ({
       }
     </div>
     <div className="field-select">
-      <FieldSelect {...props}/>
+      <FieldSelect/>
     </div>
     <div className="page-size">
-      <PageSize page={page} setPageSize={setPageSize}/>
+      <PageSize/>
     </div>
     { page.more
       ? <Button
@@ -74,4 +75,6 @@ const Summary = ({
   </div>
 }
 
-export default Themed(Summary, 'DataTable');
+export default Context.Consumer(
+  Themed(Summary, 'DataTable')
+)

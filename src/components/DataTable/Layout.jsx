@@ -1,9 +1,10 @@
 import React from 'react'
 import Headers from './Headers'
 import Rows from './Rows'
-import { propClasses } from '../../utils'
 import Pagination from './Pagination'
 import Summary from './Summary'
+import Context from './Context'
+import { propClasses } from '../../utils'
 
 export const Layout = (props) => {
   const classes = propClasses(
@@ -11,14 +12,13 @@ export const Layout = (props) => {
     'wide celled table', props.className
   );
   return <div className="datatable">
-    <Summary {...props}/>
+    <Summary/>
     <table className={classes}>
-      <Headers {...props}/>
-      <Rows {...props}/>
+      <Headers/>
+      <Rows/>
     </table>
-    <Pagination {...props}/>
+    <Pagination/>
   </div>
 }
 
-export default Layout
-
+export default Context.Consumer(Layout)

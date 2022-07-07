@@ -1,4 +1,5 @@
 import React from 'react'
+import Context from './Context'
 import Row from './Row'
 
 export const Rows = ({page, ...props}) =>
@@ -8,4 +9,4 @@ export const Rows = ({page, ...props}) =>
     )}
   </tbody>
 
-export default Rows;
+export default Context.Consumer(Rows)

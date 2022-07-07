@@ -308,7 +308,6 @@ export const RowSelection = () => {
     },
     animal: {
       label: 'Animal',
-      visible: true,
     },
   };
   return <>
@@ -320,6 +319,91 @@ export const RowSelection = () => {
       rows={rows}
       columns={columns}
       rowClick={row => window.alert('You clicked on ' + row.name + ' the ' + row.animal)}
+    />
+  </>
+}
+
+export const Pagination = () => {
+  const rows = [
+    { name: 'Alice', animal: 'Aardvark' },
+    { name: 'Bobby', animal: 'Badger' },
+    { name: 'Carmen', animal: 'Camel'  },
+    { name: 'Derek', animal: 'Dog'  },
+    { name: 'Edward', animal: 'Elephant'  },
+    { name: 'Frank', animal: 'Ferret' },
+    { name: 'Gerry', animal: 'Gerbil' },
+    { name: 'Harry', animal: 'Horse' },
+    { name: 'Ian', animal: 'Iguana' },
+    { name: 'Jack', animal: 'Jaguar' },
+    { name: 'Kelly', animal: 'Kangaroo' },
+    { name: 'Leon', animal: 'Llama' },
+    { name: 'Martin', animal: 'Moose' },
+    { name: 'Nigel', animal: 'Narwhal' },
+    { name: 'Oliver', animal: 'Octopus' },
+    { name: 'Peter', animal: 'Preying Mants' },
+    { name: 'Quentin', animal: 'Quail' },
+    { name: 'Roger', animal: 'Rhino' },
+    { name: 'Sally', animal: 'Stringray' },
+    { name: 'Terry', animal: 'Turtle' },
+    { name: 'Ursula', animal: 'Uakari' },
+    { name: 'Victor', animal: 'Velociraptor' },
+    { name: 'Wendy', animal: 'Whale' },
+    { name: 'Xavier', animal: 'Xerus' },
+    { name: 'Yasmin', animal: 'Yak' },
+    { name: 'Zelda', animal: 'Zebra' },
+  ];
+  const columns = {
+    name: {
+      label: 'Name',
+    },
+    animal: {
+      label: 'Animal',
+    },
+  };
+  return <>
+    <p className="mar-t-none">
+      This example shows the paging in action.
+    </p>
+    <DataTable
+      rows={rows}
+      columns={columns}
+    />
+  </>
+}
+
+export const PersistantOptions = () => {
+  const rows = [
+    { name: 'Bobby', animal: 'Badger', id: 21, role: 'admin' },
+    { name: 'Simon', animal: 'Stoat',  id: 22, role: 'user'  },
+    { name: 'Frank', animal: 'Ferret', id: 23, role: 'user'  },
+  ];
+  const columns = {
+    id: {
+      label: 'ID',
+      hidden: true,
+    },
+    name: {
+      label: 'Name',
+    },
+    animal: {
+      label: 'Animal',
+    },
+    role: {
+      label: 'Role',
+      hidden: true,
+    },
+  };
+  return <>
+    <p className="mar-t-none">
+      Defined a <code className="code">storageKey</code> identifier if you want to automatically
+      persist filtering, sorting and pagination options via local storage.  Try changing some options
+      (e.g. selecting/deselecting fields, setting sort order, adding a filter, changing page size, etc)
+      and then reload the page.  The data table should retain those options.
+    </p>
+    <DataTable
+      rows={rows}
+      columns={columns}
+      storageKey="datatable-test-01"
     />
   </>
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Checkbox } from '../Checkbox'
 import { Dropdown } from '../Dropdown'
+import Context from './Context'
 
 export const PageSize = ({ page, setPageSize }) =>
   <Dropdown text={`${page.pageSize} per page`} right className="mar-r">
@@ -17,4 +18,4 @@ export const PageSize = ({ page, setPageSize }) =>
     </div>
   </Dropdown>
 
-export default PageSize
+export default Context.Consumer(PageSize)

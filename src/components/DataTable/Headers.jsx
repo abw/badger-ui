@@ -1,4 +1,5 @@
 import React from 'react'
+import Context from './Context'
 import { Filter } from './Filters'
 import Header from './Header'
 
@@ -34,4 +35,4 @@ export const Headers = ({
     }
   </thead>
 
-export default Headers
+export default Context.Consumer(Headers)
