@@ -66,3 +66,30 @@ export const ManagedSate = () => {
     />
   </div>
 }
+
+export const SelectSizes = () => {
+  return <div className="pad-b-10">
+    <p>
+      Add the <code className="code">size</code> property to
+      either component to set the size.
+    </p>
+    <h5 className="mar-t-2 mar-b-none">Small</h5>
+    <SelectState
+      size="small"
+      options={[
+        { value: "f", text: "Ferrets" },
+        { value: "b", text: "Badgers" },
+        { value: "s", text: "Stoats" },
+      ]}
+    />
+    <h5 className="mar-t-2 mar-b-none">Large</h5>
+    <SelectState
+      size="large"
+      options={[
+        { value: "f", text: "Ferrets" },
+        { value: "b", text: "Badgers" },
+        { value: "s", text: "Stoats" },
+      ]}
+    />
+  </div>
+}
