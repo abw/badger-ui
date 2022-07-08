@@ -2,8 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { classNames } from '../../utils'
 import { Icon } from '../Icon'
+import { Themed } from '../../utils';
 
-export const LinkItem = (props, ref) =>
+const Link = (props, ref) =>
   <NavLink
     to={props.to}
     onClick={props.onClick}
@@ -27,6 +28,7 @@ export const LinkItem = (props, ref) =>
     }
   </NavLink>
 
-export const Link = React.forwardRef(LinkItem)
-
-export default Link
+export default Themed(
+  React.forwardRef(Link),
+  'Link'
+);
