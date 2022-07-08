@@ -51,13 +51,39 @@ export const BasicForm = () =>
     </Form>
   </>
 
+export const CompactForm = () =>
+  <>
+    <p className="mar-t-none">
+      Add the <code className="code">compact</code> class to the form to
+      squish everything a bit closer together.
+    </p>
+    <div className="row stack-tablet">
+      <div className="split-2 gut-r">
+        <h3>Regular</h3>
+        <Form>
+          <Field name="email" label="Email Address" iconLeft="at"/>
+          <Field name="password" label="Password" iconLeft="key"/>
+          <Field name="non-badger" input="checkbox" iconLeft="badger" label="Are you human?" text="I am not a badger"/>
+        </Form>
+      </div>
+      <div className="split-2 gut-l">
+        <h3>Compact</h3>
+        <Form className="compact">
+          <Field name="email" label="Email Address" iconLeft="at"/>
+          <Field name="password" label="Password" iconLeft="key"/>
+          <Field name="non-badger" input="checkbox" iconLeft="badger" label="Are you human?" text="I am not a badger"/>
+        </Form>
+      </div>
+    </div>
+  </>
+
 export const InlineFieldDefinitions = () =>
   <>
     <p className="mar-t-none">
       In a simple form the <code className="code">Field</code> parameters can
       be written inline.
     </p>
-    <Form>
+    <Form className="mobile container">
       <Field name="email" label="Email Address" iconLeft="at"/>
       <Field name="password" label="Password" iconLeft="key"/>
     </Form>
@@ -87,7 +113,7 @@ export const ExternalFieldDefinitions = () => {
       This can also be useful if you want to share field definitions between multiple
       forms.  For example, the form to add some data might have slightly different fields )
     </p>
-    <Form fields={fields}>
+    <Form fields={fields} className="mobile container">
       <Field name="email"/>
       <Field name="password"/>
     </Form>
@@ -118,16 +144,18 @@ export const SharingFieldDefinitions = () => {
       those that are specifically named by <code className="code">Field</code> objects
       will be considered part of the form.
     </p>
-    <h3>Login Form</h3>
-    <Form fields={fields} className="mar-b-4">
-      <Field name="email"/>
-      <Field name="password"/>
-    </Form>
-    <h3>Register Form</h3>
-    <Form fields={fields}>
-      <Field name="name"/>
-      <Field name="email"/>
-    </Form>
+    <div className="mobile container">
+      <h3>Login Form</h3>
+      <Form fields={fields} className="mar-b-4">
+        <Field name="email"/>
+        <Field name="password"/>
+      </Form>
+      <h3>Register Form</h3>
+      <Form fields={fields}>
+        <Field name="name"/>
+        <Field name="email"/>
+      </Form>
+    </div>
   </>
 }
 

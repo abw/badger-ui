@@ -63,6 +63,10 @@
   }
 }
 
+form .compact .field {
+  margin-bottom: $field-compact-mar-b;
+}
+
 .field .input,
 .field .input-icon,
 .field .prefix,
