@@ -18,7 +18,7 @@ const Confirm = ({
   cancelClass = '',
   confirmClass = '',
   promptClass = '',
-  solid = false,
+  solid=false,
   or=false,
   onClick = () => window.alert('No confirm action defined'),
   ...props
@@ -66,6 +66,7 @@ Confirm.defaultProps = {
   cancelText:   'Cancel',
   cancelColor:  'grey',
   prompt:       'Are you sure?',
+  solid:        false,
 }
 
 export default Themed(Confirm, 'Confirm')

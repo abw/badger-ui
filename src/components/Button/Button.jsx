@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from '../../utils/classNames'
 import Icon from '../Icon'
-import { allColors } from '../../config/colors'
 import sizes from '../../config/sizes'
+import { Themed } from '../../utils';
+import { allColors } from '../../config/colors'
 
 
-export const Button = ({
+const Button = ({
   type = 'button',
   text, children, disabled,
   solid, label, icon, iconLeft, iconRight,
@@ -63,4 +64,8 @@ Button.propTypes = {
   disabled: PropTypes.bool,
 };
 
-export default Button
+Button.defaultProps = {
+  solid: false,
+};
+
+export default Themed(Button, 'Button')
