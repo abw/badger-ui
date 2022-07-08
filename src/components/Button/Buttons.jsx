@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from '../../utils/classNames'
 import Button from './Button'
+import { Themed } from '../../utils';
 
 export const Buttons = (props) =>
   <div className={`${classNames(props, 'buttons')}`}>
@@ -9,4 +10,8 @@ export const Buttons = (props) =>
     )}
   </div>
 
-export default Buttons
+Buttons.defaultProps = {
+  solid: false,
+};
+
+export default Themed(Buttons, 'Buttons')
