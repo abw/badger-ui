@@ -1,6 +1,7 @@
 import React from 'react'
 import Context from '../Context'
 import FormButton from './FormButton'
+import { Themed } from '../../../utils';
 
 const ResetControl = ({ text = 'Reset', iconLeft = 'undo', form, ...props }) =>
   <FormButton {...props}
@@ -11,4 +12,6 @@ const ResetControl = ({ text = 'Reset', iconLeft = 'undo', form, ...props }) =>
     submitting={form.submitting}
   />
 
-export default Context.Consumer(ResetControl)
+export default Context.Consumer(
+  Themed(ResetControl, 'FormReset')
+)

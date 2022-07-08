@@ -1,6 +1,7 @@
 import React from 'react'
 import Context from '../Context'
 import FormButton from './FormButton'
+import { Themed } from '../../../utils';
 
 const SubmitControl = ({ text = 'Submit', iconRight = 'check', form, ...props }) =>
   <FormButton {...props}
@@ -11,5 +12,7 @@ const SubmitControl = ({ text = 'Submit', iconRight = 'check', form, ...props })
     submitting={form.submitting}
   />
 
-export default Context.Consumer(SubmitControl)
+export default Context.Consumer(
+  Themed(SubmitControl, 'FormSubmit')
+)
 

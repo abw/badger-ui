@@ -3,7 +3,7 @@ import classNames from '../../utils/classNames'
 import Button from './Button'
 import { Themed } from '../../utils';
 
-export const Buttons = (props) =>
+const Buttons = (props) =>
   <div className={`${classNames(props, 'buttons')}`}>
     {props.buttons.map(
       (button, n) => <Button key={n} solid={props.solid} {...button} last={n === props.buttons.length - 1} />
