@@ -1,0 +1,11 @@
+$datatable-color:             $blue !default;
+$datatable-sort-color:        $brown !default;
+$datatable-filter-color:      $indigo !default;
+$datatable-header-back:       mix($datatable-color, $white, 15%) !default;
+$datatable-header-fore:       mix($datatable-color, $black, 80%) !default;
+$datatable-border-color:      rgba(mix($datatable-color, $black, 80%), 0.2) !default;
+$datatable-summary-bg-color:  mix($datatable-color, $white, 15%) !default;
+$datatable-select-color:      $select-color !default;
+$datatable-select-fore:       $select-hover-fore !default;
+$datatable-select-back:       $select-hover-back !default;
+$datatable-select-dark:       $select-hover-dark !default;

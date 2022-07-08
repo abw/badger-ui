@@ -1,0 +1,10 @@
+// checkbox - same "unit" size as buttons
+$checkbox-back:         $white !default;
+$checkbox-size:         $unit-size !default;
+$checkbox-line:         $unit-line !default;
+$checkbox-edge:         $border-color !default;
+$checkbox-pad-v:        $unit-pad-v !default;
+$checkbox-pad-h:        $unit-pad-h !default;
+$checkbox-padding:      $checkbox-pad-v $checkbox-pad-h !default;
+$checkbox-margin:       0 $unit-margin $unit-margin 0 !default;
+$checkbox-radius:       $unit-radius !default;

@@ -6,7 +6,6 @@ import sizes from '../../config/sizes'
 import { Themed } from '../../utils';
 import { allColors } from '../../config/colors'
 
-
 const Button = ({
   type = 'button',
   text, children, disabled,

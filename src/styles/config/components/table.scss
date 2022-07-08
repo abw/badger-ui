@@ -1,0 +1,14 @@
+$table-radius:          $unit-radius !default;
+$table-radius-inner:    $unit-radius-inner !default;
+$table-shade:           $shade-color !default;
+$table-edge:            hsl($primary-hue, 30%, 80%) !default;
+$table-head-back:       hsl($primary-hue, 50%, 93%) !default;
+$table-head-fore:       hsl($primary-hue, 30%, 20%) !default;
+$table-spec-back:       hsl($primary-hue, 20%, 90%) !default;
+$table-spec-fore:       hsl($primary-hue, 40%, 70%) !default;
+$table-spec-border:     rgba($black, 0.5) !default;
+$table-key-back:        $table-head-back !default;
+$table-key-fore:        $table-head-fore !default;
+$table-detail-border:   hsl($primary-hue, 40%, 80%) !default;
+$table-detail-foot:     hsl($primary-hue, 60%, 70%) !default;
+$table-stripe-back:     hsl($primary-hue, 50%, 97%) !default;

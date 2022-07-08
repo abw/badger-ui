@@ -1,0 +1,6 @@
+$debug-color:     $brown !default;
+$debug-back:      pale-color($debug-color) !default;
+$debug-fore:      darkish-color($debug-color) !default;
+$debug-edge:      lighter-color($debug-color) !default;
+$debug-head-back: mix($debug-color, $white, 50%) !default;
+$debug-head-fore: darker-color($debug-color) !default;

@@ -1,0 +1,20 @@
+$alert-margin:              1em 0em !default;
+$alert-padding:             1em 1.5em !default;
+$alert-border:              2px !default;
+$alert-radius:              2px !default;
+$alert-head-radius:         $alert-radius - $alert-border - 1px !default;
+
+$alert-color:               $grey !default;
+$alert-dark:                darken($alert-color, 10%) !default;
+$alert-back:                wash-color($alert-color) !default;
+$alert-text:                darkish($alert-color, 20%) !default;
+$alert-head:                darker($alert-color, 20%) !default;
+$alert-head-text:           rgba(white, 0.9) !default;
+$alert-edge:                $alert-dark !default;
+$alert-hover:               $alert-color !default;
+$alert-stripe-back:         $white !default;
+$alert-icon-size:           2em !default;
+$alert-icon-padding:        0.2em !default;
+$alert-icon-back-opacity:   0.1 !default;
+$alert-icon-border-opacity: 0.2 !default;
+$alert-icon-border-width:   3px !default;

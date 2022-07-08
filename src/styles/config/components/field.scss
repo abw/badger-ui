@@ -49,7 +49,7 @@ $field-label-weight:    300 !default;
 // calculate the amount of space taken by a label, e.g. for aligning buttons
 // note that the margin must be multiplied by 0.75 to account for the smaller
 // font-size of the label
-$field-label-height: ($field-label-size * $field-label-line) + ($field-label-mar-b * 0.75) !default;
+$field-label-height:    ($field-label-size * $field-label-line) + ($field-label-mar-b * 0.75) !default;
 
 // field help
 $field-help-fore:       $grey !default;

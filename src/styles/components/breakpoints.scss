@@ -1,3 +1,4 @@
+/*-- components/breakpoints --*/
 // classes to limit width to a breakpoint, e.g. .tablet
 @each $name, $size in $breakpoints {
   .#{$name} {

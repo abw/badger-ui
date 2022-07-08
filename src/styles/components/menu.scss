@@ -1,7 +1,4 @@
-$menu-radius: $unit-radius !default;
-$menu-back:   $white !default;
-$menu-fore:   rgba($black, 0.7) !default;
-
+/*-- components/menu --*/
 .menu {
   border: 1px solid $border-color;
   border-radius: $menu-radius;

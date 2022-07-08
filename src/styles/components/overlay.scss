@@ -1,11 +1,8 @@
-$overlay-plaque-width: 100px !default;
-$overlay-plaque-height: 100px !default;
-
+/*-- components/overlay --*/
 .overlayable {
   position: relative;
   min-height: $overlay-plaque-height * 2;
 }
-
 .overlay {
   position: absolute;
   top: 0;
