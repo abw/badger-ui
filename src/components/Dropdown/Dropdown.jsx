@@ -7,6 +7,7 @@ const Dropdown = ({
   right, border,
   clicked, setClicked,
   children,
+  contentClass='',
   Trigger=DefaultTrigger,
   ...props
 }) => {
@@ -20,7 +21,7 @@ const Dropdown = ({
     <div className="trigger" onMouseEnter={setClicked ? () => setClicked(0) : null}>
       <Trigger {...props}/>
     </div>
-    <div className="content">
+    <div className={`content ${contentClass}`}>
       {children}
     </div>
   </div>
@@ -31,4 +32,3 @@ Dropdown.defaultProps = {
 };
 
 export default Themed(Dropdown, 'Dropdown');
-// export default Themed(Dropdown, 'Dropdown');
