@@ -11,7 +11,7 @@ export const Layout = ({ form, children }) =>
     encType={form.enctype}
     name={form.name}
     id={form.id}
-    className="form XXloader-buffer"
+    className="form"
   >
     <div className={form.className}>
       <Header/>

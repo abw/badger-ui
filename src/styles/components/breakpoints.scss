@@ -13,3 +13,22 @@
     content: "#{$size}";
   }
 }
+
+.lt-mobile,
+.lt-tablet,
+.lt-laptop,
+.lt-desktop,
+.lt-widescreen {
+  display: none;
+}
+
+@each $name, $size in $breakpoints {
+  @media only screen and (max-width: $size) {
+    .gt-#{$name} {
+      display: none !important;
+    }
+    .lt-#{$name} {
+      display: block !important;
+    }
+  }
+}

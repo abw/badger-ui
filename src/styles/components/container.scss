@@ -10,3 +10,22 @@
     }
   }
 }
+
+@media only screen and (max-width: calc($desktop + 2rem)) {
+  .container {
+    margin-left:  1rem !important;
+    margin-right: 1rem !important;
+    &.laptop, &.tablet, &.mobile {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+}
+@each $name, $size in $breakpoints {
+  @media only screen and (max-width: calc($size + 2rem)) {
+    .container.#{$name} {
+      margin-left:  1rem !important;
+      margin-right: 1rem !important;
+    }
+  }
+}
