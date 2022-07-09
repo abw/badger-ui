@@ -6,6 +6,52 @@ export default {
   title: 'Theming/Form'
 };
 
+export const ThemedForm = () => {
+  const MyTheme = {
+    Form: {
+      showRequired: true,
+      showOptional: true,
+      className:    'compact',
+    },
+    FormSubmit: {
+      solid: true,
+    },
+  };
+  return <>
+    <p className="mar-t-none">
+      The <code className="code">Form</code> can be themed to set default
+      values for various options.  In this example we set the <code className="code">showRequired</code> and{' '}
+      <code className="code">showOptional</code> flags on the themed form and
+      add the <code className="code">compact</code> class.  We also set
+      the <code className="code">solid</code> option for the <code className="code">FormSubmit</code> button.
+
+    </p>
+    <div className="row">
+      <div className="split-2 gut-r">
+        <h4>Default</h4>
+        <Form>
+          <Field name="email" label="Email" required />
+          <Field name="password" label="Password" required/>
+          <Field name="animal" label="Favourite Animal"/>
+          <Submit color="green" className="mar-t-2"/>
+        </Form>
+      </div>
+      <div className="split-2 gut-l">
+        <h4>Themed</h4>
+        <Theme.Provider {...MyTheme}>
+            <Form>
+            <Field name="email" label="Email" required />
+            <Field name="password" label="Password" required/>
+            <Field name="animal" label="Favourite Animal"/>
+            <Submit color="green" className="mar-t-2"/>
+          </Form>
+        </Theme.Provider>
+      </div>
+    </div>
+  </>
+}
+
+
 export const ThemedSavingSpinner = () => {
   const MyTheme = {
     FormSaving: {

@@ -1,8 +1,9 @@
 import React from 'react'
 import Context from './Context'
 import DefaultLayout from './Layout'
+import { Themed } from '../../utils';
 
-export const Form = ({
+const Form = ({
   Layout = DefaultLayout,
   ...props
 }) =>
@@ -12,4 +13,4 @@ export const Form = ({
     </Layout>
   </Context.Provider>
 
-export default Form
+export default Themed(Form, 'Form')
