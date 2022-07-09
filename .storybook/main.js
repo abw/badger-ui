@@ -14,6 +14,7 @@ module.exports = {
     "check": false,
     "reactDocgen": false
   },
+  "staticDirs": ['../public'],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,

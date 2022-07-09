@@ -19,7 +19,7 @@
     "lint": "eslint 'src/**/*'",
     "lint:fix": "eslint --fix 'src/**/*'",
     "icons": "node icons/build.js --verbose",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
