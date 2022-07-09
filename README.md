@@ -13,7 +13,7 @@ it in other projects.
 
 ## Storybook
 
-See the [https://abw.github.io/badger-ui/storybook-static/](Storybook) for
+See the [Storybook](https://abw.github.io/badger-ui/storybook-static/) for
 examples of the UI components.
 
 ## Using the `badger-ui` Library
