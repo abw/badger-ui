@@ -8,12 +8,22 @@ const modalRoot = hasDocument
   ? document.getElementById('root')
   : null;
 
-const ModalWrapper = ({ children, closeIcon, close }) => <div className="modal-overlay">
-  <div className="modal">
-    {children}
-    <Icon name={closeIcon} className="close" onClick={close}/>
+const ModalWrapper = ({
+  children,
+  closeIcon,
+  close,
+  showClose,
+  className,
+  overlayClass
+}) =>
+  <div className={`modal-overlay ${overlayClass}`}>
+    <div className={`modal ${className}`}>
+      {children}
+      { Boolean(showClose)
+        && <Icon name={closeIcon} className="close" onClick={close}/>
+      }
+    </div>
   </div>
-</div>
 
 export class Modal extends React.Component {
   constructor(props) {
@@ -42,6 +52,9 @@ export class Modal extends React.Component {
 
 Modal.defaultProps = {
   closeIcon: 'times',
+  showClose: true,
+  className: '',
+  overlayClass: ''
 }
 
 export default Themed(Modal, 'Modal');

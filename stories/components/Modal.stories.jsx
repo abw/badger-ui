@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../src/components/Button";
+import Icon from "../../src/components/Icon";
 import { Modal } from "../../src/components/Modal";
 
 export default {
@@ -28,6 +29,33 @@ export const BasicModal = () => {
           color="red" text="Hide Modal"
           onClick={() => showModal(false)}
         />
+      </Modal>
+    }
+  </div>
+}
+
+export const ModalError = () => {
+  const [modal, showModal] = React.useState(false);
+  return <div className="relative pad vh-20">
+    <Button
+      color="green" text="Show Modal Error"
+      onClick={() => showModal(true)}
+    />
+    {modal &&
+      <Modal showClose={false} className="error alert">
+        <div className="body">
+          <Icon name="alert" size="2x" className="body-icon"/>
+          <div className="content">
+            <div className="title">Modal Error</div>
+            <p>
+              This is a modal error.  Something has gone terribly wrong!
+            </p>
+            <Button
+              solid color="red" text="OK"
+              onClick={() => showModal(false)}
+            />
+          </div>
+        </div>
       </Modal>
     }
   </div>
