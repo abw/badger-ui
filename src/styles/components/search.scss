@@ -12,7 +12,7 @@
     right: $unit-margin;
     top: 0.4em;
     &.clear {
-      right: calc($unit-margin + 0.1em);
+      right: calc(#{$unit-margin} + 0.1em);
     }
     &.clear:hover {
       color: $search-icon-color;
