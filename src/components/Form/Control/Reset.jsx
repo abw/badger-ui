@@ -17,7 +17,7 @@ const ResetControl = ({
     iconLeft={iconLeft}
     onClick={form.resetForm}
     submitting={form.submitting}
-    tabindex="-1"
+    tabIndex={-1}
   />
 
 export default Context.Consumer(

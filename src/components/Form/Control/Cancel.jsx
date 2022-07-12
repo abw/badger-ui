@@ -17,7 +17,7 @@ const CancelControl = ({
     iconLeft={iconLeft}
     onClick={onClick}
     submitting={form.submitting}
-    tabindex="-1"
+    tabIndex={-1}
   />
 
 export default Context.Consumer(

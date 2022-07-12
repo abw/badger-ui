@@ -9,7 +9,7 @@ export const Text = ({field}) =>
     value={isDefined(field.value) ? field.value : ''}
     disabled={field.disabled}
     aria-disabled={field.disabled}
-    tabIndex={field.disabled ? '-1' : ''}
+    tabIndex={field.disabled ? -1 : undefined}
     placeholder={field.placeholder}
     autoComplete={field.autocomplete}
     onChange={field.onChange}

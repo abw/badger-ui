@@ -12,8 +12,8 @@ const CancelResetSubmit = ({
 }) =>
   <div className={className}>
     <div>
-      <Cancel {...cancel} tabIndex="-1"/>
-      <Reset  {...reset} tabIndex="-1"/>
+      <Cancel {...cancel}/>
+      <Reset  {...reset}/>
     </div>
     <Submit {...submit}/>
   </div>
