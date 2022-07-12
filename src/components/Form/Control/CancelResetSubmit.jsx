@@ -4,7 +4,7 @@ import Reset from './Reset';
 import Submit from './Submit';
 
 const CancelResetSubmit = ({
-  className="flex space stack-mobile mar-t",
+  className="flex start space stack-mobile mar-t",
   cancel={},
   reset={},
   submit={},
