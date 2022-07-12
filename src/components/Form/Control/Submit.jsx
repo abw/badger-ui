@@ -3,10 +3,17 @@ import Context from '../Context'
 import FormButton from './FormButton'
 import { Themed } from '../../../utils';
 
-const SubmitControl = ({ text = 'Submit', iconRight = 'check', form, ...props }) =>
+const SubmitControl = ({
+  text='Submit',
+  iconRight='check',
+  color='blue',
+  form,
+  ...props
+}) =>
   <FormButton {...props}
     type="submit"
     text={text}
+    color={color}
     iconRight={iconRight}
     onClick={form.submitForm}
     submitting={form.submitting}

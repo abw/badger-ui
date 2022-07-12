@@ -3,23 +3,23 @@ import Context from '../Context'
 import FormButton from './FormButton'
 import { Themed } from '../../../utils';
 
-const ResetControl = ({
-  text='Reset',
-  iconLeft='undo',
-  color='brown',
+const CancelControl = ({
+  text='Cancel',
+  iconLeft='arrow-left',
+  color='grey',
+  onClick,
   form,
   ...props
 }) =>
   <FormButton {...props}
-    type="reset"
     text={text}
     color={color}
     iconLeft={iconLeft}
-    onClick={form.resetForm}
+    onClick={onClick}
     submitting={form.submitting}
     tabindex="-1"
   />
 
 export default Context.Consumer(
-  Themed(ResetControl, 'FormReset')
+  Themed(CancelControl, 'FormCancel')
 )

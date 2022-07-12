@@ -3,7 +3,7 @@ import Button from '../../Button'
 
 const FormButton = ({
   submitting,
-  disabled = submitting,
+  disabled=submitting,
   ...props
 }) =>
   <Button {...props} disabled={disabled}/>

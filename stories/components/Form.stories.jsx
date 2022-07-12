@@ -1,12 +1,40 @@
 import React from 'react'
 import { Success } from '../../src/components/Alert';
-import { Form, Field, Reset, Submit } from '../../src/components/Form'
+import { Form, Field, Submit, Reset, Cancel, CancelSubmit, ResetSubmit, CancelResetSubmit } from '../../src/components/Form'
 import { sleep } from '../../src/utils';
 
 export default {
   title: 'Components/Form',
   component: Form,
 };
+
+const onSubmit = submit => sleep(1000).then(
+  () => {
+    const name = submit.values.name;
+    if (name.match(/badger/i)) {
+      // fake a valid server response
+      return Promise.resolve({
+        status: 200,
+        data: { message: 'Welcome ' + name }
+      });
+    }
+    else {
+      // fake an invalid server response
+      return Promise.resolve({
+        status: 400,
+        data: {
+          error: "You're not a member of the badger family!", // eslint-disable-line quotes
+          fields: {
+            name: {
+              valid: 0,
+              message: 'Try putting "Badger" in here somewhere.'
+            }
+          }
+        }
+      });
+    }
+  }
+)
 
 export const Overview = () => <>
   <h1 className="mar-t-none mar-l-none">Form</h1>
@@ -171,55 +199,8 @@ export const FormValues = () =>
     </Form>
   </>
 
-
-export const ResetButton = () =>
-  <>
-    <p className="mar-t-none">
-      The <code className="code">Reset</code> component can be used to
-      render a button to reset the form fields to their initial values.
-      Try changing the values in the form below then click on the reset
-      button to reset them.
-    </p>
-    <Form
-      values={{ name: 'Bobby Badger', occupation: 'Badgering' }}
-      fields={{
-        name:       { label: 'Name' },
-        occupation: { label: 'Occupation' }
-      }}
-    >
-      <Field name="name"/>
-      <Field name="occupation"/>
-      <Reset color="brown" solid className="mar-t-2"/>
-    </Form>
-  </>
-
 export const SubmitButton = () => {
   const [success, setSuccess] = React.useState();
-  const onSubmit = submit => sleep(1000).then(() => {
-    const name = submit.values.name;
-    if (name.match(/badger/i)) {
-      // fake a valid server response
-      return Promise.resolve({
-        status: 200,
-        data: { message: 'Welcome ' + name }
-      });
-    }
-    else {
-      // fake an invalid server response
-      return Promise.resolve({
-        status: 400,
-        data: {
-          error: "You're not a member of the badger family!", // eslint-disable-line quotes
-          fields: {
-            name: {
-              valid: 0,
-              message: 'Try putting "Badger" in here somewhere.'
-            }
-          }
-        }
-      });
-    }
-  })
   return <>
     <p className="mar-t-none">
       The <code className="code">Submit</code> component can be used to
@@ -230,18 +211,125 @@ export const SubmitButton = () => {
       be provided to handle an unsuccessful response.
     </p>
     <Form
-      values={{ name: 'Simon Stoat' }}
       onSubmit={onSubmit}
       onSuccess={ data => setSuccess(data.message) }
       onFailure={ data => console.log('FAILED: ', data) }
     >
-      <Field name="name" label="Name"/>
+      <Field name="name" label="Name" required/>
       <Field name="occupation" label="Occupation" required/>
       <Submit color="green" solid className="mar-t-2"/>
       { success && <Success text={success} /> }
     </Form>
   </>
 }
+
+export const ResetButton = () =>
+  <>
+    <p className="mar-t-none">
+      The <code className="code">Reset</code> component can be used to
+      render a button to reset the form fields to their initial values.
+      Try changing the values in the form below then click on the reset
+      button to reset them.
+    </p>
+    <Form>
+      <Field name="name" value="Simon Stoat" label="Name" required/>
+      <Field name="occupation" label="Occupation" required/>
+      <Reset color="brown" solid className="mar-t-2"/>
+    </Form>
+  </>
+
+export const CancelButton = () =>
+  <>
+    <p className="mar-t-none">
+      The <code className="code">Cancel</code> component can be used to
+      render a generic button to cancel an add/edit action.  It's not
+      really specific to forms, but is used frequently enough to warrant
+      adding.
+    </p>
+    <Form
+      values={{ name: 'Bobby Badger', occupation: 'Badgering' }}
+      fields={{
+        name:       { label: 'Name' },
+        occupation: { label: 'Occupation' }
+      }}
+    >
+      <Field name="name"/>
+      <Field name="occupation"/>
+      <Cancel
+        solid className="mar-t-2"
+        onClick={() => window.alert("CANCEL - This would usually be a link to navigate the user back to the previous page")}
+      />
+    </Form>
+  </>
+
+export const CancelSubmitButtons = () =>
+  <>
+    <p className="mar-t-none">
+      The <code className="code">CancelSubmit</code> component combines
+      the <code className="code">Cancel</code> and <code className="code">Submit</code> components.
+    </p>
+    <Form onSubmit={onSubmit}>
+      <Field name="name" value="Simon Stoat" label="Name" required/>
+      <Field name="occupation" label="Occupation" required/>
+      <CancelSubmit
+        cancel={{
+          onClick: () => window.alert('You clicked cancel'),
+          color: 'orange',
+          solid: true
+        }}
+        submit={{
+          color: 'violet',
+          solid: true
+        }}
+      />
+    </Form>
+  </>
+
+export const ResetSubmitButtons = () =>
+  <>
+    <p className="mar-t-none">
+      The <code className="code">ResetSubmit</code> component combines
+      the <code className="code">Reset</code> and <code className="code">Submit</code> components.
+    </p>
+    <Form onSubmit={onSubmit}>
+      <Field name="name" value="Simon Stoat" label="Name" required/>
+      <Field name="occupation" label="Occupation" required/>
+      <ResetSubmit
+        reset={{
+          solid: true
+        }}
+        submit={{
+          color: 'pink',
+          solid: true
+        }}
+      />
+    </Form>
+  </>
+
+export const CancelResetSubmitButtons = () =>
+  <>
+    <p className="mar-t-none">
+      If you're crazy for buttons and want a cancel, reset and submit button
+      then use the <code className="code">CancelResetSubmit</code> component.
+      What a time to be alive!
+    </p>
+    <Form onSubmit={onSubmit}>
+      <Field name="name" value="Simon Stoat" label="Name" required/>
+      <Field name="occupation" label="Occupation" required/>
+      <CancelResetSubmit
+        cancel={{
+          onClick: () => window.alert("You clicked on cancel")
+        }}
+        reset={{
+          solid: true
+        }}
+        submit={{
+          color: 'magenta',
+          solid: true
+        }}
+      />
+    </Form>
+  </>
 
 export const SavingSpinner = () => {
   const onSubmit = submit => sleep(5000).then(() => {
@@ -351,3 +439,4 @@ export const ValidationErrors = () =>
       </Form>
     </div>
   </>
+
