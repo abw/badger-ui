@@ -73,49 +73,17 @@ th[class*="split-"] {
   }
 }
 
-// media breakpoints
-@media only screen and (max-width: $mobile) {
-  .stack-mobile {
-    @include unsplit();
-    &.flex.row {
-      display: block !important;
+// stacking breakpoints
+@each $name, $size in $breakpoints {
+  @media only screen and (max-width: $size) {
+    .stack-#{$name} {
+      @include unsplit();
+      &.flex.row {
+        display: block !important;
+      }
+    }
+    [class*="grid-"].stack-#{$name} {
+      grid-template-columns: 1fr;
     }
   }
-  [class*="grid-"].stack-mobile {
-    grid-template-columns: 1fr;
-  }
 }
-@media only screen and (max-width: $tablet) {
-  .stack-tablet {
-    @include unsplit();
-    &.flex.row {
-      display: block !important;
-    }
-  }
-  [class*="grid-"].stack-tablet {
-    grid-template-columns: 1fr;
-  }
-}
-@media only screen and (max-width: $desktop) {
-  .stack-desktop {
-    @include unsplit();
-    &.flex.row {
-      display: block !important;
-    }
-  }
-  [class*="grid-"].stack-desktop {
-    grid-template-columns: 1fr;
-  }
-}
-@media only screen and (max-width: $widescreen) {
-  .stack-widescreen {
-    @include unsplit();
-    &.flex.row {
-      display: block !important;
-    }
-  }
-  [class*="grid-"].stack-widescreen {
-    grid-template-columns: 1fr;
-  }
-}
-
