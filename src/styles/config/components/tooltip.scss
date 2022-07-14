@@ -1,0 +1,15 @@
+@use "sass:math";
+$tooltip-fore:          $white !default;
+$tooltip-back:          $black !default;
+$tooltip-edge:          $black !default;
+$tooltip-border:        0px !default;
+$tooltip-stripe:        0px !default;
+$tooltip-z-index:       999 !default;
+$tooltip-radius:        $unit-radius !default;
+$tooltip-arrow:         10px !default;
+$tooltip-arrow-offset:  math.div($tooltip-arrow, 2) !default;
+$tooltip-shadow:        2px 2px 5px rgba($black, 0.2) !default;
+$tooltip-trans-time:    .3s !default;
+$tooltip-padding:       0.5em !default;
+$tooltip-margin:        15px !default;
+$tooltip-shift:         50% !default;
