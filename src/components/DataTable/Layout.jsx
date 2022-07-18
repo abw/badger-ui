@@ -9,14 +9,17 @@ import { propClasses } from '../../utils'
 export const Layout = (props) => {
   const classes = propClasses(
     { selectable: props.rowClick },
-    'wide celled table', props.className
+    'celled table', props.scrollX ? 'nowrap' : 'wide',
+    props.className
   );
   return <div className="datatable">
     <Summary/>
-    <table className={classes}>
-      <Headers/>
-      <Rows/>
-    </table>
+    <div className={props.scrollX ? 'scroll-x' : ''}>
+      <table className={classes}>
+        <Headers/>
+        <Rows/>
+      </table>
+    </div>
     <Pagination/>
   </div>
 }

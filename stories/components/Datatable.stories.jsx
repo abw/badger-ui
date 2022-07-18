@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import { Checkbox } from '../../src/components/Checkbox';
 import { DataTable } from '../../src/components/DataTable';
 import { stringSort } from '../../src/components/DataTable/Sort';
 
@@ -367,6 +369,64 @@ export const Pagination = () => {
     <DataTable
       rows={rows}
       columns={columns}
+    />
+  </>
+}
+
+export const WideTable = () => {
+  const [scrollX, setScrollX] = useState(true);
+  const rows = [
+    { name: 'Alice',  animal: 'Aardvark', colour: 'Grey',
+      interests: 'Aardvarking, Walking, Eating, Drinking',
+      number: 12345,
+    },
+    { name: 'Bobby',  animal: 'Badger', colour: 'Black and White',
+      interests: 'Badgering, Foraging, Ride-on Lawnmowers, Being a bit naughty',
+      number: 420,
+    },
+    { name: 'Carmen', animal: 'Camel', colour: 'Brown',
+      interests: 'Cameling, Canoeing, Climbing',
+      number: 999,
+    },
+    { name: 'Derek',  animal: 'Dog', colour: 'White, black, brown, grey, or a mix',
+      interests: 'Dogging, Chasing rabbits, Eating, Sleeping',
+      number: 42,
+    },
+    { name: 'Edward', animal: 'Elephant', colour: 'Grey',
+      interests: 'Elephanting, Eating buns',
+      number: 123456789,
+
+    },
+  ];
+  const columns = {
+    name: {
+      label: 'Name',
+    },
+    animal: {
+      label: 'Animal',
+    },
+    colour: {
+      label: 'Colour',
+    },
+    interests: {
+      label: 'Interest',
+    },
+    number: {
+      label: 'Favourite Number',
+    },
+  };
+  return <>
+    <p className="mar-t-none">
+      This example shows a wide table with the <code className="code">scrollX</code> attribute.
+    </p>
+    <Checkbox
+      value={scrollX} text="scrollX"
+      onChange={setScrollX}
+    />
+    <DataTable
+      rows={rows}
+      columns={columns}
+      scrollX={scrollX}
     />
   </>
 }

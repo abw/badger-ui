@@ -19,6 +19,11 @@
       white-space: nowrap;
     }
   }
+  &.nowrap {
+    th, td {
+      white-space: nowrap;
+    }
+  }
   thead th {
     cursor: auto;
     background: $table-head-back;
