@@ -1,5 +1,6 @@
 import React from 'react'
-import { isDefined, pounds, commas, capitalize, price, Themed } from '../../utils'
+import { pounds, commas, capitalize, price } from '@abw/badger-utils'
+import { isDefined, Themed } from '../../utils'
 import { Label } from '../Label'
 
 export const displayText = ({value}) =>

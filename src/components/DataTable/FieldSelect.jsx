@@ -1,5 +1,5 @@
 import React from 'react'
-import { capitalize } from '../../utils'
+import { capitalize } from '@abw/badger-utils'
 import { Checkbox } from '../Checkbox'
 import { Dropdown } from '../Dropdown'
 import Context from './Context'

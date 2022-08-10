@@ -2,7 +2,6 @@ import React from "react";
 import { Alert, Info } from "../../src/components/Alert";
 import { sizes, fasizes } from '../../src/config/sizes'
 import { iconNames } from '../../src/config/iconNames'
-import { addMethod } from "yup";
 
 export default {
   title: "Components/Alert",

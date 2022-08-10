@@ -1,4 +1,4 @@
-import { range } from '../../utils'
+import { range } from "@abw/badger-utils";
 
 export const paginate = ({rows, pageNo=1, pageSize=rows.length}) => {
   const total = rows.length;
@@ -57,7 +57,7 @@ export const paginate = ({rows, pageNo=1, pageSize=rows.length}) => {
     prevPage:      onFirstPage ? undefined : pageNo - 1,
     nextPage:      onLastPage ? undefined : pageNo + 1,
     lastPage:      lastPage,
-    pageRange:     rangeFrom && rangeTo ? range(rangeFrom, rangeTo + 1) : [ ],
+    pageRange:     rangeFrom && rangeTo ? range(rangeFrom, rangeTo) : [ ],
     showFirst:     rangeFrom > 1,
     showLast:      rangeTo < lastPage,
     separateFirst: rangeFrom - 1 > 1,
