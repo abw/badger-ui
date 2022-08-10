@@ -1,5 +1,5 @@
 import React from 'react';
-import { range } from '../../src/utils'
+import { range } from '@abw/badger-utils'
 import { colors } from '../../src/config/colors';
 
 export default {
@@ -17,9 +17,9 @@ export const Overview = () => <>
 </>
 
 export const EvenSplits = () => <>
-  {range(2, 17).map(
+  {range(2, 16).map(
     split => <div key={split} className="row mar-b">
-      {range(0, split).map(
+      {range(0, split-1).map(
         n => <div key={`${n}-${split}`} className={`split-${split} bg-${colors[n % colors.length]} white pad-h`}>
           split-{split}
         </div>
@@ -97,9 +97,9 @@ export const GridLayout = () =>
       Use the <code className="code">grid-N</code> classes to display content as a
       grid of N elements across.  Hurrah for grid layout properly supported in CSS!
     </p>
-    {range(2, 10).map(
+    {range(2, 9).map(
       split => <div key={split} className={`grid-${split}`}>
-        {range(0, split).map(
+        {range(0, split-1).map(
           n => <div key={`${n}-${split}`} className={`bg-${colors[n % colors.length]} white pad-h`}>
             grid-{split}
           </div>
