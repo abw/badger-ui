@@ -55,7 +55,7 @@ export const TabsOnRight = () => {
     <p className="mar-t-none">
       Add the <code className="code">right</code> CSS class via
       the <code className="code">className</code> property to have
-      a border displayed around the body content.
+      the tabs aligned to the right.
     </p>
     <Tabset tabs={tabs} className="right"/>
   </>
