@@ -1,0 +1,93 @@
+/*-- components/tabset --*/
+.tabset {
+  clear: both;
+  margin: 1em 0;
+  & > .head {
+    display:  block;
+    overflow: auto;
+    padding: 0;
+    margin: 0 0 -1px 0;
+    padding: 0 $tab-inset;
+    a.tab {
+      display:            inline-block;
+      position:           relative;
+      font-size:          $tab-font-size;
+      line-height:        1.3;
+      margin:             $tab-margin;
+      padding:            $tab-padding;
+      text-decoration:    none;
+      border:             1px solid $tab-edge;
+      border-bottom-color: $tab-active-edge;
+      color:              $tab-fore;
+      background-color:   $tab-back;
+      border-radius:      $tab-radius $tab-radius 0 0;
+      user-select:        none;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        background-color: $tab-hover-back;
+        color:            $tab-hover-fore;
+        cursor:           pointer;
+      }
+      &.active,
+      &.is-active {
+        background:       $tab-active-back;
+        border-color:     $tab-active-edge;
+        border-bottom-color: $white;
+        color:            $tab-active-fore;
+      }
+    }
+  }
+  & > .body {
+    border-top:           1px solid $tab-active-edge;
+    padding:              0.5rem 0;
+    clear:                both;
+    & > * {
+        position: relative;
+        display: none;
+        clear: both;
+        margin: 0;
+        padding: 0;
+    }
+  }
+  & > .body > *.visible,
+  & > .body.visible > * {
+    display: block;
+  }
+  &.border {
+    & > .head {
+      padding: 0 0;
+    }
+    & > .body {
+      border:               1px solid $tab-active-edge;
+      border-radius:        0 $tab-body-radius $tab-body-radius $tab-body-radius;
+      padding:              1em;
+    }
+  }
+  &.right {
+    & > .head {
+      text-align: right;
+    }
+    &.border {
+      & > .body {
+        border-radius:        $tab-body-radius 0 $tab-body-radius $tab-body-radius;
+      }
+    }
+  }
+
+}
+
+.tabs.open {
+  & > .head {
+    a:first-child {
+      margin-left: 0.5em;
+    }
+  }
+  & > .body {
+    border: none;
+    border-top:  1px solid $tab-edge;
+    border-radius: 0;
+    padding: 0.6em 0 0 0;
+  }
+}
