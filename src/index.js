@@ -19,5 +19,6 @@ export * from './components/Revealable';
 export * from './components/Search';
 export * from './components/Select';
 export * from './components/Spinner';
+export * from './components/Tabset';
 export * from './components/Toggle';
 export * from './utils';
