@@ -18,7 +18,7 @@ const Tabset = ({
 
   if (storageKey) {
     store = Storage(storageKey);
-    state = this.store.load(state);
+    state = store.load(state);
   }
   if (state.active > tabs.length - 1) {
     state.active = 0;
@@ -49,7 +49,7 @@ const Tabset = ({
       { tabs.map(
           (tab, n) => {
             const TabComponent = tab.component;
-            return <div key={n} className={n==active ? 'visible' : 'hidden'}>
+            return <div key={n} className={n==active ? visibleClass : hiddenClass}>
               {tab.content}
             </div>
           }
