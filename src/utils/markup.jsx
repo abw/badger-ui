@@ -1,13 +1,16 @@
 import React from 'react'
-import { splitParas } from '@abw/badger-utils'
+import { currency, splitLines } from '@abw/badger-utils'
 export {
   capitalize, capitalizeWords,
   inflect, Inflect, pluralise,
-  commas, price, priceOrPOA, priceOrZero, pounds, splitParas
+  commas, currency, splitLines
 } from '@abw/badger-utils'
 
 export const Paragraphs = ({text, className="", firstClass=""}) => <>
-  { splitParas(text).map(
+  { splitLines(text).map(
       (para, n) => <p key={n} className={n===0 ? firstClass : className}>{para}</p>
   )}
 </>
+
+export const pounds = n =>
+  currency(n, { locale: 'en-GB', currency: 'GBP', maximumFractionDigits: 0 })

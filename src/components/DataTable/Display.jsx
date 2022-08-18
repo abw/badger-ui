@@ -1,6 +1,6 @@
 import React from 'react'
-import { pounds, commas, capitalize, price } from '@abw/badger-utils'
-import { isDefined, Themed } from '../../utils'
+import { commas, capitalize, currency } from '@abw/badger-utils'
+import { isDefined, pounds, Themed } from '../../utils'
 import { Label } from '../Label'
 
 export const displayText = ({value}) =>
@@ -13,7 +13,7 @@ export const displayPounds = ({value}) =>
   isDefined(value) ? pounds(value) : '';
 
 export const displayPrice = ({value}) =>
-  isDefined(value) ? price(value) : '';
+  isDefined(value) ? currency(value) : '';
 
 export const displayCapitalized = ({value}) =>
   isDefined(value) ? capitalize(value) : '';
