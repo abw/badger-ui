@@ -21,7 +21,7 @@ export const Overview = () => <>
   </p>
 </>
 
-export const UnmanagedState = (props) => {
+export const UnmanagedState = () => {
   const [value, setValue] = React.useState(false);
   const options = [
     { text: 'Ten', value: 10 },
@@ -87,5 +87,28 @@ export const DisabledOptions = (props) => <>
       { value: 3, text: "Three" }
     ]}
     disabled={true}
+  />
+</>
+
+export const CustomProperties = (props) => <>
+  <p>
+    Use the <code className="code">className</code> property to set the CSS class
+    for the container and <code className="code">optionClass</code> to set the CSS
+    class for each option.
+  </p>
+  <p>
+    The <code className="code">checkedIcon</code> and <code className="code">uncheckedIcon</code> properties
+    can be set on the component and/or on each item.
+  </p>
+  <RadioState
+    initialValue={1}
+    className="grid-3 gap-1"
+    optionClass="mar-r-none"
+    checkedIcon="check"
+    options={[
+      { value: 1, text: "Badger", uncheckedIcon: 'badger' },
+      { value: 2, text: "Cat",    uncheckedIcon: 'cat'    },
+      { value: 3, text: "Human",  uncheckedIcon: 'user'   }
+    ]}
   />
 </>

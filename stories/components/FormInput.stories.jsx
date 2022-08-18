@@ -55,6 +55,23 @@ export const CheckboxInput = () =>
     </Form>
   </>
 
+export const CheckboxInputWithOptions = () =>
+  <>
+    <p className="mar-t-none">
+      The <code className="code">checkbox</code> input type accepts the same
+      options as the <code className="code">Checkbox</code> component
+    </p>
+    <Form>
+      <Field
+        name="sometext"
+        input="checkbox"
+        text="Do you like Badgers?"
+        checkedIcon="check"
+        uncheckedIcon="badger"
+      />
+    </Form>
+  </>
+
 export const SelectInput = () =>
   <div className="pad-b-10">
     <p className="mar-t-none">
@@ -149,6 +166,30 @@ export const RadioInput = () =>
         options={[
           { value: 'y', text: 'Yes, of course!' },
           { value: 'n', text: 'No, I am silly' },
+        ]}
+      />
+    </Form>
+  </div>
+
+export const RadioInputWithOptions = () =>
+  <div className="pad-b-10">
+    <p className="mar-t-none">
+      The <code className="code">radio</code> input accepts the same properties as
+      the <code className="code">Radio</code> component.
+    </p>
+    <Form>
+      <Field
+        name="animal"
+        input="radio"
+        label="What's your favourite animal?"
+        help="HINT: You really should like badgers"
+        className="grid-3 gap-1"
+        optionClass="mar-r-none"
+        checkedIcon="check"
+        options={[
+          { value: 1, text: "Badger", uncheckedIcon: 'badger' },
+          { value: 2, text: "Cat",    uncheckedIcon: 'cat'    },
+          { value: 3, text: "Human",  uncheckedIcon: 'user'   }
         ]}
       />
     </Form>
