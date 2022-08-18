@@ -29,13 +29,20 @@ const Radio = ({
     <div className={cname || ''}>
       {options.map(
         (option, n) => {
-          const active = !disabled && !option.disabled;
+          const active  = !disabled && !option.disabled;
+          const checked = isDefined(index) && index === n;
+          const icon = checked
+            ? (option.checkedIcon || checkedIcon)
+            : (option.uncheckedIcon || uncheckedIcon);
+
           const click = onChange && active
             ? () => onChange(option)
             : null;
+
           const press = onChange && active
             ? e => onKeyPress(e, option)
             : null;
+
           return <div
             key={n}
             className={`checkbox ${optionClass} ${option.className || ''} ${active ? '' : 'disabled'}`}
@@ -44,7 +51,7 @@ const Radio = ({
             aria-disabled={disabled}
           >
             <Icon
-              name={isDefined(index) && index === n ? checkedIcon : uncheckedIcon}
+              name={icon}
               className="mar-r" fixedWidth
             />
             <span className="text">{option.text}</span>
