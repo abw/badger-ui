@@ -1,5 +1,7 @@
 import React from 'react'
+import { useState } from 'react';
 import { Success } from '../../src/components/Alert';
+import Button from '../../src/components/Button';
 import { Form, Field, Submit, Reset, Cancel, CancelSubmit, ResetSubmit, CancelResetSubmit } from '../../src/components/Form'
 import { sleep } from '../../src/utils';
 
@@ -440,3 +442,43 @@ export const ValidationErrors = () =>
     </div>
   </>
 
+export const FormReference = () => {
+  const [form, setForm] = useState();
+  return <>
+    <p className="mar-t-none">
+      If you need to access the form object reference then use
+      the <code className="code">onLoad</code> property in conjunction
+      with React's <code className="code">useState</code> to store the
+      form reference.
+    </p>
+    <p>
+      In this example we save a reference to the form and then call
+      the <code className="code">setValues()</code> method when one of
+      the buttons is clicked.
+    </p>
+    <Form onLoad={setForm}>
+      <Field name="color" label="Color"/>
+      <Field name="animal" label="Animal"/>
+    </Form>
+    <Button
+      text="Black and White Badger"
+      color="black" solid
+      onClick={
+        () => form.setValues({
+          color: "Black and White",
+          animal: "Badger"
+        })
+      }
+    />
+    <Button
+      text="Red Fox"
+      color="red" solid
+      onClick={
+        () => form.setValues({
+          color: "Red",
+          animal: "Fox"
+        })
+      }
+    />
+  </>
+}

@@ -32,6 +32,9 @@ class Context extends React.Component {
       this,
       'attachField detachField submitField submitForm resetForm setValues setHidden'
     );
+    if (this.props.onLoad) {
+      this.props.onLoad(this);
+    }
     addDebug(this, props.debug, 'Form Context', 'blue');
   }
   attachField(name, field) {

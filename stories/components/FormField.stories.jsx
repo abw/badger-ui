@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as yup  from 'yup'
+import Button from '../../src/components/Button';
 import {
   Form, Field, Fields, TwoFields, ThreeFields, FourFields,
   FieldHelp, FieldLabel
@@ -546,6 +547,49 @@ export const CustomLayout = () => {
     </Form>
   </>
 }
+
+export const FieldReference = () => {
+  const [animalField, setAnimalField] = useState();
+  const [colorField, setColorField] = useState();
+  return <>
+    <p className="mar-t-none">
+      If you need to access the a field object reference then use
+      the <code className="code">onLoad</code> property in conjunction
+      with React's <code className="code">useState</code> to store the
+      field reference.
+    </p>
+    <p>
+      In this example we save references to the color and animal fields and
+      then call the <code className="code">setValue()</code> method when one of
+      the buttons is clicked.
+    </p>
+    <Form>
+      <Field name="color" label="Color"   onLoad={setColorField}/>
+      <Field name="animal" label="Animal" onLoad={setAnimalField}/>
+    </Form>
+    <Button
+      text="Black and White"
+      color="black" solid
+      onClick={() => colorField.setValue("Black and White")}
+    />
+    <Button
+      text="Brown"
+      color="brown" solid
+      onClick={() => colorField.setValue("Brown")}
+    />
+    <Button
+      text="Badger"
+      iconLeft="badger"
+      onClick={() => animalField.setValue("Badger")}
+    />
+    <Button
+      text="Cat"
+      iconLeft="cat"
+      onClick={() => animalField.setValue("Cat")}
+    />
+  </>
+}
+
 /*
 export const ValidField = () => <>
   <Form>
