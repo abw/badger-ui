@@ -1,16 +1,15 @@
+import { objSubset } from '@abw/badger-utils';
 import React from 'react';
 import UIRadio from '../../Radio';
 
-export const Radio = ({field})=>
+export const Radio = ({field}) =>
   <UIRadio
-    options={field.options}
-    value={field.value}
-    name={field.name}
-    disabled={field.disabled}
-    placeholder={field.placeholder}
+    { ...objSubset(
+        field,
+        "options value name disabled placeholder onFocus onBlur optionClass checkedIcon uncheckedIcon"
+      )
+    }
     onChange={option => field.onChangeValue(option.value)}
-    onFocus={field.onFocus}
-    onBlur={field.onBlur}
     className={`${field.className} radio`}
   />
 

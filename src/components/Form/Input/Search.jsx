@@ -1,20 +1,16 @@
+import { objSubset } from '@abw/badger-utils';
 import React from 'react';
 import { Search } from '../../Search'
 
 const SearchInput = ({field}) =>
   <Search
+    { ...objSubset(
+        field,
+        "value className placeholder minLength debounceTime onSearch onFocus onBlur renderResult displayValue"
+      )
+    }
     inputClass="inform"
-    value={field.value}
-    className={field.className}
-    placeholder={field.placeholder}
-    minLength={field.minLength}
-    debounceTime={field.debounceTime}
-    onSearch={field.onSearch}
-    renderResult={field.renderResult}
-    displayValue={field.displayValue}
     onSelect={field.onChangeValue}
-    onFocus={field.onFocus}
-    onBlur={field.onBlur}
     onClear={() => field.onChangeValue(undefined)}
     ref={field.setRef}
 />
