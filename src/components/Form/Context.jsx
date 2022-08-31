@@ -37,6 +37,12 @@ class Context extends React.Component {
     }
     addDebug(this, props.debug, 'Form Context', 'blue');
   }
+  componentDidMount() {
+    this.mounted = true;
+  }
+  componentWillUnmount() {
+    this.mounted = false;
+  }
   attachField(name, field) {
       this.debug('attaching [%s] field => %o', name, field);
       this.fields[name] = field;
@@ -46,6 +52,9 @@ class Context extends React.Component {
       delete this.fields[name];
   }
   resetForm() {
+    if (! this.mounted) {
+      return;
+    }
     this.setState({
       fields: resetFields(this.state.fields, this.props.values),
       errors: [ ],
@@ -171,7 +180,9 @@ class Context extends React.Component {
   }
   stopSubmitting(props={}) {
     this.debug('stopSubmitting()');
-    this.setState({ submitting: false, ...props });
+    if (this.mounted) {
+      this.setState({ submitting: false, ...props });
+    }
   }
   handleResponse(response) {
     response.then(
@@ -194,7 +205,9 @@ class Context extends React.Component {
     )
     .catch(
       response => {
-        this.setState({ submitting: false });
+        if (this.mounted) {
+          this.setState({ submitting: false });
+        }
         this.debug('handleResponse() => INVALID (caught error): ', response);
         return this.invalidResponse(response.data);
       }
@@ -210,6 +223,9 @@ class Context extends React.Component {
   }
   invalidResponse(response) {
     this.debug('invalidResponse(): ', response);
+    if (! this.mounted) {
+      return;
+    }
     this.setState({
       error:  response.error || response.message,
       errors: response.invalid_fields || response.errors,
