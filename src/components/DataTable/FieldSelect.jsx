@@ -4,10 +4,8 @@ import { Checkbox } from '../Checkbox'
 import { Dropdown } from '../Dropdown'
 import Context from './Context'
 
-// DEPRECATED - replaced by SortFieldSelect
-
 export const FieldSelect = ({ columns, visibleColumns, setVisibleColumn }) =>
-  <Dropdown text="Fields" right className="mar-r">
+  <Dropdown text="Fields" right className="mar-r" clickOpen>
     <div className="menu pad pad-b-none">
       { Object.keys(columns).map(
           name => <Checkbox
