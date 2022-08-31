@@ -92,20 +92,36 @@ export const ClickToLockOpen = () =>
       Add the <code className="code">clickOpen</code> property to allow
       the dropdown to be "locked" open with a click.
     </p>
-    <Dropdown
-      text="Click to Lock Open"
-      className="mar-b-12"
-      iconLeft="badger"
-      color="brown" solid
-      clickOpen
-    >
-      <div className="menu nowrap pad">
-        <Icon name="badger" fixedWidth/>
-        <Icon name="badger" fixedWidth/>
-        <Icon name="badger" fixedWidth/>
-        Badger, badger, badger...
-      </div>
-    </Dropdown>
+    <div className="flex space">
+      <Dropdown
+        text="Click to Lock Open"
+        className="mar-b-12"
+        iconLeft="badger"
+        color="brown" solid
+        clickOpen
+      >
+        <div className="menu nowrap pad">
+          <Icon name="badger" fixedWidth/>
+          <Icon name="badger" fixedWidth/>
+          <Icon name="badger" fixedWidth/>
+          Badger, badger, badger...
+        </div>
+      </Dropdown>
+      <Dropdown
+        text="Click to Lock Open"
+        className="mar-b-12"
+        iconLeft="badger"
+        color="brown" solid
+        clickOpen right
+      >
+        <div className="menu nowrap pad">
+          <Icon name="badger" fixedWidth/>
+          <Icon name="badger" fixedWidth/>
+          <Icon name="badger" fixedWidth/>
+          Badger, badger, badger...
+        </div>
+      </Dropdown>
+    </div>
   </>
 
 export const ClickToOpenAndClose = () =>
@@ -115,18 +131,35 @@ export const ClickToOpenAndClose = () =>
       then add the <code className="code">clickOpen</code> property and
       set <code className="code">hoverOpen</code> to be false.
     </p>
-    <Dropdown
-      text="Click to Open/Close"
-      className="mar-b-12"
-      iconLeft="badger"
-      color="brown" solid
-      hoverOpen={false} clickOpen
-    >
-      <div className="menu nowrap pad">
-        <Icon name="badger" fixedWidth/>
-        <Icon name="badger" fixedWidth/>
-        <Icon name="badger" fixedWidth/>
-        Badger, badger, badger...
-      </div>
-    </Dropdown>
+    <div className="flex space">
+      <Dropdown
+        text="Click to Open/Close"
+        className="mar-b-12"
+        iconLeft="badger"
+        color="brown" solid
+        hoverOpen={false} clickOpen
+      >
+        <div className="menu nowrap pad">
+          <Icon name="badger" fixedWidth/>
+          <Icon name="badger" fixedWidth/>
+          <Icon name="badger" fixedWidth/>
+          Badger, badger, badger...
+        </div>
+      </Dropdown>
+      <Dropdown
+        text="Click to Open/Close"
+        className="mar-b-12"
+        iconLeft="badger"
+        color="brown" solid
+        hoverOpen={false} clickOpen
+        right
+      >
+        <div className="menu nowrap pad">
+          <Icon name="badger" fixedWidth/>
+          <Icon name="badger" fixedWidth/>
+          <Icon name="badger" fixedWidth/>
+          Badger, badger, badger...
+        </div>
+      </Dropdown>
+    </div>
   </>

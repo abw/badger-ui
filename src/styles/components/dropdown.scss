@@ -42,7 +42,7 @@
   &.right {
     margin-right: 0;
 
-    &:hover .content {
+    .content {
       left: auto;
       right: 0;
       border-top-left-radius: $unit-radius;
