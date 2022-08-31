@@ -6,6 +6,7 @@ import { commas } from '@abw/badger-utils'
 import FieldSelect from './FieldSelect'
 import PageSize from './PageSize'
 import Context from './Context'
+import SortFieldSelect from './SortFieldSelect'
 
 const Summary = ({
   page,
@@ -50,7 +51,8 @@ const Summary = ({
       }
     </div>
     <div className="field-select">
-      <FieldSelect/>
+      {/* <FieldSelect/> */}
+      <SortFieldSelect/>
     </div>
     <div className="page-size">
       <PageSize/>

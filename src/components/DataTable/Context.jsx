@@ -26,6 +26,7 @@ class Context extends React.Component {
       ...State,
       pageNo,
       pageSize,
+      columns: props.columns,
       visibleColumns: extractVisibleColumns(props.columns),
     };
 
@@ -36,17 +37,42 @@ class Context extends React.Component {
     if (this.props.storageKey) {
       this.store = Storage(this.props.storageKey);
       state = this.store.load(state);
+
+      // make sure the columns haven't changed
+      if (state.columns) {
+        let columns = { };
+        // first update any stored columns to have the latest spec,
+        // deleting them if they no longer exist
+        Object.keys(state.columns).forEach(
+          key => {
+            if (props.columns[key]) {
+              columns[key] = props.columns[key];
+            }
+          }
+        );
+        // then add in any new columns
+        Object.keys(props.columns).forEach(
+          key => columns[key] ||= props.columns[key]
+        );
+        state.columns = columns;
+      }
+
+      // remove any visibleColumns that are no longer defined
+      if (state.visibleColumns) {
+        state.visibleColumns = state.visibleColumns.filter(
+          k => state.columns[k]
+        )
+      }
       this.debug("loaded state from storage: ", state);
     }
     // prepare data and set the initial state
     this.state = this.prepareState({
       ...state,
       rows: props.rows,
-      columns: props.columns,
     });
     this.handlers = bindHandlers(
       this,
-      'setPageNo setPageSize setVisibleColumn toggleSortColumn setSortReverse setFilter toggleFilters'
+      'setPageNo setPageSize setVisibleColumn setColumnOrder toggleSortColumn setSortReverse setFilter toggleFilters'
     );
   }
 
@@ -106,7 +132,9 @@ class Context extends React.Component {
     if (value) {
       if (index < 0) {
         this.set({
-          visibleColumns: [...visible, name]
+          visibleColumns: Object.keys(this.state.columns).filter(
+            n => n === name || visible.indexOf(n) >= 0
+          )
         })
       }
     }
@@ -117,6 +145,22 @@ class Context extends React.Component {
         })
       }
     }
+  }
+
+  setColumnOrder(names) {
+    const oldColumns = this.state.columns;
+    const oldVisible = this.state.visibleColumns;
+    let columns = { };
+    let visibleColumns = [ ];
+    names.forEach(
+      name => {
+        columns[name] = oldColumns[name];
+        if (oldVisible.indexOf(name) >= 0) {
+          visibleColumns.push(name);
+        }
+      }
+    );
+    this.set({ columns, visibleColumns });
   }
 
   toggleSortColumn(sortColumn) {

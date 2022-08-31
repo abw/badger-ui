@@ -224,3 +224,12 @@
       color: white;
   }
 }
+.datatable .field-select .dropdown .content .checkbox span.text {
+  white-space: nowrap;
+  .sort-grip {
+    padding: 0 3px;
+    &:hover .icon {
+      color: $link-hover;
+    }
+  }
+}
