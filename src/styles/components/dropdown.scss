@@ -23,7 +23,8 @@
       white-space: nowrap;
     }
   }
-  &:hover:not(.clicked) {
+  &:hover:not(.clicked):not(.closed),
+  &.open {
     .trigger .button {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -31,6 +32,11 @@
     .content {
       display: block;
       box-shadow: 2px 2px 5px rgba($black, 0.1);
+    }
+  }
+  &.closed {
+    .content {
+      display: none;
     }
   }
   &.right {

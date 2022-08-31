@@ -85,3 +85,48 @@ export const CustomTrigger = () => {
     ]}
   />
 }
+
+export const ClickToLockOpen = () =>
+  <>
+    <p>
+      Add the <code className="code">clickOpen</code> property to allow
+      the dropdown to be "locked" open with a click.
+    </p>
+    <Dropdown
+      text="Click to Lock Open"
+      className="mar-b-12"
+      iconLeft="badger"
+      color="brown" solid
+      clickOpen
+    >
+      <div className="menu nowrap pad">
+        <Icon name="badger" fixedWidth/>
+        <Icon name="badger" fixedWidth/>
+        <Icon name="badger" fixedWidth/>
+        Badger, badger, badger...
+      </div>
+    </Dropdown>
+  </>
+
+export const ClickToOpenAndClose = () =>
+  <>
+    <p>
+      If you only want the dropdown to be opened or closed with a click
+      then add the <code className="code">clickOpen</code> property and
+      set <code className="code">hoverOpen</code> to be false.
+    </p>
+    <Dropdown
+      text="Click to Open/Close"
+      className="mar-b-12"
+      iconLeft="badger"
+      color="brown" solid
+      hoverOpen={false} clickOpen
+    >
+      <div className="menu nowrap pad">
+        <Icon name="badger" fixedWidth/>
+        <Icon name="badger" fixedWidth/>
+        <Icon name="badger" fixedWidth/>
+        Badger, badger, badger...
+      </div>
+    </Dropdown>
+  </>

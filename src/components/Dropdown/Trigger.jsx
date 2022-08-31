@@ -5,6 +5,7 @@ export const Trigger = ({
   color, solid, buttonClass,
   iconLeft, iconRight,
   text,
+  onClick
 }) =>
   <Button
     color={color}
@@ -13,6 +14,7 @@ export const Trigger = ({
     iconLeft={iconLeft}
     iconRight={iconRight}
     text={text}
+    onClick={onClick}
   />
 
 export default Trigger;
