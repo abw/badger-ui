@@ -31,8 +31,9 @@ export const ThemedDataTable = () => {
       nextColor:        'orange',
       nextText:         'Forward',
       disabledColor:    'black',
+      dropdownColor:    'blue',
+      summaryClass:     'medium',
       solidButtons:     true,
-      summaryClass:     'medium'
     },
   };
   const rows = [

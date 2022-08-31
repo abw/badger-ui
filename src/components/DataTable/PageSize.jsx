@@ -1,10 +1,18 @@
 import React from 'react'
+import Context from './Context'
 import { Checkbox } from '../Checkbox'
 import { Dropdown } from '../Dropdown'
-import Context from './Context'
 
-export const PageSize = ({ page, setPageSize }) =>
-  <Dropdown text={`${page.pageSize} per page`} right className="mar-r">
+export const PageSize = ({
+  page,
+  setPageSize,
+  solidButtons,
+  dropdownColor
+}) =>
+  <Dropdown
+    text={`${page.pageSize} per page`} right className="mar-r"
+    solid={solidButtons} color={dropdownColor}
+  >
     <div className="menu pad pad-b-none">
     { [10, 25, 50, 100, 250, 500, 1000].map(
         size => <Checkbox

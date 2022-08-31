@@ -1,11 +1,20 @@
 import React from 'react'
+import Context from './Context'
 import { capitalize } from '@abw/badger-utils'
 import { Checkbox } from '../Checkbox'
 import { Dropdown } from '../Dropdown'
-import Context from './Context'
 
-export const FieldSelect = ({ columns, visibleColumns, setVisibleColumn }) =>
-  <Dropdown text="Fields" right className="mar-r">
+export const FieldSelect = ({
+  columns,
+  visibleColumns,
+  setVisibleColumn,
+  solidButtons,
+  dropdownColor
+}) =>
+  <Dropdown
+    text="Fields" right className="mar-r"
+    solid={solidButtons} color={dropdownColor}
+  >
     <div className="menu pad pad-b-none">
       { Object.keys(columns).map(
           name => <Checkbox

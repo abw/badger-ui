@@ -455,7 +455,7 @@ export const PersistantOptions = () => {
   };
   return <>
     <p className="mar-t-none">
-      Defined a <code className="code">storageKey</code> identifier if you want to automatically
+      Define a <code className="code">storageKey</code> identifier if you want to automatically
       persist filtering, sorting and pagination options via local storage.  Try changing some options
       (e.g. selecting/deselecting fields, setting sort order, adding a filter, changing page size, etc)
       and then reload the page.  The data table should retain those options.
