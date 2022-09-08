@@ -9,7 +9,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@abw/badger-ui@workspace:."
   dependencies:
-    "@abw/badger-utils": ^1.0.4
+    "@abw/badger-utils": ^1.0.5
     "@abw/react-context-generator": ^1.1.0
     "@babel/cli": ^7.15.7
     "@babel/core": ^7.15.5
@@ -78,10 +78,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@abw/badger-utils@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@abw/badger-utils@npm:1.0.4"
-  checksum: 277ca9224515ff676d36d8d5863c5ac35cded487cce53b9456343596e20bb30d5525bb31a82ff6ef3466ba97e44007acff04a5d1388f265ec92c9e2c7b461e50
+"@abw/badger-utils@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@abw/badger-utils@npm:1.0.5"
+  checksum: d0879141d90293f4a2b92aeb0764956bd3a86a3e9cda9fe55f815a28585b4b040b235b51ba6b589595ffaa330b4299d02932570617337908becf1f9543c5d7c7
   languageName: node
   linkType: hard
 
