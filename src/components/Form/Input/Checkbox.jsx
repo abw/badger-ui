@@ -1,10 +1,10 @@
 import React from 'react';
 import UICheckbox from '../../Checkbox'
-import { objSubset } from '@abw/badger-utils';
+import { extract } from '@abw/badger-utils';
 
 export const Checkbox = ({field}) =>
   <UICheckbox
-    { ...objSubset(
+    { ...extract(
         field,
         "name text disabled className onFocus onBlur checkedIcon uncheckedIcon"
       )

@@ -1,10 +1,10 @@
-import { objSubset } from '@abw/badger-utils';
+import { extract } from '@abw/badger-utils';
 import React from 'react';
 import UIRadio from '../../Radio';
 
 export const Radio = ({field}) =>
   <UIRadio
-    { ...objSubset(
+    { ...extract(
         field,
         "options value name disabled placeholder onFocus onBlur optionClass checkedIcon uncheckedIcon"
       )

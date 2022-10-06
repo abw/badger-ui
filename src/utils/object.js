@@ -1,4 +1,4 @@
 export {
-  objMap, objSubset
+  objMap, extract
 } from '@abw/badger-utils'
 

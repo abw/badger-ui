@@ -1,10 +1,10 @@
 import React from 'react';
 import UISelect from '../../Select';
-import { objSubset } from '@abw/badger-utils';
+import { extract } from '@abw/badger-utils';
 
 export const Select = ({field})=>
   <UISelect
-    { ...objSubset(
+    { ...extract(
         field,
         "value options name disabled placeholder onFocus onBlur"
       )
