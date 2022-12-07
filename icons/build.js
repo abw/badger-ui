@@ -417,7 +417,11 @@ function generateLibraryFile(icons) {
 // update icons/config.yaml and then run 'yarn icons' from the command line.
 // That will rebuild this file.
 //----------------------------------------------------------------------------
-import { library } from '@fortawesome/fontawesome-svg-core'
+
+// https://github.com/FortAwesome/Font-Awesome/issues/19348
+// import { library } from '@fortawesome/fontawesome-svg-core'
+const { library } = require('@fortawesome/fontawesome-svg-core');
+
 
 // import FontAwesome solid icons
 import {
@@ -436,7 +440,16 @@ ${icons.regular.map(
 // define custom icons
 ${icons.custom.map(generateCustomIcon).join("\n")}
 
+let BadgerUIIconsInitialised = false;
+
 export function init() {
+  if (BadgerUIIconsInitialised) {
+    return;
+  }
+  else {
+    BadgerUIIconsInitialised = true;
+  }
+
   library.add(
     // add solid icons
 ${icons.solid.map(
