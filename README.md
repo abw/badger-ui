@@ -20,11 +20,11 @@ examples of the UI components.
 
 Add the `badger-ui` library to your project.
 
-> **NOTE:**  These examples assume you're using `yarn` but the equivalent using `npm` will also work.
+> **NOTE:**  These examples assume you're using `pnpm` but the equivalent using `npm` will also work.
 
 ```sh
 cd your-project
-yarn add @abw/badger-ui
+pnpm add @abw/badger-ui
 ```
 
 Then you can import `badger-ui` components into your React components.
@@ -88,38 +88,38 @@ not intended for end users.
 First install all the dependencies.
 
 ```sh
-yarn install
+pnpm install
 ```
 
 Build the library using the following command.  Output files
 will be written to the `dist` directory.
 
 ```sh
-yarn build
+pnpm build
 ```
 
 Run the following command to view the [Storybook](https://storybook.js.org/) showing
 examples of the components in action.
 
 ```sh
-yarn storybook
+pnpm storybook
 ```
 
 To check the source code for potential errors, run `eslint`
 using this command.
 
 ```sh
-yarn lint
+pnpm lint
 ```
 
 If you want to delete the `dist` build directory you can run
 this command.
 
 ```sh
-yarn clean
+pnpm clean
 ```
 
-Note that this happens automatically when you run `yarn build`.
+Note that this happens automatically when you run `pnpm build`.
 
 # Author
 
