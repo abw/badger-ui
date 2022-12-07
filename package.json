@@ -15,12 +15,12 @@
   "homepage": "https://abw.github.io/badger-ui/",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yarn clean && rollup --config",
+    "build": "pnpm clean && rollup --config",
     "lint": "eslint 'src/**/*'",
     "lint:fix": "eslint --fix 'src/**/*'",
     "icons": "node icons/build.js --verbose",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
+    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"
   },
   "devDependencies": {
     "@abw/react-context-generator": "^1.1.0",
@@ -88,6 +88,7 @@
     "@dnd-kit/core": "^6.0.5",
     "@dnd-kit/modifiers": "^6.0.0",
     "@dnd-kit/sortable": "^7.0.1",
+    "@dnd-kit/utilities": "^3.2.1",
     "chalk": "^4.1.2",
     "command-line-args": "^5.2.0",
     "command-line-usage": "^6.1.1",
