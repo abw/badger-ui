@@ -47,3 +47,42 @@ export const ThemedLinks = () => {
     </div>
   </>
 }
+
+export const CustomNavLinks = () => {
+  const MyTheme = {
+    Link: {
+      NavLink: props =>
+        <div className={props.className({ isActive: true })}>
+          [LINK TO {props.to}] {props.children} [/link]
+        </div>
+    }
+  };
+  return <>
+    <h1 className="mar-t-none mar-l-none">Custom Link Component</h1>
+    <p>
+      The <code className="code">Link</code> component was originally designed
+      to work with React Router.  By default it renders a
+      <code className="code">NavLink</code> component.  You can define your
+      own component as the <code className="code">NavLink</code> property.
+      It's a bit of a hack, but it works in a tight spot.  Note that the
+      <code className="code">className</code> property passed to it is a
+      function which can expects to be with an <code className="code">isActive</code>
+      property if the link is active.  The <code className="code">children</code>
+      property contains the link content rendered by
+      the <code className="code">LinkContent</code> component.
+    </p>
+    <div className="row text-center">
+      <Theme.Provider {...MyTheme}>
+        <Link to="nowhere" text="Default Link"/>
+        <br/>
+        <Link
+          to="nowhere"
+          className="green button mar-l"
+          text="Green Button Link"
+          iconLeft="arrow-right"
+          iconRight="arrow-left"
+        />
+      </Theme.Provider>
+    </div>
+  </>
+}
