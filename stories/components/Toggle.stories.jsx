@@ -58,3 +58,10 @@ export const ManagedSate = (props) => {
   </>
 }
 
+export const CustomText = (props) =>
+  <ToggleState
+    checkedText="Activated"
+    uncheckedText="Deactivated"
+    initialValue={true}
+  />
+

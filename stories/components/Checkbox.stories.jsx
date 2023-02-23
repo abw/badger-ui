@@ -71,6 +71,32 @@ export const DisabledCheckbox = () => {
   </>
 }
 
+export const FullWidth = () =>
+  <>
+    <p>
+      Add the <code className="code">wide</code> class for a full-width
+      checkbox.
+    </p>
+    <CheckboxState className="wide" text="Wide Checkbox"/>
+  </>
+
+export const FixedWidth = () =>
+  <>
+    <p>
+      Add one of the <code className="code">wd-N</code> classed to set the
+      width to a number of ems.
+    </p>
+    <CheckboxState className="wd-12" text="Width 12em"/>
+  </>
+
+export const CustomText = () =>
+  <>
+    <CheckboxState
+      checkedText="Yes please"
+      uncheckedText="No thank you"
+    />
+  </>
+
 export const CustomIcons = () =>
   <>
     <CheckboxState
@@ -78,6 +104,7 @@ export const CustomIcons = () =>
       checkedIcon="arrow-up" uncheckedIcon="arrow-down"
     />
   </>
+
 
 export const CheckboxSizes = () =>
   <>

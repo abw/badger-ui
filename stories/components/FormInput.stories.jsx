@@ -65,9 +65,27 @@ export const CheckboxInputWithOptions = () =>
       <Field
         name="sometext"
         input="checkbox"
-        text="Do you like Badgers?"
+        uncheckedText="Do you like Badgers?"
+        checkedText="You do like Badgers!  You are awesome!"
         checkedIcon="check"
         uncheckedIcon="badger"
+      />
+    </Form>
+  </>
+
+export const InlineCheckboxInput = () =>
+  <>
+    <p className="mar-t-none">
+      The <code className="code">checkbox</code> input type is full-width
+      by default.  Add the <code className="code">inline</code> class if
+      you want it to shrink
+    </p>
+    <Form>
+      <Field
+        name="sometext"
+        input="checkbox"
+        text="Inline Checkbox"
+        className="inline"
       />
     </Form>
   </>

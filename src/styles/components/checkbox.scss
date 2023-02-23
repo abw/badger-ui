@@ -1,6 +1,9 @@
 /*-- components/checkbox --*/
-.checkbox {
+.checkbox, .input.checkbox {
   display:          inline-flex;
+  width:            auto;
+}
+.checkbox {
   font-size:        $checkbox-size;
   line-height:      $checkbox-line;
   padding:          $checkbox-padding;
@@ -21,6 +24,7 @@
   }
   &.wide {
     display: flex;
+    width: 100%;
     margin-right: 0;
   }
   &.checked {
@@ -68,8 +72,11 @@
   }
 }
 
-form .checkbox {
+form .checkbox.input:not(.inline) {
   width: 100%;
+}
+
+form .checkbox.input {
   margin-bottom: 0 !important;
 }
 

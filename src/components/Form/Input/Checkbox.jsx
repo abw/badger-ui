@@ -6,7 +6,7 @@ export const Checkbox = ({field}) =>
   <UICheckbox
     { ...extract(
         field,
-        "name text disabled className onFocus onBlur checkedIcon uncheckedIcon"
+        "name text disabled className onFocus onBlur checkedText uncheckedText checkedIcon uncheckedIcon"
       )
     }
     value={field.value ? true : false}

@@ -8,6 +8,8 @@ const Checkbox = ({
   text,
   value = false,
   disabled = false,
+  checkedText = text,
+  uncheckedText = text,
   checkedIcon,
   uncheckedIcon,
   iconClass = '',
@@ -34,7 +36,7 @@ const Checkbox = ({
       aria-disabled={disabled}
     >
       <Icon name={icon} className={`mar-r ${iconClass}`} fixedWidth />
-      <span className="text">{text}</span>
+      <span className="text">{value ? checkedText : uncheckedText}</span>
     </div>
   )
 }
@@ -48,6 +50,15 @@ Checkbox.propTypes = {
   className: PropTypes.string,
   /** Text content for the checkbox or an element. */
   text: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
+  /** Checked and unchecked text */
+  checkedText: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
+  uncheckedText: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node,
   ]),

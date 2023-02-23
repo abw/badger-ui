@@ -26,17 +26,17 @@
 // and wd-100 to wd-2000 for pixel widths
 @for $wd from 1 through 20 {
   .wd-#{$wd} {
-    width: #{$wd}em;
+    width: #{$wd}em !important;
   }
   .wd-#{100 * $wd} {
-    width: #{100 * $wd}px;
+    width: #{100 * $wd}px !important;
     max-height: #{250 * $wd}px;
   }
   .ht-#{$wd} {
-    height: #{$wd}em;
+    height: #{$wd}em !important;
   }
   .ht-#{100 * $wd} {
-    height: #{100 * $wd}px;
+    height: #{100 * $wd}px !important;
   }
 }
 
