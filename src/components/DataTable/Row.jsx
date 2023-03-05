@@ -9,7 +9,7 @@ export const Row = ({
   ...props
 }) =>
   <tr className={rowClass ? rowClass(row) : ''}>
-  { visibleColumns.map(
+    { visibleColumns.map(
       name => {
         const column = columns[name];
         const field  = column.field || name;
@@ -24,7 +24,7 @@ export const Row = ({
           {...props}
         />
       }
-  )}
-</tr>
+    )}
+  </tr>
 
 export default Row

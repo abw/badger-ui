@@ -1,13 +1,13 @@
-import { isDefined } from "../../utils";
+import { isDefined } from '../../utils';
 
-export const filterStringExact = ({ row, field, value, search }) =>
+export const filterStringExact = ({ value, search }) =>
   // we have to do woolly string searching because the value returned from a select
   // component is always a string
   isDefined(value)
-    ? match.toString() === search.toString()
+    ? value.toString() === search.toString()
     : false;
 
-export const filterStringContains = ({ row, field, value, search }) => {
+export const filterStringContains = ({ value, search }) => {
   // more complicate string search that looks for all words in the input
   // anywhere in the string, e.g. "foo bar" should match against "bar and foo"
   const words  = search.toLowerCase().split(/\s+/);
@@ -23,19 +23,19 @@ export const filterStringContains = ({ row, field, value, search }) => {
   }
 }
 
-export const filterInteger = ({ row, field, value, search }) =>
+export const filterInteger = ({ value, search }) =>
   //console.log('filterInteger(%o, %o, %o) [%s][%o] == [%s][%o]', row, field, search, typeof match, match, typeof search, search);
   isDefined(value)
-    ? (parseInt(match) === parseInt(search))
+    ? (parseInt(value) === parseInt(search))
     : false;
 
-export const filterFloat = ({row, field, value, search }) =>
+export const filterFloat = ({value, search }) =>
   //console.log('filterFloat(%o, %o, %o) [%s][%o] == [%s][%o]', row, field, search, typeof match, match, typeof search, search);
   isDefined(value)
     ? (parseFloat(value) === parseFloat(search))
     : false;
 
-export const filterBoolean = ({ row, field, value=false, search }) => {
+export const filterBoolean = ({ value=false, search }) => {
   // the problem here is that a select input can't have options with true/false values, and
   // values of 0/1 get converted to strings.
   const bsrch = parseInt(search) !== 0;

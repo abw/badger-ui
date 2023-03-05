@@ -46,8 +46,8 @@ export const List = ({
     onClick={disabled ? null : toggleVisibility}
     onKeyDown={
       disabled
-      ? null
-      : e => {
+        ? null
+        : e => {
           setOpen(true);
           onKeyPress(e, optionList, cursor, setCursor, setOpen, onChange)
         }

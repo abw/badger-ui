@@ -17,7 +17,7 @@ const Pagination = ({
 }) =>
   <div className="pagination">
     <div className="prev">
-    { page.less &&
+      { page.less &&
         <Button
           className="paginate-prev"
           aria-label="Goto previous page"
@@ -27,10 +27,10 @@ const Pagination = ({
           solid={solidButtons}
           onClick={() => setPageNo(page.prevPage)}
         />
-    }
+      }
     </div>
     <div className="list">
-    { page.showFirst &&
+      { page.showFirst &&
         <Button
           className="link"
           aria-label="Goto page 1"
@@ -39,11 +39,11 @@ const Pagination = ({
           solid={solidButtons}
           onClick={() => setPageNo(1)}
         />
-    }
-    {page.separateFirst &&
+      }
+      {page.separateFirst &&
       <span className="etc">&hellip;</span>
-    }
-    { page.pageRange && page.pageRange.map(
+      }
+      { page.pageRange && page.pageRange.map(
         pageNo => <Button
           key={pageNo}
           className="link"
@@ -54,11 +54,11 @@ const Pagination = ({
           onClick={() => setPageNo(pageNo)}
         />
       )
-    }
-    { page.separateLast &&
+      }
+      { page.separateLast &&
       <span className="etc">&hellip;</span>
-    }
-    { page.showLast &&
+      }
+      { page.showLast &&
       <Button
         className="link"
         aria-label={`Goto page ${page.lastPage}`}
@@ -67,10 +67,10 @@ const Pagination = ({
         solid={solidButtons}
         onClick={() => setPageNo(page.lastPage)}
       />
-    }
+      }
     </div>
     <div className="next">
-    { page.more &&
+      { page.more &&
         <Button
           className="next"
           aria-label="Goto next page"
@@ -79,8 +79,8 @@ const Pagination = ({
           text={nextText}
           solid={solidButtons}
           onClick={() => setPageNo(page.nextPage)}
-      />
-    }
+        />
+      }
     </div>
   </div>
 

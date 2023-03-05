@@ -6,7 +6,7 @@ export function bindHandlers(that, names) {
     name => {
       let method = that[name];
       if (method) {
-          handlers[name] = method.bind(that);
+        handlers[name] = method.bind(that);
       }
       else {
         throw new Error('Cannot bind to ' + name + ' method (not found in ' + that + ')');

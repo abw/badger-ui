@@ -6,9 +6,9 @@ export {
   commas, currency, splitLines
 } from '@abw/badger-utils'
 
-export const Paragraphs = ({text, className="", firstClass=""}) => <>
+export const Paragraphs = ({text, className='', firstClass=''}) => <>
   { splitLines(text).map(
-      (para, n) => <p key={n} className={n===0 ? firstClass : className}>{para}</p>
+    (para, n) => <p key={n} className={n===0 ? firstClass : className}>{para}</p>
   )}
 </>
 

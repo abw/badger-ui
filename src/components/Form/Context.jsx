@@ -44,12 +44,12 @@ class Context extends React.Component {
     this.mounted = false;
   }
   attachField(name, field) {
-      this.debug('attaching [%s] field => %o', name, field);
-      this.fields[name] = field;
+    this.debug('attaching [%s] field => %o', name, field);
+    this.fields[name] = field;
   }
   detachField(name) {
-      this.debug('detaching [%s] field', name);
-      delete this.fields[name];
+    this.debug('detaching [%s] field', name);
+    delete this.fields[name];
   }
   resetForm() {
     if (! this.mounted) {
@@ -97,14 +97,14 @@ class Context extends React.Component {
         field => field.submitField(this.handlers.submitField)
       )
     )
-    .then(
-      () => this.validateForm(this.submit)
-    )
-    .then(
-      submit => submit
-        ? this.sendRequest(submit)
-        : this.cancelRequest(submit)
-    )
+      .then(
+        () => this.validateForm(this.submit)
+      )
+      .then(
+        submit => submit
+          ? this.sendRequest(submit)
+          : this.cancelRequest(submit)
+      )
   }
   submitField(field) {
     const { name } = field;
@@ -203,15 +203,15 @@ class Context extends React.Component {
         }
       }
     )
-    .catch(
-      response => {
-        if (this.mounted) {
-          this.setState({ submitting: false });
+      .catch(
+        response => {
+          if (this.mounted) {
+            this.setState({ submitting: false });
+          }
+          this.debug('handleResponse() => INVALID (caught error): ', response);
+          return this.invalidResponse(response.data);
         }
-        this.debug('handleResponse() => INVALID (caught error): ', response);
-        return this.invalidResponse(response.data);
-      }
-    )
+      )
   }
   validResponse(response) {
     this.debug('validResponse(): ', response);

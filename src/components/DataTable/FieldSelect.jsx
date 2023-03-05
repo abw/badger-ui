@@ -54,31 +54,31 @@ export const FieldSelect = ({
     collisionDetection={closestCenter}
     onDragEnd={handleDragEnd}
     modifiers={[restrictToVerticalAxis, restrictToWindowEdges]}
+  >
+    <SortableContext
+      items={Object.keys(columns)}
+      strategy={verticalListSortingStrategy}
     >
-      <SortableContext
-        items={Object.keys(columns)}
-        strategy={verticalListSortingStrategy}
+      <Dropdown
+        text="Fields" right className="mar-r"
+        solid={solidButtons} color={dropdownColor}
+        clickOpen
       >
-        <Dropdown
-          text="Fields" right className="mar-r"
-          solid={solidButtons} color={dropdownColor}
-          clickOpen
-        >
-          <div className="menu pad pad-b-none">
+        <div className="menu pad pad-b-none">
           { Object.keys(columns).map(id =>
-              <SortableItem
-                key={id} id={id} columns={columns}
-                visibleColumns={visibleColumns}
-                setVisibleColumn={setVisibleColumn}
-              />
+            <SortableItem
+              key={id} id={id} columns={columns}
+              visibleColumns={visibleColumns}
+              setVisibleColumn={setVisibleColumn}
+            />
           )}
-          </div>
-        </Dropdown>
-      </SortableContext>
-    </DndContext>
+        </div>
+      </Dropdown>
+    </SortableContext>
+  </DndContext>
 }
 
-export function SortableItem({ id, columns, visibleColumns, setVisibleColumn, ...props }) {
+export function SortableItem({ id, columns, visibleColumns, setVisibleColumn }) {
   const {
     attributes,
     listeners,

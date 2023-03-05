@@ -1,5 +1,7 @@
 const path = require("path");
+// import path from 'node:path';
 
+// const config = {
 module.exports = {
   "stories": [
     "../stories/**/*.stories.mdx",
@@ -27,3 +29,4 @@ module.exports = {
   }
 }
 
+// export default config

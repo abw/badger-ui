@@ -23,7 +23,19 @@
     "brace-style": ["error", "stroustrup"],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "indent": [
+      "error",
+      2,
+      {
+        "offsetTernaryExpressions": true,
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ]
   },
   "settings": {
     "react": {

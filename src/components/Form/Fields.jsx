@@ -5,7 +5,7 @@ import { splitToList } from '../../utils'
 export const Fields = ({names}) =>
   <>
     { splitToList(names).map(
-        name => <Field key={name} name={name}/>
+      name => <Field key={name} name={name}/>
     )}
   </>
 

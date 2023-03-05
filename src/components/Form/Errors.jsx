@@ -16,13 +16,13 @@ const Errors = ({
 >
   <table className="validation-errors">
     <tbody>
-    {errors.map(
-      (error, index) =>
-        <tr key={index}>
-          <td className="key">{error.label||error.field}:</td>
-          <td className="value">{error.message}</td>
-        </tr>
-    )}
+      {errors.map(
+        (error, index) =>
+          <tr key={index}>
+            <td className="key">{error.label||error.field}:</td>
+            <td className="value">{error.message}</td>
+          </tr>
+      )}
     </tbody>
   </table>
 </Error>

@@ -3,10 +3,9 @@ import Reset from './Reset';
 import Submit from './Submit';
 
 const ResetSubmit = ({
-  className="flex start space stack-mobile mar-t",
+  className='flex start space stack-mobile mar-t',
   reset={},
   submit={},
-  ...props
 }) =>
   <div className={className}>
     <Reset  {...reset}/>

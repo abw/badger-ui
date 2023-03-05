@@ -1,12 +1,12 @@
-import React from "react";
-import Debug from "../../src/components/Debug";
+import React from 'react';
+import Debug from '../../src/components/Debug';
 
 export default {
-  title: "Components/Debug",
+  title: 'Components/Debug',
   component: Debug,
 }
 
-export const Example = (props) =>
+export const Example = () =>
   <>
     <h1 className="mar-t-none mar-l-none">Debugging Messages</h1>
     <p className="intro">
@@ -16,7 +16,7 @@ export const Example = (props) =>
     <Debug text="This is some debug text" />
   </>
 
-export const CustomTitle = (props) =>
+export const CustomTitle = () =>
   <>
     <Debug
       text="This is some debug text"
@@ -24,7 +24,7 @@ export const CustomTitle = (props) =>
       icon="info-circle" />
   </>
 
-export const CustomContent = (props) =>
+export const CustomContent = () =>
   <>
     <Debug>
       <h3>Debug Section One</h3>

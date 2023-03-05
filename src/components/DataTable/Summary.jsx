@@ -8,7 +8,6 @@ import { commas } from '@abw/badger-utils'
 
 const Summary = ({
   page,
-  setPageSize,
   setPageNo,
   prevIcon='arrow-left',
   prevColor='blue',
@@ -17,7 +16,6 @@ const Summary = ({
   disabledColor='smoke',
   solidButtons=false,
   summaryClass='',
-  ...props
 }) => {
   return <div className={`summary ${summaryClass}`}>
     { page.less
@@ -43,9 +41,9 @@ const Summary = ({
     </div>
     <div className="page-records">
       { page.none ? <span>There are no records to display</span>
-      : page.one  ? <span>Showing the only record</span>
-      : page.all  ? <span>Showing all {commas(page.total)} records</span>
-      :             <span>Showing {page.size} of {commas(page.total)} records from {commas(page.from)} to {commas(page.to)}</span>
+        : page.one  ? <span>Showing the only record</span>
+          : page.all  ? <span>Showing all {commas(page.total)} records</span>
+            :             <span>Showing {page.size} of {commas(page.total)} records from {commas(page.from)} to {commas(page.to)}</span>
       }
     </div>
     <div className="field-select">

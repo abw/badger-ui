@@ -7,26 +7,26 @@ export const Item = (props) => props.disabled
       <Content {...props}/>
     </div>
   : props.to ?
-    <Link {...props} onClick={() => props.setClicked(1)}/>
+      <Link {...props} onClick={() => props.setClicked(1)}/>
     /*
     <Link to={props.to||'/'} label={props.label||props.text} className="item" onClick={() => props.setClicked(1)}>
       <Content {...props}/>
     </Link>
     */
-  : props.href ?
-    <a href={props.href} target={props.target} label={props.label} className="item" onClick={() => props.setClicked(1)}>
-      <Content {...props}/>
-    </a>
-  : <span
-      className="item"
-      onClick={
-        () => {
-          props.setClicked(1);
-          props.onClick()
-        }
-      }
-    >
-      <Content {...props}/>
-    </span>
+    : props.href ?
+        <a href={props.href} target={props.target} label={props.label} className="item" onClick={() => props.setClicked(1)}>
+          <Content {...props}/>
+        </a>
+      : <span
+          className="item"
+          onClick={
+            () => {
+              props.setClicked(1);
+              props.onClick()
+            }
+          }
+        >
+          <Content {...props}/>
+        </span>
 
 export default Item

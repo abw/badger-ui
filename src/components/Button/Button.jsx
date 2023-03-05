@@ -12,7 +12,7 @@ const Button = ({
   solid, label, icon, iconLeft, iconRight,
   onClick, tabIndex=0,
   ...props
-  }) => {
+}) => {
   const content = text || children;
   return <button
     className={`${classNames(props, 'button', solid && 'solid')} ${content ? '' : 'empty'}`}

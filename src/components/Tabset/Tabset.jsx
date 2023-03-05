@@ -6,12 +6,12 @@ import Icon from '../Icon';
 const Tabset = ({
   tabs,
   storageKey,
-  tabsetClass="tabset",
-  tabClass="tab",
-  activeClass="active",
-  visibleClass="visible",
-  hiddenClass="hidden",
-  className="",
+  tabsetClass='tabset',
+  tabClass='tab',
+  activeClass='active',
+  visibleClass='visible',
+  hiddenClass='hidden',
+  className='',
 }) => {
   let state = { active: 0 };
   let store;
@@ -34,7 +34,7 @@ const Tabset = ({
 
   return <div className={`${tabsetClass} ${className}`}>
     <div className="head">
-    { tabs.map(
+      { tabs.map(
         (tab, n) =>
           <a key={n} className={n==active ? `${activeClass} ${tabClass}` : tabClass} onClick={() => activateTab(n)}>
             {tab.icon && <Icon icon={tab.icon} fixedWidth />}
@@ -43,16 +43,16 @@ const Tabset = ({
             {tab.iconRight && <Icon icon={tab.iconRight} className="on-right" fixedWidth />}
           </a>
       )
-    }
+      }
     </div>
     <div className="body">
       { tabs.map(
-          (tab, n) => {
-            const TabComponent = tab.component;
-            return <div key={n} className={n==active ? visibleClass : hiddenClass}>
-              {tab.content}
-            </div>
-          }
+        (tab, n) => {
+          // const TabComponent = tab.component;
+          return <div key={n} className={n==active ? visibleClass : hiddenClass}>
+            {tab.content}
+          </div>
+        }
       )}
     </div>
   </div>

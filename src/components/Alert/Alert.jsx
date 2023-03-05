@@ -43,30 +43,30 @@ const Alert = ({
   return <div className={cname}>
     {headline
       ? <div className="headline" onClick={revealable ? () => reveal(!revealed) : null}>
-        {headIcon &&
-          <Icon icon={headIcon} fixedWidth className="mar-r" />
-        }
-        <span className="text">{headline}</span>
-        {dismissable &&
+          { headIcon &&
+            <Icon icon={headIcon} fixedWidth className="mar-r" />
+          }
+          <span className="text">{headline}</span>
+          { dismissable &&
           <span className="dismiss">
             <Icon icon={dismissIcon} fixedWidth className="message-control" onClick={() => dismiss(true)} />
           </span>
-        }
-        {revealable &&
+          }
+          { revealable &&
           <span className="reveal">
             {revealed
               ? <Icon
-                icon={revealedIcon} fixedWidth className="message-control" transform="grow-8"
-                onClick={() => reveal(false)}
-              />
+                  icon={revealedIcon} fixedWidth className="message-control" transform="grow-8"
+                  onClick={() => reveal(false)}
+                />
               : <Icon
-                icon={unrevealedIcon} fixedWidth className="message-control" transform="grow-8 down-1"
-                onClick={() => reveal(true)}
-              />
+                  icon={unrevealedIcon} fixedWidth className="message-control" transform="grow-8 down-1"
+                  onClick={() => reveal(true)}
+                />
             }
           </span>
-        }
-      </div>
+          }
+        </div>
       : null
     }
     {revealed &&

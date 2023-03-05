@@ -3,6 +3,7 @@
   "version": "1.0.37",
   "description": "CSS/React User Interface Components",
   "author": "Andy Wardley",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
@@ -18,12 +19,15 @@
     "build": "pnpm clean && rollup --config",
     "lint": "eslint 'src/**/*'",
     "lint:fix": "eslint --fix 'src/**/*'",
-    "icons": "node icons/build.js --verbose",
+    "OLDicons": "node icons/build.js --verbose",
+    "icons": "svg-icon-librarian -f icons/config.yaml -c icons/custom -o src/config/icons.js -y",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"
   },
   "devDependencies": {
+    "@abw/badger": "^1.0.12",
     "@abw/react-context-generator": "^1.1.0",
+    "@abw/svg-icon-librarian": "^1.0.5",
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.7",
@@ -31,10 +35,6 @@
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-regular-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -52,6 +52,7 @@
     "eslint": "^7.32.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.5.13",
     "history": "^5.0.1",
     "js-yaml": "^4.1.0",
@@ -69,14 +70,11 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.42.1",
     "sass-loader": "10.2.0",
-    "style-loader": "2.0.0"
+    "style-loader": "2.0.0",
+    "yup": "^0.32.9"
   },
   "peerDependencies": {
     "@abw/react-context-generator": "^1.1.0",
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-regular-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
     "history": "^5.0.1",
     "react": ">=17.0.2",
     "react-dom": ">=17.0.2",
@@ -84,15 +82,11 @@
     "react-router-dom": "^6.1.0"
   },
   "dependencies": {
-    "@abw/badger-utils": "^1.0.13",
+    "@abw/badger-utils": "^1.0.16",
     "@dnd-kit/core": "^6.0.5",
     "@dnd-kit/modifiers": "^6.0.0",
     "@dnd-kit/sortable": "^7.0.1",
-    "@dnd-kit/utilities": "^3.2.1",
-    "chalk": "^4.1.2",
-    "command-line-args": "^5.2.0",
-    "command-line-usage": "^6.1.1",
-    "yup": "^0.32.9"
+    "@dnd-kit/utilities": "^3.2.1"
   },
   "packageManager": "yarn@3.1.1",
   "repository": {

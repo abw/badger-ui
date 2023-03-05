@@ -63,7 +63,7 @@ class Context extends React.Component {
           k => state.columns[k]
         )
       }
-      this.debug("loaded state from storage: ", state);
+      this.debug('loaded state from storage: ', state);
     }
     // prepare data and set the initial state
     this.state = this.prepareState({
@@ -101,8 +101,8 @@ class Context extends React.Component {
 
     // save any changes into local storage
     if (this.store) {
-        this.debug("saving state to storage: ", props);
-        this.store.save(props);
+      this.debug('saving state to storage: ', props);
+      this.store.save(props);
     }
   }
 

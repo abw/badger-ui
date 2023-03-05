@@ -1,7 +1,7 @@
 import React from 'react'
 import Context from './Context'
-import { Filter } from './Filters'
 import Header from './Header'
+import { Filter } from './Filters'
 
 export const Headers = ({
   columns,
@@ -11,25 +11,25 @@ export const Headers = ({
 }) =>
   <thead>
     <tr className="headings">
-    { visibleColumns.map(
+      { visibleColumns.map(
         name => <Header
           key={name}
           name={name}
           column={columns[name]}
           {...props}
         />
-    )}
+      )}
     </tr>
     { showFilters
       ? <tr className="filters">
-        { visibleColumns.map(
+          { visibleColumns.map(
             name => <Filter
               key={name}
               name={name}
               column={columns[name]}
               {...props}
             />
-        )}
+          )}
         </tr>
       : null
     }

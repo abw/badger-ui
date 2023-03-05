@@ -13,6 +13,6 @@ export const TextArea = ({field}) =>
     onFocus={field.onFocus}
     onBlur={field.onBlur}
     rows={field.rows||5}
-/>
+  />
 
 export default TextArea

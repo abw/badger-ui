@@ -1,4 +1,4 @@
-import { range } from "@abw/badger-utils";
+import { range } from '@abw/badger-utils';
 
 export const paginate = ({rows, pageNo=1, pageSize=rows.length}) => {
   const total = rows.length;

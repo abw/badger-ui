@@ -36,13 +36,13 @@ export const displayBoolean = Themed(
 )
 
 export const displayTypes = {
-    default:    displayText,
-    text:       displayText,
-    number:     displayNumber,
-    price:      displayPrice,
-    pounds:     displayPounds,
-    boolean:    displayBoolean,
-    capitalize: displayCapitalized,
+  default:    displayText,
+  text:       displayText,
+  number:     displayNumber,
+  price:      displayPrice,
+  pounds:     displayPounds,
+  boolean:    displayBoolean,
+  capitalize: displayCapitalized,
 };
 
 export default displayTypes
