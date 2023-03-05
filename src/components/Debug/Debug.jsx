@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from '../Icon'
-import { iconNames } from '../../config/iconNames'
+import icons from '../../config/icons.js'
 import { Themed } from '../../utils'
 
 const Debug = ({
@@ -22,7 +22,7 @@ Debug.propTypes = {
   /** Body text. */
   text: PropTypes.string,
   /** Name of the icon to use in the header. */
-  icon: PropTypes.oneOf(iconNames),
+  icon: PropTypes.oneOf(Object.keys(icons)),
 }
 
 Debug.defaultProps = {
