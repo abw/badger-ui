@@ -279,71 +279,71 @@ export const ValidateField = () =>
   </>
 
 export const CustomValidation = () => {
-    const validate = value => {
-      return new Promise(
-        (resolve, reject) => {
-          if (value.match(/badger/)) {
-            resolve(value);
-          }
-          else {
-            reject("Wrong, it's a badger!");  // eslint-disable-line quotes
-          }
+  const validate = value => {
+    return new Promise(
+      (resolve, reject) => {
+        if (value.match(/badger/)) {
+          resolve(value);
         }
-      )
-    }
-    return <>
-      <p className="mar-t-none">
+        else {
+          reject("Wrong, it's a badger!");  // eslint-disable-line quotes
+        }
+      }
+    )
+  }
+  return <>
+    <p className="mar-t-none">
         You can write your own validation code, or use a different validation
         library if you prefer but it should confirm to the same protocol as
-        <code className="code">yup.validate(value)</code>.  It should be a function
+      <code className="code">yup.validate(value)</code>.  It should be a function
         that takes a values as an argument and returns a Promise that either resolves
         the value or rejects it.  This is powerful, if a bit long-winded.
         See the code for this example.
-      </p>
-      <Form>
-        <Field
-          name="badger"
-          label="What's your favourite animal?"
-          help="Enter the name of your favourite animal."
-          validate={validate}
-        />
-      </Form>
-    </>
+    </p>
+    <Form>
+      <Field
+        name="badger"
+        label="What's your favourite animal?"
+        help="Enter the name of your favourite animal."
+        validate={validate}
+      />
+    </Form>
+  </>
 }
 
 export const CustomValidator = () => {
-    const validator = (value, field, pass, fail) =>
-      value.match(/badger/)
-        ? pass(value)
-        : fail("Wrong, it's a badger!") // eslint-disable-line quotes
+  const validator = (value, field, pass, fail) =>
+    value.match(/badger/)
+      ? pass(value)
+      : fail("Wrong, it's a badger!") // eslint-disable-line quotes
 
-    return <>
-      <p className="mar-t-none">
+  return <>
+    <p className="mar-t-none">
         If you want something a bit simpler, you can specify
         a <code className="code">validator</code> function (note the
         subtle difference between &quot;validat<b>or</b>&quot; and &quot;validat<b>e</b>&quot; -
         they&apos;re similar but work in slightly different ways).  If you
         specify a <code className="code">validator</code> then we take care
         of wrapping it up in a Promise for you so that it works like a
-        <code className="code">validate</code> function.
-      </p>
-      <p>
+      <code className="code">validate</code> function.
+    </p>
+    <p>
         The <code className="code">validator</code> function should
         take four parameters: the <code className="code">value</code>,
         the <code className="code">field</code> state, a <code className="code">pass()</code> function,
         and a <code className="code">fail()</code> function.  It should
         call either of the <code className="code">pass()</code> or
-        <code className="code">fail()</code> functions.
-      </p>
-      <Form>
-        <Field
-          name="badger"
-          label="What's your favourite animal?"
-          help="Enter the name of your favourite animal."
-          validator={validator}
-        />
-      </Form>
-    </>
+      <code className="code">fail()</code> functions.
+    </p>
+    <Form>
+      <Field
+        name="badger"
+        label="What's your favourite animal?"
+        help="Enter the name of your favourite animal."
+        validator={validator}
+      />
+    </Form>
+  </>
 }
 
 export const FocusAndBlur = () => {
@@ -433,7 +433,7 @@ export const InsertTwoFields = () => {
     email: {
       label: 'Your Email Address',
       iconLeft: 'at'
-  },
+    },
     password: {
       label: 'Your Password',
       iconLeft: 'key'
@@ -555,7 +555,7 @@ export const FieldReference = () => {
     <p className="mar-t-none">
       If you need to access the a field object reference then use
       the <code className="code">onLoad</code> property in conjunction
-      with React's <code className="code">useState</code> to store the
+      with React&apos;s <code className="code">useState</code> to store the
       field reference.
     </p>
     <p>
@@ -570,22 +570,22 @@ export const FieldReference = () => {
     <Button
       text="Black and White"
       color="black" solid
-      onClick={() => colorField.setValue("Black and White")}
+      onClick={() => colorField.setValue('Black and White')}
     />
     <Button
       text="Brown"
       color="brown" solid
-      onClick={() => colorField.setValue("Brown")}
+      onClick={() => colorField.setValue('Brown')}
     />
     <Button
       text="Badger"
       iconLeft="badger"
-      onClick={() => animalField.setValue("Badger")}
+      onClick={() => animalField.setValue('Badger')}
     />
     <Button
       text="Cat"
       iconLeft="cat"
-      onClick={() => animalField.setValue("Cat")}
+      onClick={() => animalField.setValue('Cat')}
     />
   </>
 }

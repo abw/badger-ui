@@ -1,9 +1,9 @@
-import React from "react";
-import { Todo } from "../../src/components/Debug";
-import { iconNames } from '../../src/config/iconNames'
+import React from 'react';
+import { Todo } from '../../src/components/Debug';
+import icons from '../../src/config/icons.js'
 
 export default {
-  title: "Components/Todo",
+  title: 'Components/Todo',
   component: Todo,
   args: {
     text: 'Jump over the grand canyon on a rocket bike.',
@@ -14,7 +14,7 @@ export default {
     title: {
     },
     icon: {
-      options: iconNames,
+      options: Object.keys(icons),
       control: { type: 'select' },
     },
   },

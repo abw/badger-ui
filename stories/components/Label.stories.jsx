@@ -1,10 +1,10 @@
-import React from "react";
-import { Label } from "../../src/components/Label";
+import React from 'react';
+import { Label } from '../../src/components/Label';
 import { colors } from '../../src/config/colors'
-import { iconNames } from '../../src/config/iconNames'
+import { iconNames } from '../../src/config/iconNames.js'
 
 export default {
-  title: "Components/Label",
+  title: 'Components/Label',
   component: Label,
   args: {
     text: 'Hello World',

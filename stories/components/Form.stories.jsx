@@ -244,7 +244,7 @@ export const CancelButton = () =>
   <>
     <p className="mar-t-none">
       The <code className="code">Cancel</code> component can be used to
-      render a generic button to cancel an add/edit action.  It's not
+      render a generic button to cancel an add/edit action.  It&apos;s not
       really specific to forms, but is used frequently enough to warrant
       adding.
     </p>
@@ -259,7 +259,7 @@ export const CancelButton = () =>
       <Field name="occupation"/>
       <Cancel
         solid className="mar-t-2"
-        onClick={() => window.alert("CANCEL - This would usually be a link to navigate the user back to the previous page")}
+        onClick={() => window.alert('CANCEL - This would usually be a link to navigate the user back to the previous page')}
       />
     </Form>
   </>
@@ -320,7 +320,7 @@ export const CancelResetSubmitButtons = () =>
       <Field name="occupation" label="Occupation" required/>
       <CancelResetSubmit
         cancel={{
-          onClick: () => window.alert("You clicked on cancel")
+          onClick: () => window.alert('You clicked on cancel')
         }}
         reset={{
           solid: true
@@ -465,8 +465,8 @@ export const FormReference = () => {
       color="black" solid
       onClick={
         () => form.setValues({
-          color: "Black and White",
-          animal: "Badger"
+          color: 'Black and White',
+          animal: 'Badger'
         })
       }
     />
@@ -475,8 +475,8 @@ export const FormReference = () => {
       color="red" solid
       onClick={
         () => form.setValues({
-          color: "Red",
-          animal: "Fox"
+          color: 'Red',
+          animal: 'Fox'
         })
       }
     />

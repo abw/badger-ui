@@ -101,9 +101,9 @@ export const SelectInput = () =>
         name="animal" input="select"
         text="Do you like Badgers?"
         options={[
-          { value: "f", text: "Ferrets" },
-          { value: "b", text: "Badgers" },
-          { value: "s", text: "Stoats" },
+          { value: 'f', text: 'Ferrets' },
+          { value: 'b', text: 'Badgers' },
+          { value: 's', text: 'Stoats' },
         ]}
       />
     </Form>
@@ -205,9 +205,9 @@ export const RadioInputWithOptions = () =>
         optionClass="mar-r-none"
         checkedIcon="check"
         options={[
-          { value: 1, text: "Badger", uncheckedIcon: 'badger' },
-          { value: 2, text: "Cat",    uncheckedIcon: 'cat'    },
-          { value: 3, text: "Human",  uncheckedIcon: 'user'   }
+          { value: 1, text: 'Badger', uncheckedIcon: 'badger' },
+          { value: 2, text: 'Cat',    uncheckedIcon: 'cat'    },
+          { value: 3, text: 'Human',  uncheckedIcon: 'user'   }
         ]}
       />
     </Form>
