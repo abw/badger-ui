@@ -1,11 +1,11 @@
-import React from "react";
-import { Spinner, Loader, Loading, Saving } from "../../src/components/Spinner";
+import React from 'react';
+import { Spinner, Loader, Loading, Saving } from '../../src/components/Spinner';
 import { sizes } from '../../src/config/sizes'
 import { iconNames } from '../../src/config/iconNames'
 import { colors } from '../../src/config/colors'
 
 export default {
-  title: "Components/Spinner",
+  title: 'Components/Spinner',
   component: Spinner,
   args: {
   },
@@ -42,7 +42,7 @@ export const Overview = (props) => <>
     The <code className="code">Loading</code> and
     The <code className="code">Saving</code> components are instances
     of the <code className="code">Loader</code> that default the message
-    to "Loading..." or "Saving..." respectively.
+    to &quot;Loading...&quot; or &quot;Saving...&quot; respectively.
   </p>
   <Spinner {...props} />
 </>
@@ -56,10 +56,10 @@ export const CustomSpinners = () =>
       <Spinner size="large" />
     </div>
     <div className="pad-v">
-      <Spinner size="larger" icon="radiation" bgColor="yellow" color="blue" />
+      <Spinner size="larger" icon="radiation" bgColor="yellow" color="black" />
     </div>
     <div className="pad-v">
-      <Spinner size="largest" icon="cat" bgColor="red" color="white" />
+      <Spinner size="largest" icon="cloop-duo" transform="shrink-1" bgColor="red" color="white" />
     </div>
   </div>
 
@@ -67,7 +67,13 @@ export const LoadingMessage = () =>
   <Loading />
 
 export const CustomLoadingMessage = () =>
-  <Loading overlayColor="black" color="green" icon="cat" message="Cat in the Washing Machine"/>
+  <Loading
+    overlayColor="black"
+    color="green"
+    icon="cat"
+    transform="shrink-2"
+    message="Cat in the Washing Machine"
+  />
 
 
 export const SavingMessage = () =>

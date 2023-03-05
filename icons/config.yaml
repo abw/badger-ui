@@ -1,7 +1,7 @@
 ---
 #============================================================================
 # This file contains the configuration for the build.js script which
-# generates a custom library of Fontawesome 5 icons.  This is used by the
+# generates a custom library of Fontawesome 6 icons.  This is used by the
 # Icon component in src/components/Icon.
 #
 # After making any changes here or adding any files to the "custom" directory
@@ -17,83 +17,89 @@
 # See the README.md file for further information.
 #============================================================================
 
-# icons to include from solid icon set
-solid:
-  - angle-left
-  - angle-right
-  - angle-down
-  - angle-up
-  - arrow-up
-  - arrow-down
-  - arrow-left
-  - arrow-right
-  - asterisk
-  - at
-  - ban
-  - bars
-  - caret-up
-  - caret-down
-  - caret-left
-  - caret-right
-  - caret-square-left
-  - caret-square-right
-  - cat
-  - check
-  - check-square
-  - circle
-  - circle-check
-  - circle-exclamation
-  - circle-question
-  - cog
-  - cogs
-  - clipboard-list
-  - exclamation-triangle
-  - filter
-  - grip-vertical
-  - info-circle
-  - key
-  - plus
-  - radiation
-  - search
-  - sort
-  - sort-down
-  - sort-up
-  - rotate-left
-  - times
-  - times-circle
-  - toggle-on
-  - toggle-off
-  - trash
-  - user
-  - users
-  - wrench
+sets:
+  # icons to include from solid icon set
+  solid:
+    - angle-left
+    - angle-right
+    - angle-down
+    - angle-up
+    - arrow-up
+    - arrow-down
+    - arrow-left
+    - arrow-right
+    - asterisk
+    - at
+    - ban
+    - bars
+    - caret-up
+    - caret-down
+    - caret-left
+    - caret-right
+    # - square-caret-left
+    # - square-caret-right
+    - cat
+    - check
+    # - square-check
+    - circle
+    - circle-check
+    - circle-exclamation
+    - circle-question
+    # - cog
+    # - cogs
+    - clipboard-list
+    # - exclamation-triangle
+    - filter
+    - grip-vertical
+    # - info-circle
+    - key
+    - plus
+    - radiation
+    - sort
+    - sort-down
+    - sort-up
+    - rotate-left
+    - toggle-on
+    - toggle-off
+    - trash
+    - user
+    - users
+    - wrench
 
-# icons to include from regular icon set
-regular:
-  - check-circle
-  - circle
-  - dot-circle
-  - face-frown
-  - square
+  # icons to include from regular icon set
+  regular:
+    - circle-check
+    - circle-dot
+    - face-frown
+    - square
+
+  # include all custom icons
+  custom: '*'
 
 
-# define aliases for icons
-alias:
+  # define aliases for icons
+icons:
   alert:        solid:circle-exclamation
-  checked:      solid:check-square
-  dotted:       regular:dot-circle
-  info:         solid:info-circle
+  checked:      solid:square-check
+  check-circle: regular:circle-check
+  ring:         regular:circle
+  # cog:          solid:gear
+  cogs:         solid:gears
+  dotted:       regular:circle-dot
+  dot-circle:   regular:circle-dot
+  info:         solid:circle-info
   ok:           solid:circle-check
   sad:          regular:face-frown
+  search:       solid:magnifying-glass
+  times:        solid:xmark
+  times-circle: solid:circle-xmark
   unchecked:    regular:square
   undo:         solid:rotate-left
   undotted:     regular:circle
-  warning:      solid:exclamation-triangle
+  warning:      solid:triangle-exclamation
 
-
-
-# set true if you want to automatically generate aliases for regular icons
-aliasRegular: true
-
-# load all custom icons in the 'custom' directory (relative to this dir)
-customDir: custom
+# # set true if you want to automatically generate aliases for regular icons
+# aliasRegular: true
+#
+# # load all custom icons in the 'custom' directory (relative to this dir)
+# customDir: custom

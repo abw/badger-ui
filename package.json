@@ -19,7 +19,6 @@
     "build": "pnpm clean && rollup --config",
     "lint": "eslint 'src/**/*'",
     "lint:fix": "eslint --fix 'src/**/*'",
-    "OLDicons": "node icons/build.js --verbose",
     "icons": "svg-icon-librarian -f icons/config.yaml -c icons/custom -o src/config/icons.js -y",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"

@@ -6,13 +6,14 @@ const Spinner = ({
   size,
   icon,
   color,
+  transform,
   bgColor,
   bgIcon,
   bgTransform
 }) =>
   <Icons className={size}>
     <Icon name={bgIcon} color={bgColor} transform={bgTransform} />
-    <Icon name={icon} color={color} spin />
+    <Icon name={icon} color={color} spin transform={transform} />
   </Icons>
 
 Spinner.defaultProps = {
