@@ -52,7 +52,7 @@ export const ManagedSate = () => {
     <CheckboxState
       text="State Maintained Internally"
       initialValue={true}
-      onChange={c => console.log("checked: ", c)}
+      onChange={c => console.log('checked: ', c)}
     />
   </>
 }
@@ -65,7 +65,7 @@ export const DisabledCheckbox = () => {
       value={disabled} onChange={setDisabled}
     />
     <CheckboxState
-      text={`This is ${disabled ? "disabled" : "enabled"}`}
+      text={`This is ${disabled ? 'disabled' : 'enabled'}`}
       disabled={disabled}
     />
   </>
