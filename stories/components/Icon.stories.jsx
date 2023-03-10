@@ -65,7 +65,7 @@ export const IconsComponent = () => <>
   </p>
   <Icons className="fa-4x">
     <Icon name="circle" color="black" transform="grow-4" />
-    <Icon name="cloop spin" color="yellow"/>
+    <Icon name="cog spin" color="yellow"/>
   </Icons>
 </>
 
@@ -76,7 +76,7 @@ export const IconStackComponent = () => <>
   <IconStack
     className="fa-4x"
     backIcon="circle" backColor="black" backTransform="grow-4"
-    foreIcon="cloop spin" foreColor="orange"
+    foreIcon="cog spin" foreColor="orange"
   />
 </>
 
@@ -90,9 +90,9 @@ export const DuoTone = () =>
     <Icon name="badger-duo 4x" color="green" className="mar-2"/>
     <Icon name="badger-duo 4x" color="blue"  className="mar-2"/>
     <br/>
-    <Icon name="cloop-duo 4x"  color="red"    className="mar-2"/>
-    <Icon name="cloop-duo 4x"  color="green"  className="mar-2"/>
-    <Icon name="cloop-duo 4x"  color="blue"   className="mar-2"/>
+    <Icon name="b-duo 4x"  color="red"    className="mar-2"/>
+    <Icon name="b-duo 4x"  color="green"  className="mar-2"/>
+    <Icon name="b-duo 4x"  color="blue"   className="mar-2"/>
   </>
 
 export const Transforms = () =>
@@ -164,11 +164,11 @@ export const Modifiers = () =>
       or <code className="code">rotate-90</code>, <code className="code">rotate-180</code>,
       and <code className="code">rotate-270</code> to rotate it.
     </p>
-    <Icon name="cloop-duo 4x spin"   color="red"    className="mar-2"/>
-    <Icon name="cloop-duo 4x beat"   color="orange" className="mar-2"/>
-    <Icon name="cloop-duo 4x bounce" color="yellow" className="mar-2"/>
-    <Icon name="cloop-duo 4x flip"   color="green"  className="mar-2"/>
-    <Icon name="cloop-duo 4x shake"  color="blue"  className="mar-2"/>
+    <Icon name="b-duo 4x spin"   color="red"    className="mar-2"/>
+    <Icon name="b-duo 4x beat"   color="orange" className="mar-2"/>
+    <Icon name="b-duo 4x bounce" color="yellow" className="mar-2"/>
+    <Icon name="b-duo 4x flip"   color="green"  className="mar-2"/>
+    <Icon name="b-duo 4x shake"  color="blue"  className="mar-2"/>
     <br/>
     <Icon name="badger-duo 4x flip-horizontal" color="red"    className="mar-2"/>
     <Icon name="badger-duo 4x flip-vertical"   color="orange" className="mar-2"/>

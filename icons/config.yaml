@@ -81,14 +81,17 @@ sets:
 icons:
   alert:        solid:circle-exclamation
   checked:      solid:square-check
+  check-on:     solid:square-check
+  check-off:    regular:square
   check-circle: regular:circle-check
   ring:         regular:circle
-  # cog:          solid:gear
   cogs:         solid:gears
   dotted:       regular:circle-dot
   dot-circle:   regular:circle-dot
   info:         solid:circle-info
   ok:           solid:circle-check
+  radio-on:     regular:circle-dot
+  radio-off:    regular:circle
   sad:          regular:face-frown
   search:       solid:magnifying-glass
   times:        solid:xmark
@@ -97,9 +100,3 @@ icons:
   undo:         solid:rotate-left
   undotted:     regular:circle
   warning:      solid:triangle-exclamation
-
-# # set true if you want to automatically generate aliases for regular icons
-# aliasRegular: true
-#
-# # load all custom icons in the 'custom' directory (relative to this dir)
-# customDir: custom

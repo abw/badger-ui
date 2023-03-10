@@ -63,8 +63,8 @@ const Radio = ({
 }
 
 Radio.defaultProps = {
-  checkedIcon:   'dotted',
-  uncheckedIcon: 'undotted',
+  checkedIcon:   'radio-on',
+  uncheckedIcon: 'radio-off',
 };
 
 export default Themed(Radio, 'Radio')
