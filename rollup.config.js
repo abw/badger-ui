@@ -6,6 +6,7 @@ import autoprefixer from 'autoprefixer'
 import copy from 'rollup-plugin-copy'
 import styles from 'rollup-plugin-styles'
 import { terser } from 'rollup-plugin-terser'
+import { visualizer } from "rollup-plugin-visualizer";
 
 const packageJson = require('./package.json')
 const dest = 'dist'
@@ -28,8 +29,11 @@ export default {
       assetFileNames: '[name][extname]',
     },
   ],
-  external: ['react'],
+  external: [
+    //'react',
+  ],
   plugins: [
+    peerDepsExternal(),
     resolve({
       extensions: ['.js', '.jsx'],
     }),
@@ -39,7 +43,6 @@ export default {
       babelHelpers: 'bundled',
     }),
     commonjs(),
-    peerDepsExternal(),
     styles({
       include: ['src/styles/**/*.scss'],
       mode: ['extract', 'styles/badger-ui.css'],
@@ -61,5 +64,6 @@ export default {
         },
       ],
     }),
+    visualizer()
   ],
 }

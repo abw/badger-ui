@@ -2,6 +2,7 @@ dist
 coverage
 node_modules
 tmp
+stats.html
 .yarn/*
 !.yarn/cache
 !.yarn/patches
