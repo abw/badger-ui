@@ -1,9 +1,9 @@
-import React from "react";
-import { Overlay } from "../../src/components/Overlay";
-import { Button } from "../../src/components/Button";
+import React from 'react';
+import { Overlay } from '../../src/components/Overlay';
+import { Button } from '../../src/components/Button';
 
 export default {
-  title: "Components/Overlay",
+  title: 'Components/Overlay',
   component: Overlay,
 }
 

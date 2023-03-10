@@ -1,10 +1,10 @@
-import React from "react";
-import { Button } from "../../src/components/Button";
-import Icon from "../../src/components/Icon";
-import { Modal } from "../../src/components/Modal";
+import React from 'react';
+import { Button } from '../../src/components/Button';
+import Icon from '../../src/components/Icon';
+import { Modal } from '../../src/components/Modal';
 
 export default {
-  title: "Components/Modal",
+  title: 'Components/Modal',
   component: Modal,
 };
 

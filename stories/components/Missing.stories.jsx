@@ -1,8 +1,8 @@
-import React from "react";
-import { Missing } from "../../src/components/Missing";
+import React from 'react';
+import { Missing } from '../../src/components/Missing';
 
 export default {
-  title: "Components/Missing",
+  title: 'Components/Missing',
   component: Missing,
 };
 

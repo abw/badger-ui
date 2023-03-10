@@ -1,8 +1,8 @@
-import React from "react";
-import { Revealable } from "../../src/components/Revealable";
+import React from 'react';
+import { Revealable } from '../../src/components/Revealable';
 
 export default {
-  title: "Components/Revealable",
+  title: 'Components/Revealable',
   component: Revealable,
 }
 

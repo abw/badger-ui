@@ -1,9 +1,9 @@
-import React from "react";
-import { Dropdown, DropdownMenu } from "../../src/components/Dropdown";
-import { Icon } from "../../src/components/Icon";
+import React from 'react';
+import { Dropdown, DropdownMenu } from '../../src/components/Dropdown';
+import { Icon } from '../../src/components/Icon';
 
 export default {
-  title: "Components/Dropdown",
+  title: 'Components/Dropdown',
   component: Dropdown,
 };
 
@@ -29,12 +29,12 @@ export const OutlineDropdownMenu = () =>
     iconLeft="bars" color="brown"
     className="mar-b-12"
     items={[
-      { text: 'User',        iconLeft: "user" },
-      { text: 'Company',     iconLeft: "users" },
+      { text: 'User',        iconLeft: 'user' },
+      { text: 'Company',     iconLeft: 'users' },
       { separator: true },
-      { text: 'Radiation',   iconLeft: "radiation" },
+      { text: 'Radiation',   iconLeft: 'radiation' },
       { separator: true },
-      { text: 'Disabled',    iconLeft: "times", disabled: true },
+      { text: 'Disabled',    iconLeft: 'times', disabled: true },
     ]}
   />
 
@@ -44,10 +44,10 @@ export const SolidDropdownMenu = () =>
     iconLeft="bars" color="blue"
     className="mar-b-12"
     items={[
-      { text: 'User',        iconLeft: "user", href: "/user" },
-      { text: 'Company',     iconLeft: "users", href: "/company" },
+      { text: 'User',        iconLeft: 'user', href: '/user' },
+      { text: 'Company',     iconLeft: 'users', href: '/company' },
       { separator: true },
-      { text: 'Radiation',   iconLeft: "radiation", href: "https://wardray-premise.com" },
+      { text: 'Radiation',   iconLeft: 'radiation', href: 'https://wardray-premise.com' },
     ]}
   />
 
@@ -57,31 +57,31 @@ export const RightAlignedMenu = () =>
     iconLeft="cog" color="orange" solid
     items={[
       { text: 'Activate',
-        iconLeft: "cog", iconLeftColor: "green",
-        onClick: () => window.alert("You clicked on 'Activate'")
+        iconLeft: 'cog', iconLeftColor: 'green',
+        onClick: () => window.alert('You clicked on \'Activate\'')
       },
       { text: 'Eliminate',
-        iconLeft: "trash", iconLeftColor: "red",
-        onClick: () => window.alert("You clicked on 'Eliminate'")
+        iconLeft: 'trash', iconLeftColor: 'red',
+        onClick: () => window.alert('You clicked on \'Eliminate\'')
       },
       { text: 'Add a User',
-        iconLeft: "user", iconLeftColor: "blue",
-        iconRight: "plus", iconRightColor: "green", iconRightClass: "small",
-        onClick: () => window.alert("You clicked on 'Add a User'")
+        iconLeft: 'user', iconLeftColor: 'blue',
+        iconRight: 'plus', iconRightColor: 'green', iconRightClass: 'small',
+        onClick: () => window.alert('You clicked on \'Add a User\'')
       },
     ]}
   />
 
 export const CustomTrigger = () => {
-  const Trigger = ({props}) => <Icon name="bars"/>
+  const Trigger = () => <Icon name="bars"/>
 
   return <DropdownMenu
     size="small" className="mar-b-12"
     Trigger={Trigger}
     items={[
-      { text: 'Foo', onClick: () => window.alert("You clicked on 'Foo'") },
-      { text: 'Bar', onClick: () => window.alert("You clicked on 'Bar'") },
-      { text: 'baz', onClick: () => window.alert("You clicked on 'Baz'") },
+      { text: 'Foo', onClick: () => window.alert('You clicked on \'Foo\'') },
+      { text: 'Bar', onClick: () => window.alert('You clicked on \'Bar\'') },
+      { text: 'baz', onClick: () => window.alert('You clicked on \'Baz\'') },
     ]}
   />
 }
@@ -90,7 +90,7 @@ export const ClickToLockOpen = () =>
   <>
     <p>
       Add the <code className="code">clickOpen</code> property to allow
-      the dropdown to be "locked" open with a click.
+      the dropdown to be &quot;locked&quot; open with a click.
     </p>
     <div className="flex space">
       <Dropdown

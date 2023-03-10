@@ -54,14 +54,14 @@ export const ManagedSate = () => {
     <SelectState
       onChange={
         option => console.log(
-          "Selected %s : %s",
+          'Selected %s : %s',
           option.value, option.text
         )
       }
       options={[
-        { value: "f", text: "Ferrets" },
-        { value: "b", text: "Badgers" },
-        { value: "s", text: "Stoats" },
+        { value: 'f', text: 'Ferrets' },
+        { value: 'b', text: 'Badgers' },
+        { value: 's', text: 'Stoats' },
       ]}
     />
   </div>
@@ -77,18 +77,18 @@ export const SelectSizes = () => {
     <SelectState
       size="small"
       options={[
-        { value: "f", text: "Ferrets" },
-        { value: "b", text: "Badgers" },
-        { value: "s", text: "Stoats" },
+        { value: 'f', text: 'Ferrets' },
+        { value: 'b', text: 'Badgers' },
+        { value: 's', text: 'Stoats' },
       ]}
     />
     <h5 className="mar-t-2 mar-b-none">Large</h5>
     <SelectState
       size="large"
       options={[
-        { value: "f", text: "Ferrets" },
-        { value: "b", text: "Badgers" },
-        { value: "s", text: "Stoats" },
+        { value: 'f', text: 'Ferrets' },
+        { value: 'b', text: 'Badgers' },
+        { value: 's', text: 'Stoats' },
       ]}
     />
   </div>

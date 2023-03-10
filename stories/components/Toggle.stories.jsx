@@ -1,9 +1,8 @@
-import React from "react";
-import { Toggle, ToggleState } from "../../src/components/Toggle";
-import { sizes } from '../../src/config/sizes'
+import React from 'react';
+import { Toggle, ToggleState } from '../../src/components/Toggle';
 
 export default {
-  title: "Components/Toggle",
+  title: 'Components/Toggle',
   component: Toggle,
 }
 
@@ -21,7 +20,7 @@ export const Overview = () => <>
   </p>
 </>
 
-export const UnmanagedState = (props) => {
+export const UnmanagedState = () => {
   const [checked, setChecked] = React.useState(false);
   return <>
     <p>
@@ -42,8 +41,7 @@ export const UnmanagedState = (props) => {
   </>
 }
 
-export const ManagedSate = (props) => {
-  const [checked, setChecked] = React.useState(false);
+export const ManagedSate = () => {
   return <>
     <p>
       The <code className="code">ToggleState</code> components is a
@@ -53,12 +51,12 @@ export const ManagedSate = (props) => {
     <ToggleState
       text="State Maintained Internally"
       initialValue={false}
-      onChange={c => console.log("checked: ", c)}
+      onChange={c => console.log('checked: ', c)}
     />
   </>
 }
 
-export const CustomText = (props) =>
+export const CustomText = () =>
   <ToggleState
     checkedText="Activated"
     uncheckedText="Deactivated"

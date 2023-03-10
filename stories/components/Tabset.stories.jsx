@@ -1,8 +1,8 @@
-import React from "react";
-import { Tabset } from "../../src/components/Tabset";
+import React from 'react';
+import { Tabset } from '../../src/components/Tabset';
 
 export default {
-  title: "Components/Tabset",
+  title: 'Components/Tabset',
   component: Tabset,
 };
 

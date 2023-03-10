@@ -15,7 +15,7 @@ export const Overview = () => <>
     This component renders a table of data with support for sorting, filtering and pagination.
     It is designed to be simple and relatively easy to use.  If you want to do more gnarly
     table stuff then <a href="https://react-table.tanstack.com/">react-table</a> may be what
-    you're looking for.
+    you&apos;re looking for.
   </p>
 </>
 
@@ -49,7 +49,7 @@ export const SimpleDatatable = () => {
     <p>
       The <code className="code">rows</code> items are objects
       that can contain any data.  The <code className="code">columns</code> entries
-      don't have any mandatory parameters.
+      don&apos;t have any mandatory parameters.
       An optional <code className="code">label</code> can be specified for the
       column heading, otherwise a capitalised form version of the column name is used.
       An optional <code className="code">type</code> can be used to
@@ -175,7 +175,7 @@ export const CustomColumnDisplay = () => {
       The function is passed an object containing the <code className="code">row</code> data,
       the <code className="code">column</code> specification, the column <code className="code">name</code>,
       the data <code className="code">field</code> (which is the same as <code className="code">name</code> if
-      the column doesn't define a separate <code className="code">field</code>) and the
+      the column doesn&apos;t define a separate <code className="code">field</code>) and the
       row <code className="code">value</code> (the same as <code className="code">row[field]</code>).  It
       should return the markup to display in the cell.
     </p>
@@ -200,8 +200,8 @@ export const CustomColumnSort = () => {
     { id: 140, forename: 'Simon', surname: 'Stoat'  },
     { id: 100, forename: 'Frank', surname: 'Ferret' },
   ];
-  const sortSurname = stringSort("surname");
-  const sortForename = stringSort("forename");
+  const sortSurname = stringSort('surname');
+  const sortForename = stringSort('forename');
   const columns = {
     id: { },
     name: {
@@ -288,7 +288,7 @@ export const RowClass = () => {
       function to set a CSS class on a row.  It receives the row data as an
       parameter and should return the CSS class.  In this example we add
       the <code className="code">positive</code> class to the band member
-      who play guitar.  They go up to eleven.  It's one louder.
+      who play guitar.  They go up to eleven.  It&apos;s one louder.
     </p>
     <DataTable
       rows={rows}

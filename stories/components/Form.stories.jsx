@@ -1,7 +1,7 @@
 import React from 'react'
+import Button from '../../src/components/Button';
 import { useState } from 'react';
 import { Success } from '../../src/components/Alert';
-import Button from '../../src/components/Button';
 import { Form, Field, Submit, Reset, Cancel, CancelSubmit, ResetSubmit, CancelResetSubmit } from '../../src/components/Form'
 import { sleep } from '../../src/utils';
 
@@ -311,7 +311,7 @@ export const ResetSubmitButtons = () =>
 export const CancelResetSubmitButtons = () =>
   <>
     <p className="mar-t-none">
-      If you're crazy for buttons and want a cancel, reset and submit button
+      If you&apos;re crazy for buttons and want a cancel, reset and submit button
       then use the <code className="code">CancelResetSubmit</code> component.
       What a time to be alive!
     </p>
@@ -334,7 +334,7 @@ export const CancelResetSubmitButtons = () =>
   </>
 
 export const SavingSpinner = () => {
-  const onSubmit = submit => sleep(5000).then(() => {
+  const onSubmit = () => sleep(5000).then(() => {
     // fake a valid server response
     return Promise.resolve({
       status: 200,
@@ -343,7 +343,8 @@ export const SavingSpinner = () => {
   })
   return <>
     <p className="mar-t-none">
-      This example demonstrates the "Saving..." spinner. Submit the form to see it.
+      This example demonstrates the &quot;Saving...&quot; spinner. Submit
+      the form to see it.
     </p>
     <Form onSubmit={onSubmit}>
       <Field name="name" label="Name"/>
@@ -355,7 +356,7 @@ export const SavingSpinner = () => {
 }
 
 export const CustomSavingSpinner = () => {
-  const onSubmit = submit => sleep(5000).then(() => {
+  const onSubmit = () => sleep(5000).then(() => {
     // fake a valid server response
     return Promise.resolve({
       status: 200,
@@ -364,7 +365,8 @@ export const CustomSavingSpinner = () => {
   })
   return <>
     <p className="mar-t-none">
-      There are various form properties that can be used to change the "Saving..." spinner.
+      There are various form properties that can be used to change the
+      &quot;Saving...&quot; spinner.
       Submit the form to see it in action.  Also be aware that you can use the theming to
       set the form saving spinner on a site-wide basis.
     </p>
@@ -448,7 +450,7 @@ export const FormReference = () => {
     <p className="mar-t-none">
       If you need to access the form object reference then use
       the <code className="code">onLoad</code> property in conjunction
-      with React's <code className="code">useState</code> to store the
+      with React&apos;s <code className="code">useState</code> to store the
       form reference.
     </p>
     <p>

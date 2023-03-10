@@ -1,9 +1,8 @@
-import React from "react";
-import { Radio, RadioState } from "../../src/components/Radio";
-import { sizes } from '../../src/config/sizes'
+import React from 'react';
+import { Radio, RadioState } from '../../src/components/Radio';
 
 export default {
-  title: "Components/Radio",
+  title: 'Components/Radio',
   component: Radio,
 }
 
@@ -11,7 +10,7 @@ export const Overview = () => <>
   <h1 className="mar-t-none mar-l-none">Radio and RadioState</h1>
   <p className="intro">
     The <code className="code">Radio</code> and <code className="code">RadioState</code>
-    components implement "radio buttons" of which only one option can be selected.
+    components implement &quot;radio buttons&quot; of which only one option can be selected.
   </p>
   <p>
     The <code className="code">Radio</code> component does not maintain state and is
@@ -44,7 +43,7 @@ export const UnmanagedState = () => {
   </>
 }
 
-export const ManagedState = (props) => <>
+export const ManagedState = () => <>
   <p>
     The <code className="code">CheckboxState</code> components is a
     wrapper around <code className="code">Checkbox</code> with additional
@@ -53,19 +52,19 @@ export const ManagedState = (props) => <>
   <RadioState
     onChange={
       option => console.log(
-        "Selected %s : %s",
+        'Selected %s : %s',
         option.value, option.text
       )
     }
     options={[
-      { value: "f", text: "Ferrets" },
-      { value: "b", text: "Badgers" },
-      { value: "s", text: "Stoats" },
+      { value: 'f', text: 'Ferrets' },
+      { value: 'b', text: 'Badgers' },
+      { value: 's', text: 'Stoats' },
     ]}
   />
 </>
 
-export const DisabledOptions = (props) => <>
+export const DisabledOptions = () => <>
   <p>
     An option can set the <code className="code">disabled</code> flag if it cannot
     be selected. You can also pass the <code className="code">disabled</code> flag to
@@ -74,23 +73,23 @@ export const DisabledOptions = (props) => <>
   <RadioState
     initialValue={1}
     options={[
-      { value: 1, text: "One" },
-      { value: 2, text: "Two" },
-      { value: 3, text: "Three", disabled: true }
+      { value: 1, text: 'One' },
+      { value: 2, text: 'Two' },
+      { value: 3, text: 'Three', disabled: true }
     ]}
   />
   <RadioState
     initialValue={1}
     options={[
-      { value: 1, text: "One" },
-      { value: 2, text: "Two" },
-      { value: 3, text: "Three" }
+      { value: 1, text: 'One' },
+      { value: 2, text: 'Two' },
+      { value: 3, text: 'Three' }
     ]}
     disabled={true}
   />
 </>
 
-export const CustomProperties = (props) => <>
+export const CustomProperties = () => <>
   <p>
     Use the <code className="code">className</code> property to set the CSS class
     for the container and <code className="code">optionClass</code> to set the CSS
@@ -106,9 +105,9 @@ export const CustomProperties = (props) => <>
     optionClass="mar-r-none"
     checkedIcon="check"
     options={[
-      { value: 1, text: "Badger", uncheckedIcon: 'badger' },
-      { value: 2, text: "Cat",    uncheckedIcon: 'cat'    },
-      { value: 3, text: "Human",  uncheckedIcon: 'user'   }
+      { value: 1, text: 'Badger', uncheckedIcon: 'badger' },
+      { value: 2, text: 'Cat',    uncheckedIcon: 'cat'    },
+      { value: 3, text: 'Human',  uncheckedIcon: 'user'   }
     ]}
   />
 </>

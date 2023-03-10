@@ -53,11 +53,11 @@ export default {
         },
         {
           src: 'icons/build.js',
-          dest: "dist/icons",
+          dest: 'dist/icons',
         },
         {
           src: 'src/config/icon*.js',
-          dest: "dist/src/config",
+          dest: 'dist/src/config',
         },
       ],
     }),

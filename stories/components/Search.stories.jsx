@@ -47,7 +47,7 @@ export const AnimalSearch = () => {
       onSelect={result => select(result)}
     />
     <div className="pad-t-2" style={{marginBottom: '10em'}}>
-    { selected && `You selected ${selected}`}
+      { selected && `You selected ${selected}`}
     </div>
   </>
 }
@@ -88,7 +88,7 @@ export const StructuredRecords = () => {
       onSelect={result => select(result)}
     />
     <div className="pad-t-2" style={{marginBottom: '10em'}}>
-    { selected && `You selected ${selected.name} - ${selected.comment}`}
+      { selected && `You selected ${selected.name} - ${selected.comment}`}
     </div>
   </>
 }

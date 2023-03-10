@@ -1,10 +1,10 @@
-import React from "react";
-import { Alert, Info } from "../../src/components/Alert";
+import React from 'react';
+import { Alert, Info } from '../../src/components/Alert';
 import { sizes, fasizes } from '../../src/config/sizes'
 import { iconNames } from '../../src/config/iconNames'
 
 export default {
-  title: "Components/Alert",
+  title: 'Components/Alert',
   component: Alert,
   args: {
     headline: 'Alert Headline',
@@ -153,7 +153,7 @@ export const OnDismiss = () =>
       headline="Dismissable Alert" headIcon="info"
       icon="badger2" title="Mr Badger's Dismissable Alert"
       text="This is an example of a dismissable alert with an onDismiss handler"
-      onDismiss={() => window.alert("You can't dismiss me that easily!")}
+      onDismiss={() => window.alert('You can\'t dismiss me that easily!')}
     />
   </>
 
@@ -166,7 +166,7 @@ export const Stripe = () =>
     <div className="bg-grey-90 pad-2">
       <Alert
         className="small" stripe
-        icon="cloop"
+        icon="info"
         title="Stripe Alert"
         text='This is an alert with the "stripe" property'
       />
@@ -211,7 +211,7 @@ export const Shadow = () =>
     </p>
     <Alert
       className="small" stripe shadow
-      icon="cloop"
+      icon="info"
       title="Stripe Alert"
       text='This is an alert with the "stripe" and "shadow" properties'
     />

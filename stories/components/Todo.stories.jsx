@@ -23,7 +23,7 @@ export default {
 export const Overview = (props) => <>
   <h1 className="mar-t-none mar-l-none">Todo</h1>
   <p className="intro">
-    A component to render a TODO message.  It's a wrapper around the
+    A component to render a TODO message.  It&apos;s a wrapper around the
     <code className="code">Debug</code> component with the title and icon
     pre-set.
   </p>

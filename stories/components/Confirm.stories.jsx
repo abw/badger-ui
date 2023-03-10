@@ -1,11 +1,8 @@
-import React from "react";
-import { Confirm } from "../../src/components/Confirm";
-import { iconNames } from '../../src/config/iconNames'
-import { colors } from '../../src/config/colors'
-import { sizes } from '../../src/config/sizes'
+import React from 'react';
+import { Confirm } from '../../src/components/Confirm';
 
 export default {
-  title: "Components/Confirm",
+  title: 'Components/Confirm',
   component: Confirm,
   args: {
     text: 'Confirm',

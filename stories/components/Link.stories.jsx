@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "../../src/components/Link";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import { Link } from '../../src/components/Link';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
-  title: "Components/Link",
+  title: 'Components/Link',
   component: Link,
 };
 
-export const Overview = (props) => <>
+export const Overview = () => <>
   <h1 className="mar-t-none mar-l-none">Link</h1>
   <p className="intro">
     This is a wrapper around the <code className="code">NavLink</code> component
