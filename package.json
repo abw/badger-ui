@@ -26,7 +26,7 @@
   "devDependencies": {
     "@abw/badger": "^1.0.12",
     "@abw/react-context-generator": "^1.1.0",
-    "@abw/svg-icon-librarian": "^1.0.5",
+    "@abw/svg-icon-librarian": "^1.0.7",
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.7",
