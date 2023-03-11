@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-ui",
-  "version": "1.1.1-beta.16",
+  "version": "1.1.1-beta.17",
   "description": "CSS/React User Interface Components",
   "author": "Andy Wardley",
   "type": "module",
@@ -11,9 +11,8 @@
       "import": "./dist/badger-ui.mjs",
       "require": "./dist/badger-ui.cjs"
     },
-    "./bin/": "./dist/bin/",
-    "./config/": "./dist/config/",
-    "./styles/": "./dist/styles/"
+    "./config/*": "./dist/config/*",
+    "./styles/*": "./dist/styles/*"
   },
   "files": [
     "dist/*"
