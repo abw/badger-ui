@@ -21,6 +21,7 @@ specifiers:
   '@rollup/plugin-json': ^4.1.0
   '@rollup/plugin-node-resolve': ^13.3.0
   '@storybook/addon-actions': ^6.5.16
+  '@storybook/addon-docs': ^6.5.16
   '@storybook/addon-essentials': ^6.5.16
   '@storybook/addon-links': ^6.5.16
   '@storybook/addon-storysource': ^6.5.16
@@ -78,6 +79,7 @@ devDependencies:
   '@rollup/plugin-json': 4.1.0_rollup@2.79.1
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
   '@storybook/addon-actions': 6.5.16_biqbaboplfbrettd7655fr4n2y
+  '@storybook/addon-docs': 6.5.16_yj5ktg5gybndizeshmgyyq6ery
   '@storybook/addon-essentials': 6.5.16_yj5ktg5gybndizeshmgyyq6ery
   '@storybook/addon-links': 6.5.16_biqbaboplfbrettd7655fr4n2y
   '@storybook/addon-storysource': 6.5.16_biqbaboplfbrettd7655fr4n2y
@@ -735,7 +737,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.20.2
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.20.7_@babel+core@7.12.9
     dev: true
