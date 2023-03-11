@@ -66,7 +66,7 @@ export default {
           src: 'bin/*',
           dest: 'dist/bin',
           transform: (contents) =>
-            contents.toString().replace('../src/config/icons.js', '@abw/badger-ui/dist/config/icons.js')
+            contents.toString().replace('../src/config/icons.js', '@abw/badger-ui/config/icons.js')
         },
       ],
     }),
