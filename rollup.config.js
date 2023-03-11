@@ -59,8 +59,14 @@ export default {
           dest: 'dist/icons',
         },
         {
-          src: 'src/config/icon*.js',
-          dest: 'dist/src/config',
+          src: 'src/config/icons.js',
+          dest: 'dist/config',
+        },
+        {
+          src: 'bin/*',
+          dest: 'dist/bin',
+          transform: (contents) =>
+            contents.toString().replace('../src/config/icons.js', '@abw/badger-ui/dist/config/icons.js')
         },
       ],
     }),
