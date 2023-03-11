@@ -28,6 +28,8 @@ export const Icon = ({icons, transform, ...props}) => {
   }
   // pull out the pertinent data
   const { minx, miny, width, height, style } = icon;
+
+  // construct a className from the className, color and/or size properties
   const className = classNames(props, faProps);
 
   return (
@@ -193,7 +195,6 @@ Icon.propTypes = {
   /** Icon size. */
   size: PropTypes.oneOf(['xs', 'sm', 'lg', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
 };
-
 
 Icon.defaultProps = {
   icons
