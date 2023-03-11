@@ -21,4 +21,5 @@ export * from './components/Select';
 export * from './components/Spinner';
 export * from './components/Tabset';
 export * from './components/Toggle';
+export * from './config/icons.js';
 export * from './utils';
