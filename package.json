@@ -87,7 +87,7 @@
   },
   "dependencies": {
     "@abw/badger-utils": "^1.0.17",
-    "@abw/svg-icon-librarian": "^1.0.8",
+    "@abw/svg-icon-librarian": "^1.0.9",
     "@dnd-kit/core": "^6.0.8",
     "@dnd-kit/modifiers": "^6.0.1",
     "@dnd-kit/sortable": "^7.0.2",
