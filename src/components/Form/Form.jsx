@@ -1,7 +1,7 @@
 import React from 'react'
-import Context from './Context'
-import DefaultLayout from './Layout'
-import { Themed } from '../../utils';
+import Context from './Context.jsx'
+import DefaultLayout from './Layout.jsx'
+import { Themed } from '../../utils/index.js';
 
 const Form = ({
   Layout = DefaultLayout,

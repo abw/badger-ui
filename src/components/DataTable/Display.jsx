@@ -1,7 +1,7 @@
 import React from 'react'
 import { commas, capitalize, currency } from '@abw/badger-utils'
-import { isDefined, pounds, Themed } from '../../utils'
-import { Label } from '../Label'
+import { isDefined, pounds, Themed } from '../../utils/index.js'
+import { Label } from '../Label/index.jsx'
 
 export const displayText = ({value}) =>
   isDefined(value) ? value : '';

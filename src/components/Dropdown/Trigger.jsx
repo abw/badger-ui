@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../Button'
+import { Button } from '../Button/index.jsx'
 
 export const Trigger = ({
   color, solid, buttonClass,

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from '../../Icon'
+import { Icon } from '../../Icon/index.jsx'
 
 export const Help = ({field}) => {
   let {help, message} = field;

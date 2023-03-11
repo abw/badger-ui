@@ -1,8 +1,9 @@
 import React from 'react'
-import Icon from '../Icon'
-import { classNames, isDefined } from '../../utils'
-import { onKeyPress } from './Utils'
-import Options from './Options'
+import Icon from '../Icon/index.jsx'
+import Options from './Options.jsx'
+import { classNames } from '../../utils/index.js'
+import { onKeyPress } from './Utils.jsx'
+import { hasValue } from '@abw/badger-utils'
 
 export const List = ({
   options=[],
@@ -20,19 +21,19 @@ export const List = ({
   ...props
 }) => {
   // cursor to track which option is highlighted in the list, or undefined when options not visible
-  const [cursor, setCursor] = React.useState(isDefined(index) ? index : -1);
+  const [cursor, setCursor] = React.useState(hasValue(index) ? index : -1);
   const [open, setOpen] = React.useState(false);
 
   const toggleVisibility = () => {
     // if currently open (cursor is defined) then set cursor to undefined to close,
     // otherwise open up options with nothing item highlighted (cursor is -1, so pressing
     // down or up will wrap it around to the first/last item)
-    //setCursor(isDefined(cursor) ? undefined : isDefined(index) ? index : -1);
+    //setCursor(hasValue(cursor) ? undefined : hasValue(index) ? index : -1);
     setOpen(! open);
   }
   const cname = classNames(props, 'select', disabled && 'disabled', open ? 'open' : 'closed');
   const blur = () => {
-    //setCursor(isDefined(index));
+    //setCursor(hasValue(index));
     setOpen(false);
     if (onBlur) {
       onBlur();
@@ -54,7 +55,7 @@ export const List = ({
     }
   >
     <div className="wide input">
-      { isDefined(selected)
+      { hasValue(selected)
         ? <div className="value">{selected.text}</div>
         : <div className="placeholder">{placeholder||''}</div>
       }

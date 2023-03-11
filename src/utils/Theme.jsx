@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
+import { isFunction, isObject } from '@abw/badger-utils';
 import React from 'react'
-import { isFunction, isObject } from './misc';
 
 const contextMapProps = (context={}, map={}, props={}) => {
   let result = { };

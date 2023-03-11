@@ -1,3 +1,3 @@
-export { default } from './Radio'
-export { default as Radio } from './Radio'
-export { default as RadioState } from './RadioState'
+export { default } from './Radio.jsx'
+export { default as Radio } from './Radio.jsx'
+export { default as RadioState } from './RadioState.jsx'

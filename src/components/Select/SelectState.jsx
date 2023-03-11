@@ -1,5 +1,5 @@
 import React from 'react'
-import Select from './Select'
+import Select from './Select.jsx'
 
 const SelectState = (props) => {
   const [value, setValue] = React.useState(props.initialValue || false);

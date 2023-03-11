@@ -1,7 +1,7 @@
 import React from 'react'
-import { Content } from './Content'
-import { Link as DefaultLink } from '../Link'
-import { Themed } from '../../utils';
+import { Content } from './Content.jsx'
+import { Link as DefaultLink } from '../Link/index.jsx'
+import { Themed } from '../../utils/index.js';
 
 const DropdownLink = ({
   Link,

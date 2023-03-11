@@ -1,5 +1,5 @@
 import React from 'react';
-import UICheckbox from '../../Checkbox'
+import UICheckbox from '../../Checkbox/index.jsx'
 import { extract } from '@abw/badger-utils';
 
 export const Checkbox = ({field}) =>

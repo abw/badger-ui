@@ -1,6 +1,6 @@
 import React from 'react'
-import Icon from '../Icon'
-import { classNames, Themed } from '../../utils'
+import Icon from '../Icon/index.jsx'
+import { classNames, Themed } from '../../utils/index.js'
 
 const Revealable = ({
   revealedIcon,

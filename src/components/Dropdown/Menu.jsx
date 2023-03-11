@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Dropdown from './Dropdown'
-import { Item } from './Item'
-import { Separator } from './Separator'
+import Dropdown from './Dropdown.jsx'
+import { Item } from './Item.jsx'
+import { Separator } from './Separator.jsx'
 
 export const Menu = ({items, ...rest}) => {
   let [clicked, setClicked] = useState(0);

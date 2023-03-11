@@ -1,6 +1,6 @@
 import React from 'react'
-import Loader from './Loader'
-import { Themed } from '../../utils';
+import Loader from './Loader.jsx'
+import { Themed } from '../../utils/index.js';
 
 const Loading = ({
   className='',

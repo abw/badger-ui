@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Icon from '../Icon';
-import { Themed } from '../../utils';
+import Icon from '../Icon/index.jsx';
+import { Themed } from '../../utils/index.js';
 
 const hasDocument = (typeof document !== 'undefined');
 const modalRoot = hasDocument

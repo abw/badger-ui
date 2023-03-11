@@ -1,8 +1,8 @@
 import React from 'react'
-import Context from './Context'
-import Header from './Header'
-import Footer from './Footer'
-import Saving from './Saving'
+import Context from './Context.jsx'
+import Header from './Header.jsx'
+import Footer from './Footer.jsx'
+import Saving from './Saving.jsx'
 
 export const Layout = ({ form, children }) =>
   <form

@@ -1,6 +1,6 @@
 import React from 'react'
-import Cancel from './Cancel';
-import Submit from './Submit';
+import Cancel from './Cancel.jsx';
+import Submit from './Submit.jsx';
 
 const CancelSubmit = ({
   className='flex start space stack-mobile mar-t',

@@ -1,7 +1,7 @@
 import React from 'react'
-import { expandOptions, findOption } from './Utils'
-import List from './List'
-import { Themed } from '../../utils';
+import List from './List.jsx'
+import { expandOptions, findOption } from './Utils.jsx'
+import { Themed } from '../../utils/index.js';
 
 const Select = ({
   options=[],

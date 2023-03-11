@@ -1,4 +1,4 @@
-import { isDefined } from '../../utils'
+import { hasValue } from '@abw/badger-utils';
 
 export const expandOptions = (options) => {
   // options can include nested groups, e.g.
@@ -32,10 +32,10 @@ export const expandOptions = (options) => {
 export const expandOptionList = (options, expanded) => {
   options.forEach(
     option => {
-      if (isDefined(option.value)) {
+      if (hasValue(option.value)) {
         expanded.push(option);
       }
-      if (isDefined(option.options)) {
+      if (hasValue(option.options)) {
         expandOptionList(option.options, expanded);
       }
     }
@@ -44,7 +44,7 @@ export const expandOptionList = (options, expanded) => {
 
 // look through an expanded list of options (see above) to find one with a matching value
 export const findOption = (options, value) => {
-  if (isDefined(value)) {
+  if (hasValue(value)) {
     const index = options.findIndex(v => v.value === value);
     if (index >= 0) {
       return [options[index], index];
@@ -61,7 +61,7 @@ export const onKeyPress = (event, options, cursor, setCursor, setOpen, onChange)
       event.preventDefault();
       setOpen(true);
       return setCursor(
-        isDefined(cursor)
+        hasValue(cursor)
           ? (cursor + 1) % options.length
           : 0
       );
@@ -71,7 +71,7 @@ export const onKeyPress = (event, options, cursor, setCursor, setOpen, onChange)
       event.preventDefault();
       setOpen(true);
       setCursor(
-        isDefined(cursor) && cursor >= 0
+        hasValue(cursor) && cursor >= 0
           ? ((cursor - 1) + options.length) % options.length
           : options.length - 1
       );
@@ -81,7 +81,7 @@ export const onKeyPress = (event, options, cursor, setCursor, setOpen, onChange)
     case ' ':
       // select current option if there is one
       event.preventDefault();
-      if (onChange && isDefined(cursor)) {
+      if (onChange && hasValue(cursor)) {
         onChange(options[cursor]);
       }
       setOpen(false);

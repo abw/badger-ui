@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import * as yup  from 'yup'
-import Button from '../../src/components/Button';
+import Button from '../../src/components/Button/index.jsx';
 import {
   Form, Field, Fields, TwoFields, ThreeFields, FourFields,
   FieldHelp, FieldLabel
-} from '../../src/components/Form'
+} from '../../src/components/Form/index.jsx'
 
 export default {
   title: 'Components/Form/Fields',

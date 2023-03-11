@@ -1,3 +1,3 @@
-export { default } from './Toggle'
-export { default as Toggle } from './Toggle'
-export { default as ToggleState } from './ToggleState'
+export { default } from './Toggle.jsx'
+export { default as Toggle } from './Toggle.jsx'
+export { default as ToggleState } from './ToggleState.jsx'

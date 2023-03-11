@@ -1,7 +1,7 @@
 import React from 'react'
-import { isDefined } from '../../../utils';
-import Context from '../Context'
-import State from './State'
+import { isDefined } from '../../../utils/index.js';
+import Context from '../Context.jsx'
+import State from './State.jsx'
 
 const Field = ({ name, form, ...props }) => {
   const value  = form.values[name];

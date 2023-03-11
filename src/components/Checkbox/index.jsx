@@ -1,3 +1,3 @@
-export { default } from './Checkbox'
-export { default as Checkbox } from './Checkbox'
-export { default as CheckboxState } from './CheckboxState'
+export { default } from './Checkbox.jsx'
+export { default as Checkbox } from './Checkbox.jsx'
+export { default as CheckboxState } from './CheckboxState.jsx'

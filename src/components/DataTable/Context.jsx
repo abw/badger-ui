@@ -1,10 +1,10 @@
 import React from 'react'
 import Generator from '@abw/react-context-generator'
-import { bindHandlers, addDebug, isDefined, Storage } from '../../utils'
+import { bindHandlers, addDebug, isDefined, Storage } from '../../utils/index.js'
 import { extractVisibleColumns } from './Utils'
-import paginate from './Paginate'
-import sort from './Sort'
-import filter from './Filter'
+import paginate from './Paginate.jsx'
+import sort from './Sort.jsx'
+import filter from './Filter.jsx'
 
 const State = {
   sortColumn:  null,

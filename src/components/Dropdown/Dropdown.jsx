@@ -1,6 +1,6 @@
 import React from 'react'
-import DefaultTrigger from './Trigger'
-import { classNames, Themed } from '../../utils';
+import DefaultTrigger from './Trigger.jsx'
+import { classNames, Themed } from '../../utils/index.js';
 
 const Dropdown = ({
   right, border,

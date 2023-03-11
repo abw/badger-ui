@@ -1,8 +1,8 @@
 import React from 'react'
-import Icon from '../Icon'
-import { Themed } from '../../utils'
+import Icon from '../Icon/index.jsx'
+import { Themed } from '../../utils/index.js'
 
-const Missing = ({
+export const Missing = ({
   item,
   text,
   children,

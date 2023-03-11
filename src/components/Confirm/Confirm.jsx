@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import Button from '../Button'
-import preventDefault from '../../utils/preventDefault'
-import { Themed } from '../../utils';
+import Button from '../Button/index.jsx'
+import { Themed, preventDefault } from '../../utils/index.js'
 
 const Confirm = ({
   initiallyRevealed = false,

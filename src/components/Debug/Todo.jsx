@@ -1,6 +1,6 @@
 import React from 'react'
-import { Themed } from '../../utils';
-import Debug from './Debug'
+import { Themed } from '../../utils/index.js';
+import Debug from './Debug.jsx'
 
 const Todo = ({
   title,

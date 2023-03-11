@@ -1,7 +1,7 @@
 import React from 'react'
-import Icon from '../Icon'
-import { propClasses, preventDefault, Themed } from '../../utils'
+import Icon from '../Icon/index.jsx'
 import { capitalize } from '@abw/badger-utils'
+import { propClasses, preventDefault, Themed } from '../../utils/index.js'
 
 const Header = ({
   name, column,

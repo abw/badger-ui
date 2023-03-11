@@ -1,8 +1,8 @@
-import { splitToList } from './misc'
+import { splitList } from '@abw/badger-utils';
 
 export function bindHandlers(that, names) {
   let handlers = { };
-  splitToList(names).forEach(
+  splitList(names).forEach(
     name => {
       let method = that[name];
       if (method) {

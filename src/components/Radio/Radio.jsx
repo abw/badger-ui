@@ -1,6 +1,7 @@
 import React from 'react'
-import Icon from '../Icon'
-import { classNames, isDefined, Themed } from '../../utils'
+import Icon from '../Icon/index.jsx'
+import { hasValue } from '@abw/badger-utils';
+import { classNames, Themed } from '../../utils/index.js'
 
 const Radio = ({
   value,
@@ -21,7 +22,7 @@ const Radio = ({
     }
   };
   const cname = classNames(props, 'radioset', disabled && 'disabled');
-  const index = isDefined(value)
+  const index = hasValue(value)
     ? options.findIndex(v => v.value === value)
     : undefined;
 
@@ -30,7 +31,7 @@ const Radio = ({
       {options.map(
         (option, n) => {
           const active  = !disabled && !option.disabled;
-          const checked = isDefined(index) && index === n;
+          const checked = hasValue(index) && index === n;
           const icon = checked
             ? (option.checkedIcon || checkedIcon)
             : (option.uncheckedIcon || uncheckedIcon);

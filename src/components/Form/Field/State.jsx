@@ -1,7 +1,7 @@
 import React from 'react';
-import Context from '../Context';
-import FieldLayout from './Layout';
-import States from './States';
+import Context from '../Context.jsx';
+import FieldLayout from './Layout.jsx';
+import States from './States.jsx';
 import {
   Text,
   TextArea,
@@ -10,8 +10,8 @@ import {
   Select,
   Static,
   Search,
-} from '../Input';
-import { addDebug, isDefined, isString } from '../../../utils';
+} from '../Input/index.jsx';
+import { addDebug, isDefined, isString } from '../../../utils/index.js';
 
 const Debug = false;
 

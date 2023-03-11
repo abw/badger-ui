@@ -1,7 +1,7 @@
 import React from 'react'
 import { Themed } from '../../utils';
 
-const Overlay = ({
+export const Overlay = ({
   color,
   className='',
   children

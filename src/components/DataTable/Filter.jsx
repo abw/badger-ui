@@ -1,9 +1,9 @@
-import { isDefined } from '../../utils';
+import { hasValue } from '@abw/badger-utils';
 
 export const filterStringExact = ({ value, search }) =>
   // we have to do woolly string searching because the value returned from a select
   // component is always a string
-  isDefined(value)
+  hasValue(value)
     ? value.toString() === search.toString()
     : false;
 
@@ -12,7 +12,7 @@ export const filterStringContains = ({ value, search }) => {
   // anywhere in the string, e.g. "foo bar" should match against "bar and foo"
   const words  = search.toLowerCase().split(/\s+/);
 
-  if (isDefined(value)) {
+  if (hasValue(value)) {
     const match = value.toString().toLowerCase();
     return words.every(
       word => match.indexOf(word) > -1
@@ -25,13 +25,13 @@ export const filterStringContains = ({ value, search }) => {
 
 export const filterInteger = ({ value, search }) =>
   //console.log('filterInteger(%o, %o, %o) [%s][%o] == [%s][%o]', row, field, search, typeof match, match, typeof search, search);
-  isDefined(value)
+  hasValue(value)
     ? (parseInt(value) === parseInt(search))
     : false;
 
 export const filterFloat = ({value, search }) =>
   //console.log('filterFloat(%o, %o, %o) [%s][%o] == [%s][%o]', row, field, search, typeof match, match, typeof search, search);
-  isDefined(value)
+  hasValue(value)
     ? (parseFloat(value) === parseFloat(search))
     : false;
 
@@ -73,7 +73,7 @@ export const filter = ({rows, columns, filters}) => {
         const value  = row[field];
         const type   = column.filterType || column.type;
         const filter = column.filter || filterTypes[type] || filterTypes.text;
-        if (isDefined(search) && search.length) {
+        if (hasValue(search) && search.length) {
           return filter({ row, field, value, search })
         }
         else {

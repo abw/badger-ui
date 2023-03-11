@@ -1,8 +1,8 @@
 import React from 'react';
-import Context from './Context';
-import Errors from './Errors';
-import Icon from '../Icon';
-import { Error } from '../Alert';
+import Context from './Context.jsx';
+import Errors from './Errors.jsx';
+import Icon from '../Icon/index.jsx';
+import { Error } from '../Alert/index.jsx';
 
 const Header = ({ form }) => {
   const errors = form.errors && form.errors.length;

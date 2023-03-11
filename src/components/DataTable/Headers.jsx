@@ -1,7 +1,7 @@
 import React from 'react'
-import Context from './Context'
-import Header from './Header'
-import { Filter } from './Filters'
+import Context from './Context.jsx'
+import Header from './Header.jsx'
+import { Filter } from './Filters.jsx'
 
 export const Headers = ({
   columns,

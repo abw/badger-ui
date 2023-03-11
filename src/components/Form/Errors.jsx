@@ -1,6 +1,6 @@
 import React from 'react'
-import { Themed } from '../../utils';
-import { Error } from '../Alert'
+import { Themed } from '../../utils/index.js';
+import { Error } from '../Alert/index.jsx'
 
 const Errors = ({
   errors,

@@ -1,6 +1,6 @@
 import React from 'react'
-import { CheckboxState } from '../Checkbox'
-import { Themed } from '../../utils'
+import { CheckboxState } from '../Checkbox/index.jsx'
+import { Themed } from '../../utils/index.js'
 
 const ToggleState = props =>
   <CheckboxState {...props}/>

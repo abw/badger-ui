@@ -1,6 +1,6 @@
 import { extract } from '@abw/badger-utils';
 import React from 'react';
-import { Search } from '../../Search'
+import { Search } from '../../Search/index.jsx'
 
 const SearchInput = ({field}) =>
   <Search

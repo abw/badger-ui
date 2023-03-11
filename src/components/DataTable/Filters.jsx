@@ -1,6 +1,6 @@
 import React from 'react'
-import { propClasses, isDefined, Themed } from '../../utils'
-import Icon from '../Icon'
+import { propClasses, isDefined, Themed } from '../../utils/index.js'
+import Icon from '../Icon/index.jsx'
 
 export const TextFilter = ({name, value, setFilter}) =>
   <input

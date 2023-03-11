@@ -1,6 +1,6 @@
 import React from 'react'
-import Optional from './Optional'
-import Required from './Required'
+import Optional from './Optional.jsx'
+import Required from './Required.jsx'
 
 export const Label = ({field}) =>
   <label htmlFor={field.id} className={field.labelClass || ''}>

@@ -1,2 +1,2 @@
-export { default } from './Missing'
-export { default as Missing } from './Missing'
+export { default } from './Missing.jsx'
+export { default as Missing } from './Missing.jsx'

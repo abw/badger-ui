@@ -1,6 +1,6 @@
 import React from 'react'
-import { Content } from './Content'
-import Link from './Link'
+import Link from './Link.jsx'
+import { Content } from './Content.jsx'
 
 export const Item = (props) => props.disabled
   ? <div className={'item disabled'} aria-disabled={true}>

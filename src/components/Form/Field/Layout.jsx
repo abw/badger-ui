@@ -1,8 +1,8 @@
 import React from 'react'
-import Label from './Label'
-import Help from './Help'
-import { propClasses } from '../../../utils'
-import { Icon } from '../../Icon'
+import Label from './Label.jsx'
+import Help from './Help.jsx'
+import { propClasses } from '../../../utils/index.js'
+import { Icon } from '../../Icon/index.jsx'
 
 export const Layout = ({form, field}) => {
   const {

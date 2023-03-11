@@ -1,6 +1,6 @@
 import React from 'react'
-import Loading from './Loading'
-import { Themed } from '../../utils';
+import Loading from './Loading.jsx'
+import { Themed } from '../../utils/index.js';
 
 const Saving = (props) =>
   <Loading {...props} />

@@ -1,7 +1,6 @@
 import React from 'react'
-import classNames from '../../utils/classNames'
-import Button from './Button'
-import { Themed } from '../../utils';
+import Button from './Button.jsx'
+import { classNames, Themed } from '../../utils/index.js'
 
 const Buttons = (props) =>
   <div className={`${classNames(props, 'buttons')}`}>

@@ -1,7 +1,6 @@
-import React from 'react'
-import { useState } from 'react';
-import Storage from '../../utils/Storage'
-import Icon from '../Icon';
+import React, { useState } from 'react'
+import Storage from '../../utils/index.js'
+import Icon from '../Icon/index.jsx';
 
 const Tabset = ({
   tabs,

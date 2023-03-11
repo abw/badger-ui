@@ -1,6 +1,6 @@
 import React from 'react'
-import Icon from '../Icon'
-import classNames from '../../utils/classNames'
+import Icon from '../Icon/index.jsx'
+import { classNames } from '../../utils/index.js'
 
 export const Label = (props) => <span
   className={classNames(props, 'label')}

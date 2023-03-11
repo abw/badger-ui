@@ -1,7 +1,7 @@
 import React from 'react'
-import DefaultLayout from './Layout'
-import Context from './Context'
-import { Themed } from '../../utils'
+import DefaultLayout from './Layout.jsx'
+import Context from './Context.jsx'
+import { Themed } from '../../utils/index.js'
 
 export const DataTable = ({
   Layout = DefaultLayout,

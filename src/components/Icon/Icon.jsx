@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import icons from '../../config/icons.js'
-import { classNames, Themed } from '../../utils'
+import { classNames, Themed } from '../../utils/index.js'
 import { isString } from '@abw/badger-utils';
 
 const faProps = {
@@ -37,6 +37,7 @@ export const Icon = ({icons, transform, ...props}) => {
       role="img" xmlns="http://www.w3.org/2000/svg"
       viewBox={`${minx||0} ${miny||0} ${width} ${height}`}
       style={style && ReactStyle(style)}
+      onClick={props.onClick}
     >
       { transform
         ? <Transform icon={icon} transform={transform}>

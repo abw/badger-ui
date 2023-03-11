@@ -1,8 +1,7 @@
 import React from 'react'
-import Icon from '../Icon'
 import PropTypes from 'prop-types'
-import classNames from '../../utils/classNames'
-import { Themed } from '../../utils'
+import Icon from '../Icon/index.jsx'
+import { classNames, Themed } from '../../utils/index.js'
 
 const Checkbox = ({
   text,

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Themed } from '../../utils';
-import { Icon, Icons } from '../Icon'
+import { Themed } from '../../utils/index.js';
+import { Icon, Icons } from '../Icon/index.jsx'
 
 const Spinner = ({
   size,

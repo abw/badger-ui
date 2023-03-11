@@ -1,6 +1,6 @@
 import React from 'react'
-import { propClasses } from '../../utils'
-import displayTypes from './Display'
+import { propClasses } from '../../utils/index.js'
+import displayTypes from './Display.jsx'
 
 export const Cell = ({
   row, column, name, field, value, rowClick, onClick,

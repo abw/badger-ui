@@ -1,7 +1,7 @@
 import React from 'react'
-import Spinner from './Spinner'
-import { Themed } from '../../utils';
-import { Overlay } from '../Overlay'
+import Spinner from './Spinner.jsx'
+import { Themed } from '../../utils/index.js';
+import { Overlay } from '../Overlay/index.jsx'
 
 const Loader = ({
   overlayColor,

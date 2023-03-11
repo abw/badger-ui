@@ -1,6 +1,6 @@
 import React from 'react'
-import Context from './Context'
-import Row from './Row'
+import Context from './Context.jsx'
+import Row from './Row.jsx'
 
 export const Rows = ({page, ...props}) =>
   <tbody>

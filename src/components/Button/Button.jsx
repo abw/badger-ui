@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from '../../utils/classNames'
-import Icon from '../Icon'
-import sizes from '../../config/sizes'
-import { Themed } from '../../utils';
-import { allColors } from '../../config/colors'
+import Icon from '../Icon/index.jsx'
+import { sizes, allColors } from '../../config/index.js'
+import { classNames, Themed } from '../../utils/index.js';
 
 const Button = ({
   type = 'button',

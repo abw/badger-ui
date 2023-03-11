@@ -1,7 +1,7 @@
 import React from 'react'
-import Cancel from './Cancel';
-import Reset from './Reset';
-import Submit from './Submit';
+import Cancel from './Cancel.jsx';
+import Reset from './Reset.jsx';
+import Submit from './Submit.jsx';
 
 const CancelResetSubmit = ({
   className='flex start space stack-mobile mar-t',

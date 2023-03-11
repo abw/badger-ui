@@ -1,10 +1,10 @@
 import React from 'react'
-import Headers from './Headers'
-import Rows from './Rows'
-import Pagination from './Pagination'
-import Summary from './Summary'
-import Context from './Context'
-import { propClasses } from '../../utils'
+import Headers from './Headers.jsx'
+import Rows from './Rows.jsx'
+import Pagination from './Pagination.jsx'
+import Summary from './Summary.jsx'
+import Context from './Context.jsx'
+import { propClasses } from '../../utils/index.js'
 
 export const Layout = (props) => {
   const classes = propClasses(

@@ -1,7 +1,7 @@
 import React from 'react'
-import Context from '../Context'
-import FormButton from './FormButton'
-import { Themed } from '../../../utils';
+import Context from '../Context.jsx'
+import FormButton from './FormButton.jsx'
+import { Themed } from '../../../utils/index.js';
 
 const ResetControl = ({
   text='Reset',

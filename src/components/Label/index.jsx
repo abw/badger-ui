@@ -1,2 +1,2 @@
-export { Label as default } from './Label'
-export { Label } from './Label'
+export { Label as default } from './Label.jsx'
+export { Label } from './Label.jsx'

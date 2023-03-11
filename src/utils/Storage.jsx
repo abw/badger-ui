@@ -1,5 +1,4 @@
-import { objMap } from './object.js';
-import { isDefined } from './misc.js';
+import { hasValue, objMap } from '@abw/badger-utils';
 
 function LocalStorage() {
   let store = {};
@@ -17,13 +16,13 @@ export const prefixKey = (prefix, key) => [prefix, key].join('-');
 export function loadState(prefix, props) {
   return objMap(props, (value, key) => {
     let stored = Store.getItem(prefixKey(prefix, key));
-    return isDefined(stored) ? JSON.parse(stored) : value;
+    return hasValue(stored) ? JSON.parse(stored) : value;
   });
 }
 
 export function saveState(prefix, props) {
   Object.keys(props).forEach((key) =>
-    isDefined(props[key])
+    hasValue(props[key])
       ? Store.setItem(prefixKey(prefix, key), JSON.stringify(props[key]))
       : Store.removeItem(prefixKey(prefix, key))
   );

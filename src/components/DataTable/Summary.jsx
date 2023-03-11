@@ -1,10 +1,10 @@
 import React from 'react'
-import FieldSelect from './FieldSelect'
-import PageSize from './PageSize'
-import Context from './Context'
-import { Button } from '../Button'
-import { Themed } from '../../utils'
+import FieldSelect from './FieldSelect.jsx'
+import PageSize from './PageSize.jsx'
+import Context from './Context.jsx'
 import { commas } from '@abw/badger-utils'
+import { Button } from '../Button/index.jsx'
+import { Themed } from '../../utils/index.js'
 
 const Summary = ({
   page,

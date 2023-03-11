@@ -1,7 +1,7 @@
 import React from 'react'
 import Generator from '@abw/react-context-generator'
-import { bindHandlers, addDebug } from '../../utils'
-import { buildFields, resetFields } from './Utils'
+import { bindHandlers, addDebug } from '../../utils/index.js'
+import { buildFields, resetFields } from './Utils.jsx'
 
 class Context extends React.Component {
   static defaultProps = {

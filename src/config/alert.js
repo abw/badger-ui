@@ -1,1 +1,1 @@
-export const types = ['info', 'success', 'warning', 'error'];
+export const alertTypes = ['info', 'success', 'warning', 'error'];

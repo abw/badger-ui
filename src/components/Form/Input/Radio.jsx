@@ -1,6 +1,6 @@
 import { extract } from '@abw/badger-utils';
 import React from 'react';
-import UIRadio from '../../Radio';
+import UIRadio from '../../Radio/index.jsx';
 
 export const Radio = ({field}) =>
   <UIRadio

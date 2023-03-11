@@ -1,6 +1,6 @@
 import React from 'react'
-import Icon from './Icon'
-import Icons from './Icons'
+import Icon from './Icon.jsx'
+import Icons from './Icons.jsx'
 
 export const IconStack = (props) => <Icons className={props.className}>
   <Icon icon={props.backIcon} color={props.backColor} transform={props.backTransform} />

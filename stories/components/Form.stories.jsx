@@ -1,9 +1,8 @@
-import React from 'react'
-import Button from '../../src/components/Button';
-import { useState } from 'react';
-import { Success } from '../../src/components/Alert';
-import { Form, Field, Submit, Reset, Cancel, CancelSubmit, ResetSubmit, CancelResetSubmit } from '../../src/components/Form'
-import { sleep } from '../../src/utils';
+import React, { useState } from 'react'
+import Button from '../../src/components/Button/index.jsx';
+import { Success } from '../../src/components/Alert/index.jsx';
+import { Form, Field, Submit, Reset, Cancel, CancelSubmit, ResetSubmit, CancelResetSubmit } from '../../src/components/Form/index.jsx'
+import { sleep } from '../../src/utils/index.js';
 
 export default {
   title: 'Components/Form',

@@ -1,6 +1,6 @@
 import React from 'react'
-import Field from './Field'
-import { splitToList } from '../../utils'
+import Field from './Field/index.jsx'
+import { splitToList } from '../../utils/index.js'
 
 export const Fields = ({names}) =>
   <>

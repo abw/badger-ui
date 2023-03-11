@@ -1,8 +1,8 @@
 import React from 'react'
 import Content from './Content.jsx';
+import { classNames } from '../../utils/index.js'
+import { Themed } from '../../utils/index.js';
 import { NavLink as DefaultNavLink } from 'react-router-dom';
-import { classNames } from '../../utils'
-import { Themed } from '../../utils';
 
 const Link = (
   {

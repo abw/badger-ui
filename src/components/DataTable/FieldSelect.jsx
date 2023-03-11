@@ -1,8 +1,8 @@
 import React from 'react';
-import Context from './Context'
-import Dropdown from '../Dropdown'
-import Checkbox from '../Checkbox'
-import Icon from '../Icon';
+import Context from './Context.jsx'
+import Dropdown from '../Dropdown/index.jsx'
+import Checkbox from '../Checkbox/index.jsx'
+import Icon from '../Icon/index.jsx';
 import { capitalize } from '@abw/badger-utils'
 import { CSS } from '@dnd-kit/utilities';
 import {

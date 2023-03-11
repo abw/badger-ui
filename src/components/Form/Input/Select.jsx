@@ -1,5 +1,5 @@
 import React from 'react';
-import UISelect from '../../Select';
+import UISelect from '../../Select/index.jsx';
 import { extract } from '@abw/badger-utils';
 
 export const Select = ({field})=>

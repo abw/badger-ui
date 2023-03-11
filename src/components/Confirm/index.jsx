@@ -1,2 +1,2 @@
-export { default } from './Confirm'
-export { default as Confirm } from './Confirm'
+export { default } from './Confirm.jsx'
+export { default as Confirm } from './Confirm.jsx'

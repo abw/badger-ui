@@ -1,7 +1,7 @@
 import React from 'react'
-import { Themed } from '../../utils'
-import { Button } from '../Button'
-import Context from './Context'
+import { Themed } from '../../utils/index.js'
+import { Button } from '../Button/index.jsx'
+import Context from './Context.jsx'
 
 const Pagination = ({
   page, setPageNo,

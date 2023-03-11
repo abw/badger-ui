@@ -1,7 +1,7 @@
 import React from 'react'
-import Context from './Context'
-import { Checkbox } from '../Checkbox'
-import { Dropdown } from '../Dropdown'
+import Context from './Context.jsx'
+import { Checkbox } from '../Checkbox/index.jsx'
+import { Dropdown } from '../Dropdown/index.jsx'
 
 export const PageSize = ({
   page,

@@ -1,6 +1,6 @@
 import React from 'react'
-import Context from './Context'
-import { Error } from '../Alert'
+import Context from './Context.jsx'
+import { Error } from '../Alert/index.jsx'
 
 const Footer = ({form}) => {
   const errors = form.errors && form.errors.length;

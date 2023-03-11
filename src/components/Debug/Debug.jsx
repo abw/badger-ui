@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from '../Icon'
+import Icon from '../Icon/index.jsx'
 import icons from '../../config/icons.js'
-import { Themed } from '../../utils'
+import { Themed } from '../../utils/index.js'
 
 const Debug = ({
   title,

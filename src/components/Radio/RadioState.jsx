@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Radio from './Radio'
+import Radio from './Radio.jsx'
 
 const RadioState = (props) => {
   const [value, setValue] = useState(props.initialValue || false);

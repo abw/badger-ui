@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Icon from '../Icon'
-import propClasses from '../../utils/propClasses'
-import { sizes, fasizes } from '../../config/sizes'
-import { types } from '../../config/alert'
-import { Themed } from '../../utils';
+import Icon from '../Icon/index.jsx'
+import { sizes, fasizes, alertTypes } from '../../config/index.js'
+import { Themed, propClasses } from '../../utils/index.js';
 
 const Alert = ({
   title,
@@ -13,14 +11,14 @@ const Alert = ({
   type, size,
   stripe, shadow,
   className, icon, text, children,
+  onDismiss,
   iconSize = '2x',
   dismissable = false,
   revealable = false,
   initiallyRevealed = false,
-  onDismiss,
-  dismissIcon,
-  revealedIcon,
-  unrevealedIcon,
+  dismissIcon = 'times-circle',
+  revealedIcon = 'caret-down',
+  unrevealedIcon = 'caret-left',
 }) => {
   const [revealed, reveal] = useState(initiallyRevealed || !revealable);
   const [dismissed, setDismissed] = useState(false);
@@ -30,6 +28,7 @@ const Alert = ({
   ];
   const cname = classes.filter(i => !!i).join(' ');
   const dismiss = () => {
+    console.log('dismissing');
     if (onDismiss) {
       onDismiss();
     }
@@ -103,7 +102,7 @@ Alert.propTypes = {
   /** Any custom css `class` for the container element. */
   className: PropTypes.string,
   /** Alert type. */
-  type: PropTypes.oneOf(types),
+  type: PropTypes.oneOf(alertTypes),
   /** Title for the body text. */
   title: PropTypes.string,
   /** Body text. */

@@ -1,6 +1,7 @@
 import React from 'react';
-import Icon from '../Icon';
-import { addDebug, isDefined, classNames, debounce, Themed } from '../../utils';
+import Icon from '../Icon/index.jsx';
+import { hasValue } from '@abw/badger-utils';
+import { addDebug, classNames, debounce, Themed } from '../../utils';
 
 const inactiveState = {
   searching: false,
@@ -25,7 +26,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     const value = this.props.value;
-    const input = isDefined(value)
+    const input = hasValue(value)
       ? this.props.displayValue
         ? this.props.displayValue(value)
         : value.text
@@ -114,7 +115,7 @@ class Search extends React.Component {
   reset() {
     this.debug('reset()');
     const { value, displayValue } = this.props;
-    const input = isDefined(value)
+    const input = hasValue(value)
       ? displayValue
         ? displayValue(value)
         : value.text
@@ -151,7 +152,7 @@ class Search extends React.Component {
 
       case 'Enter':
         event.preventDefault();
-        if (results && results.length && isDefined(cursor)) {
+        if (results && results.length && hasValue(cursor)) {
           this.select(results[cursor]);
         }
         break;
@@ -200,7 +201,7 @@ class Search extends React.Component {
     this.debug('select() result:', result);
     const value = result;
     const { displayValue } = this.props;
-    const input = isDefined(result)
+    const input = hasValue(result)
       ? displayValue
         ? displayValue(result)
         : result.text
@@ -227,7 +228,7 @@ class Search extends React.Component {
       <div className="options">
         {results.length ? (
           results.map((result, n) => {
-            let active = isDefined(cursor) && results[cursor] === result;
+            let active = hasValue(cursor) && results[cursor] === result;
             return (
               <div
                 className={`option ${active ? 'selected' : ''}`}

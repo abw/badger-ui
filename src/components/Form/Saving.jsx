@@ -1,7 +1,7 @@
 import React from 'react'
-import Context from './Context'
-import { Themed } from '../../utils';
-import { Loader } from '../Spinner';
+import Context from './Context.jsx'
+import { Themed } from '../../utils/index.js';
+import { Loader } from '../Spinner/index.jsx';
 
 const Saving = ({form, icon, color, bgColor, overlayColor, className, message}) => <Loader
   icon={form.savingIcon||icon}
