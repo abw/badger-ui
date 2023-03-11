@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@abw/badger': ^1.1.10
   '@abw/badger-utils': ^1.0.17
-  '@abw/react-context-generator': ^1.1.1
+  '@abw/react-context-generator': 1.1.2-beta.0
   '@abw/svg-icon-librarian': ^1.0.9
   '@babel/cli': ^7.21.0
   '@babel/core': ^7.21.0
@@ -66,7 +66,7 @@ dependencies:
 
 devDependencies:
   '@abw/badger': 1.1.10
-  '@abw/react-context-generator': 1.1.1_biqbaboplfbrettd7655fr4n2y
+  '@abw/react-context-generator': 1.1.2-beta.0_biqbaboplfbrettd7655fr4n2y
   '@babel/cli': 7.21.0_@babel+core@7.21.0
   '@babel/core': 7.21.0
   '@babel/eslint-parser': 7.19.1_ccoxihxmx25rm5cufeee3dmlne
@@ -148,8 +148,8 @@ packages:
       js-yaml: 4.1.0
       prompts: 2.4.2
 
-  /@abw/react-context-generator/1.1.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-3Nspj3R7dDJv08Hccqe9V6f1myb/nLJr24cqd9kkJ8/kqGmFD5XdKBv9Fg5rwJj/w6K8lwZL6c15YfnPXOe00w==}
+  /@abw/react-context-generator/1.1.2-beta.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-lLuM7PEEgVeo0FkesKtap5ZF9ET3/N+FFVbPjVAfkGW9r3jnx6kpZdFMWOubeWohP+9ZEhHeUHYdVR7r7QVtog==}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
@@ -168,6 +168,7 @@ packages:
       '@fortawesome/free-brands-svg-icons': 6.3.0
       '@fortawesome/free-regular-svg-icons': 6.3.0
       '@fortawesome/free-solid-svg-icons': 6.3.0
+    dev: false
 
   /@ampproject/remapping/2.2.0:
     resolution: {integrity: sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w==}
