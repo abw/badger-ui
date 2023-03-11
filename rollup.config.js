@@ -6,7 +6,7 @@ import autoprefixer from 'autoprefixer'
 import copy from 'rollup-plugin-copy'
 import styles from 'rollup-plugin-styles'
 import { terser } from 'rollup-plugin-terser'
-import { visualizer } from "rollup-plugin-visualizer";
+import { visualizer } from 'rollup-plugin-visualizer';
 
 const packageJson = require('./package.json')
 const dest = 'dist'

@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-ui",
-  "version": "1.1.1-beta.13",
+  "version": "1.1.1-beta.14",
   "description": "CSS/React User Interface Components",
   "author": "Andy Wardley",
   "type": "module",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@abw/badger": "^1.1.10",
-    "@abw/react-context-generator": "1.1.2-beta.0",
+    "@abw/react-context-generator": "1.1.2-beta.1",
     "@abw/svg-icon-librarian": "^1.0.7",
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.0",
