@@ -201,7 +201,7 @@ class Context extends React.Component {
     });
   }
 
-  toggleFilters = () => {
+  toggleFilters() {
     // Do we actually need to call set and force pagination?  No, but we
     // might want to persist all options in local storage and the set()
     // method would be a good place to put that.
