@@ -23,7 +23,7 @@ export const Icon = ({icons, transform, ...props}) => {
   const icon = icons[name];
 
   if (! icon) {
-    console.log(`Invalid icon name:${name}`);
+    console.log(`Invalid icon name: ${name}`);
     return null;
   }
   // pull out the pertinent data
