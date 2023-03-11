@@ -23,11 +23,14 @@ export const Padding = () =>
     <p>
       A character can be added to designate which side or sides
       to apply padding to: <code className="code">pad-t</code> for the
-      top, <code className="code">pad-b</code> for the bottom, <code className="code">pad-l</code>{' '}
+      top, <code className="code">pad-b</code> for the bottom,{' '}
+      <code className="code">pad-l</code>{' '}
       for the left and <code className="code">pad-r</code> for the right.{' '}
-      <code className="code">pad-v</code> (&quot;v&quot; for &quot;vertical&quot;) applies it to both the top and bottom
-      and <code className="code">pad-h</code> (&quot;h&quot; for &quot;horizontal&quot;) applies it to both the left and right.
-      These will all add a single unit (0.5rem) of padding to the
+      <code className="code">pad-v</code>{' '}
+      (&quot;v&quot; for &quot;vertical&quot;) applies it to both the top
+      and bottom and <code className="code">pad-h</code>{' '}
+      (&quot;h&quot; for &quot;horizontal&quot;) applies it to both the left
+      and right. These will all add a single unit (0.5rem) of padding to the
       relevant side(s).
     </p>
     <p>
@@ -64,7 +67,7 @@ export const Padding = () =>
       There are five units (2.5em) of padding all around.
     </div>
     { [6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40].map(
-      n => <div className={`bg-magenta white pad-l-${n} mar-b mar-r`}>
+      n => <div className={`bg-magenta white pad-l-${n} mar-b mar-r`} key={n}>
         pad-l-{n}
       </div>
     )}

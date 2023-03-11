@@ -216,11 +216,14 @@ export const StackingSplits = () =>
   <>
     <p className="mar-t-none">
       The <code className="code">stack-XXX</code> classes
-      also work in conjunction with the <code className="code">split-XXX</code> classes.
-      Use the <code className="code">gut-X</code> classes to add gutters (implemented as padding)
-      between elements that will be removed when the elements stack.  This is a bit of a cludgy hack that
-      was required before the gods of CSS blessed us with grids.  If you're writing new
-      code then you're probably better off using the grid classes.
+      also work in conjunction with the{' '}
+      <code className="code">split-XXX</code>{' '}
+      classes.  Use the <code className="code">gut-X</code> classes to add
+      gutters (implemented as padding) between elements that will be removed
+      when the elements stack.  This is a bit of a cludgy hack that was
+      required before the gods of CSS blessed us with grids.  If you&apos;re
+      writing new code then you&apos;re probably better off using the grid
+      classes.
     </p>
 
     <h4><code className="code">row stack-mobile</code> - <span className="mobile-width"></span></h4>
