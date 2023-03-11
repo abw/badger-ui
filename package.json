@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-ui",
-  "version": "1.1.1-beta.0",
+  "version": "1.1.1-beta.1",
   "description": "CSS/React User Interface Components",
   "author": "Andy Wardley",
   "type": "module",
@@ -14,6 +14,9 @@
     "url": "https://github.com/abw/badger-ui/issues"
   },
   "homepage": "https://abw.github.io/badger-ui/",
+  "bin": {
+    "badger-ui-icons": "./dist/bin/badger-ui-icons.js"
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "pnpm clean && rollup --config",
