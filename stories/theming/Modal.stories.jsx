@@ -1,6 +1,6 @@
-import React from "react";
-import Button from "../../src/components/Button";
-import { Modal } from "../../src/components/Modal";
+import React from 'react';
+import Button from '../../src/components/Button';
+import { Modal } from '../../src/components/Modal';
 import { Theme } from '../../src/utils'
 
 export default {

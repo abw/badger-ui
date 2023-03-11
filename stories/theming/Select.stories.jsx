@@ -1,5 +1,5 @@
-import React from "react";
-import { Select, SelectState } from "../../src/components/Select";
+import React from 'react';
+import { Select, SelectState } from '../../src/components/Select';
 import { Theme } from '../../src/utils'
 
 export default {

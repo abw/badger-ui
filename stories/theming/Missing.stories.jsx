@@ -1,5 +1,5 @@
-import React from "react";
-import { Missing } from "../../src/components/Missing";
+import React from 'react';
+import { Missing } from '../../src/components/Missing';
 import { Theme } from '../../src/utils'
 
 export default {
@@ -10,7 +10,7 @@ export const ThemedMissing = () => {
   const MyTheme = {
     Missing: {
       icon:     'alert',
-      fallback: "None, None More Found"
+      fallback: 'None, None More Found'
     },
   };
   return <>

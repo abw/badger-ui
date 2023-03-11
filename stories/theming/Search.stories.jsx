@@ -1,5 +1,5 @@
-import React from "react";
-import { Search } from "../../src/components/Search";
+import React from 'react';
+import { Search } from '../../src/components/Search';
 import { Theme } from '../../src/utils'
 
 export default {
@@ -49,21 +49,22 @@ export const ThemedSearch = () => {
         <h2>Themed</h2>
         <Theme.Provider {...MyTheme}>
           <Search
-          placeholder="Animal search"
-          className="rounded"
-          onSearch={
-            (that, value) => that.searchResults(
-              animals.filter( a => a.toLowerCase().match(value) )
-            )
-          }
-          // how to render each result in the selection list
-          renderResult={result => <div className="result">{result}</div>}
-          // how to render a selected result in the search bar
-          displayValue={result => result}
-          // what to do when the result is selected
-          onSelect={result => select(result)}
-        />
-      </Theme.Provider>
+            placeholder="Animal search"
+            className="rounded"
+            onSearch={
+              (that, value) => that.searchResults(
+                animals.filter( a => a.toLowerCase().match(value) )
+              )
+            }
+            // how to render each result in the selection list
+            renderResult={result => <div className="result">{result}</div>}
+            // how to render a selected result in the search bar
+            displayValue={result => result}
+            // what to do when the result is selected
+            onSelect={result => select(result)}
+          />
+        </Theme.Provider>
+        Selected: {selected}
       </div>
     </div>
   </>

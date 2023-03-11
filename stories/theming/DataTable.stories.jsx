@@ -1,5 +1,5 @@
-import React from "react";
-import { DataTable } from "../../src/components/DataTable";
+import React from 'react';
+import { DataTable } from '../../src/components/DataTable';
 import { Theme } from '../../src/utils'
 
 export default {
@@ -72,10 +72,10 @@ export const ThemedDataTable = () => {
   return <>
     <h1 className="mar-t-none mar-l-none">Themed DataTable</h1>
     <h2 className="text-center">Unthemed</h2>
-      <DataTable
-        rows={rows}
-        columns={columns}
-      />
+    <DataTable
+      rows={rows}
+      columns={columns}
+    />
     <h2 className="text-center">Themed</h2>
     <Theme.Provider {...MyTheme}>
       <DataTable

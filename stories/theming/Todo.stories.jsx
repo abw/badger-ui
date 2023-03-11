@@ -1,5 +1,5 @@
-import React from "react";
-import { Todo } from "../../src/components/Debug";
+import React from 'react';
+import { Todo } from '../../src/components/Debug';
 import { Theme } from '../../src/utils'
 
 export default {
@@ -11,7 +11,7 @@ export const ThemedTodo = () => {
     Todo: {
       icon:     'alert',
       title:    'Things To Be Done',
-      fallback: "I haven't got around to this yet"
+      fallback: 'I haven\'t got around to this yet'
     },
   };
   return <>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Checkbox, CheckboxState } from "../../src/components/Checkbox";
+import React from 'react';
+import { Checkbox, CheckboxState } from '../../src/components/Checkbox';
 import { Theme } from '../../src/utils'
 
 export default {

@@ -1,5 +1,5 @@
-import React from "react";
-import { Dropdown, DropdownMenu } from "../../src/components/Dropdown";
+import React from 'react';
+import { Dropdown, DropdownMenu } from '../../src/components/Dropdown';
 import { Theme } from '../../src/utils'
 
 export default {
@@ -55,7 +55,7 @@ export const ThemedDropdownLink = () => {
       creates a React Router <code className="code">NavLink</code> component.
     </p>
     <p>
-      If you're not using React Router then you can define a custom
+      If you&apos;re not using React Router then you can define a custom
       <code className="code">Link</code> component
       as a property of <code className="code">DropdownLink</code> in your
       theme to render links a different way.  This simple example shows the
@@ -67,9 +67,9 @@ export const ThemedDropdownLink = () => {
         <DropdownMenu
           text="Menu" color="blue" solid
           items={[
-            { text: 'One',   to: "one" },
-            { text: 'Two',   to: "two" },
-            { text: 'Three', to: "three" },
+            { text: 'One',   to: 'one' },
+            { text: 'Two',   to: 'two' },
+            { text: 'Three', to: 'three' },
           ]}
         />
       </Theme.Provider>

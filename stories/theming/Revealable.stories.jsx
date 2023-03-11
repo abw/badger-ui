@@ -1,5 +1,5 @@
-import React from "react";
-import { Revealable } from "../../src/components/Revealable";
+import React from 'react';
+import { Revealable } from '../../src/components/Revealable';
 import { Theme } from '../../src/utils'
 
 export default {

@@ -1,5 +1,5 @@
-import React from "react";
-import { Alert, Info, Warning } from "../../src/components/Alert";
+import React from 'react';
+import { Alert, Info, Warning } from '../../src/components/Alert';
 import { Theme } from '../../src/utils'
 
 export default {

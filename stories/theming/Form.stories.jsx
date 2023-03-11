@@ -1,5 +1,5 @@
-import React from "react";
-import { Form, Field, Submit, Reset } from "../../src/components/Form";
+import React from 'react';
+import { Form, Field, Submit, Reset } from '../../src/components/Form';
 import { sleep, Theme } from '../../src/utils'
 
 export default {
@@ -39,7 +39,7 @@ export const ThemedForm = () => {
       <div className="split-2 gut-l">
         <h4>Themed</h4>
         <Theme.Provider {...MyTheme}>
-            <Form>
+          <Form>
             <Field name="email" label="Email" required />
             <Field name="password" label="Password" required/>
             <Field name="animal" label="Favourite Animal"/>
@@ -63,7 +63,7 @@ export const ThemedSavingSpinner = () => {
     },
   };
 
-  const onSubmit = submit => sleep(5000).then(() => {
+  const onSubmit = () => sleep(5000).then(() => {
     // fake a valid server response
     return Promise.resolve({
       status: 200,
@@ -72,7 +72,7 @@ export const ThemedSavingSpinner = () => {
   })
   return <>
     <p className="mar-t-none">
-      The "Saving..." spinner in forms can be customised using numerous long-winded
+      The &quot;Saving...&quot; spinner in forms can be customised using numerous long-winded
       form properties.  If you want to change the default style for all the forms in your
       site then theming the <code className="code">FormSaving</code> is the way forward.
     </p>

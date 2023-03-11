@@ -1,5 +1,5 @@
-import React from "react";
-import { Toggle, ToggleState } from "../../src/components/Toggle";
+import React from 'react';
+import { Toggle, ToggleState } from '../../src/components/Toggle';
 import { Theme } from '../../src/utils'
 
 export default {

@@ -1,5 +1,5 @@
-import React from "react";
-import { Confirm } from "../../src/components/Confirm";
+import React from 'react';
+import { Confirm } from '../../src/components/Confirm';
 import { Theme } from '../../src/utils'
 
 export default {

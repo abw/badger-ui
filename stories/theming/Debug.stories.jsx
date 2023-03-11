@@ -1,5 +1,5 @@
-import React from "react";
-import { Debug } from "../../src/components/Debug";
+import React from 'react';
+import { Debug } from '../../src/components/Debug';
 import { Theme } from '../../src/utils'
 
 export default {

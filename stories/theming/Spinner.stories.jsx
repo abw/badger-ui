@@ -1,5 +1,5 @@
-import React from "react";
-import { Spinner, Loading, Saving } from "../../src/components/Spinner";
+import React from 'react';
+import { Spinner, Loading, Saving } from '../../src/components/Spinner';
 import { Theme } from '../../src/utils'
 
 export default {
