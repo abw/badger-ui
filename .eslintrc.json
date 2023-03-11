@@ -18,6 +18,7 @@
   },
   "plugins": ["react", "react-hooks", "babel"],
   "parser": "@babel/eslint-parser",
+  "ignorePatterns": ["stats.html"],
   "rules": {
     "quotes": ["warn", "single"],
     "brace-style": ["error", "stroustrup"],

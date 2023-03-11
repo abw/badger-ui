@@ -17,7 +17,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "pnpm clean && rollup --config",
-    "lint": "eslint 'src/**/*'",
+    "lint": "eslint 'src/**/*' 'stories/**/*.jsx'",
     "lint:fix": "eslint --fix 'src/**/*'",
     "icons": "svg-icon-librarian -f icons/config.yaml -c icons/custom -o src/config/icons.js -y",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
