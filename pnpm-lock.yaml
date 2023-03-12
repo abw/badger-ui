@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@abw/badger': ^1.1.10
   '@abw/badger-utils': ^1.0.17
-  '@abw/react-context-generator': 1.1.2-beta.1
+  '@abw/react-context-generator': 2.0.0
   '@abw/svg-icon-librarian': ^1.0.9
   '@babel/cli': ^7.21.0
   '@babel/core': ^7.21.0
@@ -66,7 +66,7 @@ dependencies:
 
 devDependencies:
   '@abw/badger': 1.1.10
-  '@abw/react-context-generator': 1.1.2-beta.1_biqbaboplfbrettd7655fr4n2y
+  '@abw/react-context-generator': 2.0.0_biqbaboplfbrettd7655fr4n2y
   '@babel/cli': 7.21.0_@babel+core@7.21.0
   '@babel/core': 7.21.0
   '@babel/eslint-parser': 7.19.1_ccoxihxmx25rm5cufeee3dmlne
@@ -148,8 +148,8 @@ packages:
       js-yaml: 4.1.0
       prompts: 2.4.2
 
-  /@abw/react-context-generator/1.1.2-beta.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-74prIGyzH4wf6CM5Mql/WckSghjtxPTVzhzdz3rn3pgADcU5hO4cEZZSGEGldgzOp47HN5uH8hngE3ugV0kM4Q==}
+  /@abw/react-context-generator/2.0.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-ODx/1itG32vDfMX/n7nsKMdyKTWZG1WNvD7DPXawRW2uiK/3j/qbuoYsA5R6JHMfdvupXG9XaB/8kmU7DYFI/g==}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'

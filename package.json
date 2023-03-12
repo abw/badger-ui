@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@abw/badger": "^1.1.10",
-    "@abw/react-context-generator": "1.1.2-beta.1",
+    "@abw/react-context-generator": "2.0.0",
     "@abw/svg-icon-librarian": "^1.0.7",
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.0",
@@ -88,6 +88,7 @@
   "peerDependencies": {
     "@abw/react-context-generator": "^1.1.2-beta.0",
     "history": "^5.0.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.9.0",

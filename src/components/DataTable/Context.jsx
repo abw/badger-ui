@@ -1,5 +1,5 @@
 import React from 'react'
-import Generator from '@abw/react-context-generator'
+import { Generator } from '@abw/react-context-generator'
 import { bindHandlers, addDebug, isDefined, Storage } from '../../utils/index.js'
 import { extractVisibleColumns } from './Utils'
 import paginate from './Paginate.jsx'

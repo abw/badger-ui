@@ -1,5 +1,5 @@
 import React from 'react'
-import Generator from '@abw/react-context-generator'
+import { Generator } from '@abw/react-context-generator'
 import { bindHandlers, addDebug } from '../../utils/index.js'
 import { buildFields, resetFields } from './Utils.jsx'
 
