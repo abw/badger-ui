@@ -17,10 +17,11 @@ it in other projects.
 
 ## Using the `badger-ui` Library
 
-Add the `badger-ui` library to your project.
+Add the `badger-ui` library to your project using your favourite package
+manager.
 
 ```sh
-yarn add @abw/badger-ui
+pnpm add @abw/badger-ui
 ```
 
 Then you can import `badger-ui` components into your React components.
@@ -41,7 +42,7 @@ To use the default CSS styles import the main CSS file into
 one of the top-level files for you project:
 
 ```jsx
-import '@abw/badger-ui/dist/styles/badger-ui.css'
+import '@abw/badger-ui/styles/badger-ui.css'
 ```
 
 ### Customising Styles Using SASS
@@ -61,14 +62,16 @@ $alert-radius: 10px;
 $checkbox-padding: 2px 4px;
 
 // import badger-ui styles
-@import "@abw/badger-ui/dist/styles/badger-ui.scss";
+@import "@abw/badger-ui/styles/badger-ui.scss";
 ```
 
 You should then import this custom stylesheet into your application.
 
 ### Custom Icons
 
-The `badger-ui` library uses a number of icons from the [Fontawesome](https://fontawesome.com/) collection.
+The `badger-ui` library uses a number of icons from the
+[Fontawesome](https://fontawesome.com/) collection.  It has a custom
+library built using [svg-icon-librarian](https://www.npmjs.com/package/@abw/svg-icon-librarian).
 
 You will almost certainly want to add further icons to this
 collection, either incorporating addition Fontawesome icons
@@ -84,39 +87,39 @@ not intended for end users.
 First install all the dependencies.
 
 ```sh
-yarn install
+pnpm install
 ```
 
 Build the library using the following command.  Output files
 will be written to the `dist` directory.
 
 ```sh
-yarn build
+pnpm build
 ```
 
 Run the following command to view the [Storybook](https://storybook.js.org/) showing
 examples of the components in action.
 
 ```sh
-yarn storybook
+pnpm storybook
 ```
 
 To check the source code for potential errors, run `eslint`
 using this command.
 
 ```sh
-yarn lint
+pnpm lint
 ```
 
 If you want to delete the `dist` build directory you can run
 this command.
 
 ```sh
-yarn clean
+pnpm clean
 ```
 
-Note that the `clean` step happens automatically when you run `yarn build`.
+Note that the `clean` step happens automatically when you run `pnpm build`.
 
 # Author
 
-Andy Wardley <abw@wardley.org> 2018 to 2022
+Andy Wardley <abw@wardley.org> 2018 to 2023

@@ -61,7 +61,7 @@ Aliases are also useful for "semantic" naming.  For example, you could define
 the `portfolio` icon as an alias to the `briefcase` icon in the solid set.
 
 ```yaml
-alias:
+icons:
   portfolio: solid:briefcase
 ```
 
