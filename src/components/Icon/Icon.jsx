@@ -190,10 +190,10 @@ function parseTransform(transformString) {
 }
 
 Icon.propTypes = {
-  /** The name of the icon. */
-  name: PropTypes.string,
-  /** Icon size. */
-  size: PropTypes.oneOf(['xs', 'sm', 'lg', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
+  name:      PropTypes.string,
+  size:      PropTypes.string,
+  color:     PropTypes.string,
+  transform: PropTypes.string,
 };
 
 Icon.defaultProps = {
