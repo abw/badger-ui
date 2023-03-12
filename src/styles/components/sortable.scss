@@ -7,19 +7,10 @@
   background-color: #fff;
   padding: 0.25em 0.5em 0.25em 0;
   font-size: 1em;
-  border-bottom: 1px solid $sortable-list-border-color;
   cursor: pointer;
   user-select: none;
   display: flex;
   align-items: flex-start;
-  &:first-child {
-    border-radius: $sortable-radius $sortable-radius 0 0;
-  }
-  &:nth-last-child(3) {
-    // dnd adds 2 hidden elements to the end
-    border-radius: 0 0 $sortable-radius $sortable-radius;
-    border-bottom: none;
-  }
   &.inactive {
     opacity: 0.4;
   }
@@ -30,6 +21,33 @@
     border-radius: 0;
   }
 }
+.sortable.list.vertical {
+  .sortable.item {
+    border-bottom: 1px solid $sortable-list-border-color;
+    &:first-child {
+      border-radius: $sortable-radius $sortable-radius 0 0;
+    }
+    &:nth-last-child(3) {
+      // dnd adds 2 hidden elements to the end
+      border-radius: 0 0 $sortable-radius $sortable-radius;
+      border-bottom: none;
+    }
+  }
+}
+.sortable.list.horizontal {
+  .sortable.item {
+    border-right: 1px solid $sortable-list-border-color;
+    &:first-child {
+      border-radius: $sortable-radius 0 0 $sortable-radius;
+    }
+    &:nth-last-child(3) {
+      // dnd adds 2 hidden elements to the end
+      border-radius: 0 $sortable-radius $sortable-radius 0;
+      border-right: none;
+    }
+  }
+}
+
 .sortable.list.changed .sortable.item.moved {
   color: $sortable-moved-fg-color;
   background-color: $sortable-moved-bg-color;

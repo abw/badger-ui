@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../src/components/Button/Button.jsx';
 import Icon from '../../src/components/Icon/Icon.jsx';
-import { VerticalSort } from '../../src/components/Sortable/index.jsx';
+import { HorizontalSort, VerticalSort } from '../../src/components/Sortable/index.jsx';
 
 export default {
   title: 'Components/Sortable',
@@ -16,6 +16,58 @@ export const Overview = () => <>
     vertical and horizontal sorting.
   </p>
 </>
+
+export const HorizontalSorting = () => {
+  const rows = [
+    { id: 100, forename: 'Alan',    surname: 'Aardvark' },
+    { id: 101, forename: 'Brian',   surname: 'Badger' },
+    { id: 102, forename: 'Colin',   surname: 'Camel' },
+    { id: 103, forename: 'David',   surname: 'Dog' },
+  ];
+  const [changed, setChanged] = React.useState(false);
+  const [items, setItems] = React.useState(rows);
+  const setOrder = items => {
+    setItems(items);
+    setChanged(true);
+  }
+  const resetOrder = () => {
+    setItems( rows.map( row => ({ ...row, moved: false }) ) );
+    setChanged(false);
+  }
+  const Item = ({
+    item, setNodeRef, style, listeners, ...props
+  }) =>
+    <div
+      ref={setNodeRef} style={style}
+      className={`split-4 sortable item ${item.moved ? 'moved' : ''}`}
+      {...props}
+      {...listeners}
+    >
+      <div className="wide text-center">
+        {item.forename} {item.surname}
+      </div>
+    </div>
+
+  return (
+    <>
+      <div className="flex space">
+        <h3 className="mar-t-none">Drag Items to Set Order</h3>
+        { changed &&
+          <div>
+            <Button color="brown" text="Reset Order" iconLeft="undo" onClick={resetOrder}/>
+          </div>
+        }
+      </div>
+      <div className={`sortable list horizontal wide row ${changed ? 'changed' : ''}`}>
+        <HorizontalSort
+          items={items}
+          Item={Item}
+          setOrder={setOrder}
+        />
+      </div>
+    </>
+  )
+}
 
 export const VerticalSorting = () => {
   const rows = [
@@ -50,7 +102,7 @@ export const VerticalSorting = () => {
       {...props}
       {...listeners}
     >
-      <div className="split-6">
+      <div className="split-6 pad-l">
         {item.id}
       </div>
       <div className="split-3">
@@ -59,7 +111,7 @@ export const VerticalSorting = () => {
       <div className="split-3">
         {item.surname}
       </div>
-      <div className="split-6 text-right">
+      <div className="split-6 text-right pad-r">
         <Icon name="sort" fixedWidth className=""/>
       </div>
     </div>
@@ -74,7 +126,7 @@ export const VerticalSorting = () => {
           </div>
         }
       </div>
-      <div className={`sortable list ${changed ? 'changed' : ''}`}>
+      <div className={`sortable list vertical ${changed ? 'changed' : ''}`}>
         <VerticalSort
           items={items}
           Item={Item}
