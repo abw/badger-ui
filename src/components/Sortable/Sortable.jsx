@@ -7,10 +7,12 @@ import {
 } from '@dnd-kit/core';
 import {
   arrayMove,
+  rectSortingStrategy,
   SortableContext,
   sortableKeyboardCoordinates,
   useSortable
 } from '@dnd-kit/sortable';
+import { restrictToParentElement } from '@dnd-kit/modifiers';
 
 
 export const Sortable = ({
@@ -18,8 +20,8 @@ export const Sortable = ({
   setOrder,
   List=({children}) => children,
   Item,
-  modifiers=[],
-  strategy,
+  modifiers=[restrictToParentElement],
+  strategy=rectSortingStrategy,
   ...props
 }) => {
   const sensors = useSensors(
