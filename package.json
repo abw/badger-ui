@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-ui",
-  "version": "1.1.1-beta.18",
+  "version": "1.1.1-beta.19",
   "description": "CSS/React User Interface Components",
   "author": "Andy Wardley",
   "type": "module",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@abw/badger": "^1.1.10",
     "@abw/react-context-generator": "2.0.0",
-    "@abw/svg-icon-librarian": "^1.0.7",
+    "@abw/svg-icon-librarian": "^1.0.9",
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.19.1",
@@ -86,7 +86,8 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "@abw/react-context-generator": "^1.1.2-beta.0",
+    "@abw/react-context-generator": "^2.0.0",
+    "@abw/svg-icon-librarian": "^1.0.9",
     "history": "^5.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -96,7 +97,6 @@
   },
   "dependencies": {
     "@abw/badger-utils": "^1.0.17",
-    "@abw/svg-icon-librarian": "^1.0.9",
     "@dnd-kit/core": "^6.0.8",
     "@dnd-kit/modifiers": "^6.0.1",
     "@dnd-kit/sortable": "^7.0.2",
