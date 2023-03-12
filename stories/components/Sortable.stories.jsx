@@ -11,9 +11,11 @@ export default {
 export const Overview = () => <>
   <h1 className="mar-t-none mar-l-none">Sortable Elements</h1>
   <p className="intro">
+    The <code className="code">Sortable</code> component is a wrapper
+    around [dnd kit](https://dndkit.com/) for sorting items.
     The <code className="code">VerticalSort</code> and{' '}
-    <code className="code">HorizontalSort</code> components implement
-    vertical and horizontal sorting.
+    <code className="code">HorizontalSort</code> components are specialisations
+    for vertical and horizontal sorting.
   </p>
 </>
 
