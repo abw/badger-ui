@@ -1,0 +1,10 @@
+$sortable-list-bg-color:     rgba($blue, 0.1) !default;
+$sortable-list-border-color: rgba($blue, 0.2) !default;
+// $sortable-radius:            $unit-radius !default;
+$sortable-radius:            10px !default;
+$sortable-moved-color:       $orange !default;
+$sortable-moved-fg-color:    darker-color($sortable-moved-color) !default;
+$sortable-moved-bg-color:    mix($white, $sortable-moved-color, 95%) !default;
+$sortable-moving-color:      $green !default;
+$sortable-moving-fg-color:   darker-color($sortable-moving-color) !default;
+$sortable-moving-bg-color:   mix($white, $sortable-moving-color, 95%) !default;
