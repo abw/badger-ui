@@ -42,7 +42,7 @@ sets:
     - check
     # - square-check
     - circle
-    - circle-check
+    # - circle-check
     - circle-exclamation
     - circle-question
     # - cog
@@ -80,15 +80,17 @@ sets:
   # define aliases for icons
 icons:
   alert:        solid:circle-exclamation
-  checked:      solid:square-check
-  check-on:     solid:square-check
-  check-off:    regular:square
-  check-circle: regular:circle-check
+  # checked:      solid:square-check
+  checkbox-on:  solid:square-check
+  checkbox-off: regular:square
+  check-circle: solid:circle-check
+  check-ring:   regular:circle-check
   ring:         regular:circle
   cogs:         solid:gears
-  dotted:       regular:circle-dot
-  dot-circle:   regular:circle-dot
+  # dotted:       regular:circle-dot
+  # dot-circle:   regular:circle-dot
   info:         solid:circle-info
+  info-circle:  solid:circle-info
   ok:           solid:circle-check
   radio-on:     regular:circle-dot
   radio-off:    regular:circle
@@ -96,7 +98,8 @@ icons:
   search:       solid:magnifying-glass
   times:        solid:xmark
   times-circle: solid:circle-xmark
-  unchecked:    regular:square
+  times-ring:   regular:circle-xmark
+  # unchecked:    regular:square
   undo:         solid:rotate-left
-  undotted:     regular:circle
+  # undotted:     regular:circle
   warning:      solid:triangle-exclamation
