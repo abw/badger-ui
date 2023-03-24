@@ -76,8 +76,8 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
-  checkedIcon:   'check-on',
-  uncheckedIcon: 'check-off',
+  checkedIcon:   'checkbox-on',
+  uncheckedIcon: 'checkbox-off',
 };
 
 export default Themed(Checkbox, 'Checkbox')
