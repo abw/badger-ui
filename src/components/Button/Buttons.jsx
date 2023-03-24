@@ -5,7 +5,14 @@ import { classNames, Themed } from '../../utils/index.js'
 const Buttons = (props) =>
   <div className={`${classNames(props, 'buttons')}`}>
     {props.buttons.map(
-      (button, n) => <Button key={n} solid={props.solid} {...button} last={n === props.buttons.length - 1} />
+      (button, n) => <Button
+        key={n}
+        solid={props.solid}
+        shade={props.shade}
+        round={props.round}
+        {...button}
+        last={n === props.buttons.length - 1}
+      />
     )}
   </div>
 

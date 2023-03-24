@@ -1,5 +1,5 @@
 export const colors = [
-  'red', 'brown', 'orange', 'yellow', 'olive', 'green', 'teal',
+  'black', 'red', 'brown', 'orange', 'yellow', 'olive', 'green', 'teal',
   'blue', 'navy', 'indigo', 'violet', 'magenta', 'pink',
 ];
 

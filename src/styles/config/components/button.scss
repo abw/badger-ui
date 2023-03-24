@@ -4,7 +4,7 @@ $button-fore:           rgba($black, 0.7) !default;
 $button-size:           $unit-size !default;
 $button-line:           $unit-line !default;
 $button-pad-v:          $unit-pad-v !default;
-$button-pad-h:          $unit-pad-h !default;
+$button-pad-h:          $unit-pad-h * 2 !default;
 $button-padding:        $button-pad-v $button-pad-h !default;
 $button-margin:         0 $unit-margin $unit-margin 0 !default;
 $button-radius:         $unit-radius !default;
@@ -15,4 +15,9 @@ $button-border-width:   1px;
 $button-invalid-back:   $invalid-back !default;
 $button-invalid-edge:   $invalid-edge !default;
 $button-invalid-fore:   $invalid-fore !default;
+$button-shade-angle:    175deg !default;
+$button-shade-amount:   5% !default;
+$button-shade-hover:    3% !default;
+$button-shade-lighten:  $button-shade-amount !default;
+$button-shade-darken:   $button-shade-amount !default;
 

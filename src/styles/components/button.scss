@@ -21,13 +21,34 @@
   background-color: white;
   background-color: wash-color($button-color);
   border:           $button-border-width solid darken($button-color, 5%);
-  &.solid {
+  &.solid, &.shade {
     background-color: darkish-color($button-color);
     border-color:     transparent;
     color:            rgba($white,0.95);
     text-shadow: 1px 1px 1px rgba(black, $button-text-shadow);
     .icon {
       filter: drop-shadow(1px 1px 1px rgba(black, $button-text-shadow));
+    }
+  }
+  &.shade {
+    background: linear-gradient(
+      $button-shade-angle,
+      lighten($button-color, $button-shade-lighten),
+      darken($button-color, $button-shade-darken)
+    );
+    &:hover, &:focus, &.focus {
+      background: linear-gradient(
+        $button-shade-angle,
+        lighten($button-color, $button-shade-lighten - $button-shade-hover),
+        darken($button-color, $button-shade-darken + $button-shade-hover)
+      );
+    }
+    &:focus, &.focus {
+      background: linear-gradient(
+        $button-shade-angle,
+        darken($button-color, $button-shade-darken),
+        lighten($button-color, $button-shade-lighten)
+      );
     }
   }
   &.compact {
@@ -56,7 +77,8 @@
     background-color: rgba($button-color, 0.1);
     text-decoration: none;
     border-color: $button-color;
-    &.solid {
+    &.solid,
+    &.shade {
         background-color: $button-color;
     }
   }
@@ -86,8 +108,10 @@
         }
       }
   }
+  &.round,
   &.rounded {
-    padding: 0.5em 1em;
+    //padding-left: $button-pad-h * 1.5;
+    //padding-right: $button-pad-h * 1.5;
     border-radius: 2em;
   }
   &.rounded.empty {
@@ -112,11 +136,13 @@
       @include outline($col);
     }
   }
-  .solid.button.#{"" + $name} {
+  .solid.button.#{"" + $name},
+  .shade.button.#{"" + $name} {
     background-color: darkish-color($col);
     background-color: $col;
     border-color: transparent;
-    color: rgba($white,0.95);
+    // color: rgba($white,0.95);
+    color: $white;
     &:hover, &:focus, &.focus {
       background-color: darkish-color($col);
       color: $white;
@@ -128,18 +154,37 @@
       color: $white;
       @include outline(rgba($col, 0.6));
     }
+    &.yellow, &.olive {
+      color: $black;
+      text-shadow: none;
+    }
+  }
+  .shade.button.#{"" + $name} {
+    background: linear-gradient(
+      $button-shade-angle,
+      lighten($col, $button-shade-lighten),
+      darken($col, $button-shade-darken)
+    );
+    &:hover, &:focus, &.focus {
+      background: linear-gradient(
+        $button-shade-angle,
+        lighten($col, $button-shade-lighten - $button-shade-hover),
+        darken($col, $button-shade-darken + $button-shade-hover)
+      );
+    }
+    &:focus, &.focus {
+      background: linear-gradient(
+        $button-shade-angle,
+        darken($col, $button-shade-darken),
+        lighten($col, $button-shade-lighten)
+      );
+    }
   }
 }
 .button.dark-text {
   color: rgba($black,0.75);
   &:hover, &:focus, &.focus {
     color: $black;
-  }
-}
-.button.black.solid {
-  color: rgba($white, 0.7);
-  &:hover, &:focus, &.focus {
-    color: rgba($white, 0.9);
   }
 }
 .button.light-grey,
@@ -181,11 +226,21 @@
     &:first-child {
       margin-left: 0;
       border-radius: $button-radius 0 0 $button-radius;
+      &.round,
+      &.rounded {
+        padding-left: 1em;
+        border-radius: 2em 0 0 2em;
+      }
     }
     &:last-child {
       border-radius: 0 $button-radius $button-radius 0;
       margin-left: 0;
       margin-right: 0;
+      &.round,
+      &.rounded {
+        padding-right: 1em;
+        border-radius: 0 2em 2em 0;
+      }
     }
     &:focus {
       z-index: 1;

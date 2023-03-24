@@ -3,17 +3,27 @@ import PropTypes from 'prop-types'
 import Icon from '../Icon/index.jsx'
 import { sizes, allColors } from '../../config/index.js'
 import { classNames, Themed } from '../../utils/index.js';
+import { hasValue } from '@abw/badger-utils';
 
 const Button = ({
   type = 'button',
-  text, children, disabled,
-  solid, label, icon, iconLeft, iconRight,
+  text, children,
+  disabled,
+  outline, solid, shade, round,
+  label, icon, iconLeft, iconRight,
   onClick, tabIndex=0,
   ...props
 }) => {
   const content = text || children;
+  const classes = classNames(
+    props,
+    'button',
+    outline ? 'outline' : solid ? 'solid' : shade ? 'shade' : null,
+    round && 'round',
+    hasValue(content) || 'empty'
+  )
   return <button
-    className={`${classNames(props, 'button', solid && 'solid')} ${content ? '' : 'empty'}`}
+    className={classes}
     aria-label={label} onClick={onClick} tabIndex={tabIndex}
     type={type} disabled={disabled} aria-disabled={disabled}
   >
@@ -35,8 +45,12 @@ Button.propTypes = {
     * Otherwise it sets the foreground color.
     */
   color: PropTypes.oneOf(allColors),
+  /** Boolean flag to make the button outlined. */
+  outline: PropTypes.bool,
   /** Boolean flag to make the button solid filled. */
   solid: PropTypes.bool,
+  /** Boolean flag to make the button solid filled with shading. */
+  shade: PropTypes.bool,
   /** Button type, defaults to "button" but can be set to "submit" or "reset" for use in forms. */
   type: PropTypes.string,
   /** Text content for the button. */

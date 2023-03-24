@@ -18,11 +18,15 @@ export const ThemedButtons = () => {
       <div className="split-2">
         <h2>Unthemed</h2>
         <Button color="green" text="Default Button"/>
+        <Button color="green" text="Solid Button" solid/>
+        <Button color="green" text="Outline Button" outline/>
       </div>
       <div className="split-2">
         <h2>Themed</h2>
         <Theme.Provider {...MyTheme}>
-          <Button color="green" text="Solid Button"/>
+          <Button color="green" text="Default Button"/>
+          <Button color="green" text="Solid Button" solid/>
+          <Button color="green" text="Outline Button" outline/>
         </Theme.Provider>
       </div>
     </div>
