@@ -21,7 +21,7 @@ export const CustomTitle = () =>
     <Debug
       text="This is some debug text"
       title="Debugging Info"
-      icon="info-circle" />
+      icon="info" />
   </>
 
 export const CustomContent = () =>

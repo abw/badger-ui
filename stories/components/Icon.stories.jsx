@@ -89,6 +89,9 @@ export const DuoTone = () =>
     <Icon name="badger-duo 4x" color="red"   className="mar-2"/>
     <Icon name="badger-duo 4x" color="green" className="mar-2"/>
     <Icon name="badger-duo 4x" color="blue"  className="mar-2"/>
+    <Icon name="badger3-bw 4x" color="indigo"  className="mar-2"/>
+    <Icon name="badger3-bw 4x" color="violet"  className="mar-2"/>
+    <Icon name="badger3-bw 4x" color="magenta"  className="mar-2"/>
     <br/>
     <Icon name="b-duo 4x"  color="red"    className="mar-2"/>
     <Icon name="b-duo 4x"  color="green"  className="mar-2"/>
@@ -170,10 +173,10 @@ export const Modifiers = () =>
     <Icon name="b-duo 4x flip"   color="green"  className="mar-2"/>
     <Icon name="b-duo 4x shake"  color="blue"  className="mar-2"/>
     <br/>
-    <Icon name="badger-duo 4x flip-horizontal" color="red"    className="mar-2"/>
-    <Icon name="badger-duo 4x flip-vertical"   color="orange" className="mar-2"/>
-    <Icon name="badger-duo 4x rotate-90"       color="yellow" className="mar-2"/>
-    <Icon name="badger-duo 4x rotate-180"      color="green"  className="mar-2"/>
-    <Icon name="badger-duo 4x rotate-270"      color="blue"   className="mar-2"/>
+    <Icon name="badger3-bw 4x flip-horizontal" color="red"    className="mar-2"/>
+    <Icon name="badger3-bw 4x flip-vertical"   color="orange" className="mar-2"/>
+    <Icon name="badger3-bw 4x rotate-90"       color="yellow" className="mar-2"/>
+    <Icon name="badger3-bw 4x rotate-180"      color="green"  className="mar-2"/>
+    <Icon name="badger3-bw 4x rotate-270"      color="blue"   className="mar-2"/>
   </>
 

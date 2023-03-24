@@ -43,6 +43,6 @@ export const Customisation = () =>
     text="Kill the Cat" color="brown" solid
     iconLeft="radiation" iconRight="cat"
     prompt="Really?" promptClass="small"
-    cancelText="Don't Do It!" cancelIcon="ban" cancelColor="green"
-    confirmText="Do It!" confirmIcon="check-circle" confirmColor="red"
+    cancelText="Don't Do It!" cancelIcon="times-ring" cancelColor="green"
+    confirmText="Do It!" confirmIcon="check-ring" confirmColor="red"
   />

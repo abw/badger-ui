@@ -16,9 +16,9 @@ export const Overview = () => <>
 export const SimpleDropdown = () =>
   <Dropdown text="Badgers" iconLeft="badger" color="brown" solid className="mar-b-12">
     <div className="menu nowrap pad">
-      <Icon name="badger" fixedWidth/>
-      <Icon name="badger" fixedWidth/>
-      <Icon name="badger" fixedWidth/>
+      <Icon name="badger"  className="mar-h" fixedWidth/>
+      <Icon name="badger2" className="mar-h" fixedWidth/>
+      <Icon name="badger3" className="mar-h" fixedWidth/>
       Badger, badger, badger...
     </div>
   </Dropdown>
@@ -101,9 +101,9 @@ export const ClickToLockOpen = () =>
         clickOpen
       >
         <div className="menu nowrap pad">
-          <Icon name="badger" fixedWidth/>
-          <Icon name="badger" fixedWidth/>
-          <Icon name="badger" fixedWidth/>
+          <Icon name="badger"  className="mar-h" fixedWidth/>
+          <Icon name="badger2" className="mar-h" fixedWidth/>
+          <Icon name="badger3" className="mar-h" fixedWidth/>
           Badger, badger, badger...
         </div>
       </Dropdown>
@@ -115,9 +115,9 @@ export const ClickToLockOpen = () =>
         clickOpen right
       >
         <div className="menu nowrap pad">
-          <Icon name="badger" fixedWidth/>
-          <Icon name="badger" fixedWidth/>
-          <Icon name="badger" fixedWidth/>
+          <Icon name="badger"  className="mar-h" fixedWidth/>
+          <Icon name="badger2" className="mar-h" fixedWidth/>
+          <Icon name="badger3" className="mar-h" fixedWidth/>
           Badger, badger, badger...
         </div>
       </Dropdown>
@@ -140,9 +140,9 @@ export const ClickToOpenAndClose = () =>
         hoverOpen={false} clickOpen
       >
         <div className="menu nowrap pad">
-          <Icon name="badger" fixedWidth/>
-          <Icon name="badger" fixedWidth/>
-          <Icon name="badger" fixedWidth/>
+          <Icon name="badger"  className="mar-h" fixedWidth/>
+          <Icon name="badger2" className="mar-h" fixedWidth/>
+          <Icon name="badger3" className="mar-h" fixedWidth/>
           Badger, badger, badger...
         </div>
       </Dropdown>
@@ -155,9 +155,9 @@ export const ClickToOpenAndClose = () =>
         right
       >
         <div className="menu nowrap pad">
-          <Icon name="badger" fixedWidth/>
-          <Icon name="badger" fixedWidth/>
-          <Icon name="badger" fixedWidth/>
+          <Icon name="badger"  className="mar-h" fixedWidth/>
+          <Icon name="badger2" className="mar-h" fixedWidth/>
+          <Icon name="badger3" className="mar-h" fixedWidth/>
           Badger, badger, badger...
         </div>
       </Dropdown>
