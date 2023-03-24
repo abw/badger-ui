@@ -125,4 +125,4 @@ Note that this happens automatically when you run `pnpm build`.
 
 # Author
 
-Andy Wardley <abw@wardley.org> 2018 to 2022
+Andy Wardley <abw@wardley.org> 2018 to 2023
