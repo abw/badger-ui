@@ -1,5 +1,7 @@
 # Badger-UI
 
+![badger-ui](public/badger-ui-2.svg)
+
 The `badger-ui` library contains React components and corresponding
 styles for rendering various user interface components.  It was
 written by Andy Wardley and evolved over a number of years as he
