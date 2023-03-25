@@ -9,9 +9,7 @@ const Portal = ({id, children}) => {
     () => {
       let created = false;
       let elem = document.getElementById(id);
-      console.log(`id ${id} is`, elem);
       if (! elem) {
-        console.log('creating new element');
         elem = document.createElement('div');
         document.body.appendChild(elem);
         created = true;
