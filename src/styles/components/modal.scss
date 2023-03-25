@@ -9,6 +9,17 @@
   height: 100vh;
   background-color: rgba($black, 0.75);
   z-index: 1000;
+  &.grey {
+    background-color: rgba($grey, 0.85);
+  }
+  &.white {
+    background-color: rgba($white, 0.85);
+  }
+  &.absolute {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .modal {
@@ -26,6 +37,9 @@
   outline: none;
   padding: 2em;
   z-index: 1001;
+  &.absolute {
+    position: absolute;
+  }
 }
 
 .modal .close {

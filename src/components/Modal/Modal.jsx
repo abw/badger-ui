@@ -1,61 +1,24 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import Portal from './Portal.jsx'
 import Icon from '../Icon/index.jsx';
 import { Themed } from '../../utils/index.js';
 
-const hasDocument = (typeof document !== 'undefined');
-const modalRoot = hasDocument
-  ? document.getElementById('root')
-  : null;
-
-const ModalWrapper = ({
-  children,
-  closeIcon,
-  close,
-  showClose,
-  className,
-  overlayClass
+const Modal = ({
+  id,
+  close, closeIcon='times',
+  overlayClass='', className='',
+  children
 }) =>
-  <div className={`modal-overlay ${overlayClass}`}>
-    <div className={`modal ${className}`}>
-      {children}
-      { Boolean(showClose)
-        && <Icon name={closeIcon} className="close" onClick={close}/>
-      }
+  <Portal id={id}>
+    <div className={`modal-overlay ${id ? 'absolute' : ''} ${overlayClass}`}>
+      <div className={`modal ${id ? 'absolute' : ''} ${className}`}>
+        {children}
+        { Boolean(close)
+          && <Icon name={closeIcon} className="close" onClick={close}/>
+        }
+      </div>
     </div>
-  </div>
-
-export class Modal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.el = hasDocument ? document.createElement('div') : null;
-  }
-  componentDidMount() {
-    if (hasDocument) {
-      modalRoot.appendChild(this.el);
-    }
-  }
-  componentWillUnmount() {
-    if (hasDocument) {
-      modalRoot.removeChild(this.el);
-    }
-  }
-  render() {
-    return hasDocument
-      ? ReactDOM.createPortal(
-        <ModalWrapper {...this.props} />,
-        this.el
-      )
-      : null;
-  }
-}
-
-Modal.defaultProps = {
-  closeIcon: 'times',
-  showClose: true,
-  className: '',
-  overlayClass: ''
-}
+  </Portal>
 
 export default Themed(Modal, 'Modal');
 
