@@ -28,9 +28,8 @@
   @include spaced-out('gut', $suffix, 'padding', $gutter);
 }
 
-@mixin outline($col) {
-  //box-shadow: 0 0 0 2px $white, 0 0 0 4px rgba($col, 0.5);
-  box-shadow: 0 0 0 2px $col;
+@mixin outline($col, $width: 2px) {
+  box-shadow: 0 0 0 $width $col;
 }
 
 @mixin shadow1() {

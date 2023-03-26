@@ -9,7 +9,7 @@ const Button = ({
   type = 'button',
   text, children,
   disabled,
-  outline, solid, shade, round,
+  outline, solid, shade, gradient, round,
   label, icon, iconLeft, iconRight,
   onClick, tabIndex=0,
   ...props
@@ -18,7 +18,7 @@ const Button = ({
   const classes = classNames(
     props,
     'button',
-    outline ? 'outline' : solid ? 'solid' : shade ? 'shade' : null,
+    outline ? 'outline' : solid ? 'solid' : shade ? 'shade' : gradient ? 'gradient' : null,
     round && 'round',
     hasValue(content) || 'empty'
   )

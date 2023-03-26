@@ -7,9 +7,11 @@ const Buttons = (props) =>
     {props.buttons.map(
       (button, n) => <Button
         key={n}
+        color={props.color}
         solid={props.solid}
         shade={props.shade}
         round={props.round}
+        gradient={props.gradient}
         {...button}
         last={n === props.buttons.length - 1}
       />

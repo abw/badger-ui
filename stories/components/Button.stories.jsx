@@ -78,10 +78,18 @@ export const OutlineButtons = () =>
       <code className="code">$button-border-width</code>
       <code className="code">$button-text-shadow</code> and more.
     </p>
-    <Button text="Outline button" />
-    {colors.map(
-      col => <Button key={col} text={`Outline ${col} outline button`} color={col} />
-    )}
+    <div className="pad-2">
+      <Button text="Outline button" />
+      {colors.map(
+        col => <Button key={col} text={`Outline ${col} outline button`} color={col} />
+      )}
+    </div>
+    <div className="bg-grey-30 pad-2">
+      <Button text="Outline button" />
+      {colors.map(
+        col => <Button key={col} text={`Outline ${col} outline button`} color={col} />
+      )}
+    </div>
   </>
 
 export const SolidButtons = () =>
@@ -103,16 +111,33 @@ export const ShadeButtons = () =>
       Flat design has dominated the web for the last ten years or so.  So
       it&apos;s only a matter of time until everyone starts putting shading
       back on their buttons.  Be ahead of the curve with
-      the <code className="code">shade</code> property to add a subtle gradient
-      to the buttons.  The default amount is a respectably subtle 5% but you
+      the <code className="code">shade</code> property to add some subtle shading
+      to the buttons.  The default amount is a respectable 5% but you
       can change that using the <code className="code">$button-shade-amount</code> SASS
       configuration option.  The default angle is 175 degrees (almost straight
       down but slightly to the right), which you can change with
       the <code className="code">$button-shade-angle</code> option.
     </p>
-    <Button text="Shaded button" shade />
+    <Button text="Shade button" shade />
     {colors.map(
-      col => <Button key={col} text={`Shaded ${col} button`} color={col} shade />
+      col => <Button key={col} text={`Shade ${col} button`} color={col} shade />
+    )}
+  </>
+
+export const GradientButtons = () =>
+  <>
+    <p>
+      What&apos;s that you say?  Shading is out and gradients are in?
+      Add the <code className="code">gradient</code> property to add a gradient
+      to the buttons.  The default hue shift is a 15deg but you
+      can change that using the <code className="code">$button-gradient-hue-shift</code> SASS
+      configuration option.  The default angle is 145 degrees (down and to the
+      right), which you can change with
+      the <code className="code">$button-gradient-angle</code> option.
+    </p>
+    <Button text="Gradient button" gradient />
+    {colors.map(
+      col => <Button key={col} text={`Gradient ${col} button`} color={col} gradient />
     )}
   </>
 
@@ -122,27 +147,33 @@ export const RoundedButtons = () =>
       Add the <code className="code">round</code> property for rounded buttons.
     </p>
     <div className="row stack-tablet">
-      <div className="split-3">
-        <Button text="Round button" round />
+      <div className="split-4">
+        <Button text="Round" round />
       </div>
-      <div className="split-3">
-        <Button text="Round solid button" round solid />
+      <div className="split-4">
+        <Button text="Round solid" round solid />
       </div>
-      <div className="split-3">
-        <Button text="Round shade button" round shade />
+      <div className="split-4">
+        <Button text="Round shade" round shade />
+      </div>
+      <div className="split-4">
+        <Button text="Round gradient" round gradient />
       </div>
     </div>
     {colors.map(
       col =>
         <div key={col} className="row stack-tablet">
-          <div className="split-3">
-            <Button key={col} text={`Round ${col} button`} color={col} round/>
+          <div className="split-4">
+            <Button key={col} text={`Round ${col}`} color={col} round/>
           </div>
-          <div className="split-3">
-            <Button key={col} text={`Round ${col} solid button`} color={col} round solid/>
+          <div className="split-4">
+            <Button key={col} text={`Round ${col} solid`} color={col} round solid/>
           </div>
-          <div className="split-3">
-            <Button key={col} text={`Round ${col} shade button`} color={col} round shade/>
+          <div className="split-4">
+            <Button key={col} text={`Round ${col} shade`} color={col} round shade/>
+          </div>
+          <div className="split-4">
+            <Button key={col} text={`Round ${col} gradient`} color={col} round gradient/>
           </div>
         </div>
     )}
@@ -167,47 +198,6 @@ export const IconButtons = () =>
     <Button solid iconRight="radiation spin" color="green" text="Saving"/>
   </>
 
-export const ButtonSets = () =>
-  <>
-    <p className="mar-t-none pad-b-2">
-      Use the <code className="code">Buttons</code> component with an
-      array of <code className="code">buttons</code> to create a button set.
-      You can add any of the <code className="code">solid</code>,{' '}
-      <code className="code">shade</code> or <code className="code">round</code>{' '}
-      properties to the <code className="code">Buttons</code> component to have
-      those styles applied to the buttons in it.
-    </p>
-    <Buttons buttons={[
-      { iconLeft: 'arrow-left', color: 'red', text: 'Left' },
-      { icon: 'arrow-up', color: 'green' },
-      { iconRight: 'arrow-right', color: 'blue', text: 'Right' }
-    ]} />
-    <br />
-    <Buttons buttons={[
-      { iconLeft: 'arrow-left', color: 'red', text: 'Left', solid: true },
-      { icon: 'arrow-up', color: 'green' },
-      { iconRight: 'arrow-right', color: 'blue', text: 'Right', solid: true }
-    ]} />
-    <br />
-    <Buttons solid buttons={[
-      { iconLeft: 'arrow-left', color: 'red', text: 'Left' },
-      { icon: 'arrow-up', color: 'green' },
-      { iconRight: 'arrow-right', color: 'blue', text: 'Right' }
-    ]} />
-    <br />
-    <Buttons shade buttons={[
-      { iconLeft: 'arrow-left', color: 'red', text: 'Left' },
-      { icon: 'arrow-up', color: 'green' },
-      { iconRight: 'arrow-right', color: 'blue', text: 'Right' }
-    ]} />
-    <br/>
-    <Buttons solid round buttons={[
-      { iconLeft: 'arrow-left', color: 'red', text: 'Left' },
-      { icon: 'arrow-up', color: 'green' },
-      { iconRight: 'arrow-right', color: 'blue', text: 'Right' }
-    ]} />
-  </>
-
 export const DisabledButton = () =>
   <>
     <p className="mar-t-none pad-b-2">
@@ -225,3 +215,83 @@ export const DisabledButton = () =>
       iconLeft="alert" color="red" text="Disabled Shade" shade disabled={true}
     />
   </>
+
+export const ButtonSets = () =>
+  <>
+    <p className="mar-t-none pad-b-2">
+      Use the <code className="code">Buttons</code> component with an
+      array of <code className="code">buttons</code> to create a button set.
+      You can add any of the <code className="code">color</code>,{' '}
+      <code className="code">solid</code>,{' '}
+      <code className="code">shade</code> or <code className="code">round</code>{' '}
+      properties to the <code className="code">Buttons</code> component to have
+      those styles applied to the buttons in it.  Or you can apply them to
+      the buttons on an individual basis.
+    </p>
+    <Buttons
+      color="red"
+      buttons={[
+        { iconLeft: 'arrow-left', text: 'Left' },
+        { icon: 'arrow-up' },
+        { iconRight: 'arrow-right', text: 'Right' }
+      ]}
+    />
+    <br />
+    <Buttons
+      color="magenta" round
+      buttons={[
+        { iconLeft: 'arrow-left', text: 'Left' },
+        { icon: 'arrow-up' },
+        { iconRight: 'arrow-right', text: 'Right' }
+      ]}
+    />
+    <br />
+    <Buttons
+      color="brown" solid
+      buttons={[
+        { iconLeft: 'arrow-left', text: 'Left' },
+        { icon: 'arrow-up' },
+        { iconRight: 'arrow-right', text: 'Right' }
+      ]}
+    />
+    <br />
+    <Buttons
+      color="orange" shade
+      buttons={[
+        { iconLeft: 'arrow-left', text: 'Left' },
+        { icon: 'arrow-up' },
+        { iconRight: 'arrow-right', text: 'Right' }
+      ]}
+    />
+    <br />
+    <Buttons
+      color="blue" gradient
+      buttons={[
+        { iconLeft: 'arrow-left', text: 'Left' },
+        { icon: 'arrow-up' },
+        { iconRight: 'arrow-right', text: 'Right' }
+      ]}
+    />
+    <br />
+    <Buttons
+      color="teal" round solid
+      buttons={[
+        { iconLeft: 'arrow-left', text: 'Left' },
+        { icon: 'arrow-up' },
+        { iconRight: 'arrow-right', text: 'Right' }
+      ]}
+    />
+    <br />
+    <Buttons solid buttons={[
+      { iconLeft: 'arrow-left', color: 'red', text: 'Left' },
+      { icon: 'arrow-up', color: 'green' },
+      { iconRight: 'arrow-right', color: 'blue', text: 'Right' }
+    ]} />
+    <br />
+    <Buttons shade buttons={[
+      { iconLeft: 'arrow-left', color: 'red', text: 'Left', round: true },
+      { icon: 'arrow-up', color: 'green' },
+      { iconRight: 'arrow-right', color: 'blue', text: 'Right' }
+    ]} />
+  </>
+

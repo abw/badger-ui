@@ -7,6 +7,7 @@ $primary-hue:   210 !default;
 $secondary-hue: 180 !default;
 
 // shades of black/grey
+$zero:       #000;
 $black:      hsl($primary-hue, 20%, 10%) !default;
 $dark-grey:  hsl($primary-hue, 10%, 30%) !default;
 $grey:       hsl($primary-hue,  5%, 50%) !default;
@@ -19,8 +20,8 @@ $white:   #fff !default;
 $red:     hsl(0, 100%, 40%) !default;
 $brown:   hsl(20, 50%, 40%) !default;
 $orange:  hsl(30, 100%, 45%) !default;
-$yellow:  hsl(50, 90%, 47%) !default;
-$olive:   hsl(68, 70%, 45%) !default;
+$yellow:  hsl(50, 100%, 42%) !default;
+$olive:   hsl(68, 75%, 42%) !default;
 $green:   hsl(100, 70%, 40%) !default;
 $teal:    hsl(160, 60%, 45%) !default;
 $blue:    hsl(200, 80%, 45%) !default;

@@ -235,7 +235,7 @@ export const ResetButton = () =>
     <Form>
       <Field name="name" value="Simon Stoat" label="Name" required/>
       <Field name="occupation" label="Occupation" required/>
-      <Reset color="brown" solid className="mar-t-2"/>
+      <Reset color="brown" className="mar-t-2"/>
     </Form>
   </>
 
@@ -257,7 +257,7 @@ export const CancelButton = () =>
       <Field name="name"/>
       <Field name="occupation"/>
       <Cancel
-        solid className="mar-t-2"
+        className="mar-t-2"
         onClick={() => window.alert('CANCEL - This would usually be a link to navigate the user back to the previous page')}
       />
     </Form>
@@ -276,7 +276,6 @@ export const CancelSubmitButtons = () =>
         cancel={{
           onClick: () => window.alert('You clicked cancel'),
           color: 'orange',
-          solid: true
         }}
         submit={{
           color: 'violet',
@@ -297,7 +296,7 @@ export const ResetSubmitButtons = () =>
       <Field name="occupation" label="Occupation" required/>
       <ResetSubmit
         reset={{
-          solid: true
+          text: 'Undo Changes'
         }}
         submit={{
           color: 'pink',
@@ -322,7 +321,7 @@ export const CancelResetSubmitButtons = () =>
           onClick: () => window.alert('You clicked on cancel')
         }}
         reset={{
-          solid: true
+          text: 'Reset Changes'
         }}
         submit={{
           color: 'magenta',
@@ -481,5 +480,72 @@ export const FormReference = () => {
         })
       }
     />
+  </>
+}
+
+export const AlignmentTest = () => {
+  return <>
+    <p className="mar-t-none">
+      We want to make sure all our component are the same size and line up
+      nicely, don&apos;t we?  If you have a element that doesn&apos;t have a
+      label (like the submit button in the first row of this example) then you
+      can add the <code className="code">no-label</code> class to the container
+      to have it add the same amount of padding at the top that a label would
+      normally take up.
+    </p>
+    <Form>
+      <div className="row">
+        <div className="split-4 gut-r">
+          <Field name="color" label="Color"/>
+        </div>
+        <div className="split-4 gut-h">
+          <Field
+            name="animal" input="select" label="Animal"
+            options={[ {value: 'badger', text: 'Badger' } ]}
+          />
+        </div>
+        <div className="split-4 gut-h">
+          <Field
+            name="badgering"
+            input="checkbox"
+            label="Badgering"
+            text="Badgering"
+          />
+        </div>
+        <div className="split-4 gut-h no-label">
+          <Submit solid className="wide"/>
+        </div>
+      </div>
+      <p>
+        The second row is using flexbox and aligning them to the bottom
+        with <code className="code">flex end</code> on the container.  Note
+        that fields have a 0.5rem margin on the bottom by default.  Buttons
+        typically only have a 0.25rem margin by default, but you can add the{' '}
+        <code className="code">bar-b-2</code> class to the submit button to
+        increase it so they all line up vertically.  We&apos;re also using the {' '}
+        <code className="code">fieldClass</code> property on the first three
+        fields to add a margin on the right with <code className="code">mar-r-2</code>.
+      </p>
+      <div className="flex end">
+        <Field
+          name="color"
+          label="Color"
+          fieldClass="mar-r-2"
+        />
+        <Field
+          name="animal" input="select" label="Animal"
+          options={[ {value: 'badger', text: 'Badger' } ]}
+          fieldClass="mar-r-2"
+        />
+        <Field
+          name="badgering"
+          input="checkbox"
+          label="Badgering"
+          text="Badgering"
+          fieldClass="mar-r-2"
+        />
+        <Submit solid className="mar-b-2"/>
+      </div>
+    </Form>
   </>
 }

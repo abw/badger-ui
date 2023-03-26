@@ -7,6 +7,7 @@
   line-height:      $button-line;
   margin:           $button-margin;
   padding:          $button-padding;
+  border:           $button-border-width solid $button-border-color;
   border-radius:    $button-radius;
   text-align:       center;
   text-decoration:  none;
@@ -17,15 +18,27 @@
   background-image: none;
   white-space:      nowrap;
   user-select:      none;
-  transition: 0.3s all;
-  background-color: white;
-  background-color: wash-color($button-color);
-  border:           $button-border-width solid darken($button-color, 5%);
-  &.solid, &.shade {
+  transition:       0.3s all;
+  background-color: rgba($button-back-color, $button-back-opacity);
+  &:hover {
+    background-color: mix($button-color, $button-hover-back-mixer, $button-hover-back-mix);
+    color: mix($button-color, $button-hover-text-mixer, $button-hover-text-mix);
+    text-decoration: none;
+  }
+  &:focus, &.focus {
+    border-color: $button-focus-border-color;
+    background-color: mix($button-color, $button-focus-back-mixer, $button-focus-back-mix);
+    color: mix($button-color, $button-focus-text-mixer, $button-focus-text-mix);
+    @include outline(rgba($button-color, $button-focus-outline-opacity), $button-focus-outline-width);
+  }
+  &.solid, &.shade, &.gradient {
     background-color: darkish-color($button-color);
     border-color:     transparent;
     color:            rgba($white,0.95);
-    text-shadow: 1px 1px 1px rgba(black, $button-text-shadow);
+    text-shadow:      1px 1px 1px rgba(black, $button-text-shadow);
+    &:focus, &.focus {
+      border-color: $button-focus-border-color;
+    }
     .icon {
       filter: drop-shadow(1px 1px 1px rgba(black, $button-text-shadow));
     }
@@ -73,20 +86,6 @@
       flex-grow: 1;
     }
   }
-  &:hover, &:focus, &.focus {
-    background-color: rgba($button-color, 0.1);
-    text-decoration: none;
-    border-color: $button-color;
-    &.solid,
-    &.shade {
-        background-color: $button-color;
-    }
-  }
-  &:focus, &.focus {
-    border-color: white;
-    background-color: pale-color($button-color);
-    @include outline($button-color);
-  }
   &:active,
   &.active {
       outline: 0;
@@ -121,43 +120,41 @@
 
 @each $name, $col in $colors {
   .button.#{"" + $name} {
-    color: darken($col, 5%);
-    border-color: darken($col, 5%);
-    background-color: wash-color($col);
-    &:hover, &:focus, &.focus {
-      color: $col;
-      border-color: $col;
-      background-color: rgba($col, 0.1);
+    color:        $col;
+    border-color: $col;
+    &:hover {
+      background-color: mix($col, $button-hover-back-mixer, $button-hover-back-mix);
+      color: mix($col, $button-hover-text-mixer, $button-hover-text-mix);
     }
     &:focus, &.focus {
-      border-color: white;
-      color: darken(saturate($col, 30%), 20%);
-      background-color: rgba($col, 0.15);
-      @include outline($col);
+      background-color: mix($col, $button-focus-back-mixer, $button-focus-back-mix);
+      color: mix($col, $button-focus-text-mixer, $button-focus-text-mix);
+      border-color: $button-focus-border-color;
+      @include outline(rgba($col, $button-focus-outline-opacity), $button-focus-outline-width);
     }
   }
   .solid.button.#{"" + $name},
-  .shade.button.#{"" + $name} {
+  .shade.button.#{"" + $name},
+  .gradient.button.#{"" + $name} {
     background-color: darkish-color($col);
     background-color: $col;
-    border-color: transparent;
-    // color: rgba($white,0.95);
-    color: $white;
-    &:hover, &:focus, &.focus {
-      background-color: darkish-color($col);
+    border-color:     mix($zero, $col, $button-solid-border-darken);
+    color:            $white;
+    &:hover {
+      background-color: mix($zero, $col, $button-solid-hover-darken);
+      border-color:     darken($col, 5%);
       color: $white;
-      border-color: darken($col, 5%);
     }
     &:focus, &.focus {
-      border-color: mix($white, $col, 80%);
-      background-color: darken(saturate($col, 20%), 10%);
+      background-color: mix($zero, $col, $button-solid-focus-darken);
+      border-color:     mix($white, $col, 90%);
       color: $white;
-      @include outline(rgba($col, 0.6));
+      @include outline(rgba($col, $button-focus-outline-opacity), $button-focus-outline-width);
     }
-    &.yellow, &.olive {
-      color: $black;
-      text-shadow: none;
-    }
+    // &.yellow, &.olive {
+      // color: $black;
+      // text-shadow: none;
+    // }
   }
   .shade.button.#{"" + $name} {
     background: linear-gradient(
@@ -179,6 +176,36 @@
         lighten($col, $button-shade-lighten)
       );
     }
+  }
+  .gradient.button.#{"" + $name} {
+    background: linear-gradient(
+      $button-gradient-angle,
+      $col,
+      adjust-hue($col, $button-gradient-hue-shift)
+    );
+    &:hover {
+      background: linear-gradient(
+        $button-gradient-angle,
+        mix($zero, $col, $button-solid-hover-darken),
+        mix($zero,
+          adjust-hue($col, $button-gradient-hue-shift),
+          $button-solid-hover-darken
+        )
+      );
+    }
+    &:focus, &.focus {
+      background: linear-gradient(
+        $button-gradient-angle,
+        mix($zero, $col, $button-solid-focus-darken),
+        mix($zero,
+          adjust-hue($col, $button-gradient-hue-shift),
+          $button-solid-focus-darken
+        )
+      );
+    }
+  }
+  .buttons .button.#{"" + $name}:focus {
+    border-color: $col;
   }
 }
 .button.dark-text {
@@ -218,7 +245,7 @@
   margin: 0 0 0.5em 0;
   .button {
     flex: 1 0 auto;
-    margin-right: $button-gap;
+    margin-right: $buttons-gap;
     margin-bottom: 0;
     border-radius: 0 0 0 0;
     padding-left: 1em;
@@ -226,6 +253,7 @@
     &:first-child {
       margin-left: 0;
       border-radius: $button-radius 0 0 $button-radius;
+      border-right-color: $buttons-joint !important;
       &.round,
       &.rounded {
         padding-left: 1em;
@@ -234,6 +262,7 @@
     }
     &:last-child {
       border-radius: 0 $button-radius $button-radius 0;
+      border-left-color: $buttons-joint !important;
       margin-left: 0;
       margin-right: 0;
       &.round,
@@ -243,7 +272,13 @@
       }
     }
     &:focus {
+      box-shadow: none !important;
       z-index: 1;
+    }
+    &:focus.solid,
+    &:focus.shade,
+    &:focus.gradient {
+      border-color: transparent !important;
     }
     &.solid:focus {
       z-index: 1;
