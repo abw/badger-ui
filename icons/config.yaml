@@ -89,6 +89,7 @@ icons:
   cogs:         solid:gears
   # dotted:       regular:circle-dot
   # dot-circle:   regular:circle-dot
+  happy:        regular:face-smile
   info:         solid:circle-info
   info-circle:  solid:circle-info
   ok:           solid:circle-check

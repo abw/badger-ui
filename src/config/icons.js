@@ -243,6 +243,11 @@ export const iconSets = {
       "height": 512,
       "path": "M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"
     },
+    "face-smile": {
+      "width": 512,
+      "height": 512,
+      "path": "M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+    },
     "circle-dot": {
       "width": 512,
       "height": 512,
@@ -363,6 +368,7 @@ export const icons = {
   "face-frown": iconSets["regular"]["face-frown"],
   "filter": iconSets["solid"]["filter"],
   "grip-vertical": iconSets["solid"]["grip-vertical"],
+  "happy": iconSets["regular"]["face-smile"],
   "info": iconSets["solid"]["circle-info"],
   "info-circle": iconSets["solid"]["circle-info"],
   "key": iconSets["solid"]["key"],
