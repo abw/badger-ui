@@ -118,6 +118,13 @@ export const ShadeButtons = () =>
       down but slightly to the right), which you can change with
       the <code className="code">$button-shade-angle</code> option.
     </p>
+    <p>
+      If you don&apos;t think you&apos;ll use shaded buttons then you can set
+      the <code className="code">$include-button-shade</code> SASS
+      option to <code className="code">false</code> to avoid generating the
+      CSS for them.
+    </p>
+
     <Button text="Shade button" shade />
     {colors.map(
       col => <Button key={col} text={`Shade ${col} button`} color={col} shade />
@@ -134,6 +141,12 @@ export const GradientButtons = () =>
       configuration option.  The default angle is 145 degrees (down and to the
       right), which you can change with
       the <code className="code">$button-gradient-angle</code> option.
+    </p>
+    <p>
+      If you think gradient buttons are far too new-fangled and modern then
+      you can set the <code className="code">$include-button-gradient</code> SASS
+      option to <code className="code">false</code> and save yourself a bit of
+      generated CSS.
     </p>
     <Button text="Gradient button" gradient />
     {colors.map(

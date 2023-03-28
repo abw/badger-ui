@@ -31,7 +31,7 @@
     color: mix($button-color, $button-focus-text-mixer, $button-focus-text-mix);
     @include outline(rgba($button-color, $button-focus-outline-opacity), $button-focus-outline-width);
   }
-  &.solid, &.shade, &.gradient {
+  &.solid {
     background-color: darkish-color($button-color);
     border-color:     transparent;
     color:            rgba($white,0.95);
@@ -41,27 +41,6 @@
     }
     .icon {
       filter: drop-shadow(1px 1px 1px rgba(black, $button-text-shadow));
-    }
-  }
-  &.shade {
-    background: linear-gradient(
-      $button-shade-angle,
-      lighten($button-color, $button-shade-lighten),
-      darken($button-color, $button-shade-darken)
-    );
-    &:hover, &:focus, &.focus {
-      background: linear-gradient(
-        $button-shade-angle,
-        lighten($button-color, $button-shade-lighten - $button-shade-hover),
-        darken($button-color, $button-shade-darken + $button-shade-hover)
-      );
-    }
-    &:focus, &.focus {
-      background: linear-gradient(
-        $button-shade-angle,
-        darken($button-color, $button-shade-darken),
-        lighten($button-color, $button-shade-lighten)
-      );
     }
   }
   &.compact {
@@ -109,8 +88,6 @@
   }
   &.round,
   &.rounded {
-    //padding-left: $button-pad-h * 1.5;
-    //padding-right: $button-pad-h * 1.5;
     border-radius: 2em;
   }
   &.rounded.empty {
@@ -133,9 +110,7 @@
       @include outline(rgba($col, $button-focus-outline-opacity), $button-focus-outline-width);
     }
   }
-  .solid.button.#{"" + $name},
-  .shade.button.#{"" + $name},
-  .gradient.button.#{"" + $name} {
+  .solid.button.#{"" + $name} {
     background-color: darkish-color($col);
     background-color: $col;
     border-color:     mix($zero, $col, $button-solid-border-darken);
@@ -151,63 +126,149 @@
       color: $white;
       @include outline(rgba($col, $button-focus-outline-opacity), $button-focus-outline-width);
     }
-    // &.yellow, &.olive {
-      // color: $black;
-      // text-shadow: none;
-    // }
-  }
-  .shade.button.#{"" + $name} {
-    background: linear-gradient(
-      $button-shade-angle,
-      lighten($col, $button-shade-lighten),
-      darken($col, $button-shade-darken)
-    );
-    &:hover, &:focus, &.focus {
-      background: linear-gradient(
-        $button-shade-angle,
-        lighten($col, $button-shade-lighten - $button-shade-hover),
-        darken($col, $button-shade-darken + $button-shade-hover)
-      );
-    }
-    &:focus, &.focus {
-      background: linear-gradient(
-        $button-shade-angle,
-        darken($col, $button-shade-darken),
-        lighten($col, $button-shade-lighten)
-      );
-    }
-  }
-  .gradient.button.#{"" + $name} {
-    background: linear-gradient(
-      $button-gradient-angle,
-      $col,
-      adjust-hue($col, $button-gradient-hue-shift)
-    );
-    &:hover {
-      background: linear-gradient(
-        $button-gradient-angle,
-        mix($zero, $col, $button-solid-hover-darken),
-        mix($zero,
-          adjust-hue($col, $button-gradient-hue-shift),
-          $button-solid-hover-darken
-        )
-      );
-    }
-    &:focus, &.focus {
-      background: linear-gradient(
-        $button-gradient-angle,
-        mix($zero, $col, $button-solid-focus-darken),
-        mix($zero,
-          adjust-hue($col, $button-gradient-hue-shift),
-          $button-solid-focus-darken
-        )
-      );
-    }
   }
   .buttons .button.#{"" + $name}:focus {
     border-color: $col;
   }
 }
+
+@if $include-button-shade {
+  button.shade {
+    background-color: darkish-color($button-color);
+    border-color:     transparent;
+    color:            rgba($white,0.95);
+    text-shadow:      1px 1px 1px rgba(black, $button-text-shadow);
+    background: linear-gradient(
+      $button-shade-angle,
+      lighten($button-color, $button-shade-lighten),
+      darken($button-color, $button-shade-darken)
+    );
+    &:focus, &.focus {
+      border-color: $button-focus-border-color;
+      color:            rgba($white,0.95);
+    }
+    .icon {
+      filter: drop-shadow(1px 1px 1px rgba(black, $button-text-shadow));
+    }
+    &:hover, &:focus, &.focus {
+      color:            $white;
+      border-color:     $button-focus-border-color;
+      background:       linear-gradient(
+        $button-shade-angle,
+        lighten($button-color, $button-shade-lighten - $button-shade-hover),
+        darken($button-color, $button-shade-darken + $button-shade-hover)
+      );
+    }
+    &:focus, &.focus {
+      background: linear-gradient(
+        $button-shade-angle,
+        darken($button-color, $button-shade-darken),
+        lighten($button-color, $button-shade-lighten)
+      );
+    }
+    @each $name, $col in $colors {
+      &.#{"" + $name} {
+        background-color: darkish-color($col);
+        border-color:     mix($zero, $col, $button-solid-border-darken);
+        color:            $white;
+        background: linear-gradient(
+          $button-shade-angle,
+          lighten($col, $button-shade-lighten),
+          darken($col, $button-shade-darken)
+        );
+        &:hover, &:focus, &.focus {
+          color: $white;
+          background: linear-gradient(
+            $button-shade-angle,
+            lighten($col, $button-shade-lighten - $button-shade-hover),
+            darken($col, $button-shade-darken + $button-shade-hover)
+          );
+        }
+        &:focus, &.focus {
+          color: $white;
+          background: linear-gradient(
+            $button-shade-angle,
+            darken($col, $button-shade-darken),
+            lighten($col, $button-shade-lighten)
+          );
+        }
+      }
+    }
+  }
+}
+
+@if $include-button-gradient {
+  button.gradient {
+    background-color: darkish-color($button-color);
+    border-color:     transparent;
+    color:            rgba($white,0.95);
+    text-shadow:      1px 1px 1px rgba(black, $button-text-shadow);
+    &:focus, &.focus {
+      border-color:   $button-focus-border-color;
+      color:          rgba($white,0.95);
+    }
+    .icon {
+      filter: drop-shadow(1px 1px 1px rgba(black, $button-text-shadow));
+    }
+
+    &:hover, &:focus, &.focus {
+      color:            $white;
+      border-color:     $button-focus-border-color;
+      background:       linear-gradient(
+        $button-shade-angle,
+        lighten($button-color, $button-shade-lighten - $button-shade-hover),
+        darken($button-color, $button-shade-darken + $button-shade-hover)
+      );
+    }
+    &:focus, &.focus {
+      background: linear-gradient(
+        $button-shade-angle,
+        darken($button-color, $button-shade-darken),
+        lighten($button-color, $button-shade-lighten)
+      );
+    }
+    @each $name, $col in $colors {
+      &.#{"" + $name} {
+        background-color: darkish-color($col);
+        background: linear-gradient(
+          $button-gradient-angle,
+          $col,
+          adjust-hue($col, $button-gradient-hue-shift)
+        );
+        border-color:     mix($zero, $col, $button-solid-border-darken);
+        color:            $white;
+        &:hover {
+          border-color:   darken($col, 5%);
+          color:          $white;
+          background-color: mix($zero, $col, $button-solid-hover-darken);
+          background: linear-gradient(
+            $button-gradient-angle,
+            mix($zero, $col, $button-solid-hover-darken),
+            mix($zero,
+              adjust-hue($col, $button-gradient-hue-shift),
+              $button-solid-hover-darken
+            )
+          );
+        }
+        &:focus, &.focus {
+          background-color: mix($zero, $col, $button-solid-focus-darken);
+          background: linear-gradient(
+            $button-gradient-angle,
+            mix($zero, $col, $button-solid-focus-darken),
+            mix($zero,
+              adjust-hue($col, $button-gradient-hue-shift),
+              $button-solid-focus-darken
+            )
+          );
+          border-color:     mix($white, $col, 90%);
+          color: $white;
+          @include outline(rgba($col, $button-focus-outline-opacity), $button-focus-outline-width);
+        }
+      }
+    }
+  }
+}
+
 .button.dark-text {
   color: rgba($black,0.75);
   &:hover, &:focus, &.focus {
@@ -253,7 +314,6 @@
     &:first-child {
       margin-left: 0;
       border-radius: $button-radius 0 0 $button-radius;
-      border-right-color: $buttons-joint !important;
       &.round,
       &.rounded {
         padding-left: 1em;
@@ -262,7 +322,6 @@
     }
     &:last-child {
       border-radius: 0 $button-radius $button-radius 0;
-      border-left-color: $buttons-joint !important;
       margin-left: 0;
       margin-right: 0;
       &.round,
@@ -270,6 +329,9 @@
         padding-right: 1em;
         border-radius: 0 2em 2em 0;
       }
+    }
+    &:not(:first-child) {
+      border-left: none;
     }
     &:focus {
       box-shadow: none !important;

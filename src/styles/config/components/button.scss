@@ -24,10 +24,6 @@ $button-focus-text-mixer:       $zero !default;
 $button-focus-border-color:     $white !default;
 $button-focus-outline-opacity:  0.6 !default;
 $button-focus-outline-width:    3px !default;
-//$button-focus-opacity:  0.10;
-//$button-focus-text-darken: 5%;
-// $button-focus:          0 0 0 2px rgba($white, 0.9), 0 0 0 4px rgba($black, 0.25) !default;
-// $button-border-color:   darken($button-color, 5%) !default;
 $button-solid-border-darken:    6% !default;
 $button-solid-hover-darken:     12% !default;
 $button-solid-focus-darken:     18% !default;
@@ -44,3 +40,6 @@ $button-gradient-hue-shift:     15deg !default;
 
 $buttons-gap:                   0px !default;
 $buttons-joint:                 rgba($white, 0.5);
+
+$include-button-shade:          true !default;
+$include-button-gradient:       true !default;
