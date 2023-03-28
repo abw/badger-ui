@@ -19,6 +19,7 @@ export * from './components/Revealable/index.jsx'
 export * from './components/Search/index.jsx'
 export * from './components/Select/index.jsx'
 export * from './components/Spinner/index.jsx'
+export * from './components/Switch/index.jsx'
 export * from './components/Tabset/index.jsx'
 export * from './components/Toggle/index.jsx'
 export * from './config/icons.js';
