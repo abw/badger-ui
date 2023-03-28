@@ -36,22 +36,14 @@ sets:
     - caret-down
     - caret-left
     - caret-right
-    # - square-caret-left
-    # - square-caret-right
     - cat
     - check
-    # - square-check
     - circle
-    # - circle-check
     - circle-exclamation
     - circle-question
-    # - cog
-    # - cogs
     - clipboard-list
-    # - exclamation-triangle
     - filter
     - grip-vertical
-    # - info-circle
     - key
     - plus
     - radiation
@@ -77,18 +69,15 @@ sets:
   custom: '*'
 
 
-  # define aliases for icons
+  # define icon name mapping
 icons:
   alert:        solid:circle-exclamation
-  # checked:      solid:square-check
   checkbox-on:  solid:square-check
   checkbox-off: regular:square
   check-circle: solid:circle-check
   check-ring:   regular:circle-check
   ring:         regular:circle
   cogs:         solid:gears
-  # dotted:       regular:circle-dot
-  # dot-circle:   regular:circle-dot
   happy:        regular:face-smile
   info:         solid:circle-info
   info-circle:  solid:circle-info
@@ -100,7 +89,5 @@ icons:
   times:        solid:xmark
   times-circle: solid:circle-xmark
   times-ring:   regular:circle-xmark
-  # unchecked:    regular:square
   undo:         solid:rotate-left
-  # undotted:     regular:circle
   warning:      solid:triangle-exclamation
