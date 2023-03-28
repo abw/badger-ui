@@ -37,9 +37,6 @@
     border: 0;
     line-height: 2.2em;
   }
-  .button:not(:last-child) {
-      border-right: 1px solid;
-  }
   &.wide {
     .initial-button {
       width: 100%;
