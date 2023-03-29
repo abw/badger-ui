@@ -59,7 +59,7 @@ export const CustomSpinners = () =>
       <Spinner size="larger" icon="radiation" bgColor="yellow" color="black" />
     </div>
     <div className="pad-v">
-      <Spinner size="largest" icon="cloop-duo" transform="shrink-1" bgColor="red" color="white" />
+      <Spinner size="largest" icon="asterisk" transform="shrink-1" bgColor="red" color="white" />
     </div>
   </div>
 
