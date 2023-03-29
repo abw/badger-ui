@@ -240,12 +240,6 @@ export const SortableTable = () => {
       {...props}
       {...listeners}
     >
-      <Cells item={item}/>
-    </tr>
-
-  // Component rendering content of sortable item
-  const Cells = ({item}) =>
-    <>
       <td>
         {item.id}
       </td>
@@ -255,17 +249,7 @@ export const SortableTable = () => {
       <td>
         {item.surname}
       </td>
-    </>
-
-  // Overlay used to display active item outside table
-  const Overlay = ({item}) =>
-    <table className="wide">
-      <tbody>
-        <tr>
-          <Cells item={item}/>
-        </tr>
-      </tbody>
-    </table>
+    </tr>
 
   return (
     <>
@@ -279,9 +263,8 @@ export const SortableTable = () => {
       </p>
       <p>
         The solution is to define a <code className="code">List</code> component
-        to render the outer list, an <code className="code">Item</code> to
-        render each item in the list, and additionally
-        an <code className="code">Overlay</code> to render the active item.
+        to render the outer list, and an <code className="code">Item</code> to
+        render each item in the list.
       </p>
       <div className="flex space">
         <h3 className="mar-t-none">Drag Items to Set Order</h3>
@@ -295,7 +278,6 @@ export const SortableTable = () => {
         items={items}
         List={Table}
         Item={Row}
-        Overlay={Overlay}
         setOrder={setOrder}
       />
     </>

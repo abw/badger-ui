@@ -76,7 +76,7 @@ export const Sortable = ({
       </SortableContext>
       { Overlay && activeItem &&
       <DragOverlay>
-        <Overlay item={activeItem}/>
+        <Overlay item={activeItem} {...props}/>
       </DragOverlay>
       }
     </DndContext>
