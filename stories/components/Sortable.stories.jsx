@@ -198,3 +198,106 @@ export const VerticalSorting = () => {
     </>
   )
 }
+
+export const SortableTable = () => {
+  const rows = [
+    { id: 100, forename: 'Alan',    surname: 'Aardvark' },
+    { id: 101, forename: 'Brian',   surname: 'Badger' },
+    { id: 102, forename: 'Colin',   surname: 'Camel' },
+    { id: 103, forename: 'David',   surname: 'Dog' },
+  ];
+  const [changed, setChanged] = React.useState(false);
+  const [items, setItems] = React.useState(rows);
+  const setOrder = items => {
+    setItems(items);
+    setChanged(true);
+  }
+  const resetOrder = () => {
+    setItems( rows.map( row => ({ ...row, moved: false }) ) );
+    setChanged(false);
+  }
+
+  // Component for sortable list
+  const Table = ({children}) =>
+    <table className="wide celled table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Forename</th>
+          <th>Surname</th>
+        </tr>
+      </thead>
+      <tbody className={`sortable list vertical ${changed ? 'changed' : ''}`}>
+        {children}
+      </tbody>
+    </table>
+
+  // Component for sortable item
+  const Row = ({item, setNodeRef, style, listeners, ...props}) =>
+    <tr
+      ref={setNodeRef} style={style}
+      className={`wide sortable item row ${item.moved ? 'moved' : ''}`}
+      {...props}
+      {...listeners}
+    >
+      <Cells item={item}/>
+    </tr>
+
+  // Component rendering content of sortable item
+  const Cells = ({item}) =>
+    <>
+      <td>
+        {item.id}
+      </td>
+      <td>
+        {item.forename}
+      </td>
+      <td>
+        {item.surname}
+      </td>
+    </>
+
+  // Overlay used to display active item outside table
+  const Overlay = ({item}) =>
+    <table className="wide">
+      <tbody>
+        <tr>
+          <Cells item={item}/>
+        </tr>
+      </tbody>
+    </table>
+
+  return (
+    <>
+      <p className="mar-t-none">
+        If you want to be able to sort rows in a table then you have to do a
+        little extra work.  The problem is that dnd kit inserts a {' '}
+        <code className="code">div</code> at the end of the list to handle the
+        current active item.  This leads to a DOM error that a{' '}
+        <code className="code">div</code> is not valid inside a{' '}
+        <code className="code">tbody</code>.
+      </p>
+      <p>
+        The solution is to define a <code className="code">List</code> component
+        to render the outer list, an <code className="code">Item</code> to
+        render each item in the list, and additionally
+        an <code className="code">Overlay</code> to render the active item.
+      </p>
+      <div className="flex space">
+        <h3 className="mar-t-none">Drag Items to Set Order</h3>
+        { changed &&
+          <div>
+            <Button color="brown" text="Reset Order" iconLeft="undo" onClick={resetOrder}/>
+          </div>
+        }
+      </div>
+      <VerticalSort
+        items={items}
+        List={Table}
+        Item={Row}
+        Overlay={Overlay}
+        setOrder={setOrder}
+      />
+    </>
+  )
+}

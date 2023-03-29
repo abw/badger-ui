@@ -47,6 +47,9 @@
     }
   }
 }
+tr.sortable.item {
+  display: table-row !important;
+}
 
 .sortable.list.changed .sortable.item.moved {
   color: $sortable-moved-fg-color;
