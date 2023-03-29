@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from '../Icon/index.jsx'
-import { sizes, allColors } from '../../config/index.js'
+import { sizes } from '../../config/index.js'
 import { classNames, Themed } from '../../utils/index.js';
 import { hasValue } from '@abw/badger-utils';
 
@@ -44,7 +44,7 @@ Button.propTypes = {
     * If `solid` is set then this will set the background color.
     * Otherwise it sets the foreground color.
     */
-  color: PropTypes.oneOf(allColors),
+  color: PropTypes.string,
   /** Boolean flag to make the button outlined. */
   outline: PropTypes.bool,
   /** Boolean flag to make the button solid filled. */
