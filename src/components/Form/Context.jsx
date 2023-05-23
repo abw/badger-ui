@@ -193,7 +193,7 @@ class Context extends React.Component {
           this.debug('handleResponse() => VALID (200): ', response);
           return this.validResponse(response.data);
         }
-        else if (response.status >= 400 && response.status < 500) {
+        else if (response.status >= 400 && response.status <= 500) {
           this.debug('handleResponse() => INVALID (400-500): ', response);
           return this.invalidResponse(response.data);
         }
