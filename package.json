@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-ui",
-  "version": "2.0.0-beta.10",
+  "version": "2.0.0-beta.11",
   "description": "CSS/React User Interface Components",
   "author": "Andy Wardley",
   "type": "module",
