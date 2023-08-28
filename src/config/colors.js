@@ -1,6 +1,6 @@
 export const colors = [
   'black', 'red', 'brown', 'orange', 'yellow', 'olive', 'green', 'teal',
-  'blue', 'navy', 'indigo', 'violet', 'magenta', 'pink',
+  'blue', 'navy', 'indigo', 'violet', 'magenta', 'pink', 'maroon'
 ];
 
 export const greys = [
