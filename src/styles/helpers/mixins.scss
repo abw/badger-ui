@@ -52,4 +52,10 @@
       padding-right: 0 !important;
     }
   }
+  &.flex {
+    display: block !important;
+  }
+  &[class*="grid-"] {
+    grid-template-columns: 1fr;
+  }
 }

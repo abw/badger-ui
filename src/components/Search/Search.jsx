@@ -60,10 +60,16 @@ class Search extends React.Component {
     // track when component is mounted to avoid "Can't perform a React state
     // update on an unmounted component." warnings
     this.mounted = true;
+    if (this.props.onLoad) {
+      this.props.onLoad(this)
+    }
   }
   componentWillUnmount() {
     this.setState({ results: null });
     this.mounted = false;
+    if (this.props.onUnload) {
+      this.props.onUnload(this)
+    }
   }
   focus() {
     this.debug('focus()');
