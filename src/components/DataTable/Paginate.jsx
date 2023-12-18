@@ -1,7 +1,10 @@
 import { range } from '@abw/badger-utils';
 
 export const paginate = ({rows, pageNo=1, pageSize=rows.length}) => {
-  const total = rows.length;
+  const total    = rows.length;
+  const lastPage = Math.ceil(total / pageSize);
+  pageNo = Math.min(pageNo, lastPage)
+
   let firstIndex = pageSize * (pageNo - 1);
   let lastIndex  = firstIndex + pageSize;
 
@@ -14,7 +17,6 @@ export const paginate = ({rows, pageNo=1, pageSize=rows.length}) => {
   const thisSize    = items.length;
   const onFirstPage = (pageNo === 1);
   const onLastPage  = (lastIndex >= total - 1);
-  const lastPage    = Math.ceil(total / pageSize);
   let rangeFrom   = (pageNo > 1 ? pageNo - 1 : pageNo);
   let rangeTo     = (pageNo < lastPage ? pageNo + 1 : lastPage);
 

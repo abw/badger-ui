@@ -433,9 +433,29 @@ export const WideTable = () => {
 
 export const PersistantOptions = () => {
   const rows = [
-    { name: 'Bobby', animal: 'Badger', id: 21, role: 'admin' },
-    { name: 'Simon', animal: 'Stoat',  id: 22, role: 'user'  },
-    { name: 'Frank', animal: 'Ferret', id: 23, role: 'user'  },
+    { name: 'Alan',       animal: 'Anteater', id: 10, role: 'admin' },
+    { name: 'Bobby',      animal: 'Badger',   id: 21, role: 'admin' },
+    { name: 'Brenda',     animal: 'Badger',   id: 22, role: 'admin' },
+    { name: 'Christina',  animal: 'Cat',      id: 23, role: 'user' },
+    { name: 'Derek',      animal: 'Dog',      id: 24, role: 'user' },
+    { name: 'Delia',      animal: 'Donkey',   id: 25, role: 'admin' },
+    { name: 'Edwin',      animal: 'Elephant', id: 26, role: 'admin' },
+    { name: 'Frank',      animal: 'Ferret',   id: 27, role: 'user'  },
+    { name: 'Felicity',   animal: 'Fox',      id: 28, role: 'admin' },
+    { name: 'Gertrude',   animal: 'Goat',     id: 29, role: 'admin' },
+    { name: 'Hector',     animal: 'Hamster',  id: 30, role: 'admin' },
+    { name: 'Ian',        animal: 'Iguana',   id: 31, role: 'user' },
+    { name: 'Julie',      animal: 'Jellyfish',id: 32, role: 'user' },
+    { name: 'Kevin',      animal: 'Koala',    id: 33, role: 'user' },
+    { name: 'Lionel',     animal: 'Llama',    id: 34, role: 'user' },
+    { name: 'Mary',       animal: 'Magpie',   id: 35, role: 'user' },
+    { name: 'Nerys',      animal: 'Narwhal',  id: 36, role: 'user' },
+    { name: 'Oliver',     animal: 'Octopus',  id: 37, role: 'user' },
+    { name: 'Penny',      animal: 'Panda',    id: 39, role: 'admin' },
+    { name: 'Quentin',    animal: 'Quail',    id: 40, role: 'admin' },
+    { name: 'Roger',      animal: 'Raccoon',  id: 41, role: 'user' },
+    { name: 'Simon',      animal: 'Stoat',    id: 42, role: 'user'  },
+    { name: 'Terry',      animal: 'Tiger',    id: 43, role: 'user'  },
   ];
   const columns = {
     id: {
@@ -467,6 +487,46 @@ export const PersistantOptions = () => {
     />
   </>
 }
+
+/*
+// Used to test the pagination overflow
+export const PersistantOptions2 = () => {
+  const rows = [
+    { name: 'Alan',       animal: 'Anteater', id: 10, role: 'admin' },
+    { name: 'Bobby',      animal: 'Badger',   id: 21, role: 'admin' },
+    { name: 'Brenda',     animal: 'Badger',   id: 22, role: 'admin' },
+  ];
+  const columns = {
+    id: {
+      label: 'ID',
+      hidden: true,
+    },
+    name: {
+      label: 'Name',
+    },
+    animal: {
+      label: 'Animal',
+    },
+    role: {
+      label: 'Role',
+      hidden: true,
+    },
+  };
+  return <>
+    <p className="mar-t-none">
+      Define a <code className="code">storageKey</code> identifier if you want to automatically
+      persist filtering, sorting and pagination options via local storage.  Try changing some options
+      (e.g. selecting/deselecting fields, setting sort order, adding a filter, changing page size, etc)
+      and then reload the page.  The data table should retain those options.
+    </p>
+    <DataTable
+      rows={rows}
+      columns={columns}
+      storageKey="datatable-test-01"
+    />
+  </>
+}
+*/
 
 /*
 export const ColumnTypes = () => {
