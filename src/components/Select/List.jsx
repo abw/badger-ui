@@ -29,7 +29,7 @@ export const List = ({
     // otherwise open up options with nothing item highlighted (cursor is -1, so pressing
     // down or up will wrap it around to the first/last item)
     //setCursor(hasValue(cursor) ? undefined : hasValue(index) ? index : -1);
-    sleep(50).then(
+    sleep(200).then(
       () => {
         console.log('toggling open');
         setOpen(! open)
@@ -37,7 +37,7 @@ export const List = ({
     )
   }
   const cname = classNames(props, 'select', disabled && 'disabled', open ? 'open' : 'closed');
-  const blur = () => sleep(10).then(
+  const blur = () => sleep(200).then(
     () => {
       console.log('closing on blur');
       setOpen(false);
