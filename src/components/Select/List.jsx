@@ -3,7 +3,7 @@ import Icon from '../Icon/index.jsx'
 import Options from './Options.jsx'
 import { classNames } from '../../utils/index.js'
 import { onKeyPress } from './Utils.jsx'
-import { hasValue } from '@abw/badger-utils'
+import { hasValue, sleep } from '@abw/badger-utils'
 
 export const List = ({
   options=[],
@@ -29,16 +29,19 @@ export const List = ({
     // otherwise open up options with nothing item highlighted (cursor is -1, so pressing
     // down or up will wrap it around to the first/last item)
     //setCursor(hasValue(cursor) ? undefined : hasValue(index) ? index : -1);
-    setOpen(! open);
+    sleep(10).then(
+      () => setOpen(! open)
+    )
   }
   const cname = classNames(props, 'select', disabled && 'disabled', open ? 'open' : 'closed');
-  const blur = () => {
-    //setCursor(hasValue(index));
-    setOpen(false);
-    if (onBlur) {
-      onBlur();
+  const blur = () => sleep(10).then(
+    () => {
+      setOpen(false);
+      if (onBlur) {
+        onBlur();
+      }
     }
-  };
+  )
 
   return <div
     className={cname} tabIndex="0"
