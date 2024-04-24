@@ -12,7 +12,11 @@ const Options = ({options, cursor, setCursor, onChange, optionClass, disabled}) 
       { hasValue(option.value)
         ? <div
             className={`option ${optionClass||''} ${option.className||''} ${option.disabled ? 'disabled' : ''} ${selected ? 'selected' : ''}`}
-            onClick={click} onMouseEnter={() => setCursor(option.index)}>
+            onClick={() => {
+              console.log('selecting option: ', option);
+              click()
+            }}
+            onMouseEnter={() => setCursor(option.index)}>
             {option.text}
           </div>
         : <div className="option heading">
