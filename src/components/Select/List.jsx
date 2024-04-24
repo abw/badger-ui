@@ -5,6 +5,8 @@ import { classNames } from '../../utils/index.js'
 import { onKeyPress } from './Utils.jsx'
 import { hasValue, sleep } from '@abw/badger-utils'
 
+const blurDelay = 200
+
 export const List = ({
   options=[],
   optionList=[],
@@ -29,17 +31,17 @@ export const List = ({
     // otherwise open up options with nothing item highlighted (cursor is -1, so pressing
     // down or up will wrap it around to the first/last item)
     //setCursor(hasValue(cursor) ? undefined : hasValue(index) ? index : -1);
-    sleep(50).then(
+    sleep(blurDelay).then(
       () => {
-        console.log('toggling open');
+        // console.log('toggling open');
         setOpen(! open)
       }
     )
   }
   const cname = classNames(props, 'select', disabled && 'disabled', open ? 'open' : 'closed');
-  const blur = () => sleep(50).then(
+  const blur = () => sleep(blurDelay).then(
     () => {
-      console.log('closing on blur');
+      // console.log('closing on blur');
       setOpen(false);
       if (onBlur) {
         onBlur();
