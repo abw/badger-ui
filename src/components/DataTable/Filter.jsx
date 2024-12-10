@@ -55,7 +55,7 @@ export const filterTypes = {
   float:   filterFloat,
 }
 
-export const filter = ({rows, columns, filters}) => {
+export const filter = ({rows, columns={}, filters={}}) => {
   const fkeys = Object.keys(filters);
 
   // console.log("filtering: %s rows with ", rows.length, filters);
@@ -68,7 +68,7 @@ export const filter = ({rows, columns, filters}) => {
     row => fkeys.every(
       fkey => {
         const search = filters[fkey];
-        const column = columns[fkey];
+        const column = columns[fkey] || { };
         const field  = column.field || fkey;
         const value  = row[field];
         const type   = column.filterType || column.type;
